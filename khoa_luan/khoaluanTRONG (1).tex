@@ -1,0 +1,1394 @@
+\documentclass[12pt,a4paper,oneside]{report}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath,amsxtra,amssymb,latexsym, amscd,amsthm, enumerate}
+\usepackage{cases}
+\usepackage{graphicx}
+
+
+
+\usepackage{indentfirst}
+\usepackage{ragged2e}
+
+
+\setlength{\textwidth}{430pt}
+
+\newtheorem{nx}{Nhận xét}[section]
+\newtheorem{dl}{Định lý}[section]
+\newtheorem{bd}{Bổ đề} [section]
+\newtheorem{dn}{Định nghĩa}[section]
+\newtheorem{vd}{Ví dụ} [section]
+\newtheorem{md}{Mệnh đề}[section]
+\newtheorem{hq}{Hệ quả}[section]
+\newtheorem{cy}{Chú ý}[section]
+\newtheorem{bt}{Bài tập}
+\numberwithin{equation}{section}
+\setlength{\textwidth}{15.5cm} %Độ rộng của khối chữ 210-3.5-2=15.5cm
+
+\def\A{\mathcal{A}}
+\def\C{\mathbb{C}}
+\def\R{\mathbb{R}}
+\def\Q{\mathbb{Q}}
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\def\L{\mathcal{L}}
+\def\ln{\ell_p^n}
+\def\l1{\ell_1}
+\def\lp{\ell_p}
+\def\lq{\ell_q}
+\def\lo{\ell_{\infty}}
+\def\Lp{\mathbf{L_p}}
+\def\Lpp{\mathit{L_p}}
+\def\Lqq{\mathit{L_q}}
+\def\Lo{\mathbf{L_{\infty}}}
+\def\Loo{\mathit{L_{\infty}}}
+\def\m{\mu}
+\def\s{\sigma}
+\def\sgn{\text{sign}}
+\def\disint{\displaystyle\int}
+\def\dissum{\displaystyle\sum}
+\def\van{triệt tiêu bên ngoài một tập có độ đo hữu hạn }
+\def\hol{bất đẳng thức Hölder }
+\def\hkn{hầu khắp nơi}
+\def\es{\text{ess sup}}
+\def\kgdd{(X,\A,\mu)}
+	
+\setlength{\voffset}{-20pt}
+\setlength{\parsep}{0 pt}
+\setlength{\evensidemargin} {-0.94 mm}  %Lề trang phải 2.54cm-0.34cm=2cm
+\setlength{\oddsidemargin}{0.96cm}     %Lề trang trái 2.54cm+0.96cm=3.5cm
+\setlength{\topmargin}{0.2mm}          %Lề trên 2.54cm-0.04cm=2.5cm
+\setlength{\headheight}{0.4cm}             %Chieu cao cua Headerline
+\setlength{\headsep}{0.5cm}                %Khoảng cách từ Headerline tới khối chữ trong trang
+\setlength{\textheight}{23.7cm}             %Chiều cao của khối chữ trong trang=24.1cm
+\setlength{\baselineskip}{20truept}
+\renewcommand{\baselinestretch}{1.5} % Dãn dòng
+%\renewcommand{\footrulewidth}{0.4cm}
+\setlength{\hfuzz}{30pt}
+
+\usepackage{fancybox}
+
+\pagenumbering{roman}\pagestyle{plain}
+
+\allowdisplaybreaks
+\begin{document}
+
+\thispagestyle{empty}
+\thisfancypage{\setlength{\fboxsep}{2pt}\setlength{\fboxrule}{2pt}\doublebox}{} 
+\begin{center} %%%%
+{\fontsize{14pt}{16}\selectfont BỘ GIÁO DỤC VÀ ĐÀO TẠO}\\
+\vskip 0.05cm
+{\bf\fontsize{14pt}{16}\selectfont TRƯỜNG ĐẠI HỌC QUY NHƠN}\\
+{——————————————}\\
+\vskip 2cm
+{\bf\fontsize{16pt}{22}\selectfont NGUYỄN NHẬT NAM}
+
+\vskip 3cm
+\begin{center}
+{\bf\fontsize{22pt}{22}\selectfont Một số phương pháp phân tích ma trận và ứng dụng}
+
+\end{center}
+
+\vskip 2.5cm
+{\bf\fontsize{16pt}{22}\selectfont LUẬN VĂN TỐT NGHIỆP ĐẠI HỌC}\\
+\vskip 0.5cm
+{\bf\fontsize{16pt}{22}\selectfont Ngành: Toán ứng dụng }\\
+\vskip 0.05cm
+{\bf\fontsize{16pt}{22}\selectfont Chuyên ngành: Khoa học dữ liệu}\\
+\vskip 2.5cm
+{\bf\fontsize{16pt}{22}\selectfont Người hướng dẫn: TS Lâm Thị Thanh Tâm}\\
+
+\vfill
+{\bf\fontsize{14pt}{16}\selectfont {Bình Định, 2023}}\\
+\end{center}
+\newpage
+\thispagestyle{empty}
+
+%%%%%%% bìa phụ
+
+\thisfancypage{\setlength{\fboxsep}{2pt}\setlength{\fboxrule}{2pt}\doublebox}{} 
+\begin{center} %%%%
+{\fontsize{14pt}{16}\selectfont BỘ GIÁO DỤC VÀ ĐÀO TẠO}\\
+\vskip 0.05cm
+{\bf\fontsize{14pt}{16}\selectfont TRƯỜNG ĐẠI HỌC QUY NHƠN}\\
+{——————————————}\\
+\end{center}
+
+\vskip 3cm
+\begin{center}
+{\bf\fontsize{22pt}{22}\selectfont Một số phương pháp phân tích ma trận và ứng dụng}
+
+
+
+\vskip 3.5cm
+{\bf\fontsize{16pt}{22}\selectfont LUẬN VĂN TỐT NGHIỆP ĐẠI HỌC}\\
+\vskip 0.5cm
+{\bf\fontsize{16pt}{22}\selectfont Ngành: Toán ứng dụng}\\
+\vskip 0.05cm
+{\bf\fontsize{16pt}{22}\selectfont Chuyên ngành: Khoa học dữ liệu}\\
+\vskip 2.5cm
+\end{center}
+\begin{flushleft}
+{\bf\fontsize{16pt}{22}\selectfont Sinh viên thực hiện:  NGUYỄN NHẬT NAM}\\
+\vskip 0.05cm
+{\fontsize{16pt}{22}\selectfont Mã số SV: 4251140002}\\
+\vskip 0.05cm
+{\fontsize{16pt}{22}\selectfont Lớp, Khóa: Toán ứng dụng K42}\\
+\vskip 2cm
+{\bf\fontsize{16pt}{22}\selectfont Người hướng dẫn: TS Lâm Thị Thanh Tâm}\\
+\end{flushleft}
+
+
+\vfill
+\begin{center}
+	{\bf\fontsize{14pt}{16pt}\selectfont Bình Định, 2023}
+\end{center}
+%\newpage
+%\thispagestyle{empty}
+%\begin{center}
+%	BỘ GIÁO DỤC VÀ ĐÀO TẠO\\
+%	\textbf{TRƯỜNG ĐẠI HỌC QUY NHƠN}\\
+%	{——————————————}
+%
+%\end{center}
+%\vskip 2.5cm
+%\begin{center}
+%	\LARGE{\textbf{MỘT SỐ VẤN ĐỀ VỀ KHÔNG GIAN LEBESGUE}}
+%	
+%	\vskip 0.5cm
+%\end{center}
+%\vskip 2.5cm
+%\begin{center}
+%	\textbf{LUẬN VĂN TỐT NGHIỆP ĐẠI HỌC}\\
+%	\vskip 0.5cm
+%	\textbf{Ngành: Sư phạm Toán}\\
+%	\vskip 0.5cm
+%	\textbf{Chuyên ngành: Giải tích}
+%\end{center}
+%\vskip 2cm
+%\begin{flushleft}
+%	\textbf{Sinh viên thực hiện: Nguyễn Chí Trọng}\\
+%	Mã số SV: 3951010051\\
+%	Lớp, Khóa: Sư phạm Toán K39
+%\end{flushleft}
+%\vskip 1.5cm
+%
+%\begin{center}
+%	\textbf{Người hướng dẫn: PGS.TS. LƯƠNG ĐĂNG KỲ}
+%\end{center}
+%\vskip 1.5cm
+%\vfill 
+%\begin{center}
+%	\textbf{	Bình Định - 2020}
+%\end{center}
+%
+
+
+\newpage
+\chapter*{Lời cảm ơn}
+\pagenumbering{arabic}            % Danh lai trang
+\pagenumbering{roman}
+\addcontentsline{toc}{chapter}{Lời cảm ơn}
+\begin{justify}
+Trước khi đi vào nội dung của luận văn, em xin bày tỏ lòng biết ơn chân thành tới toàn thể giáo viên của Trường Đại học Quy Nhơn nói chung và của Khoa Toán-Thống kê nói riêng vì đã tận tâm dạy bảo em trong suốt quá trình em theo học tại trường, và đặc biệt là sự định hướng dẫn dắt của TS Lâm Thị Thanh Tâm đối với đề tài khóa luận này.
+
+Nhân dịp này em cũng xin được gửi những lời cảm ơn đến những người bạn, đặc biệt là những người thân trong gia đình đã luôn giúp đỡ em hết mình, luôn động viên, cổ vũ tinh thần và tạo điều kiện thuận lợi giúp em có thể hoàn thành được khoá luận tốt nghiệp này.
+
+Trong quá trình viết báo cáo này mặc dù đã được chỉnh sửa nhiều lần nhưng không thể tránh khỏi việc thiếu sót và gây cho người đọc cảm giác khó hiểu. Em xin chân thành cảm ơn nếu nhận được sự góp ý từ các quý thầy cô, anh chị và bạn bè để có thể chỉnh sửa luận văn được tốt hơn.
+\end{justify}
+\vskip 0.5cm
+\begin{flushright}
+Quy Nhơn, ngày ... tháng ... năm 2023\qquad\\
+Sinh viên thực hiện\qquad\qquad\qquad\qquad\\
+
+\vskip 1.5cm
+\textbf{Nguyễn Nhật Nam}\qquad\quad\quad\quad\qquad
+\end{flushright}
+
+%%% ---------- MỤC LỤC -------- %%%
+\tableofcontents
+%\chapter*{Một số ký hiệu}
+%\addcontentsline{toc}{chapter}{Một số ký hiệu}
+
+%\begin{tabular}{l l}
+%	$\mathbb N$&Tập các số tự nhiên,\\ 
+%	$\mathbb Z$&Tập các số nguyên,\\
+%	$\mathbb Q$&Tập các số hữu tỉ,\\
+%	$\mathbb R$&Tập các số thực,\\
+%	$\mathbb C$&Tập các số phức,\\
+%	$\overline{\mathbb{R}}$& Tập số thực mở rộng $\{-\infty\}\cup\mathbb R\cup\{\infty\},$\\
+%	$\mathbb R^n$&Không gian vectơ thực $n$-chiều,\\ 
+%	$\chi_A$&Hàm đặc trưng của tập $A$,\\
+%	$\bigsqcup\limits_{i=1}^n A_i$&hợp rời rạc các tập $A_1,A_2,\ldots,A_n$.	
+%\end{tabular}
+\chapter*{Lời mở đầu}
+\addcontentsline{toc}{chapter}{Lời mở đầu}
+
+\begin{justify}   
+Trong thời đại công nghệ thông tin phát triển mạnh mẽ ngày nay, việc thu thập và xử lý dữ liệu ngày càng trở nên quan trọng và cần thiết. Các phương pháp phân tích dữ liệu như phân rã giá trị suy biến (SVD) và phân tích thành phần chính (PCA) đóng vai trò quan trọng trong việc giải quyết các vấn đề liên quan đến dữ liệu lớn và đa chiều. Những phương pháp này không chỉ giúp giảm kích thước dữ liệu mà còn giúp khai thác thông tin hữu ích từ dữ liệu gốc. SVD và PCA đã và đang được ứng dụng rộng rãi trong nhiều lĩnh vực khoa học và kỹ thuật, chẳng hạn như xử lý hình ảnh, phân tích dữ liệu, nhận dạng mẫu, thống kê, v.v.
+
+Trong luận văn này, chúng tôi tập trung nghiên cứu về các phương pháp phân tích dữ liệu như phân rã giá trị suy biến (SVD) và phân tích thành phần chính (PCA), cũng như một số ứng dụng của chúng trong các bài toán thực tế. Mục tiêu chính của luận văn là tìm hiểu về các tính chất cơ bản, cách tính và ứng dụng của SVD và PCA trong việc giải quyết các vấn đề liên quan đến dữ liệu.
+
+Đối tượng nghiên cứu trong luận văn này là phương pháp phân rã giá trị suy biến (SVD) và phân tích thành phần chính (PCA). Ngoài lời cảm ơn, mục lục, lời mở đầu và một số ký hiệu, luận văn được chia làm bốn chương chính:
+
+Chương 1: Kiến thức cơ bản. Trong chương này, chúng tôi trình bày một số kiến thức cơ sở về đại số tuyến tính, giải tích và thống kê, nhằm chuẩn bị cho việc tìm hiểu về SVD và PCA.
+
+Chương 2: Phân rã giá trị suy biến (SVD). Trong chương này, chúng tôi giới thiệu về SVD, cách tính SVD và mối quan hệ giữa SVD và giá trị riêng của ma trận. Ngoài ra, chúng tôi cũng trình bày một số ứng dụng của SVD trong việc giải quyết các bài toán thực tế.
+
+Chương 3: Phân tích thành phần chính (PCA). Trong chương này, chúng tôi giới thiệu về PCA, cách tính PCA và mối quan hệ giữa PCA và SVD. Chúng tôi cũng sẽ trình bày một số ứng dụng của PCA trong việc giảm kích thước dữ liệu, phân tích dữ liệu và các bài toán khác.
+
+Chương 4: Ứng dụng của SVD và PCA trong các bài toán thực tế. Chương này sẽ trình bày một số ví dụ cụ thể về việc áp dụng SVD và PCA trong các bài toán thực tế như xử lý hình ảnh, nhận dạng mẫu, phân tích dữ liệu và thống kê.
+
+Luận văn tốt nghiệp này được hoàn thành dưới sự hướng dẫn của TS. lâm Thị Thanh Tâm. Nhân dịp này, tôi xin bày tỏ lòng biết ơn sâu sắc đến thầy/cô hướng dẫn, đã không chỉ hỗ trợ tôi trong việc nghiên cứu khoa học mà còn tận tình giúp đỡ và tạo mọi điều kiện thuận lợi cho tôi trong suốt quá trình làm đề tài. Tôi cũng xin chân thành cảm ơn tập thể lớp Toán Ứng Dụng K42, khoa Toán và THống kê Trường Đại học Quy Nhơn đã giúp đỡ và tạo mọi điều kiện thuận lợi cho tôi hoàn thành khóa học cùng với luận văn này.
+
+Cuối cùng, tôi xin chân thành cảm ơn gia đình, bạn bè, những người thân yêu đã luôn quan tâm, giúp đỡ và ủng hộ tôi trong suốt quá trình học tập và thực hiện luận văn này. Dù đã cố gắng hết sức, nhưng do thời gian và năng lực có hạn, luận văn không tránh khỏi những thiếu sót và hạn chế. Rất mong nhận được sự góp ý và chỉ bảo của quý thầy cô, quý bạn đồng nghiệp để luận văn tốt nghiệp này được hoàn thiện hơn. Tôi xin chân thành cảm ơn.
+\end{justify}
+  \chapter*{\centerline{Một số ký hiệu}}
+\addcontentsline{toc}{chapter}{Một số ký hiệu}
+\begin{tabular}{l l}
+	$\mathbb N$&tập các số tự nhiên\\
+	$\mathbb Z$&tập các số nguyên\\
+	$ \mathbb Q $& tập các số hữu tỷ\\
+	$\mathbb R$&tập các số thực\\
+	$\mathbb C$&tập các số phức\\
+	$ \overline{\R} $&tập các số thực mở rộng\\
+	$\mathbb R^n$&không gian vectơ thực $n$-chiều\\ 
+	$\mathbb K$&tập $\R$ hoặc $\C$\\
+$\mathcal{P}(X)$&tập tất cả các tập con của $X$\\
+
+%	$\gt{\rst}$& tập số thực mở rộng $\{-\vc\}\cup\rst\cup\{\vc\},$\\
+
+
+
+%	$\sigma(\uon{C})$&$\sigma$-đại số sinh bởi  $\uon{C}$,\\ 
+%	$\uon{M}_L$&$\sigma$-đại số các tập Lebesgue đo được trên $\rst$,\\
+%	$\uon{M}_L^n$&$\sigma$-đại số các tập Lebesgue đo được trên $\rst^n$,\\
+%	$\uon{C}_c(\rst)$&không gian các hàm liên tục có giá compact,\\ 
+
+%	$\mu_L$&độ đo Lebesgue trên $\rst$,\\
+%	$\mu_L^n$&độ đo Lebesgue trên $\rst^n$,\\
+%	$(\rst,\uon{M}_L,\mu_L)$&không gian độ đo Lebesgue trên $\rst$,\\
+%	$(\rst^n,\uon{M}_L^n,\mu_L^n)$&không gian độ đo Lebesgue trên $\rst^n$,\\
+$ \sgn $&hàm dấu\\
+$A\bigtriangleup B$&hiệu đối xứng của hai tập $A$ và $B$\\
+$\bigsqcup_{i=1}^n A_i$&hợp rời nhau các tập $A_1,\ldots,A_n$\\
+$f_n\uparrow$&dãy $f_n$ đơn điệu tăng\\
+$f_n\downarrow$&dãy $f_n$ đơn điệu giảm\\
+$f_n\nearrow f$&dãy $f_n$ đơn điệu tăng và hội tụ đến $f$\\
+$f_n\rightrightarrows f$&dãy $f_n$ hội tụ đều đến $f$\\	
+	%$f^+,\ f^-$&phần dương, phần âm của hàm $f$,\\
+$\L$&$\sigma$-đại số Lebesgue các tập con của $\R$\\
+$m$&độ đo Lebesgue\\
+$\sharp$&độ đo đếm
+	
+\end{tabular}
+\chapter{Một số kiến thức chuẩn bị}
+\pagenumbering{arabic}            % Danh lai trang
+\section{Ma trận}.
+\begin{dn}\rm                    %ĐN sigma đại số
+ Ma trận cỡ $m \times n$ là một bảng gồm $m n$ số thực được sắp xếp thành $m$ dòng và $n$ cột. Ma trận thường được kí hiệu như sau\\
+ $$
+ \mathbf{A}=\left[\begin{array}{ccccccc}
+ 	a_{11} & a_{12} & a_{13} & \cdots & \cdots & \cdots & a_{1 n} \\
+ 	a_{21} & a_{22} & a_{23} & \cdots & \cdots & \cdots & a_{2 n} \\
+ 	\vdots & \vdots & \vdots & \cdots & \cdots & \cdots & \vdots \\
+ 	a_{m 1} & a_{m 2} & a_{13} & \cdots & \cdots & \cdots & a_{m n}
+ \end{array}\right],
+ $$
+ 
+ hoặc
+ 
+ $$
+ \mathbf{A}=\left(\begin{array}{ccccccc}
+ 	a_{11} & a_{12} & a_{13} & \cdots & \cdots & \cdots & a_{1 n} \\
+ 	a_{21} & a_{22} & a_{23} & \cdots & \cdots & \cdots & a_{2 n} \\
+ 	\vdots & \vdots & \vdots & \cdots & \cdots & \cdots & \vdots \\
+ 	a_{m 1} & a_{m 2} & a_{13} & \cdots & \cdots & \cdots & a_{m n}
+ \end{array}\right),
+ $$
+ 
+ hoặc $\mathbf{A}=\left(a_{i j}\right)_{m \times n}$, trong đó $a_{i j}$ là phần tử của ma trận nằm trên dòng $i$, cột $j$, với $i=1,2, \ldots, m$, và $j=1,2, \ldots, n$.
+ 
+ Khi $m=n$, ta gọi ma trận cỡ $m \times m$ là ma trận vuông cấp $m$. Các phần tử $a_{11}$, $a_{22}, \ldots, a_{m m}$ nằm trên một đường thẳng được gọi đường chéo chính của ma trận.
+\end{dn}
+	
+%\end{dn}
+\begin{dn}\rm
+	Ma trận đơn vị cấp $n$ là ma trận vuông cấp $n$ có mọi phần tử nằm trên đường chéo chính bằng 1, các phần tử khác bằng 0 . Ta ký hiệu ma trận đơn vị cấp $n$ bởi $\mathbf{I}_{n}$ và nó có dạng như sau
+$$
+\mathbf{I}_{n}=\left[\begin{array}{cccc}
+	1 & 0 & \cdots & 0 \\
+	0 & 1 & \cdots & 0 \\
+	\vdots & \vdots & \ddots & \vdots \\
+	0 & 0 & \ldots & 1
+\end{array}\right]
+$$
+Trong trường hợp không cần chú ý đến cấp của ma trận, ta ký hiệu ma trận đơn vị bởi $\mathbf{I}$ .
+\end{dn}
+\begin{dn}\rm                     
+Ma trận đường chéo là ma trận vuông có các phần tử nằm trên đường chéo chính khác 0, các phần tử nằm ngoài đường chéo chính bằng 0 . Ma trận đường chéo có dạng như sau
+$$
+\mathbf{D}=\left[\begin{array}{cccc}
+	a_{11} & 0 & \ldots & 0 \\
+	0 & a_{22} & \cdots & 0 \\
+	\vdots & \vdots & \ddots & \vdots \\
+	0 & 0 & \ldots & a_{m m}
+\end{array}\right]
+$$
+\indent Ma trận chỉ có một dòng được gọi là vector dòng. Ma trận chỉ có một cột được gọi là vector cột.
+\end{dn}
+\begin{dn}\rm 
+	Ma trận vuông A cấp $n$ được gọi là ma trận khả nghịch nếu tồn tại một ma trận $\mathbf{A}^{\prime}$ vuông cấp $n$ thỏa mãn $\mathbf{A} \mathbf{A}^{\prime}=\mathbf{A}^{\prime} \mathbf{A}=\mathbf{I}_{n}$. Ma trận $\mathbf{A}$ được gọi là ma trận nghịch đảo của ma trận $\mathbf{A}$, và được ký hiệu là $\mathbf{A}^{-1}$
+\end{dn}
+\begin{dn}\rm 
+	Cho ma trận $\mathbf{A}=\left(a_{i j}\right)_{m \times n}$. Ma trận chuyển vị của $\mathbf{A}$, ký hiệu là $\mathbf{A}^{T}$, có dạng $\mathbf{A}^{T}=\left(a_{j i}\right)_{n \times m}$.
+	
+	Ma trận vuông $\mathbf{A}$ được gọi là ma trận đối xứng nếu $\mathbf{A}^{T}=\mathbf{A}$, và được gọi là ma trận phản đối xứng nếu $\mathbf{A}^{T}=-\mathbf{A}$.
+\end{dn}
+\begin{dn}\rm 
+	Ma trận vuông $\mathbf{A}$ được gọi là ma trận trực giao nếu $\mathbf{A}^{T} \mathbf{A}=$ $\mathbf{A A}^{T}=\mathbf{I}$
+	
+	Nhận xét: (i) Ma trận $\mathbf{A}=\left[a_{i j}\right]_{n \times n}$ là ma trận trực giao khi và chỉ khi $\sum_{k=1}^{n} a_{i k} a_{j k}=\delta_{i j}$, với $\delta_{i j}$ là kí hiệu Kronecker.
+	
+	(ii) Ma trận trực giao $\mathbf{A}$ là khả nghịch và $\mathbf{A}^{T}=\mathbf{A}^{-1}$.
+	
+	(iii) Ma trận $\mathbf{A}$ trực giao khi và chỉ khi các vector cột và các vector hàng của $\mathbf{A}$ tạo thành các hệ trực chuẩn.
+\end{dn}
+\begin{dn}\rm 
+	Cho $\mathbf{A}$ là một ma trận vuông cấp $n$. Định thức của ma trận $\mathbf{A}$, ký hiệu là $\operatorname{det}(\mathbf{A})$ hay $|\mathbf{A}|$ là một giá trị được xác định bằng công thức
+	
+	$$
+	\operatorname{det}(\mathbf{A})=a_{11} \mathbf{A}_{11}+a_{12} \mathbf{A}_{12}+\cdots+a_{1 n} \mathbf{A}_{1 n}
+	$$
+	
+	trong đó $\mathbf{A}_{i k}=(-1)^{i+k} \operatorname{det}\left(\mathbf{M}_{i k}\right)$, với $\mathbf{M}_{i k}$ là ma trận vuông cấp $n-1$ nhận được từ ma trận $\mathbf{A}$ bằng cách bỏ đi dòng thứ $i$ và cột thứ $k$. Đại lượng $\mathbf{A}_{i k}$ được gọi là phần bù đại số của $a_{i k}$.
+	
+	Nhận xét:
+	
+	- Định thức cấp một: Nếu $\mathbf{A}=\left(a_{11}\right)$ thì $\operatorname{det}(\mathbf{A})=a_{11}$.
+	
+	- Định thức cấp hai: Nếu $\mathbf{A}=\left[\begin{array}{ll}a & b \\ c & d\end{array}\right]$ thì $\operatorname{det}(\mathbf{A})=a d-b c$.
+\end{dn}
+\begin{dn}\rm 
+	Cho $\mathbf{A}$ là ma trận cỡ $m \times n$ bất kì và $s$ là số nguyên thỏa $1 \leqslant s \leqslant \min (m, n)$. Khi đó, các phần tử nằm trên giao của $s$ dòng và $s$ cột của ma trận $\mathbf{A}$ sẽ lập nên các ma trận vuông cấp $s$, ta gọi đó chính là các ma trận con cấp $s$ của $\mathbf{A}$.
+	
+	Định thức của các ma trận này được gọi là định thức con cấp $s$ của ma trận $\mathbf{A}$.
+\end{dn}
+\begin{dn}\rm 
+	 Định thức con cấp cao nhất, khác 0 của ma trận $\mathbf{A}$ được gọi là định thức con cơ sở của ma trận $\mathbf{A}$. Một ma trận $\mathbf{A}$ có thể có nhiều định thức con cơ sở cùng cấp.
+	
+	Hạng của ma trận $\mathbf{A}$ là cấp của định thức con cơ sở. Ký hiệu hạng của ma trận $\mathbf{A}$ là $\operatorname{rank}(\mathbf{A})$.
+	
+	Nhận xét: Cho $\mathbf{A}$ là ma trận cấp $m \times n, \mathbf{B}$ là ma trận cấp $n \times l$. (i) Nếu $\operatorname{rank}(\mathbf{B})=n$ thì $\operatorname{rank}(\mathbf{A} \cdot \mathbf{B})=\operatorname{rank}(\mathbf{A})$.
+	
+	(ii) Nếu $\operatorname{rank}(\mathbf{A})=n$ thì $\operatorname{rank}(\mathbf{A} . \mathbf{B})=\operatorname{rank}(\mathbf{B})$.
+\end{dn}
+\begin{dn}\rm 
+	Vết của ma trận vuông $\mathbf{A}$ cấp $n$ được xác định bằng tổng các phần tử trên đường chéo chính của ma trận $\mathbf{A}$, và được ký hiệu là $\operatorname{Tr}(\mathrm{A})$.
+\end{dn}
+
+%\begin{md}
+%Cho $\A$ là một $\sigma$-đại số các tập con của $X$ và $\mu: \A\rightarrow \overline{\R}$ là một độ đo. Khi đó
+%\begin{itemize}
+%\item $\mu$ là đơn điệu và dưới $\sigma$-cộng tính.
+%\item Nếu $A,B\in \A$ với $A\subset B$ và $\mu(A)<\infty$, thì
+%$$\mu(B \setminus A)=\mu(B)-\mu(A).$$
+%\end{itemize}
+%\end{md}
+%Định lý sau đây rất thường được sử dụng.
+%\begin{dl}
+%Cho $\m$ là một độ đo trên $\sigma$-đại số $\A$ các tập con của $X$. Khi đó
+%\begin{align*}
+%(A_n)_{n\geq 1} \subset \A,\m(A_n)=0,\forall n\geq 1 \Rightarrow \m(\cup_{n\geq 1} A_n)=0.
+%\end{align*}
+%\end{dl}
+%Định lý tiếp theo sẽ trả lời cho câu hỏi khi nào thì đẳng thức sau đúng
+%$$\lim_{n\to\infty}\m(E_n)=\m\left(\lim_{n\to\infty}E_n\right)?$$
+%\begin{dl}\label{dlhoitudondieutrongdodo}\rm\textbf{(Định lý hội tụ đơn điệu trong độ đo).} \textit{Cho $\mu$ là một độ đo trên $\sigma$-đại số $\A$ các tập con của $X$, và $\left(E_n\right)_{n\geq 1} \subset \A$ là một dãy đơn điệu. Khi đó
+%\begin{enumerate}[(a)]
+%\item Nếu $E_n \uparrow$ thì $\lim_{n\rightarrow\infty} \mu\left(E_n\right)=\mu\left(\lim_{n\rightarrow\infty} E_n\right).$
+%\item Nếu $E_n \downarrow$ và $\mu(E_1)<\infty$ thì $\lim_{n\rightarrow\infty} \mu\left(E_n\right)=\mu\left(\lim_{n\rightarrow\infty} E_n\right).$
+%\end{enumerate}}
+%\end{dl}
+%%\begin{cy}\rm
+%%\begin{itemize}
+%%\item Trong Định lý \ref{dlhoitudondieutrongdodo}(b), điều kiện $\mu(E_1)<\infty$ có thể được thay thế bởi $\mu(E_{n_0})<\infty$ với $n_0 \geq 1$ nào đó.
+%%\item Điều kiện $\mu(E_1)<\infty$, nói chung là cần thiết. Nếu $\mu(E_1)=\infty$, thì Định lý \ref{dlhoitudondieutrongdodo}(b) không còn đúng. Thật vậy, trong không gian độ đo Lebesgue $(\R,\L,m)$, ta lấy $E_n:=(n,\infty)$ với mọi $n\geq 1$. Khi đó $\lim_{n\rightarrow\infty}E_n=\emptyset$, và vì vậy
+%%$$\displaystyle\lim_{n\rightarrow\infty} m(E_n)=\infty\neq 0=m\left(\displaystyle\lim_{n\rightarrow\infty} E_n\right).$$
+%%\end{itemize}
+%%\end{cy}
+%Bây giờ ta sẽ nhắc lại một bổ đề quan trọng trong lý thuyết độ đo.
+%\begin{dl}\rm\textbf{(Bổ đề Fatou trong độ đo).}
+%\textit{Cho $\m$ là một độ đo trên một $\sigma$-đại số $\A$ các tập con của $X$ và $(E_n)_{n\geq 1}\subset \A$. Khi đó
+%\begin{itemize}
+%\item[(a)] Ta luôn có
+%$$\m\left(\liminf_{n\rightarrow\infty} E_n\right)\leq \liminf_{n\rightarrow\infty} \m(E_n).$$
+%\item[(b)] Nếu tồn tại $A\in\A$ sao cho $\m(A)<\infty$ và $E_n\subset A$ với mọi $n\geq 1$, thì
+%$$\m\left(\limsup_{n\rightarrow\infty} E_n\right)\geq \limsup_{n\rightarrow\infty} \m(E_n).$$
+%\item[(c)] Nếu dãy $(E_n)_{n\geq 1}$ hội tụ và tồn tại $A\in\A$ sao cho $\m(A)<\infty, E_n\subset A$ với mọi $n\geq 1$, thì
+%$$\lim_{n\rightarrow\infty} \m(E_n)=\m\left(\lim_{n\rightarrow\infty} E_n\right).$$
+%\end{itemize}}
+%\end{dl}
+%\begin{dn}\rm                  %Không gian đo được
+%Cho $\A$ là một $\sigma$-đại số các tập con của $X$. Khi đó cặp $(X,\A)$ được gọi là một \textbf{không gian đo được}. Một tập $A\subset X$ được gọi là $\A$-đo được nếu $A\in \A$.
+%%Đôi khi để đơn giản ta nói $A$ là đo được thay vì nói $A$ là $\A$-đo được nếu không có nhầm lẫn.
+%\end{dn}
+%\begin{dn}\rm             %Không gian độ đo
+%Cho $(X,\A)$ là một không gian đo được và $\mu$ là một độ đo trên $\sigma$-đại số $\A$. Khi đó bộ ba $\kgdd$ được gọi là một \textbf{không gian độ đo}.
+%\end{dn}
+%%\begin{dn}\rm              %khgian độ đo hữu hạn
+%%Cho $\kgdd$ là không gian độ đo. Khi đó
+%%\begin{itemize}
+%%\item Một tập $A\subset X$ được gọi là \textbf{tập không} hay tập có độ đo 0 nếu $A$ đo được và $\mu(A)=0$.
+%%\end{itemize}
+%%\end{dn}
+%\begin{dn}\rm
+%Một không gian độ đo được gọi là \textbf{đầy đủ} nếu $A$ là tập không, $B\subset A$ thì $B$ là tập không, tức là,
+%$$A\in\A,\m(A)=0,B\subset A\Rightarrow B\in\A\text{ và }\m(B)=0.$$
+%\end{dn}
+%%\subsection{Tích phân Lebesgue}
+%\begin{dn}\rm    %hàm đo được
+%	Cho $(X,\A)$ là một không gian đo được và một tập $A \in \A$. Một hàm số thực suy rộng $f:X \to\overline{\R}$ gọi là \textbf{đo được} trên tập $A$ đối với $\sigma$-đại số $\mathfrak{A}$ nếu
+%	$$\{ x \in A: f(x) < a \} \in \A,\quad\forall a\in\R.$$
+%	
+%\end{dn}
+%Nếu $X=\R$ và $\A=\L$ là $\sigma$-đại số các tập Lebesgue-đo được, thì $f$ là một \textbf{hàm số Lebesgue-đo được}.
+%\begin{dn}\rm   %Hàm đơn giản
+%Cho $(X,\A)$ là một không gian đo được và một tập $A \in \A$. Một hàm số $f: X\to\R$ được gọi là một \textbf{hàm đơn giản} trên $A$ nếu $f$ là hàm số đo được trên $A$ và chỉ nhận hữu hạn giá trị trên $A$, tức là, tồn tại hữu hạn các số thực phân biệt $\alpha_1,\ldots,\alpha_n$ sao cho
+%$$f(A)=\lbrace\alpha_1,\ldots,\alpha_n\rbrace.$$
+%Khi $A=X$ ta chỉ nói $f$ là hàm đơn giản.
+%\end{dn}
+%Định lý sau đây được gọi là Định lý cấu trúc hàm đo được.
+%\begin{dl}
+%Cho $(X,\A)$ là một không gian đo được và một tập $A \in \A$. Khi đó, nếu $f:X\to \overline{\R}$ là một hàm số đo được và hữu hạn trên $A$, thì tồn tại một dãy các hàm đơn giản trên $A$, $(f_n)_{n\geq 1},$ sao cho với mọi $x\in A$, ta có
+%$$f(x)=\lim_{n\to \infty} f_n(x).$$
+%Hơn nữa, nếu $f\geq 0$ thì ta có thể chọn dãy các hàm đơn giản $(f_n)_{n\geq 1}$ sao cho
+%$$0\leq f_n \nearrow f$$
+%trên $A$. Nếu $f$ là hàm số bị chặn trên $A$ thì ta có thể chọn dãy các hàm đơn giản $(f_n)_{n\geq 1}$ sao cho
+%$$f_n(x)\rightrightarrows f(x)$$
+%trên $A$.
+%\end{dl}
+%\begin{dn}\rm
+%	Cho $(X, \A, \mu)$ là một không gian độ đo  và  tập $A\subset X$. Một tính chất $P(x)$ được gọi là đúng hầu khắp $x\in A$, hoặc đúng \textbf{hầu khắp nơi} trên $A$ nếu tồn tại tập đo được $B\subset A$ có độ đo 0, sao cho tính chất $P(x)$ đúng với mọi $x\in A\setminus B.$
+%\end{dn}
+%
+%\begin{dn}\rm
+%	%\df (\cite{LDK})
+%	\begin{itemize}
+%	\item [(i)] Cho $A\neq \emptyset$. Cho $f: X \to \R$ là một hàm đơn giản không âm trên $A$. Ta định nghĩa \textbf{tích phân} của $f$ trên $A$, ký hiệu là $\int_{A}f(x)d\mu(x)$ hoặc $\int_{A}f\,d\mu$, là $\sum_{i=1}^{n} \alpha_i \mu(A_i)$.
+%	\item [(ii)] Khi $A=\emptyset$ và $f: X \to \R$ là một hàm đo được trên $A$, ta định nghĩa
+%	$$\int_{A}f\,d\mu=\int_{\emptyset}f\,d\mu=0.$$
+%\end{itemize}
+%
+%\end{dn}
+%
+%\begin{dn}\rm
+%%	\df (\cite{LDK})
+%	Cho $f: X\to \overline{\R}$ là một hàm đo được trên $A$, ta có thể viết $$f=f^{+}-f^{-}$$ trong đó $f^{+}=\max\{f,0\}$ và $f^{-}=\max\{-f,0\}$ là các hàm đo được không âm trên $A$.
+%
+%Ta nói $f$ là \textbf{tựa khả tích} trên  $A$ nếu $\int_{A}f^{+}d\mu$ và $\int_{A}f^{-}d\mu$ không đồng thời bằng $+\infty$. Khi đó tích phân của $f$ trên $A$ được định nghĩa là $$\int_{A}f d\mu=\int_{A}f^{+}d\mu -\int_{A}f^{-}d\mu.$$
+%	
+%	Ta nói $f$ là \textbf{khả tích} trên  $A$ nếu $\int_{A}\left| f\right| d\mu<\infty.$
+%\end{dn}
+%Tiếp theo ta sẽ trả lời cho câu hỏi cơ bản của lý thuyết tích phân, đó là khi nào ta có thể chuyển dấu giới hạn từ bên ngoài vào bên trong? Tức là xảy ra đẳng thức
+%$$\lim_{n\to\infty} \disint_A f_nd\m=\disint_A\lim_{n\to\infty} f_nd\m?$$
+%\begin{dl}[\textbf{Định lý hội tụ đơn điệu của Levi}]  % {\rm (\cite{LDK})} \label{thr1.15} 
+%Cho $f_n: X\to \overline{\R}$, $n\ge 1$ là một dãy các hàm đo được không âm và đơn điệu tăng đến $f$ trên $A$. Khi đó$$\lim_{n\to\infty}\disint_{A}f_{n} d\mu=\disint_{A}f d\mu.$$
+%
+%\end{dl}
+%Bổ đề Fatou trong lý thuyết độ đo ta đã xem xét trong mục trước, trong lý thuyết tích phân ta cũng có một kết quả tương tự.
+%\begin{bd}
+%	[\textbf{Bổ đề Fatou}] %{\rm (\cite{LDK})}\label{lm1.17}
+%Cho $f_n: X\to \overline{\R}$, $n\ge 1$ là một dãy các hàm đo được không âm trên $A$. Khi đó
+%$$\int_{A}\liminf_{n\to\infty}f_{n}d\mu \le \liminf_{n\to\infty}\int_{A}f_{n} d\mu.$$
+%\end{bd}
+%
+%%\begin{dl}
+%%	[Lebesgue] %{\rm (\cite{LDK})} \label{thr1.16}
+%%Cho $(X,\A,\mu)$ là một không gian độ đo và $f,f_{n}:D\to \overline{\R}, n\ge 1$, là các hàm đo được trên $A\in \A$. Khi đó $f_{n}\to f $ \hkn$ $ trên $A$ và $\mu(A)<\infty$, thì $f_{n}\mathop  \to \limits^\mu f $ trên $A$.
+%%\end{dl}
+%\begin{dl}	[\textbf{Định lý hội tụ bị chặn}]
+%Cho $f_n:X\to \overline{\R}, n\ge 1$, là một dãy các hàm đo được trên $A$ sao cho $\lim_{n\to \infty}f_n=f$ \hkn$ $ trên $A$. Giả sử tồn tại một hàm khả tích trên $A$ là $g:X\to \overline{\R} $, sao cho với mọi $n\ge 1, |f_n|\le g$ \hkn$ $ trên $A$. Khi đó 
+%$$\lim_{n\to \infty}\int_Af_n d\mu =\int_Af \,d\mu.$$
+%\end{dl}
+%Định lý sau đây cho ta một tiêu chuẩn khả tích Riemann của một hàm số thực.
+%\begin{dl}
+%	Cho $ f $ là một hàm số thực xác định trên đoạn $[a,b] $. Khi đó
+%	\begin{itemize}
+%		\item[\rm(i)] $ f $ khả tích Riemann trên $ [a,b] $ nếu và chỉ nếu $ f $ bị chặn và liên tục hầu khắp nơi trên $ [a,b] $.
+%		\item[\rm(ii)] Nếu $ f $ khả tích Riemann trên $ [a,b] $ thì $ f $ khả tích Lebesgue trên $ [a,b] $ và hai tích phân này bằng nhau, tức là\[ (R)\int_{[a,b]}f(x) d{x}=(L)\int_{[a,b]}f(x)d{\mu(x)}.  \]
+%	\end{itemize}
+%\end{dl}
+
+\section{Vector riêng- Giá trị riêng}
+\begin{dn}\rm
+ Cho $\mathbf{A}$ là ma trận vuông cấp $n$. Khi đó đa thức bậc $n$ của biến $\lambda$ được xác định như sau
+ $$
+ P_{\mathbf{A}}(\lambda)=\operatorname{det}(\mathbf{A}-\lambda \mathbf{I})=\left|\begin{array}{cccc}
+ 	a_{11}-\lambda & a_{12} & \ldots & a_{1 n} \\
+ 	a_{21} & a_{22}-\lambda & \ldots & a_{2 n} \\
+ 	\vdots & \vdots & \ddots & \vdots \\
+ 	a_{n 1} & a_{n 2} & \ldots & a_{n n}-\lambda
+ \end{array}\right|
+ $$
+ 
+ được gọi là đa thức đặc trưng của ma trận $\mathbf{A}$. Các nghiệm của đa thức $P_{\mathbf{A}}(\lambda)$ được gọi là các giá trị riêng của ma trận $\mathbf{A}$.
+ 
+ Vector $\mathbf{u} \in \mathbb{R}^{n}$ được gọi là vector riêng ứng với giá trị riêng $\lambda$ của ma trận $\mathbf{A}$ nếu thỏa $\mathbf{A u}=\lambda \mathbf{u}$.
+ 
+ Nhận xét:
+ 
+ (i) Nếu $\lambda$ là một giá trị riêng của $\mathbf{A}$ thì $\operatorname{det}(\mathbf{A}-\lambda \mathbf{I})=0$. Khi đó hệ phương trình thuần nhất 
+ $$
+ (\mathbf{A}-\lambda \mathbf{I})\left[\begin{array}{c}
+ 	x_{1} \\
+ 	\vdots \\
+ 	x_{n}
+ \end{array}\right]=0
+ $$
+ 
+ có vô số nghiệm.
+ 
+ (ii) Mỗi giá trị riêng có thể có nhiều vector riêng.
+ 
+ (iii) Mỗi vector riêng chỉ ứng với một giá trị riêng duy nhất.
+ 
+ (iv) Nếu $\lambda=0$ là một giá trị riêng của ma trận $\mathbf{A}$ thì $\mathbf{A}$ không khả nghịch. Ngược lại, nếu mọi giá trị riêng của $\mathbf{A}$ đều khác 0 thì ma trận $\mathbf{A}$ khả nghịch. 
+\end{dn}
+\section{Định lí phổ của ma trận đối xứng}
+\begin{dn}\rm
+	Cho $\mathbf{A}$ là ma trận đối xứng cấp $n$. Khi đó
+	
+	i) Với mỗi giá trị riêng thực $\lambda$ của $\mathbf{A}$, tồn tại một vector riêng tương ứng $\mathbf{u} \in \mathbb{R}^{n}$ sao cho $\mathbf{A u}=\lambda \mathbf{u}$.
+	
+	ii) Tồn tại ma trận dường chéo $\mathbf{D}$ cấp $n$ và ma trận trực giao $\mathbf{U}$ cấp $n$ sao cho $\mathbf{A}=\mathbf{U D U}^{T}$, trong đó các phần tử nằm trên đường chéo chính của $\mathbf{D}$ là các giá trị riêng của $\mathbf{A}$, và các vector cột của $\mathbf{U}$ là các vetor riêng của $\mathbf{A}$ tương ứng với các giá trị riêng đó. Tức là, nếu
+	
+	$$
+	\mathbf{D}=\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}\right)
+	$$
+	
+	và
+	
+	$$
+	\mathbf{U}=\left[\begin{array}{lllllll}
+		\mathbf{u}^{(1)} & \mid & \mathbf{u}^{(2)} & \ldots & \ldots & \mathbf{u}^{(n)}
+	\end{array}\right]
+	$$
+	
+	thì $\mathbf{A} \mathbf{u}^{(i)}=\lambda_{i} \cdot \mathbf{u}^{(i)}, \quad i=1,2, \ldots, n$.
+	
+\textbf{	Chứng minh}. Ta sẽ chứng minh định lí này bằng phương pháp quy nạp toán học. Trường hợp $n=1$, kết quả trên đúng. Giả sử kết quả trên đúng với mọi ma trận có cấp nhỏ hơn hoặc bằng $n-1$, ta sẽ chứng minh kết quả trên đúng trong trường hợp ma trận $\mathbf{A}$ là ma trận đối xứng cấp $n$.
+	
+	Xét hàm số $p(t)=\operatorname{det}(t \mathbf{I}-\mathbf{A})$. Ta có $p(t)$ là một đa thức bậc $n$ và được gọi là đa thức đặc trưng của ma trận $\mathbf{A}$. Theo Định lí cơ bản của đại số, đa thức $p(t)$ sẽ có $n$ nghiệm là $\lambda_{1}, \lambda_{2}, \ldots, \lambda n$, và ta gọi chúng là các giá trị riêng của ma trận $\mathbf{A}$.
+	
+	Giả sử $\lambda$ là một giá trị riêng của ma trận $\mathbf{A}$, ta có $\operatorname{det}(\lambda \mathbf{I}-\mathbf{A})=0$, tức ma trận $(\lambda \mathbf{I}-\mathbf{A})$ không khả nghịch. Điều này có nghĩa là, tồn tại một vector thực, khác không $\mathbf{u}$ sao cho $\mathbf{A} \mathbf{u}=\lambda \mathbf{u}$. Ta có thể chuẩn hóa vector $\mathbf{u}$ sao cho $\mathbf{u}^{T} \mathbf{u}=1$. Khi đó, $\lambda=\mathbf{u}^{T} \mathbf{A u}$ là số thực.
+	
+	Với $\lambda_{1}$ là một giá trị riêng của $\mathbf{A}$ và $\mathbf{u}_{1}$ là một vector riêng tương ứng. Sử dụng phép trực giao hóa Gramm-Schmidt, ta có thể tìm được ma trận $\mathbf{V}_{1}$ cấp $n \times(n-1)$ sao cho $\left[\mathbf{u}_{1} \mathbf{V}_{1}\right]$ là một ma trận trực giao. Ta có $\mathbf{V}_{1}^{T} \mathbf{A} \mathbf{V}_{1}$ là ma trận đối xứng cấp $n-1$. Khi đó theo giả thiết quy nạp, ta có thể viết $\mathbf{V}_{1}^{T} \mathbf{A} \mathbf{V}_{1}=\mathbf{Q}_{1} \mathbf{D}_{1} \mathbf{Q}_{1}^{T}$, trong đó $\mathbf{D}_{1}=\operatorname{diag}\left(\lambda_{2}, \lambda_{3}, \ldots, \lambda_{n}\right)$ là ma trận đường chéo với các phần tử nằm trên đường chéo chính là $n-1$ giá trị riêng của $\mathbf{A}$ và $\mathbf{Q}_{1}$ là ma trận trực giao cấp $(n-1)$ gồm $(n-1)$ vector riêng của $\mathbf{V}_{1}^{T} \mathbf{A} \mathbf{V}_{1}$ tương ứng.
+	
+	Ta định nghĩa ma trận $\mathbf{U}_{1}$ cấp $n \times(n-1)$ bởi $\mathbf{U}_{1}=\mathbf{V}_{1} \mathbf{Q}_{1}$. Khi đó $\mathbf{U}=\left[\mathbf{u}_{1}, \mathbf{U}_{1}\right]$ là ma trận trực giao. Ta có
+	
+	$$
+	\mathbf{U}^{T} \mathbf{A} \mathbf{U}=\left(\begin{array}{c}
+		\mathbf{u}_{1}^{T} \\
+		\mathbf{U}_{1}^{T}
+	\end{array}\right) \mathbf{A}\left(\mathbf{u}_{1}-\mathbf{U}_{1}\right)=\left(\begin{array}{cc}
+		\mathbf{u}_{1}^{T} \mathbf{A} \mathbf{u}_{1} & \mathbf{u}_{1}^{T} \mathbf{A} \mathbf{U}_{1} \\
+		\mathbf{U}_{1}^{T} \mathbf{A} \mathbf{u}_{1} & \mathbf{U}_{1}^{T} \mathbf{A} \mathbf{U}_{1}
+	\end{array}\right)=\left(\begin{array}{cc}
+		\lambda_{1} & 0 \\
+		0 & \mathbf{D}_{1}
+	\end{array}\right)=\mathbf{D} .
+	$$
+	Điều này chứng tỏ $\mathbf{A}=\mathbf{U D U}^{T}$, với $\mathbf{U}$ là ma trận trực giao cấp $n$ và $\mathbf{D}=$ $\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}\right).$\\
+	
+	Đây được gọi là phân tích giá trị riêng của ma trận $\mathbf{A}$ (Eigen value decomposition, EVD). 
+
+\end{dn}
+
+\chapter{ PHÂN TÍCH GIÁ TRỊ KÌ DỊ }
+
+Trong chương này, chúng tôi trình bày cơ sở của phân tích giá trị kì dị của ma trận, thuật toán phân tích giá trị kì dị, và trình bày một số tính chất của ma trận liên quan đến phân tích giá trị kì dị của nó. 
+\section{Giới thiệu}
+Phân tích giá trị kì dị (SVD) là một trong những phân tích rất quan trọng của ma trận, có nhiều ứng dụng trong khoa học và kĩ thuật. Dạng cổ điển nhất của phân tích giá trị kì dị được phát hiện trong lĩnh vực Hình học vi phân []. Vào năm 1873 và 1874 , hai nhà toán học Eugenio Beltrami và Camille Jordan đã độc lập đưa ra giá trị kì dị của dạng song tuyến tính. Năm 1889, James Joshept Sylvester đã đưa ra phân tích giá trị kì dị của ma trận vuông thưc. Đến năm 1915, nhà toán học Autonne phát hiện ra phân tích giá trị kì dị dưới dạng phân tích cực. Năm 1936, hai nhà toán học Carl Eckart và Gale Young đã lần đầu tiên chứng minh phân tích giá trị kì dị đối với ma trận hình chữ nhật thực [] và ma trận vuông phức []. Trong chương này, chúng tôi sẽ tìm hiểu về phân tích giá trị kì dị cho một ma trận hình chữ nhật thực $\mathbf{A}$ cỡ $m \times n$.
+\section{Phân tích giá trị kì dị}
+Để phát biểu và chứng minh định lý phân tích giá trị kì dị, chúng ta sẽ cần định lí sau đây.
+
+\begin{dl} Cho A là một ma trận có cấp $m \times n$. Khi đó, mọi giá trị riêng của ma trận $\mathbf{A}^{T} \mathbf{A}$ đều không âm.
+
+Chứng minh. Dễ thấy $\mathbf{A}^{T} \mathbf{A}$ là một ma trận đối xứng. Theo Định lí 1.3.1, mọi giá trị riêng của $\mathbf{A}^{T} \mathbf{A}$ đều là số thực. Với mỗi giá trị riêng $\lambda$ của $\mathbf{A}^{T} \mathbf{A}$, giả sử $\mathbf{v}$ là véc tơ riêng tương ứng. Khi đó
+
+$$
+\mathbf{A}^{T} \mathbf{A} \mathbf{v}=\lambda \mathbf{v}
+$$
+
+Để ý rằng ta có thể chọn $\mathbf{v}$ là véc tơ đơn vị, i.e. $\|\mathbf{v}\|=1$. Với cách chọn như vậy, ta nhận được
+
+$$
+\|\mathbf{A} \mathbf{v}\|^{2}=\langle\mathbf{A} \mathbf{v}, \mathbf{A v}\rangle=(\mathbf{A v})^{T}(\mathbf{A v})=\mathbf{v}^{T} \mathbf{A}^{T} \mathbf{A} \mathbf{v}=\lambda \mathbf{v}^{T} \mathbf{v}=\lambda\|\mathbf{v}\|^{2}=\lambda
+$$
+
+Do vậy, $\lambda \geqslant 0$.
+Ta có định nghĩa và cách xác định các giá trị kì dị của một ma trận như sau
+\end{dl}
+
+\begin{dn}\rm Cho ma trận $\mathbf{A}$ cỡ $m \times n$ bất kì $(m \leqslant n)$ và $\lambda_{1}, \lambda_{2} \ldots, \lambda_{r}$, $1 \leqslant r \leqslant \min (m, n)$, lần lượt là các giá trị riêng của ma trận $\mathbf{A}^{T} \mathbf{A}$. Các giá trị $\sigma_{i}=\sqrt{\lambda_{i}}, 1 \leqslant i \leqslant r$, được gọi là các giá trị kì dị của ma trận $\mathbf{A}$.
+
+Định lí sau cho ta sự tồn tại của SVD của một ma trận bất kỳ
+\end{dn}
+
+\begin{dl}Mọi ma trận $\mathrm{A}$ cỡ $m \times n$ bất kì đều có phân tích SVD có dạng
+
+$$
+\mathbf{A}=\mathbf{U D V}^{T}
+$$
+
+trong đó $\mathbf{U}$ và $\mathbf{V}$ lần lượt là các ma trận trực giao cấp $m$ và $n$,
+
+D là ma trận đường chéo cỡ $m \times n$ có dạng
+
+$$
+\mathbf{D}=\left[\begin{array}{ccccccc}
+	\sigma_{1} & 0 & 0 & \ldots & 0 & \ldots & 0 \\
+	0 & \sigma_{2} & 0 & \ldots & 0 & \ldots & 0 \\
+	\vdots & \vdots & \ddots & \ldots & \vdots & \ldots & \vdots \\
+	0 & 0 & \ldots & \sigma_{r} & 0 & \ldots & 0 \\
+	0 & \ldots & \ldots & 0 & 0 & \ldots & 0
+\end{array}\right]=\left[\begin{array}{cccc}
+	\mathbf{D}_{r \times r} & 0 & \ldots & 0 \\
+	0 & \ldots & \ldots & 0 \\
+	\vdots & \ddots & & \vdots \\
+	0 & \ldots & \ldots & 0
+\end{array}\right]
+$$
+\end{dl}
+Chứng minh. Vì $\mathbf{A}^{T} \mathbf{A}$ là ma trận đối xứng nên theo Định lí 2.2.1 $n$ giá trị riêng $\lambda_{1}, \ldots, \lambda_{n}$ của nó đều không âm. Do đó tồn tại $r \leqslant n$ sao cho $\lambda_{1} \geqslant \lambda_{2} \geqslant \lambda_{r}>0$ và $\lambda_{j}=0$ với $j>r$. Khi đó ma trận $\mathbf{A}$ có các giá trị kì dị là $\sigma_{1} \geqslant \sigma_{2} \geqslant \cdots \geqslant \sigma_{r} \geqslant 0$, và $\sigma_{j}=0$ với $j>r$.
+
+Chọn $\mathbf{v}_{i} \in \mathbb{R}^{n}, i=1,2, \ldots, n$, là các vetor riêng tương ứng với $\lambda_{i}$ sao cho $\mathbf{v}_{i}$ là các vetor đơn vị. Đặt $\mathbf{V}=\left(\mathbf{v}_{1}, \mathbf{v}_{2}, \ldots, \mathbf{v}_{n}\right)$, với $\mathbf{v}_{i}$ là các vector cột. Khi đó $\mathbf{V}$ là ma trận trực giao.
+
+Với $\sigma_{i}, 1 \leqslant i \leqslant r$, là các giá trị kì dị dương của $\mathbf{A}$, đặt $\mathbf{u}_{i}=\frac{\mathbf{A v}_{i}}{\sigma_{i}}, i=1,2, \ldots, r$. Khi đó $\mathbf{u}_{i}$ là vector đơn vị trong $\mathbb{R}^{m}$.
+
+Xây dựng ma trận $\mathbf{U}=\left(\mathbf{u}_{1}, \mathbf{u}_{2}, \ldots, \mathbf{u}_{m}\right)$, với $\mathbf{u}_{j}=0, r<j \leqslant m$. Ta có $\mathbf{U}$ là ma trận trực giao.
+
+Ta chứng minh $\mathbf{A}=\mathbf{U D V}^{T}$, hay $\mathbf{A V}=\mathbf{U D}$.
+
+Ta có
+
+$$
+\begin{aligned}
+	\mathbf{A} \mathbf{V} & =\mathbf{A}\left[\mathbf{v}_{1}, \mathbf{v}_{2}, \ldots, \mathbf{v}_{n}\right]=\left[\mathbf{A v}_{1}, \mathbf{A v}_{2}, \ldots, \mathbf{A} \mathbf{v}_{n}\right]=\left[\mathbf{A v}_{1}, \mathbf{A v}_{2}, \ldots, \mathbf{A v}_{r}, 0, \ldots, 0\right] \\
+	& =\left[\sigma_{1} \mathbf{u}_{1}, \sigma_{2} \mathbf{u}_{2}, \ldots, \sigma_{r} \mathbf{u}_{r}, 0, \ldots, 0\right]=\left[\mathbf{u}_{1}, \mathbf{u}_{2}, \ldots, \mathbf{u}_{m}\right] \cdot \operatorname{diag}\left(\sigma_{1}, \sigma_{2}, \ldots, \sigma_{r}\right) \\
+	& =\mathbf{U D}
+\end{aligned}
+$$
+
+Vậy $\mathbf{A}=\mathbf{U D V}^{T}$%Các vector cột $\mathbf{u}_{i}$ trong ma trận $\mathbf{U}$ được gọi là các vector kì dị trái của $\mathbf{A}$. Các vetor cột $\mathbf{v}_{i}$ trong ma trận $\mathbf{V}$ được gọi là các vector kì dị phải của $\mathbf{A}$.
+
+Trong trường hợp $\operatorname{rank}(\mathbf{A})=r<n$, thì SVD của $X$ có dạng "chặt cụt" như sau:
+$$
+X=U_r S_r V_r^T
+$$
+
+trong đó $U_r, V_r$ lần lượt là ma trận được tạo bởi $r$ cột đầu tiên của $U, V$, và $S_r$ là ma trận con cấp $r \times r$ được tạo bởi $r$ hàng đầu tiên và $r$ cột đầu tiên của $S$. Khai triển
+(2.3) được gọi là phân tích SVD "chặt cụt" của $X$.
+
+
+\begin{dl}[\textbf{Về dạng khai triển của phân tích giá trị kì dị}] Cho $\mathbf{A}$ là ma trận cỡ $m \times n$ bất kì. Khi đó
+
+$$
+\mathbf{A}=\mathbf{U D V}^{T}=\sigma_{1} \mathbf{u}_{1} \mathbf{v}_{1}^{T}+\sigma_{2} \mathbf{u}_{2} \mathbf{v}_{2}^{T}+\cdots+\sigma_{r} \mathbf{u}_{r} \mathbf{v}_{r}^{T}
+$$
+
+trong đó $\sigma_{i}$ là các giá trị kì dị dương của ma trận $\mathbf{A}, \mathbf{u}_{i}$ là các vector kì dị trái và $\mathbf{v}_{i}$ là các vector kì dị phải của ma trận $\mathbf{A}$.
+\end{dl}
+Chứng minh. Ta có
+
+$$
+\begin{aligned}
+	& \mathbf{U D V}^{T}=\left[\mathbf{u}_{1}, \mathbf{u}_{2}, \ldots, \mathbf{u}_{m}\right]\left[\begin{array}{ccc}
+		\mathbf{D}_{r \times r} & \ldots & 0 \\
+		\vdots & \ldots & \vdots \\
+		0 & \ldots & 0
+	\end{array}\right]\left[\begin{array}{c}
+		\mathbf{v}_{1}^{T} \\
+		\mathbf{v}_{2}^{T} \\
+		\vdots \\
+		\mathbf{v}_{n}^{T}
+	\end{array}\right] \\
+	& =\left[\mathbf{u}_{1}, \mathbf{u}_{2}, \ldots, \mathbf{u}_{r}, \mathbf{u}_{r+1}, \ldots, \mathbf{u}_{m}\right]\left[\begin{array}{ccc}
+		\mathbf{D}_{r \times r} & \ldots & 0 \\
+		\vdots & \ddots & \vdots \\
+		0 & \ldots & 0
+	\end{array}\right]\left[\begin{array}{c}
+		\mathbf{v}_{1}^{T} \\
+		\mathbf{v}_{2}^{T} \\
+		\vdots \\
+		\mathbf{v}_{r}^{T} \\
+		\mathbf{v}_{r+1}^{T} \\
+		\vdots \\
+		\mathbf{v}_{n}^{T}
+	\end{array}\right] \\
+	& \left.=\left[\mathbf{u}_{1}, \mathbf{u}_{2}, \ldots, \mathbf{u}_{r}\right]\left[\begin{array}{ccc}
+		\sigma_{1} & \ldots & 0 \\
+		\vdots & \ddots & \vdots \\
+		0 & \ldots & \sigma_{r}
+	\end{array}\right]\left[\begin{array}{c}
+		\mathbf{v}_{1}^{T} \\
+		\mathbf{v}_{2}^{T} \\
+		\vdots \\
+		\mathbf{v}_{r}^{T}
+	\end{array}\right]+\left[\begin{array}{llll}
+		\mathbf{u}_{r+1} & \mathbf{u}_{r+2} & \ldots & \mathbf{u}_{m}
+	\end{array}\right]\right][0]\left[\begin{array}{c}
+		\mathbf{v}_{1}^{T} \\
+		\mathbf{v}_{2}^{T} \\
+		\vdots \\
+		\mathbf{v}_{n}^{T}
+	\end{array}\right] \\
+	& =\left[\mathbf{u}_{1}, \mathbf{u}_{2}, \ldots, \mathbf{u}_{r}\right]\left[\begin{array}{ccc}
+		\sigma_{1} & \ldots & 0 \\
+		\vdots & \ddots & \vdots \\
+		0 & \ldots & \sigma_{r}
+	\end{array}\right]\left[\begin{array}{c}
+		\mathbf{v}_{1}^{T} \\
+		\mathbf{v}_{2}^{T} \\
+		\vdots \\
+		\mathbf{v}_{r}^{T}
+	\end{array}\right] \\
+	& =\left[\sigma_{1} \mathbf{u}_{1}, \ldots, \sigma_{r} \mathbf{u}_{r}\right]\left[\begin{array}{c}
+		\mathbf{v}_{1}^{T} \\
+		\mathbf{v}_{2}^{T} \\
+		\vdots \\
+		\mathbf{v}_{r}^{T}
+	\end{array}\right]=\sigma_{1} \mathbf{u}_{1} \mathbf{v}_{1}^{T}+\sigma_{2} \mathbf{u}_{2} \mathbf{v}_{2}^{T}+\cdots+\sigma_{r} \mathbf{u}_{r} \mathbf{v}_{r}^{T} .
+\end{aligned}
+$$
+
+
+\section{Thuật toán tìm SVD của một ma trận}
+Cho $\mathbf{A}$ là ma trận cỡ $m \times n$, với $m \geq n$. Để tìm $\mathrm{SVD}$ của ma trận $\mathbf{A}$, chúng ta thực hiện các bước sau.
+
+- Bước 1. Tính ma trận $\mathbf{A}^{T} \mathbf{A}$ và giải phương trình $\operatorname{det}\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right)=0$ để tìm các giá trị riêng $\lambda_{1} \geq \lambda_{2} \geq \ldots \geq \lambda_{n} \geq 0$ của ma trận $\mathbf{A}^{T} \mathbf{A}$. Từ đó suy ra các giá trị kì dị của $\mathbf{A}$ là $\sigma_{i}=\sqrt{\lambda_{i}}, i=\overline{1, n}$ và $\mathbf{D}=\operatorname{diag}\left(\sigma_{1}, \sigma_{2}, \ldots, \sigma_{n}\right)$
+
+- Bước 2. Tương ứng với mỗi giá trị riêng $\lambda_{i}$, tìm véctơ riêng $v_{i} \in \mathbb{R}^{n}$ sao cho $\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right) v_{i}=0$. Từ đó tìm được ma trận trực giao $\mathbf{V}$ cấp $n$ chứa các véctơ kì dị phải của $\mathbf{A}$.
+
+- Bước 3. Xác định các véctơ kì dị trái của $\mathbf{A}$ theo công thức
+
+$$
+u_{i}=\frac{1}{\sigma_{i}} \mathbf{A} v_{i}
+$$
+
+Bổ sung $n-r$ véctơ $u_{r+1}, \ldots, u_{n}$ vào hệ $\left\{u_{1}, u_{2}, \ldots, u_{r}\right\}$ sao cho $\left\{u_{1}, u_{2}, \ldots, u_{n}\right\}$ lập thành một cơ sở trực chuẩn của $\mathbb{R}^{n}$. Từ đó nhận được ma trận trực giao $\mathbf{U}$ chứa các véctơ kì dị trái của $\mathbf{A}$, và
+
+$$
+\mathbf{A}=\mathbf{U D V}^{T}
+$$
+là phân tích SVD của ma trận $\mathbf{A}$.
+
+\subsubsection{Ví dụ}
+
+Tìm SVD của ma trận $\mathbf{A}=\left[\begin{array}{ll}1 & 0 \\ 1 & 0 \\ 0 & 1\end{array}\right]$. Lời giải.
+
+Bước 1: Tìm các giá trị kì dị củ ma trận $\mathbf{A}$
+
+Ta có
+
+$$
+\mathbf{A}^{T} \mathbf{A}=\left[\begin{array}{lll}
+	1 & 1 & 0 \\
+	0 & 0 & 1
+\end{array}\right]\left[\begin{array}{ll}
+	1 & 0 \\
+	1 & 0 \\
+	0 & 1
+\end{array}\right]=\left[\begin{array}{ll}
+	2 & 0 \\
+	0 & 1
+\end{array}\right]
+$$
+
+Giải phương trình $\operatorname{det}\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right)=0$, ta tìm đượccác giá trị riêng $\lambda$ của $\mathbf{A}^{T} \mathbf{A}$ là $\lambda_{1}=2, \lambda_{2}=1$. Do đó các giá trị kì dị của $\mathbf{A}$ là $\sigma_{1}=\sqrt{2}, \sigma_{2}=1$. Suy ra
+
+$$
+\mathbf{D}=\left[\begin{array}{cc}
+	\sqrt{2} & 0 \\
+	0 & 1
+\end{array}\right]
+$$
+
+Bước 2: Tìm ma trận $\mathbf{V}$
+
+Giải phương trình $\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right) v=0$ ta tìm được các véctơ riêng tương ứng là $v_{1}=\left[\begin{array}{l}1 \\ 0\end{array}\right]$ và $v_{2}=\left[\begin{array}{l}0 \\ 1\end{array}\right]$. Từ đó suy ra
+
+$$
+\mathbf{V}^{T}=\left[\begin{array}{ll}
+	1 & 0 \\
+	0 & 1
+\end{array}\right]
+$$
+
+Bước 3: Tìm ma trận $\mathbf{U}$
+
+Ta có
+
+$$
+u_{1}=\frac{1}{\sigma_{1}} A v_{1}=\frac{1}{\sqrt{2}}\left[\begin{array}{ll}
+	1 & 0 \\
+	1 & 0 \\
+	0 & 1
+\end{array}\right]\left[\begin{array}{l}
+	1 \\
+	0
+\end{array}\right]=\left[\begin{array}{c}
+	\frac{1}{\sqrt{2}} \\
+	\frac{1}{\sqrt{2}} \\
+	0
+\end{array}\right]
+$$
+
+và
+
+$$
+u_{2}=\frac{1}{\sigma_{2}} A v_{1}=\left[\begin{array}{ll}
+	1 & 0 \\
+	1 & 0 \\
+	0 & 1
+\end{array}\right]\left[\begin{array}{l}
+	0 \\
+	1
+\end{array}\right]=\left[\begin{array}{l}
+	0 \\
+	0 \\
+	1
+\end{array}\right]
+$$
+
+Do đó
+
+$$
+\mathbf{U}=\left[\begin{array}{cc}
+	\frac{1}{\sqrt{2}} & 0 \\
+	\frac{1}{\sqrt{2}} & 0 \\
+	0 & 1
+\end{array}\right]
+$$
+
+Vậy phân tích SVD của ma trận $\mathbf{A}$ là
+
+$$
+\mathbf{A}=\left[\begin{array}{ll}
+	1 & 0 \\
+	1 & 0 \\
+	0 & 1
+\end{array}\right]=\left[\begin{array}{cc}
+	\frac{1}{\sqrt{2}} & 0 \\
+	\frac{1}{\sqrt{2}} & 0 \\
+	0 & 1
+\end{array}\right]\left[\begin{array}{cc}
+	\sqrt{2} & 0 \\
+	0 & 1
+\end{array}\right]\left[\begin{array}{ll}
+	1 & 0 \\
+	0 & 1
+\end{array}\right]
+$$
+
+\section{Một số tính chất của ma trận liên quan đến SVD của nó}
+\begin{dl}
+Cho ma trận $\mathbf{A}$ cỡ $m \times n$ bất kì, có phân tích SVD là
+
+$$
+\mathbf{A}=\mathbf{U D V}^{T}
+$$
+
+Khi đó, hạng của $\mathbf{A}$ đúng bằng số các giá trị kì dị dương của $\mathbf{A}$.
+\end{dl}
+Chứng minh. Giả sử $r$ là số các giá trị kì dị dương của $\mathbf{A}$. Đặt $\mathbf{U}_{r}=\left[\mathbf{u}_{1}, \mathbf{u}_{2}, \ldots, \mathbf{u}_{r}\right]$, $\mathbf{V}_{r}=\left[\mathbf{v}_{1}, \mathbf{v}_{2}, \ldots, \mathbf{v}_{r}\right]$. Do tính chất của hạng của ma trận và tính trực giao của $\mathbf{U}, \mathbf{V}$ ta suy ra
+
+$$
+\begin{aligned}
+	& \operatorname{rank}\left(\mathbf{U}_{r}\right)=\operatorname{rank}\left(\mathbf{U}_{r} \mathbf{U}_{r}^{T}\right)=\operatorname{rank}\left(\mathbf{I}_{r}\right)=r, \\
+	& \operatorname{rank}\left(\mathbf{V}_{r}^{T}\right)=\operatorname{rank}\left(\mathbf{V}_{r}^{T} \mathbf{V}_{r}\right)=\operatorname{rank}\left(\mathbf{I}_{r}\right)=r .
+\end{aligned}
+$$
+
+Do đó
+
+$$
+\operatorname{rank}(\mathbf{A})=\operatorname{rank}\left(\mathbf{U D V}^{T}\right)=\operatorname{rank}\left(\mathbf{U}_{r} \mathbf{D} \mathbf{V}_{r}^{T}\right)=\operatorname{rank}\left(\mathbf{D V}_{r}^{T}\right)=\operatorname{rank}(\mathbf{D})=r
+$$
+
+
+\begin{dl} 
+Cho $\mathrm{A}$ là một ma trận có cỡ $m \times n$. Giả sử $\mathbf{A}$ có phân tích $\mathrm{SVD}$ dưới dạng khai triển là
+
+$$
+\mathbf{A}=\sigma_{1} \mathbf{u}_{1} \mathbf{v}_{1}^{T}+\cdots+\sigma_{r} \mathbf{u}_{r} \mathbf{v}_{r}^{T}
+$$
+
+Khi đó, với mỗi số nguyên dương $k<r$, ma trận
+
+$$
+\mathbf{A}_{k}=\sigma_{1} \mathbf{u}_{1} \mathbf{v}_{1}^{T}+\cdots+\sigma_{k} \mathbf{u}_{k} \mathbf{v}_{k}^{T}
+$$
+
+có hạng $k, \operatorname{rank}\left(\mathbf{A}_{k}\right)=k$.
+\end{dl}
+Chứng minh. Dễ thấy rằng ma trận $\mathbf{A}_{k}$ có thể viết ở dạng
+
+$$
+\mathbf{A}_{k}=\left(\sigma_{1} \mathbf{v}_{1}^{T}+\cdots+\sigma_{k} \mathbf{v}_{k}^{T}\right)\left[\begin{array}{c}
+	\mathbf{u}_{1} \\
+	\mathbf{u}_{2} \\
+	\vdots \\
+	\mathbf{u}_{k}
+\end{array}\right]
+$$
+
+Ta có
+
+$$
+\left[\begin{array}{c}
+	\mathbf{u}_{1} \\
+	\mathbf{u}_{2} \\
+	\vdots \\
+	\mathbf{u}_{k}
+\end{array}\right]\left[\begin{array}{c}
+	\mathbf{u}_{1} \\
+	\mathbf{u}_{2} \\
+	\vdots \\
+	\mathbf{u}_{k}
+\end{array}\right]^{T}=\mathbf{I}_{k} \text { và rank }\left[\begin{array}{c}
+	\mathbf{u}_{1} \\
+	\mathbf{u}_{2} \\
+	\vdots \\
+	\mathbf{u}_{k}
+\end{array}\right]=\operatorname{rank}\left[\begin{array}{c}
+	\mathbf{u}_{1} \\
+	\mathbf{u}_{2} \\
+	\vdots \\
+	\mathbf{u}_{k}
+\end{array}\right]\left[\begin{array}{c}
+	\mathbf{u}_{1} \\
+	\mathbf{u}_{2} \\
+	\vdots \\
+	\mathbf{u}_{k}
+\end{array}\right]^{T}=k .
+$$
+
+Xét $\operatorname{rank}\left(\sigma_{1} \mathbf{v}_{1}^{T}, \sigma_{2} \mathbf{v}_{2}^{T}, \ldots, \sigma_{k} \mathbf{v}_{k}^{T}\right)$. Ta có
+
+$$
+\left(\mathbf{v}_{1}^{T}, \mathbf{v}_{2}^{T}, \ldots, \mathbf{v}_{k}^{T}\right)\left(\mathbf{v}_{1}, \mathbf{v}_{2}, \ldots, \mathbf{v}_{k}\right)=\mathbf{I}_{k}
+$$
+
+Do đó
+
+$$
+\left(\sigma_{1} \mathbf{v}_{1}^{T}, \ldots, \sigma_{k} \mathbf{v}_{k}^{T}\right)\left(\mathbf{v}_{1}, \mathbf{v}_{2}, \ldots, \mathbf{v}_{k}\right)=\left[\begin{array}{c}
+	\sigma_{1} \\
+	\sigma_{2} \\
+	\vdots \\
+	\sigma_{k}
+\end{array}\right] \mathbf{I}_{k}=\left[\begin{array}{cccc}
+	\sigma_{1} & 0 & \ldots & 0 \\
+	0 & \sigma_{2} & \ldots & 0 \\
+	\vdots & \vdots & \ddots & \vdots \\
+	0 & 0 & \ldots & \sigma_{k}
+\end{array}\right]=\mathbf{B}
+$$
+
+Vì  $\operatorname{rank}(\mathbf{B})=k=\operatorname{rank}\left(\mathbf{v}_{1}, \mathbf{v}_{2}, \ldots, \mathbf{v}_{k}\right)$ nên
+
+$$
+\operatorname{rank}\left(\sigma_{1} \mathbf{v}_{1}^{T}, \sigma_{2} \mathbf{v}_{2}^{T}, \ldots, \sigma_{k} \mathbf{v}_{k}^{T}\right)=k
+$$
+
+Từ đó, ta suy $\operatorname{ra~} \operatorname{rank}\left(\mathbf{A}_{k}\right)=k$.
+\begin{dl} 
+ Cho $\mathbf{A}$ là ma trận cỡ $m \times n$ bất kì và $\sigma_{1}, \sigma_{2}, \ldots, \sigma_{r}$ là các giá trị kì dị dương của $\mathbf{A}$. Khi đó $\|\mathbf{A}\|_{F}=\sqrt{\sigma_{1}^{2}+\sigma_{2}^{2}+\cdots+\sigma_{r}^{2}}$.
+\end{dl} 
+Chứng minh. Giả sử $\mathbf{Q}$ là ma trận trực giao cấp $m$. Khi đó
+
+$\|\mathbf{Q} \mathbf{A}\|_{F}^{2}=\left\|\left[\mathbf{Q} \mathbf{a}_{1}, \ldots, \mathbf{Q} \mathbf{a}_{n}\right]\right\|_{F}^{2}=\left\|\mathbf{Q}_{\mathbf{1}}\right\|_{F}^{2}+\cdots+\left\|\mathbf{Q} \mathbf{a}_{n}\right\|_{F}^{2}=\left\|\mathbf{a}_{1}\right\|_{F}^{2}+\cdots+\left\|\mathbf{a}_{n}\right\|_{F}^{2}=\|\mathbf{A}\|_{F}^{2}$.
+
+Giả sử $\mathbf{A}$ có phân tích $\mathrm{SVD}$ là $\mathbf{A}=\mathbf{U D V}^{T}$. Vì $\mathbf{U}$ và $\mathbf{V}$ là các ma trận trực giao nên
+
+$$
+\left.\|\mathbf{A}\|_{F}^{2}=\left\|\mathbf{U D V}^{T}\right\|_{F}^{2}=\| \mathbf{D V}^{T}\right\}\left\|_{F}^{2}=\right\|\left(\mathbf{D V}^{T}\right)^{T}\left\|_{F}^{2}=\right\| \mathbf{V D}^{T}\left\|_{F}^{2}=\right\| \mathbf{D}^{T} \|_{F}^{2}=\sigma_{1}^{2}+\sigma_{2}^{2}+\cdots+\sigma_{r}^{2}
+$$
+
+Vậy
+
+$$
+\|\mathbf{A}\|_{F}^{2}=\sqrt{\sigma_{1}^{2}+\cdots+\sigma_{r}^{2}}
+$$
+
+với $\sigma_{i}, i=1,2, \ldots, r$ là các giá trị kì dị của ma trận $\mathbf{A}$.
+
+%\section{Phân tích thành phần chính (PCA)}
+\chapter{ Phân tích Thành phần Chính }
+\section{Giới thiệu}
+%%Phép phân tích thành phần chính (Principal Components Analysis - PCA) là một thuật toán thống kê sử dụng phép biến đổi trực giao để biến đổi một tập hợp dữ liệu từ một không gian nhiều chiều sang một không gian mới ít chiều hơn (2 hoặc 3 chiều) nhằm tối ưu hóa việc thể hiện sự biến thiên của dữ liệu.
+%%Trong công tác nghiên cứu thực nghiệm, ta thu thập được những bộ dữ liệu thường được thể hiện dưới dạng bảng các giá trị số của nhiều cá thể. Chúng tạo thành “đám mây số liệu” khá phức tạp và việc tìm hiểu thông tin từ đó gặp khó khăn. Một trong những phương pháp hiệu quả trong xử lý số liệu nhiều chiều là phương pháp phân tích thành phần chính – Principal component analysis (PCA). Đây là một thuật toán thống kê sử dụng phép biến đổi trực giao để biến đổi một tập hợp dữ liệu từ một không gian nhiều chiều sang một không gian mới ít chiều hơn (2 hoặc 3 chiều) nhằm tối ưu hóa việc thể hiện sự biến thiên của dữ liệu. PCA được áp dụng để phân tích dữ liệu trong rất nhiều lĩnh vực như nông nghiệp, kinh tế, y tế và các ngành khoa học khác.
+Phép phân tích thành phần chính (Principal Components Analysis - PCA) là một phương pháp phân tích ma trận đa biến, giúp giảm số chiều của dữ liệu bằng cách tìm ra các thành phần chính của ma trận đó. Ý tưởng của PCA là chuyển đổi dữ liệu ban đầu từ không gian có số chiều cao sang không gian có số chiều thấp hơn, giúp cho việc xử lý và phân tích dữ liệu dễ dàng hơn.
+Phép phân tích thành phần chính được đưa ra vào năm 1901 bởi Karl Pearson và đã được phát triển và ứng dụng rộng rãi trong nhiều lĩnh vực khác nhau như nhận dạng hình ảnh, phân tích tín hiệu, dự báo kinh tế và thị trường tài chính.
+
+Một trong những ứng dụng quan trọng nhất của phép phân tích thành phần chính là giảm số chiều của dữ liệu. Khi dữ liệu có số chiều lớn, việc phân tích và xử lý trở nên phức tạp và tốn nhiều thời gian. Đồng thời cho phép giảm số chiều của dữ liệu bằng cách xác định các thành phần chính của ma trận, giúp cho việc xử lý và phân tích dữ liệu trở nên đơn giản và nhanh chóng hơn.
+
+Ngoài ra, phép phân tích này còn được sử dụng để giảm tác động của nhiễu trong dữ liệu, phát hiện các mối quan hệ giữa các biến đầu vào và giúp tối ưu hóa các thuật toán máy học.
+
+Với những ứng dụng và lợi ích của mình, hép phân tích thành phần chính đã trở thành một công cụ quan trọng trong phân tích dữ liệu và được sử dụng rộng rãi trong nhiều lĩnh vực khác nhau.
+\section{Ý tưởng}
+Giả sử dữ liệu ban đầu là $x \in \mathbb{R}^{m}$ và dữ liệu đã được giảm chiều là $z \in \mathbb{R}^{r}$ với $r<m$. Cách đơn giản nhất để giảm chiều dữ liệu từ $m$ về $r<m$ là chỉ cần giữ lại $r$ phần tử quan trọng nhất. Có hai câu hỏi được đặt ra ở đây. Câu hỏi thứ nhất, làm thế nào để xác định tầm quan trọng của mỗi chiều dữ liệu? Câu hỏi thứ hai, nếu tầm quan trọng của các chiều dữ liệu là như nhau, ta cần bỏ đi chiều nào?
+
+Để trả lời câu hỏi thứ nhất, ta quan sát Hình $2.2 a$. Giả sử các điểm dữ liệu có thành phần thứ hai (phương đứng) giống hệt nhau hoặc sai khác nhau rất ít (phương sai nhỏ). Như vậy thành phần này hoàn toàn có thể được lược bỏ đi, và ta ngầm hiểu rằng nó sẽ được xấp xỉ bằng kỳ vọng của thành phần đó trên toàn bộ các điểm dữ liệu. Ngược lại, việc làm này nếu được áp dụng lên thành phần thứ nhất (phương ngang) sẽ khiến lượng thông tin bị mất đi rất nhiều do sai số xấp xỉ quá lớn. Vì vậy, lượng thông tin theo mỗi thành phần có thể được đo bằng phương sai của dữ liệu trên thành phần đó. Tổng lượng thông tin có thể được coi là tổng phương sai trên toàn bộ các thành phần.
+
+Câu hỏi thứ hai tương ứng với trường hợp Hình 2.2b. Trong cả hai chiều, phương sai của dữ liệu đều lớn, việc bỏ đi một trong hai chiều đều dẫn đến việc lượng thông tin bị mất đi là rất lớn. Tuy nhiên, quan sát ban đầu của chúng ta là nếu xoay trục tọa độ đi một góc phù hợp, một trong hai chiều dữ liệu có thể được giảm đi vì dữ liệu có xu hướng phân bố xung quanh một đường thẳng.
+
+thêm 2 hình zô 
+Hình 2.2: Ví dụ về phương sai của dữ liệu trong không gian hai chiều. (a) Chiều thứ hai có phương sai (tỉ lệ với độ rộng của đường hình chuông) nhỏ hơn chiều thứ nhất. (b) Cả hai chiều có phương sai đáng kể. Phương sai của mỗi chiều là phương sai của thành phần tương ứng được lấy trên toàn bộ dữ liệu. Phương sai tỉ lệ thuận với độ phân tán của dữ liệu. Ý tưởng chính của PCA: Tìm một hệ trực chuẩn mới sao cho trong hệ này, các thành phần quan trọng nhất nằm trong $r$ thành phần đầu tiên.
+
+PCA là một phương pháp đi tìm một phép xoay trục tọa độ để được một hệ trục tọa độ mới sao cho trong hệ mới này, thông tin của dữ liệu chủ yếu tập trung ở vài thành phần. Phần còn lại chứa ít thông tin hơn có thể được lược bỏ.
+
+\section{Phân tích thành phần chính}
+
+Về mặt hình thức, cho ma trận dữ liệu $X \in \mathbb{R}^{m \times n}$ với mỗi giá trị đã được chuẩn hóa sao cho mỗi cột có giá trị trung bình là 0 và phương sai là 1 . PCA của $X$ với $r$ thành phần là tìm ma trận trực giao $A \in \mathbb{R}^{m \times r}$ và ma trận $B \in \mathbb{R}^{n \times r}$ sao cho $X$ có thể biểu diễn được dưới dạng ma trận
+
+$$
+X=A B^{T}+E
+$$
+
+trong đó $\|E\|^{2}$ đạt giá trị nhỏ nhất. Ma trận $A$ được gọi là ma trận thành phần, và các cột của nó là các thành phần chính. Ma trận $B$ được gọi là ma trận tải, các tải trọng là các trọng số cho phép tái cấu trúc các biến ban đầu dưới dạng tổ hợp tuyến tính của các thành phần chính. Cặp $(A, B)$ được gọi là nghiệm PCA.
+
+Ngoài ra, PCA được trình bày theo một cách khác dưới dạng véctơ như sau:
+
+$$
+X=\sum_{i=1}^{r} a_{i} b_{i}^{T}+E
+$$
+
+Điều này cho thấy $\mathrm{PCA}$ là xấp xỉ $X$ với tổng của $r$ ma trận có hạng 1 .
+Mục tiêu của PCA là làm giảm tối thiểu $\|E\|^{2}=\left\|X-A B^{T}\right\|^{2}$. Vì $\operatorname{rank}\left(A B^{T}\right) \leq r$ nên $A B^{T}$ là SVD "chặt cụt" của $X$, nghĩa là nếu $U_{r} S_{r}\left(V_{r}\right)^{T}$ là SVD "chặt cụt" của $X$ thì $A=m^{\frac{1}{2}} U_{r}$ và $B^{T}=m^{-\frac{1}{2}} S_{r}\left(V_{r}\right)^{T}$. Số lượng thành phần tối thiểu phù hợp là số giá trị kì dị khác 0 của $X$, hay là hạng của $X$. Vì vậy, không cần thiết phải lấy số thành phần $r$ lớn hơn số lượng biến $n$. Trên thực tế, $r$ thường được lấy nhỏ hơn nhiều so với $n$.
+
+Do thứ tự giảm dần của các giá trị kì dị của $X$ trong SVD, thành phần chính đầu tiên giải thích phương sai nhiều nhất có thể và từng thành phần chính tiếp theo giải thích phương sai với ràng buộc là nó trực giao (không tương quan với các thành phần trước đó). Khi đó tổng phương sai được giải thích là $\operatorname{tr}\left(B B^{T}\right)=\operatorname{tr}\left(m^{-\frac{1}{2}} S_{r}^{2}\right)$ với $\operatorname{tr}\left(S_{r}^{2}\right)$ là tổng bình phương của $r$ giá trị kì dị lớn nhất của $X$.
+
+section{Tìm các thành phần chính của bài toán PCA thông qua SVD}
+
+Xét một vectơ $x$ bất kì. Thành phần chính là tổ hợp tuyến tính $s=\sum_{i=1}^{m} w_{i} x_{i}$ có chứa càng nhiều phương sai của dữ liệu đầu vào càng tốt. Như vậy, thành phần chính đầu tiên được định nghĩa bằng trực giác là tổ hợp tuyến tính của các biến quan sát, trong đó có phương sai lớn nhất.
+
+Chúng ta cần đưa ra ràng buộc cho chuẩn của vectơ $w=\left(w_{1}, w_{2}, \ldots, w_{m}\right)$. Để đơn giản, chúng ta ràng buộc $w$ có chuẩn bằng 1 , tức là
+
+$$
+\|w\|=\sqrt{\sum_{i=1}^{m} w_{i}^{2}}=1
+$$
+
+Các ràng buộc khác về giá trị chuẩn của $w$ chúng ta có thể đưa về ràng buộc trên.
+
+Chú ý rằng phương sai của một tổ hợp tuyến tính bất kì đều có thể được tính thông qua ma trận hiệp phương sai của dữ liệu. Xét một tổ hợp tuyến tính $w^{T} x=\sum_{i=1}^{m} w_{i} x_{i}$. Giả sử giá trị trung bình bằng 0 , tức là $E\{x\}=0$. Khi đó
+
+$$
+\begin{aligned}
+	E\left\{\left(w^{T} x\right)^{2}\right\}=E\left\{\left(w^{T} x\right)\left(w^{T} x\right)\right\}=E\left\{w^{T}\left(x x^{T}\right) w\right\} & =w^{T} E\left\{x x^{T}\right\} \\
+	& =w^{T} C w
+\end{aligned}
+$$
+
+trong đó $C=E\left\{x x^{T}\right\}$ là ma trận hiệp phương sai. Vì vậy, bài toán cơ bản $\mathrm{PCA}$ được xác định như sau:
+
+$$
+\max _{w:\|w\|=1} w^{T} C w
+$$
+
+Vì $C$ là ma trận đối xứng nên theo Định lí phổ của ma trận đối xứng, tồn tại ma trận trực giao $U \in \mathbb{R}^{m \times n}$ và ma trận đường chéo $D=\operatorname{diag}\left(\lambda_{1}, \ldots, \lambda_{n}\right) \in \mathbb{R}^{n \times n}$ sao cho $C=U D U^{T}$, trong đó $\lambda_{1}, \ldots, \lambda_{n}$ là các giá trị riêng của $C$, và các véctơ cột của $U$ là các véctơ riêng của $C$ ứng với giá trị riêng đó. Thực hiện đổi biến $v=U^{T} w$. Khi đó ta nhận được
+
+$$
+w^{T} C w=w^{T} U D U^{T} w=v^{T} D v=\sum_{i=1}^{n} v_{i}^{2} \lambda_{i}
+$$
+
+Vì $U$ trực giao nên $\|v\|=\|w\|$, do đó, $v$ có ràng buộc $\|v\|=1$. Tiếp tục thực hiện phép đổi biến $m_{i}=v_{i}^{2}, i=1, \ldots, n$. Khi đó ràng buộc $\|v\|=1$ tương đương với ràng buộc $m_{i} \geq 0$ và $\sum_{i=1}^{n} m_{i}=1$. Bài toán được chuyển sang dạng
+
+$$
+\max \sum_{i=1}^{n} m_{i} \lambda_{i}, \text { với } m_{i} \geq 0, \sum_{i=1}^{n} m_{i}=1 \text {. }
+$$
+
+Rõ ràng, bài toán cho thấy giá trị lớn nhất tìm được khi $m_{i}$ tương ứng với $\lambda_{i}$ lớn nhất bằng 1 và các $m_{i}$ còn lại bằng 0 . Kí hiệu $i^{*}$ là chỉ số của giá trị riêng lớn nhất. Trở lại biến $w$, điều này tương đương với $w$ bắt đầu từ vectơ riêng thứ $i^{*}$, tức là cột thứ $i^{*}$ của U. Như vậy, thành phần chính đầu tiên được tìm một cách dễ dàng thông qua phân tích giá trị riêng.
+
+Do các vectơ riêng của ma trận đối xứng là trực giao nên việc tìm thành phần chính thứ hai đồng nghĩa với việc tối đa hóa phương sai sao cho $v_{i^{*}}$ vẫn bằng 0 . Điều này thực sự tương đương với việc tạo $w$ trực giao mới cho vectơ riêng đầu tiên. Như vậy, về mặt $m_{i}$, chúng ta có bài toán tối ưu hóa tương tự nhưng với ràng buộc $m_{i^{*}}=0$. Rõ ràng, nghiệm của bài toán tối ưu đó thu được khi $w$ bằng với vectơ riêng tương ứng với giá trị riêng lớn nhất thứ hai. Lôgic này áp dụng cho thành phần chính thứ $k$.
+
+Do đó, tất cả các thành phần chính có thể được tìm thấy bằng cách đặt các vectơ riêng $u_{i}, i=1, \ldots, n$ trong $U$ sao cho các giá trị riêng giảm dần. Chúng ta hãy giả sử $U$ được định nghĩa như vậy. Khi đó thành phần chính thứ $i$ có dạng
+
+$$
+s_{i}=u_{i}^{T} x
+$$
+
+Lưu ý rằng tất cả các $\lambda_{i}$ đều không âm đối với ma trận hiệp phương sai.
+
+\section{Tính duy nhất nghiệm của PCA}
+
+Định lý 2.3.1. Nếu $(A, B)$ là một nghiệm của mô hình $P C A$ thì $(A Q, B Q)$ cũng là một nghiệm của mô hình $P C A$, với $Q$ là ma trận trực giao cấp $r$.
+
+Lúc này, $Q$ được gọi là phép quay trực giao.
+
+Chưng minh. Giả sử $(A, B)$ là một nghiệm của mô hình $\mathrm{PCA}$.
+
+Với $Q$ là một ma trận trực giao cấp $r$, tức là $Q Q^{T}=Q^{T} Q=I_{r}$, ta có
+
+$$
+(A Q)(A Q)^{T}=A Q Q^{T} A^{T}=A I_{r} A^{T}=A A^{T}=I_{m}
+$$
+
+và
+
+$$
+(A Q)^{T}(A Q)=Q^{T} A^{T} A Q=Q^{T} I_{r} Q=Q^{T} Q=I_{r}
+$$
+
+Suy ra $(A Q)$ là ma trận trực giao cỡ $m \times r$.
+
+Mặt khác, ta có
+
+$$
+(A Q)(B Q)^{T}=A Q Q^{T} B^{T}=A I_{r} B^{T}=A B^{T}
+$$
+
+và
+
+$$
+\left\|X-A Q Q^{T} B^{T}\right\|^{2}=\left\|X-A B^{T}\right\|^{2}
+$$
+
+Vậy $(A Q, B Q)$ là một nghiệm của mô hình $\mathrm{PCA}$.
+
+Từ Định lí 2.3.1, ta có nhận xét sau:
+
+Nhận xét 2.3.1. (i) Nghiệm $(A, B)$ của PCA không duy nhất.
+
+(ii) Phép quay trực giao $Q$ sẽ cho ta ma trận tải có cấu trúc đơn giản hơn, do đó các nhân tố sẽ được diễn giải dễ dàng hơn.
+
+\section{Thuật toán tìm PCA của một ma trận}
+
+Giả sử $X$ là ma trận cỡ $m \times n$, với $m \geq n$. Để tìm $\mathrm{PCA}$ của ma trận $X$, chúng ta thực hiện các bước sau:
+
+- Bước 1: Tìm SVD "chặt cụt" của ma trận $X$, ta được $X=U_{r} S_{r}\left(V_{r}\right)^{T}$ với $r \leq n$.
+
+- Bước 2: Tính ma trận $A$ và $B$ theo công thức sau:
+
+$$
+A=m^{\frac{1}{2}} U_{r}, \quad B^{T}=m^{-\frac{1}{2}} S_{r}\left(V_{r}\right)^{T}
+$$
+
+- Bước 3: Nếu nghiệm $(A, B)$ chưa tốt thì chọn phép quay $Q$, với $Q$ là ma trận trực giao cấp $r$, ta tìm được nghiệm của mô hình $\mathrm{PCA}$ là $(A Q, B Q)$
+
+
+ 
+\chapter{ MỘT SỐ ỨNG DỤNG CỦA SVD và PCA }
+
+\section{Ứng dụng của SVD trong bài toán xấp xỉ hạnh thấp tốt nhất của ma trận}
+
+Về lí thuyết, khi làm việc với ma trận, ta cần nắm được toàn bộ những thông tin về ma trận đó. Tuy nhiên, trong thực tế có những ma trận cấp rất lớn với nhiều phần tử, lượng thông tin cần xử lí nhiều khiến ta rất khó khăn khi tiếp cận. Vấn đề đặt ra là, làm thế nào để ta cần loại bỏ, giảm tải bớt những thông tin, số liệu không cần thiết mà vẫn đảm bảo giữ lại những số liệu, những thông tin đặc trưng của ma trận, nhằm giúp cho công việc nghiên cứu được thuận tiện và đơn giản hơn. Nói cách khác, ta cần tìm một ma trận có hạng nhỏ hơn xấp xỉ với ma trận đã cho. Một trong những công cụ có thể giúp ta tìm được ma trận xấp xỉ đó chính là SVD. Trong chương này, chúng ta sẽ cùng tìm hiểu về ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận. 
+
+ho $\mathbf{A}$ là một ma trận cấp $m \times n$ bất kì, $\operatorname{rank}(\mathbf{A})=r$. Giả sử $\mathbf{A}$ có phân tích SVD dạng khai triển là
+
+$$
+\mathbf{A}=\sum_{i=1}^{r} \sigma_{i} \mathbf{u}_{i} \mathbf{v}_{i}^{T}
+$$
+
+Với mỗi $k \in\{1,2, \ldots, r\}$, dặt
+
+$$
+\mathbf{A}_{k}=\sum_{i=1}^{k} \sigma_{i} \mathbf{u}_{i} \mathbf{v}_{i}^{T}
+$$
+
+Khi đó, $\operatorname{rank}\left(\mathbf{A}_{k}\right)=k$. Hơn nữa, $\mathbf{A}_{k}$ chính là ma trận xấp xỉ tốt nhất có hạng bằng $k$ của $\mathbf{A}$ theo cả hai chuẩn là chuẩn Frobenius và chuẩn 2. Ta có hai định lí quan trọng sau
+
+\begin{dl}{Định lí Eckart- Young, 1936}
+
+Với mọi ma trận $\mathbf{B}$ cỡ $m \times n$ và $\operatorname{rank}(\mathbf{B}) \leqslant k$, ta có
+
+$$
+\|\mathbf{A}-\mathbf{B}\|_{F} \geqslant\left\|\mathbf{A}-\mathbf{A}_{k}\right\|_{F} .
+$$
+\end{dl}
+Để chứng minh Định lý Eckart- Young, ta cần Bổ đề sau
+
+\begin{bd} Giả sử $\mathbf{A}$ là một ma trận cấp $m \times n$ bất kì, $\operatorname{rank}(\mathbf{A})=r, \mathbf{A}$ có phân tích SVD dạng khai triển là
+
+$$
+\mathbf{A}=\sum_{i=1}^{r} \sigma_{i} \mathbf{u}_{i} \mathbf{v}_{i}^{T}
+$$
+
+Khi đó với vector $\mathbf{x} \in \mathbb{R}^{n}$ bất kì và $1 \leqslant k \leqslant r$, ta có
+
+$$
+\|\mathbf{A} \mathbf{x}\|_{F}^{2} \leqslant \sigma_{k}^{2}\|\mathbf{x}\|_{F}^{2}+\sum_{i=1}^{k} \sigma_{i}^{2}\left(\mathbf{v}_{i}^{T} \mathbf{x}\right)^{2}-\sigma_{k}^{2} \sum_{i=1}^{k}\left(\mathbf{v}_{i}^{T} \mathbf{x}\right)^{2} .
+$$
+\end{bd}
+Chứng minh. Theo phân tích SVD dạng khai triển của $\mathbf{A}$ ta có
+
+$$
+\mathbf{A} \mathbf{x}=\sum_{i=1}^{r} \sigma_{i} \mathbf{u}_{i} \mathcal{V}_{i}^{T} \mathbf{x}=\sum_{i=1}^{r} \sigma_{i} \mathbf{u}_{i}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)=\sum_{i=1}^{r} \sigma_{i}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right) \mathbf{u}_{i}
+$$
+
+Do $\left(\mathbf{u}_{1} \cdot \mathbf{u}_{2}, \ldots, \mathbf{u}_{m}\right)$ là cơ sở trực chuẩn trong $\mathbb{R}^{m}$ và $\sigma_{1} \geqslant \sigma_{2} \cdots \geqslant \sigma_{r}$ nên
+
+$$
+\|\mathbf{A} \mathbf{x}\|_{F}^{2}=\sum_{i=1}^{r} \sigma_{i}^{2}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2} \leqslant \sum_{i=1}^{k} \sigma_{i}^{2}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2}+\sigma_{k}^{2} \sum_{i=k+1}^{r}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2} .
+$$
+
+Mặt khác
+
+$\sigma_{k}^{2} \sum_{i=1}^{k}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2}+\sigma_{k}^{2} \sum_{i=k+1}^{r}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2}=\sigma_{k}^{2} \sum_{i=1}^{r}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2} \leqslant \sigma_{k}^{2} \sum_{i=1}^{n}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2}=\sigma_{k}^{2}\left\|\mathbf{V}^{T} \mathbf{x}\right\|_{F}^{2}=\sigma_{k}^{2}\|\mathbf{x}\|_{F}^{2}$
+
+Do đó,
+
+$$
+\sigma_{k}^{2} \sum_{i=k+1}^{r}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2} \leqslant \sigma_{k}^{2}\|\mathbf{x}\|_{F}^{2}-\sigma_{k}^{2} \sum_{i=1}^{k}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2}
+$$
+
+Vậy
+
+$$
+\|\mathbf{A} \mathbf{x}\|_{F}^{2} \leqslant \sigma_{k}^{2}\|\mathbf{x}\|_{F}^{2}+\sum_{i=1}^{k} \sigma_{i}^{2}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2}-\sigma_{k}^{2} \sum_{i=1}^{k}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2}
+$$
+
+Tiếp theo, chúng ta sẽ chứng minh Định lý 3.2.1.
+
+Chứng minh Định lý 3.2.1. Giả sử ma trận $\mathbf{B}$ có khai triển SVD dạng
+
+$$
+\mathbf{B}=\sum_{i=1}^{k} \mathbf{x}_{i} \mathbf{y}_{i}^{T}
+$$
+
+trong đó $\left(\mathbf{x}_{1}, \mathbf{x}_{2}, \ldots, \mathbf{x}_{m}\right)$ là hệ trực giao, $\left(\mathbf{y}_{1}, \mathbf{y}_{2}, \ldots, \mathbf{y}_{n}\right)$ là hệ trực chuẩn. Ta có $\|\mathbf{A}-\mathbf{B}\|_{F}^{2}=\operatorname{Tr}\left((\mathbf{A}-\mathbf{B})\left(\mathbf{A}-\mathbf{B}^{T}\right)\right)=\operatorname{Tr}\left(\mathbf{A} \mathbf{A}^{T}-\mathbf{A} \mathbf{B}^{T}-\mathbf{B A}^{T}+\mathbf{B B}^{T}\right)$. Mặt khác
+
+$$
+\begin{aligned}
+	\mathbf{B} \mathbf{B}^{T} & -\mathbf{A B}^{T}-\mathbf{B} \mathbf{A}^{T}=\left(\sum_{i=1}^{k} \mathbf{x}_{i} \mathbf{y}_{i}^{T}\right)\left(\sum_{i=1}^{k} \mathbf{y}_{i} \mathbf{x}_{i}^{T}\right)-A \sum_{i=1}^{k} \mathbf{y}_{i} \mathbf{x}_{i}^{T}-\left(\sum_{i=1}^{k} \mathbf{x}_{i} \mathbf{y}_{i}^{T}\right) \mathbf{A}^{T} \\
+	& =\sum_{i=1}^{k} \mathbf{x}_{i} \mathbf{x}_{i}^{T}-\sum_{i=1}^{k} \mathbf{x}_{i} \mathbf{y}_{i}^{T} \mathbf{A}^{T}-\sum_{i=1}^{k} \mathbf{A}_{i} \mathbf{x}_{i}^{T}+\sum_{i=1}^{k} \mathbf{A}_{i} \mathbf{y}_{i}^{T} \mathbf{A}_{T}-\sum_{i=1}^{k} \mathbf{A}_{i} \mathbf{y}_{i}^{T} \mathbf{A}^{T} \\
+	& =\sum_{i=1}^{k} \mathbf{x}_{i}\left(\mathbf{x}_{i}^{T}-\mathbf{y}_{i}^{T} \mathbf{A}^{T}\right)-\sum_{i=1}^{k} \mathbf{A} \mathbf{y}_{i}\left(\mathbf{x}_{i}^{T}-\mathbf{y}_{i}^{T} \mathbf{A}^{T}\right)-\sum_{i=1}^{k} \mathbf{A} \mathbf{y}_{i} \mathbf{y}_{i}^{T} \mathbf{A}^{T} \\
+	& =\sum_{i=1}^{k}\left(\mathbf{x}_{i}-\mathbf{A} \mathbf{y}_{i}\right)\left(\mathbf{x}_{i}^{T}-\mathbf{y}_{i}^{T} \mathbf{A}^{T}\right)-\sum_{i=1}^{k} \mathbf{A} \mathbf{y}_{i} \mathbf{y}_{i}^{T} A^{T} \\
+	& =\sum_{i=1}^{k}\left(\mathbf{x}_{i}-\mathbf{A} \mathbf{y}_{i}\right)\left(\mathbf{x}_{i}-\mathbf{y}_{i} \mathbf{A}\right)^{T}-\sum_{i=1}^{k}\left(\mathbf{A y}_{i}\right)\left(\mathbf{a y}_{i}\right)^{T} .
+\end{aligned}
+$$
+
+Vì
+
+$$
+\left.\sum_{i=1}^{k} \operatorname{Tr}\left(\left(\mathbf{x}_{i}-\mathbf{A y}_{i}\right)\left(\mathbf{x}_{i}-\mathbf{y}_{i} \mathbf{A}\right)^{T}\right)\right)=\sum_{i=1}^{k}\left\|\mathbf{x}_{i}-\mathbf{A y}_{i}\right\|_{F}^{2} \geqslant 0
+$$
+
+nên suy ra
+
+$$
+\begin{aligned}
+	\|\mathbf{A}-\mathbf{B}\|_{F}^{2} & =\operatorname{Tr}\left(\mathbf{A} \mathbf{A}^{T}\right)+\sum_{i=1}^{k} \operatorname{Tr}\left(\left(\mathbf{x}_{i}-\mathbf{A} \mathbf{y}_{i}\right)\left(\mathbf{x}_{i}-\mathbf{y}_{i} \mathbf{A}\right)^{T}\right)-\sum_{i=1}^{k}\left\|\mathbf{A y}_{i}\right\|_{F}^{2} \\
+	& \geqslant \operatorname{Tr}\left(\mathbf{A} \mathbf{A}^{T}\right)-\sum_{i=1}^{k}\left\|\mathbf{A y}_{i}\right\|_{F}^{2} .
+\end{aligned}
+$$
+
+Tiếp theo, ta đánh giá số hạng $\sum_{i=1}^{k}\left\|\mathbf{A y}_{i}\right\|_{F}^{2}$ trong bất đẳng thức $\left(^{*}\right)$. Theo Bổ đề 3.2 .2 ta có
+
+$$
+\left\|\mathbf{A y}_{i}\right\|_{F}^{2} \leqslant \sigma_{k}^{2}+\sum_{i=1}^{k} \sigma_{i}^{2}\left(\mathcal{V}_{i}^{T} \mathbf{y}_{i}\right)^{2}-\sigma_{k}^{2} \sum_{i=1}^{k}\left(\mathcal{V}_{\mathcal{V}}^{T} \mathbf{y}_{i}\right)^{2} \text {. }
+$$
+
+Lấy tổng theo chỉ số $j$ ta có bất đẳng thức
+
+$$
+\begin{aligned}
+	\sum_{j=1}^{k}\left\|\mathbf{A y}_{j}\right\|^{2} & \leqslant k \sigma_{k}^{2}+\sum_{j=1}^{k}\left[\sum_{i=1}^{k} \sigma_{i}^{2}\left(\mathcal{V}_{i}^{T} \mathbf{y}_{j}\right)^{2}-\sigma_{k}^{2} \sum_{i=1}^{k}\left(\mathcal{V}_{i}^{T} \mathbf{y}_{j}\right)^{2}\right] \\
+	& =k \sigma_{k}^{2}+\sum_{j=1}^{k}\left[\sum_{i=1}^{k}\left(\sigma_{i}^{2}-\sigma_{k}^{2}\right)\left(\mathcal{V}_{i}^{T} \mathbf{y}_{j}\right)^{2}\right] \\
+	& =\sum_{i=1}^{k}\left[\sigma_{k}^{2}+\sum_{j=1}^{k}\left(\sigma_{i}^{2}-\sigma_{k}^{2}\right)\left(\mathcal{V}_{i}^{T} \mathbf{y}_{j}\right)^{2}\right] \\
+	& =\sum_{i=1}^{k}\left[\sigma_{k}^{2}+\left(\sigma_{i}^{2}-\sigma_{k}^{2}\right) \sum_{j=1}^{k}\left(v_{i}^{T} y_{j}\right)^{2}\right] .
+\end{aligned}
+$$
+
+Mặt khác,
+
+$$
+\sum_{j=1}^{k}\left(\mathcal{V}_{i}^{T} \mathbf{y}_{j}\right)^{2} \leqslant \sum_{j=1}^{n}\left(\mathcal{V}_{i}^{T} \mathbf{y}_{j}\right)^{2}=\left\|\mathcal{V}_{i}^{T} \mathbf{Y}\right\|_{F}^{2}=\left\|\mathcal{V}_{i}^{T}\right\|_{F}^{2}=1
+$$
+
+với $\mathbf{Y}$ là ma trận trực giao có các cột là các vector $\mathbf{y}_{1}, \mathbf{y}_{2}, \ldots, \mathbf{y}_{n}$. Do đó
+
+$$
+\sum_{j=1}^{k}\left\|\mathbf{A y}_{j}\right\|_{F}^{2} \leqslant \sum_{i=1}^{k} \sigma_{k}^{2}
+$$
+
+Thay vào bất đẳng thức $(*)$ ta được
+
+$$
+\|\mathbf{A}-\mathbf{B}\|_{F}^{2} \geqslant \operatorname{Tr}\left(\mathbf{A} \mathbf{A}^{T}\right)-\sum_{i=1}^{k}\left\|\mathbf{A} \mathbf{y}_{i}\right\|_{F}^{2} \geqslant\|\mathbf{A}\|_{F}^{2}-\sum_{i=1}^{k} \sigma_{i}^{2} .
+$$
+
+Khi $\mathbf{B}=\mathbf{A}_{k}=\sum_{i=1}^{k} \sigma_{i} \mathbf{u}_{i} \mathcal{V}_{i}^{T}$, ta có
+
+$$
+\mathbf{A}-\mathbf{A}_{k}=\sum_{i=k+1}^{r} \sigma_{i} \mathbf{u}_{i} \mathcal{V}_{i}^{T}
+$$
+
+Từ đó suy ra
+
+$$
+\left\|\mathbf{A}-\mathbf{A}_{k}\right\|_{F}^{2}=\sum_{i=k+1}^{r} \sigma_{i}^{2}=\sum_{i=1}^{r} \sigma_{i}^{2}-\sum_{i=1}^{k} \sigma_{i}^{2}=\|A\|_{F}^{2}-\sum_{i=1}^{k} \sigma_{i}^{2} .
+$$
+
+Điều này chứng tỏ $\mathbf{A}_{k}$ chính là xấp xỉ hạng $k$ tốt nhất của ma trận $\mathbf{A}$ theo chuẩn Frobenius.
+
+Định lí 3.2.3. Giả sử $\mathbf{A}$ là ma trận cỡ $m \times n$ bất kì, với $\operatorname{rank}(A)=r$ và $\mathbf{A}$ có khai triển kì dị SVD là
+
+$$
+\mathbf{A}=\sum_{i=1}^{r} \sigma_{i} \mathbf{u}_{i} \mathcal{V}_{i}^{T}
+$$
+
+Khi đó, với mọi ma trận $\mathbf{B}$ có cỡ $m \times n$ bất kì và $\operatorname{rank}(\mathbf{B}) \leqslant k$, ta có
+
+$$
+\|\mathbf{A}-\mathbf{B}\|_{2} \geqslant \sigma_{k+1}
+$$
+
+Dấu " =" xảy ra khi $\mathbf{B}=\mathbf{A}_{k}=\sum_{i=1}^{k} \sigma_{i} \mathbf{u}_{i} \mathcal{V}_{i}^{T}$.
+
+Chúng minh. Giả sử tồn tại ma trận $\mathbf{B}$ có $\operatorname{rank}(\mathbf{B}) \leqslant k$ và $\|\mathbf{A}-\mathbf{B}\|_{2}<\sigma_{k+1}$. Vì $\operatorname{rank}(\mathbf{B}) \leqslant k$ nên tồn tại một không gian con $\mathbf{W}$ cỡ $r-k$ sao cho với mọi $\mathbf{w} \in \mathbf{W}$ thì $\mathrm{Bw}=0$.
+
+Do đó với mọi $\mathbf{w} \in \mathbf{W}$ thì $\mathbf{A} \mathbf{w}=(\mathbf{A}-\mathbf{B}) \mathbf{w}$ và
+
+$$
+\|\mathbf{A} \mathbf{w}\|_{2}=\|(\mathbf{A}-\mathbf{B}) \mathbf{w}\|_{2} \leqslant\|\mathbf{A}-\mathbf{B}\|_{2}\|\mathbf{w}\|_{2}<\sigma_{k+1}\|\mathbf{w}\|_{2} .
+$$
+
+Vì vậy W là không gian con cỡ $r-k$ sao cho
+
+$$
+\|\mathbf{A}\|_{2}<\sigma_{k+1}\|\mathbf{w}\|_{2}
+$$
+
+Mặt khác, tồn tại một không gian con $\mathbf{U}$ có chiều là $k+1$ được xây dựng từ $k+1$ giá trị kì dị đầu tiên của ma trận $\mathbf{A}$ sao cho
+
+$$
+\|\mathbf{A} \mathbf{u}\| \geqslant \sigma_{k+1}\|\mathbf{u}\|_{2}, \quad \forall \mathbf{u} \in \mathbf{U}
+$$
+
+Khi đó $\operatorname{dim}(\mathbf{U}+\mathbf{W})=(r-k)+(k+1)=r+1>r$. Do đó tồn tại $\mathcal{V} \neq \mathbf{0}$ và $\mathcal{V} \in \mathbf{U} \cap \mathbf{W}$. Suy ra $\|\mathbf{A} \mathcal{V}\|_{2}<\sigma_{k+1}\|\mathcal{V}\|_{2}$ và $\|\mathbf{A} \mathcal{V}\| \geqslant \sigma_{k+1}\|\mathcal{V}\|_{2}$. Điều này không thể xảy ra. Vì vậy giả thiết phản chứng ban đầu là sai.
+
+Vậy với mọi ma trận $\mathbf{B}$ cỡ $m \times n$ bất kì có $\operatorname{rank}(\mathbf{B}) \leqslant k$ thì $\|\mathbf{A}-\mathbf{B}\|_{2} \geqslant \sigma_{k+1}$.
+
+Khi $\mathbf{B}=\mathbf{A}_{k}$ thì $\left\|\mathbf{A}-\mathbf{A}_{k}\right\|_{2}=\sigma_{k+1}$. Điều này chứng tỏ $\mathbf{A}_{k}$ chính là xấp xỉ hạng $k$ tốt nhất của $\mathbf{A}$ theo chuẩn 2 . 
+
+\section{Phân tích SVD trong xử lí ảnh}
+
+Như đã nói, phân tích SVD là dạng phân tích có rất nhiều ứng dụng trong lý thuyết và thực tiễn. Một trong những ứng dụng ấn tượng nhất chính là sử dụng SVD trong hiệu chỉnh hình ảnh kĩ thuật số. Nhờ đó hình ảnh được truyền đi một cách hiệu quả bằng vệ tinh, internet, ...
+
+Ý tưởng cơ sở của việc hiệu chỉnh ảnh là làm giảm số lượng thông tin truyền đi mà không làm mất đi những thông tin thực chất. Trong một bức ảnh kĩ thuật số, mỗi điểm ảnh được thể hiện bởi ba giá trị màu: xanh (blue), lục (green), đỏ (red) với các trị số từ 0 đến 255. Như vậy, với một hình ảnh có độ lớn là $340 \times 280$ pixels thì chúng ta phải lưu trữ 3 ma trận (thể hiện màu sắc của các điểm) có cùng độ lớn là $340 \times 280$, tức là phải lưu trữ 285600 số. Tuy nhiên, trong thực tế, khi truyền hay lưu trữ thông tin ảnh, ta có thể không cần những hình ảnh, hoặc một số phần của hình ảnh có độ nét quá lớn. Sử dụng phân tích SVD, chúng ta có thể loại bỏ rất nhiều thông tin không cần thiết đó.
+
+Ví dụ một hình ảnh $340 \times 280$ pixels được phân tích thành 3 ma trận $\mathbf{A}, \mathbf{B}, \mathbf{C}$ có cùng độ lớn $340 \times 280$. Giả sử $\mathbf{A}$ có phân tích SVD là
+
+$$
+\mathbf{A}=\sigma_{1} \mathbf{u}_{1} \mathcal{V}_{1}^{T}+\cdots+\sigma_{r} \mathbf{u}_{r} \mathcal{V}_{r}^{T}
+$$
+
+Theo như chứng minh ở Định lí 3.2.1, với mỗi giá trị $k<r$ thì $A_{k}=\sigma_{1} \mathbf{u}_{1} \mathcal{V}_{1}^{T}+\cdots+$ $\sigma_{k} \mathbf{u}_{k} \mathcal{V}_{k}^{T}$ là xấp xỉ hạng $k$ tốt nhất của $\mathbf{A}$.
+
+Ví dụ, $k=20$ thì ma trận $\mathbf{A}_{k}$ thể hiện các dữ liệu của $\mathbf{A}$ tương ứng với 20 giá trị kì dị đầu tiên. Như vậy, ta chỉ cần lưu trữ 20 giá trị kì dị, 20 vector $\mathbf{u}_{i}, 20$ vector $\mathcal{V}_{i}$, tương đương với 12420 số. Tương tự như vậy với hai ma trận $\mathbf{B}$ và $\mathbf{C}$, số lượng các số phải lưu trữ là 37260 số. Rõ ràng phân tích SVD đã giúp giảm tải một lượng thông tin cần lưu trữ một cách đáng kể.
+
+Trong  Python, ta có thể hiệu chỉnh độ nét của hình ảnh theo tham số $k$ tùy chọn. Ta xét ví dụ sau 
+
+\end{document}
