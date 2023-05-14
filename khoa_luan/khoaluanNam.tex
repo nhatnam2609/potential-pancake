@@ -788,7 +788,9 @@ là phân tích SVD của ma trận $\mathbf{A}$.
 \end{itemize}
 \subsubsection{Ví dụ}
 
-Tìm SVD của ma trận $\mathbf{A}=\left[\begin{array}{ll}1 & 0 \\ 1 & 0 \\ 0 & 1\end{array}\right]$. Lời giải.
+Tìm SVD của ma trận $\mathbf{A}=\left[\begin{array}{ll}1 & 0 \\ 1 & 0 \\ 0 & 1\end{array}\right]$.
+
+Lời giải:
 
 Bước 1: Tìm các giá trị kì dị củ ma trận $\mathbf{A}$
 
@@ -819,7 +821,10 @@ $$
 
 Bước 2: Tìm ma trận $\mathbf{V}$
 
-Giải phương trình $\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right) v=0$ ta tìm được các véctơ riêng tương ứng là $v_{1}=\left[\begin{array}{l}1 \\ 0\end{array}\right]$ và $v_{2}=\left[\begin{array}{l}0 \\ 1\end{array}\right]$. Từ đó suy ra
+Giải phương trình $\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right) v=0$ ta tìm được các véctơ riêng tương ứng là \\
+$v_{1}=\left[\begin{array}{l}1 \\ 0\end{array}\right]$ và $v_{2}=\left[\begin{array}{l}0 \\ 1\end{array}\right]$.
+
+Từ đó suy ra
 
 $$
 \mathbf{V}^{T}=\left[\begin{array}{ll}
@@ -893,6 +898,13 @@ $$
 	0 & 1
 \end{array}\right]
 $$
+Bên dưới là ví dụ về SVD trên PYTHON3.
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.9]{example_svd.png}
+	\caption{Ví dụ SVD trên PYTHON3}
+	\label{fig:galaxy}
+\end{figure}
 
 \section{Một số tính chất của ma trận liên quan đến SVD của nó}
 \begin{dl}
