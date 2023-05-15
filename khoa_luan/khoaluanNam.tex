@@ -3,7 +3,8 @@
 \usepackage{amsmath,amsxtra,amssymb,latexsym, amscd,amsthm, enumerate}
 \usepackage{cases}
 \usepackage{graphicx}
-
+\usepackage{caption}
+\usepackage{subcaption}
 
 
 \usepackage{indentfirst}
@@ -349,8 +350,8 @@ $$
 \end{dn}	
 	Nhận xét:
 	\begin{itemize}
-		
-	\item[(i)] Ma trận $\mathbf{A}=\left[a_{i j}\right]_{n \times n}$ là ma trận trực giao khi và chỉ khi $\sum_{k=1}^{n} a_{i k} a_{j k}=\delta_{i j}$, với $\delta_{i j}$ là kí hiệu Kronecker.
+	
+	\item[(i)] Ma trận $\mathbf{A}=\left[a_{i j}\right]_{n \times n}$ là ma trận trực giao khi và chỉ khi $$\sum_{k=1}^{n} a_{i k} a_{j k}=\delta_{i j}$$ với $\delta_{i j}$ là kí hiệu Kronecker. 
 	
 	\item[(ii)] Ma trận trực giao $\mathbf{A}$ là khả nghịch và $\mathbf{A}^{T}=\mathbf{A}^{-1}$.
 	
@@ -362,7 +363,6 @@ $$
 	$$
 	\operatorname{det}(\mathbf{A})=a_{11} \mathbf{A}_{11}+a_{12} \mathbf{A}_{12}+\cdots+a_{1 n} \mathbf{A}_{1 n}
 	$$
-	
 	trong đó $\mathbf{A}_{i k}=(-1)^{i+k} \operatorname{det}\left(\mathbf{M}_{i k}\right)$, với $\mathbf{M}_{i k}$ là ma trận vuông cấp $n-1$ nhận được từ ma trận $\mathbf{A}$ bằng cách bỏ đi dòng thứ $i$ và cột thứ $k$. Đại lượng $\mathbf{A}_{i k}$ được gọi là phần bù đại số của $a_{i k}$.
 	
 	Nhận xét:
@@ -391,139 +391,6 @@ $$
 \begin{dn}\rm 
 	Vết của ma trận vuông $\mathbf{A}$ cấp $n$ được xác định bằng tổng các phần tử trên đường chéo chính của ma trận $\mathbf{A}$, và được ký hiệu là $\operatorname{Tr}(\mathrm{A})$.
 \end{dn}
-
-%\begin{md}
-%Cho $\A$ là một $\sigma$-đại số các tập con của $X$ và $\mu: \A\rightarrow \overline{\R}$ là một độ đo. Khi đó
-%\begin{itemize}
-%\item $\mu$ là đơn điệu và dưới $\sigma$-cộng tính.
-%\item Nếu $A,B\in \A$ với $A\subset B$ và $\mu(A)<\infty$, thì
-%$$\mu(B \setminus A)=\mu(B)-\mu(A).$$
-%\end{itemize}
-%\end{md}
-%Định lý sau đây rất thường được sử dụng.
-%\begin{dl}
-%Cho $\m$ là một độ đo trên $\sigma$-đại số $\A$ các tập con của $X$. Khi đó
-%\begin{align*}
-%(A_n)_{n\geq 1} \subset \A,\m(A_n)=0,\forall n\geq 1 \Rightarrow \m(\cup_{n\geq 1} A_n)=0.
-%\end{align*}
-%\end{dl}
-%Định lý tiếp theo sẽ trả lời cho câu hỏi khi nào thì đẳng thức sau đúng
-%$$\lim_{n\to\infty}\m(E_n)=\m\left(\lim_{n\to\infty}E_n\right)?$$
-%\begin{dl}\label{dlhoitudondieutrongdodo}\rm\textbf{(Định lý hội tụ đơn điệu trong độ đo).} \textit{Cho $\mu$ là một độ đo trên $\sigma$-đại số $\A$ các tập con của $X$, và $\left(E_n\right)_{n\geq 1} \subset \A$ là một dãy đơn điệu. Khi đó
-%\begin{enumerate}[(a)]
-%\item Nếu $E_n \uparrow$ thì $\lim_{n\rightarrow\infty} \mu\left(E_n\right)=\mu\left(\lim_{n\rightarrow\infty} E_n\right).$
-%\item Nếu $E_n \downarrow$ và $\mu(E_1)<\infty$ thì $\lim_{n\rightarrow\infty} \mu\left(E_n\right)=\mu\left(\lim_{n\rightarrow\infty} E_n\right).$
-%\end{enumerate}}
-%\end{dl}
-%%\begin{cy}\rm
-%%\begin{itemize}
-%%\item Trong Định lý \ref{dlhoitudondieutrongdodo}(b), điều kiện $\mu(E_1)<\infty$ có thể được thay thế bởi $\mu(E_{n_0})<\infty$ với $n_0 \geq 1$ nào đó.
-%%\item Điều kiện $\mu(E_1)<\infty$, nói chung là cần thiết. Nếu $\mu(E_1)=\infty$, thì Định lý \ref{dlhoitudondieutrongdodo}(b) không còn đúng. Thật vậy, trong không gian độ đo Lebesgue $(\R,\L,m)$, ta lấy $E_n:=(n,\infty)$ với mọi $n\geq 1$. Khi đó $\lim_{n\rightarrow\infty}E_n=\emptyset$, và vì vậy
-%%$$\displaystyle\lim_{n\rightarrow\infty} m(E_n)=\infty\neq 0=m\left(\displaystyle\lim_{n\rightarrow\infty} E_n\right).$$
-%%\end{itemize}
-%%\end{cy}
-%Bây giờ ta sẽ nhắc lại một bổ đề quan trọng trong lý thuyết độ đo.
-%\begin{dl}\rm\textbf{(Bổ đề Fatou trong độ đo).}
-%\textit{Cho $\m$ là một độ đo trên một $\sigma$-đại số $\A$ các tập con của $X$ và $(E_n)_{n\geq 1}\subset \A$. Khi đó
-%\begin{itemize}
-%\item[(a)] Ta luôn có
-%$$\m\left(\liminf_{n\rightarrow\infty} E_n\right)\leq \liminf_{n\rightarrow\infty} \m(E_n).$$
-%\item[(b)] Nếu tồn tại $A\in\A$ sao cho $\m(A)<\infty$ và $E_n\subset A$ với mọi $n\geq 1$, thì
-%$$\m\left(\limsup_{n\rightarrow\infty} E_n\right)\geq \limsup_{n\rightarrow\infty} \m(E_n).$$
-%\item[(c)] Nếu dãy $(E_n)_{n\geq 1}$ hội tụ và tồn tại $A\in\A$ sao cho $\m(A)<\infty, E_n\subset A$ với mọi $n\geq 1$, thì
-%$$\lim_{n\rightarrow\infty} \m(E_n)=\m\left(\lim_{n\rightarrow\infty} E_n\right).$$
-%\end{itemize}}
-%\end{dl}
-%\begin{dn}\rm                  %Không gian đo được
-%Cho $\A$ là một $\sigma$-đại số các tập con của $X$. Khi đó cặp $(X,\A)$ được gọi là một \textbf{không gian đo được}. Một tập $A\subset X$ được gọi là $\A$-đo được nếu $A\in \A$.
-%%Đôi khi để đơn giản ta nói $A$ là đo được thay vì nói $A$ là $\A$-đo được nếu không có nhầm lẫn.
-%\end{dn}
-%\begin{dn}\rm             %Không gian độ đo
-%Cho $(X,\A)$ là một không gian đo được và $\mu$ là một độ đo trên $\sigma$-đại số $\A$. Khi đó bộ ba $\kgdd$ được gọi là một \textbf{không gian độ đo}.
-%\end{dn}
-%%\begin{dn}\rm              %khgian độ đo hữu hạn
-%%Cho $\kgdd$ là không gian độ đo. Khi đó
-%%\begin{itemize}
-%%\item Một tập $A\subset X$ được gọi là \textbf{tập không} hay tập có độ đo 0 nếu $A$ đo được và $\mu(A)=0$.
-%%\end{itemize}
-%%\end{dn}
-%\begin{dn}\rm
-%Một không gian độ đo được gọi là \textbf{đầy đủ} nếu $A$ là tập không, $B\subset A$ thì $B$ là tập không, tức là,
-%$$A\in\A,\m(A)=0,B\subset A\Rightarrow B\in\A\text{ và }\m(B)=0.$$
-%\end{dn}
-%%\subsection{Tích phân Lebesgue}
-%\begin{dn}\rm    %hàm đo được
-%	Cho $(X,\A)$ là một không gian đo được và một tập $A \in \A$. Một hàm số thực suy rộng $f:X \to\overline{\R}$ gọi là \textbf{đo được} trên tập $A$ đối với $\sigma$-đại số $\mathfrak{A}$ nếu
-%	$$\{ x \in A: f(x) < a \} \in \A,\quad\forall a\in\R.$$
-%	
-%\end{dn}
-%Nếu $X=\R$ và $\A=\L$ là $\sigma$-đại số các tập Lebesgue-đo được, thì $f$ là một \textbf{hàm số Lebesgue-đo được}.
-%\begin{dn}\rm   %Hàm đơn giản
-%Cho $(X,\A)$ là một không gian đo được và một tập $A \in \A$. Một hàm số $f: X\to\R$ được gọi là một \textbf{hàm đơn giản} trên $A$ nếu $f$ là hàm số đo được trên $A$ và chỉ nhận hữu hạn giá trị trên $A$, tức là, tồn tại hữu hạn các số thực phân biệt $\alpha_1,\ldots,\alpha_n$ sao cho
-%$$f(A)=\lbrace\alpha_1,\ldots,\alpha_n\rbrace.$$
-%Khi $A=X$ ta chỉ nói $f$ là hàm đơn giản.
-%\end{dn}
-%Định lý sau đây được gọi là Định lý cấu trúc hàm đo được.
-%\begin{dl}
-%Cho $(X,\A)$ là một không gian đo được và một tập $A \in \A$. Khi đó, nếu $f:X\to \overline{\R}$ là một hàm số đo được và hữu hạn trên $A$, thì tồn tại một dãy các hàm đơn giản trên $A$, $(f_n)_{n\geq 1},$ sao cho với mọi $x\in A$, ta có
-%$$f(x)=\lim_{n\to \infty} f_n(x).$$
-%Hơn nữa, nếu $f\geq 0$ thì ta có thể chọn dãy các hàm đơn giản $(f_n)_{n\geq 1}$ sao cho
-%$$0\leq f_n \nearrow f$$
-%trên $A$. Nếu $f$ là hàm số bị chặn trên $A$ thì ta có thể chọn dãy các hàm đơn giản $(f_n)_{n\geq 1}$ sao cho
-%$$f_n(x)\rightrightarrows f(x)$$
-%trên $A$.
-%\end{dl}
-%\begin{dn}\rm
-%	Cho $(X, \A, \mu)$ là một không gian độ đo  và  tập $A\subset X$. Một tính chất $P(x)$ được gọi là đúng hầu khắp $x\in A$, hoặc đúng \textbf{hầu khắp nơi} trên $A$ nếu tồn tại tập đo được $B\subset A$ có độ đo 0, sao cho tính chất $P(x)$ đúng với mọi $x\in A\setminus B.$
-%\end{dn}
-%
-%\begin{dn}\rm
-%	%\df (\cite{LDK})
-%	\begin{itemize}
-%	\item [(i)] Cho $A\neq \emptyset$. Cho $f: X \to \R$ là một hàm đơn giản không âm trên $A$. Ta định nghĩa \textbf{tích phân} của $f$ trên $A$, ký hiệu là $\int_{A}f(x)d\mu(x)$ hoặc $\int_{A}f\,d\mu$, là $\sum_{i=1}^{n} \alpha_i \mu(A_i)$.
-%	\item [(ii)] Khi $A=\emptyset$ và $f: X \to \R$ là một hàm đo được trên $A$, ta định nghĩa
-%	$$\int_{A}f\,d\mu=\int_{\emptyset}f\,d\mu=0.$$
-%\end{itemize}
-%
-%\end{dn}
-%
-%\begin{dn}\rm
-%%	\df (\cite{LDK})
-%	Cho $f: X\to \overline{\R}$ là một hàm đo được trên $A$, ta có thể viết $$f=f^{+}-f^{-}$$ trong đó $f^{+}=\max\{f,0\}$ và $f^{-}=\max\{-f,0\}$ là các hàm đo được không âm trên $A$.
-%
-%Ta nói $f$ là \textbf{tựa khả tích} trên  $A$ nếu $\int_{A}f^{+}d\mu$ và $\int_{A}f^{-}d\mu$ không đồng thời bằng $+\infty$. Khi đó tích phân của $f$ trên $A$ được định nghĩa là $$\int_{A}f d\mu=\int_{A}f^{+}d\mu -\int_{A}f^{-}d\mu.$$
-%	
-%	Ta nói $f$ là \textbf{khả tích} trên  $A$ nếu $\int_{A}\left| f\right| d\mu<\infty.$
-%\end{dn}
-%Tiếp theo ta sẽ trả lời cho câu hỏi cơ bản của lý thuyết tích phân, đó là khi nào ta có thể chuyển dấu giới hạn từ bên ngoài vào bên trong? Tức là xảy ra đẳng thức
-%$$\lim_{n\to\infty} \disint_A f_nd\m=\disint_A\lim_{n\to\infty} f_nd\m?$$
-%\begin{dl}[\textbf{Định lý hội tụ đơn điệu của Levi}]  % {\rm (\cite{LDK})} \label{thr1.15} 
-%Cho $f_n: X\to \overline{\R}$, $n\ge 1$ là một dãy các hàm đo được không âm và đơn điệu tăng đến $f$ trên $A$. Khi đó$$\lim_{n\to\infty}\disint_{A}f_{n} d\mu=\disint_{A}f d\mu.$$
-%
-%\end{dl}
-%Bổ đề Fatou trong lý thuyết độ đo ta đã xem xét trong mục trước, trong lý thuyết tích phân ta cũng có một kết quả tương tự.
-%\begin{bd}
-%	[\textbf{Bổ đề Fatou}] %{\rm (\cite{LDK})}\label{lm1.17}
-%Cho $f_n: X\to \overline{\R}$, $n\ge 1$ là một dãy các hàm đo được không âm trên $A$. Khi đó
-%$$\int_{A}\liminf_{n\to\infty}f_{n}d\mu \le \liminf_{n\to\infty}\int_{A}f_{n} d\mu.$$
-%\end{bd}
-%
-%%\begin{dl}
-%%	[Lebesgue] %{\rm (\cite{LDK})} \label{thr1.16}
-%%Cho $(X,\A,\mu)$ là một không gian độ đo và $f,f_{n}:D\to \overline{\R}, n\ge 1$, là các hàm đo được trên $A\in \A$. Khi đó $f_{n}\to f $ \hkn$ $ trên $A$ và $\mu(A)<\infty$, thì $f_{n}\mathop  \to \limits^\mu f $ trên $A$.
-%%\end{dl}
-%\begin{dl}	[\textbf{Định lý hội tụ bị chặn}]
-%Cho $f_n:X\to \overline{\R}, n\ge 1$, là một dãy các hàm đo được trên $A$ sao cho $\lim_{n\to \infty}f_n=f$ \hkn$ $ trên $A$. Giả sử tồn tại một hàm khả tích trên $A$ là $g:X\to \overline{\R} $, sao cho với mọi $n\ge 1, |f_n|\le g$ \hkn$ $ trên $A$. Khi đó 
-%$$\lim_{n\to \infty}\int_Af_n d\mu =\int_Af \,d\mu.$$
-%\end{dl}
-%Định lý sau đây cho ta một tiêu chuẩn khả tích Riemann của một hàm số thực.
-%\begin{dl}
-%	Cho $ f $ là một hàm số thực xác định trên đoạn $[a,b] $. Khi đó
-%	\begin{itemize}
-%		\item[\rm(i)] $ f $ khả tích Riemann trên $ [a,b] $ nếu và chỉ nếu $ f $ bị chặn và liên tục hầu khắp nơi trên $ [a,b] $.
-%		\item[\rm(ii)] Nếu $ f $ khả tích Riemann trên $ [a,b] $ thì $ f $ khả tích Lebesgue trên $ [a,b] $ và hai tích phân này bằng nhau, tức là\[ (R)\int_{[a,b]}f(x) d{x}=(L)\int_{[a,b]}f(x)d{\mu(x)}.  \]
-%	\end{itemize}
-%\end{dl}
 
 \section{Vector riêng- Giá trị riêng}
 \begin{dn}\rm
@@ -609,7 +476,143 @@ thì $\mathbf{A} \mathbf{u}^{(i)}=\lambda_{i} \cdot \mathbf{u}^{(i)}, \quad i=1,
 	Điều này chứng tỏ $\mathbf{A}=\mathbf{U D U}^{T}$, với $\mathbf{U}$ là ma trận trực giao cấp $n$ và $\mathbf{D}=$ $\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}\right).$\\
 	Đây được gọi là phân tích giá trị riêng của ma trận $\mathbf{A}$ (Eigen value decomposition, EVD). 
 \end{proof}
+\section{Xác xuất thống kê}
+\subsection{Kỳ vọng}
+\label{sub:expectaion_covariance}
+\index{kỳ vọng -- expectation}
+\textit{Kỳ vọng} (expectation) của một biến ngẫu nhiên $\mathbf{x}$ được định nghĩa bởi:
+	\begin{eqnarray}
+		\label{eqn:30_21}
+		\text{E}[\mathbf{x}] = \sum_ \mathbf{x} \mathbf{x} p(\mathbf{x})  & \text{nếu}~\mathbf{ x} ~ \text{là rời rạc.} \quad
+		\\
+		\label{eqn:30_22}
+		\text{E}[\mathbf{x}] = \int \mathbf{x} p(\mathbf{x}) dx  & \text{nếu}~ \mathbf{x} ~ \text{là liên tục.}
+	\end{eqnarray}
+	% \end{equation}
+Giả sử $f(.)$ là một hàm số trả về một số với mỗi giá trị $\mathbf{x^*}$ của biến ngẫu
+nhiên $\mathbf{x}$. Khi đó, nếu $\mathbf{x}$ là biến ngẫu nhiên rời rạc, ta có
+\begin{equation}
+	\label{eqn:30_23}
+	\text{E}[f(\mathbf{x})] = \sum_\mathbf{x} f(\mathbf{x}) p(\mathbf{x}).
+\end{equation}
+Công thức cho biến ngẫu nhiên liên tục cũng được viết tương tự.
 
+Với xác suất đồng thời, kỳ vọng của một hàm cũng được xác định tương tự:
+\begin{equation}
+	\label{eqn:30_24}
+	\text{E}[f(x, y)] = \sum_{\mathbf{x,y}} f(\mathbf{x, y}) p(\mathbf{x, y}) dx dy.
+\end{equation}
+Có ba tính chất cần nhớ về kỳ vọng:
+\begin{enumerate}
+	\item Kỳ vọng của một hằng số theo một biến ngẫu nhiên $\mathbf{x}$ bất kỳ bằng chính hằng số đó:
+	\begin{equation}
+		\label{eqn:30_25}
+		\text{E}[\alpha] = \alpha.
+	\end{equation}
+	\item Kỳ vọng có tính chất tuyến tính:
+	\begin{eqnarray}
+		\label{eqn:30_26}
+		\text{E}[\alpha \mathbf{x}] & = & \alpha \text{E}[\mathbf{x}],  \\
+		\label{eqn:30_27}
+		\text{E}[f(\mathbf{x}) + g(\mathbf{x})] & = & \text{E}[f(\mathbf{x})] + \text{E}[g(\mathbf{x})].
+	\end{eqnarray}
+	\item Kỳ vọng của tích hai biến ngẫu nhiên độc lập bằng tích kỳ vọng của chúng:
+	\begin{equation}
+		\label{eqn:30_28}
+		\text{E}[f(\mathbf{x}) g(\mathbf{y})] = \text{E}[f(\mathbf{x})] \text{E}[g(\mathbf{y})].
+	\end{equation}
+	
+\end{enumerate}
+
+
+% \subsection{Kỳ vọng và ma trận hiệp phương sai}
+
+Khái niệm kỳ vọng thường đi kèm với khái niệm \textit{phương
+	sai} (variance) trong không gian một chiều và \textit{ma trận hiệp
+	phương sai} (covariance matrix) trong không gian nhiều chiều. 
+
+\subsection{Phương sai} % (fold)
+
+% \subsubsection{Với dữ liệu một chiều}
+\index{phương sai -- variance}
+\index{do@độ lệch chuẩn -- standard deviation}
+Cho $N$ giá trị $\mathbf{x}_1, \mathbf{x}_2, \dots, \mathbf{x}_N$. {Kỳ vọng} và {phương sai}
+của bộ dữ liệu này được tính theo công thức
+\begin{eqnarray} 
+	\bar{\mathbf{x}} &=& \frac{1}{N}\sum_{n=1}^N \mathbf{x}_n = \frac{1}{N}\mathbf{x1},\\\ 
+	\sigma^2 &=& \frac{1}{N} \sum_{n=1}^N (\mathbf{x}_n - \bar{\mathbf{x}})^2,
+\end{eqnarray} 
+$\text { với } \mathbf{x}=\left[x_1, x_2, \ldots, x_N\right] \text {, và } \mathbf{1} \in \mathbb{R}^N$là
+vector cột chứa toàn phần tử 1. Kỳ vọng đơn giản là trung bình cộng của toàn bộ
+các giá trị. Phương sai là trung bình cộng của bình phương khoảng cách từ mỗi
+điểm tới kỳ vọng. Phương sai càng nhỏ, các điểm dữ liệu càng gần với kỳ vọng,
+tức các điểm dữ liệu càng giống nhau. Phương sai càng lớn, dữ liệu càng có tính
+phân tán. Ví dụ về kỳ vọng và phương sai của dữ liệu một chiều có thể được thấy
+trong Hình~\ref{fig:27_2a}. 
+
+Căn bậc hai của phương sai, $\sigma$ còn được gọi là \textit{độ lệch chuẩn} (standard deviation) của
+dữ liệu.
+
+
+%%%%%%% Three subfigures with bottom caption%%%%%%%%%%%%%%
+\begin{figure}[t]
+	\begin{subfigure}{0.325\textwidth}
+		\includegraphics[width=0.99\linewidth]{var_1d.pdf}
+		\caption{}
+		\label{fig:27_2a}
+	\end{subfigure}
+	\begin{subfigure}{0.325\textwidth}
+		\includegraphics[width=0.99\linewidth]{pca_diagvar.pdf}
+		\caption{}
+		\label{fig:27_2b}
+	\end{subfigure}
+	\begin{subfigure}{0.325\textwidth}
+		\includegraphics[width=0.8\linewidth]{pca_var.png}
+		\caption{}
+		\label{fig:27_2c}
+	\end{subfigure}
+	\caption{
+		Ví dụ về kỳ vọng và phương sai. (a) Dữ liệu trong không gian
+		một chiều. (b) Dữ liệu trong không gian hai chiều mà hai chiều
+		không tương quan. Trong trường hợp này, ma trận hiệp phương sai là ma trận
+		đường chéo với hai phần tử trên đường chéo  là $\sigma_1, \sigma_2$, đây
+		cũng chính là hai trị riêng của ma trận hiệp phương sai và là phương sai
+		của mỗi chiều dữ liệu. (c) Dữ liệu trong không gian hai chiều có tương
+		quan. Theo mỗi chiều, ta có thể tính được kỳ vọng và phương sai. Phương sai
+		càng lớn thì dữ liệu trong chiều đó càng phân tán. Trong ví dụ này, dữ liệu
+		theo chiều thứ hai phân tán nhiều hơn so với chiều thứ nhất. }
+	\label{fig:27_2}
+\end{figure}
+
+\subsection{Ma trận hiêp phương sai}
+
+Cho $N$ điểm dữ liệu được biểu diễn bởi các vector cột $\mathbf{x}_1, \dots, \mathbf{x}_N$, khi đó, {vector kỳ vọng} và {ma trận hiệp phương sai} của toàn bộ dữ liệu được định nghĩa là
+\begin{eqnarray} 
+	\bar{\mathbf{x}} &=& \frac{1}{N} \sum_{n=1}^N \mathbf{x}_n, \\\ 
+	\mathbf{S} &=&  \frac{1}{N}\sum_{n=1}^N (\mathbf{x}_n - \bar{\mathbf{x}})(\mathbf{x}_n - \bar{\mathbf{x}})^T = \frac{1}{N}\hat{\mathbf{X}}\hat{\mathbf{X}}^T.
+\end{eqnarray} 
+Trong đó $\hat{\mathbf{X}}$ được tạo bằng cách trừ mỗi cột của $\mathbf{X}$ đi $\bar{\mathbf{x}}$: 
+\begin{equation} 
+	\hat{\mathbf{x}}_n = \mathbf{x}_n - \bar{\mathbf{x}}.
+\end{equation} 
+\newpage 
+Một vài tính chất của ma trận hiệp phương sai: 
+\begin{enumerate}
+	
+	\item Ma trận hiệp phương sai là một ma trận đối xứng, hơn nữa, nó là một ma trận.
+	
+	\item Mọi phần tử trên đường chéo của ma trận hiệp phương sai là các số không âm. Chúng chính là phương sai của từng chiều dữ liệu. 
+	
+	\item Các phần tử ngoài đường chéo $s_{ij}, i \neq j$ thể hiện sự tương quan
+	giữa thành phần thứ $i$ và thứ $j$ của dữ liệu, còn được gọi là hiệp phương
+	sai. Giá trị này có thể dương, âm hoặc bằng không. Khi nó bằng không, ta nói
+	rằng hai thành phần $i, j$ trong dữ liệu là \textit{không tương quan}.
+	
+	\item Nếu ma trận hiệp phương sai là ma trận đường chéo, ta có dữ liệu hoàn toàn không tương quan giữa các chiều. 
+\end{enumerate}
+
+Ví dụ về sự tương quan của dữ liệu được cho trong Hình~\ref{fig:27_2b} và
+\ref{fig:27_2c}.% <hr> 
 \chapter{ PHÂN TÍCH GIÁ TRỊ KÌ DỊ }
 
 Trong chương này, chúng tôi trình bày cơ sở của phân tích giá trị kì dị của ma trận, thuật toán phân tích giá trị kì dị, và trình bày một số tính chất của ma trận liên quan đến phân tích giá trị kì dị của nó. 
@@ -771,15 +774,15 @@ Cho $\mathbf{A}$ là ma trận cỡ $m \times n$, với $m \geq n$. Để tìm $
 
  \item Bước 1. Tính ma trận $\mathbf{A}^{T} \mathbf{A}$ và giải phương trình $\operatorname{det}\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right)=0$ để tìm các giá trị riêng $\lambda_{1} \geq \lambda_{2} \geq \ldots \geq \lambda_{n} \geq 0$ của ma trận $\mathbf{A}^{T} \mathbf{A}$. Từ đó suy ra các giá trị kì dị của $\mathbf{A}$ là $\sigma_{i}=\sqrt{\lambda_{i}}, i=\overline{1, n}$ và $\mathbf{D}=\operatorname{diag}\left(\sigma_{1}, \sigma_{2}, \ldots, \sigma_{n}\right)$
 
-\item Bước 2. Tương ứng với mỗi giá trị riêng $\lambda_{i}$, tìm véctơ riêng $v_{i} \in \mathbb{R}^{n}$ sao cho $\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right) v_{i}=0$. Từ đó tìm được ma trận trực giao $\mathbf{V}$ cấp $n$ chứa các véctơ kì dị phải của $\mathbf{A}$.
+\item Bước 2. Tương ứng với mỗi giá trị riêng $\lambda_{i}$, tìm véctơ riêng $\mathbf{v}_{i} \in \mathbb{R}^{n}$ sao cho $\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right) v_{i}=0$. Từ đó tìm được ma trận trực giao $\mathbf{V}$ cấp $n$ chứa các véctơ kì dị phải của $\mathbf{A}$.
 
 \item Bước 3. Xác định các véctơ kì dị trái của $\mathbf{A}$ theo công thức
 
 $$
-u_{i}=\frac{1}{\sigma_{i}} \mathbf{A} v_{i}
+\mathbf{u}_{i}=\frac{1}{\sigma_{i}} \mathbf{A} \mathbf{v}_{i}
 $$
 
-Bổ sung $n-r$ véctơ $u_{r+1}, \ldots, u_{n}$ vào hệ $\left\{u_{1}, u_{2}, \ldots, u_{r}\right\}$ sao cho $\left\{u_{1}, u_{2}, \ldots, u_{n}\right\}$ lập thành một cơ sở trực chuẩn của $\mathbb{R}^{n}$. Từ đó nhận được ma trận trực giao $\mathbf{U}$ chứa các véctơ kì dị trái của $\mathbf{A}$, và
+Bổ sung $n-r$ vector $\mathbf{u}_{r+1}, \ldots, \mathbf{u}_{n}$ vào hệ $\left\{\mathbf{u}_{1}, \mathbf{u}_{2}, \ldots, \mathbf{u}_{r}\right\}$ sao cho $\left\{\mathbf{u}_{1},\mathbf{u}_{2}, \ldots, \mathbf{u}_{n}\right\}$ lập thành một cơ sở trực chuẩn của $\mathbb{R}^{n}$. Từ đó nhận được ma trận trực giao $\mathbf{U}$ chứa các véctơ kì dị trái của $\mathbf{A}$, và
 
 $$
 \mathbf{A}=\mathbf{U D V}^{T}
@@ -821,8 +824,8 @@ $$
 
 Bước 2: Tìm ma trận $\mathbf{V}$
 
-Giải phương trình $\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right) v=0$ ta tìm được các véctơ riêng tương ứng là \\
-$v_{1}=\left[\begin{array}{l}1 \\ 0\end{array}\right]$ và $v_{2}=\left[\begin{array}{l}0 \\ 1\end{array}\right]$.
+Giải phương trình $\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right) \mathbf{v}=0$ ta tìm được các véctơ riêng tương ứng là \\
+$\mathbf{v}_{1}=\left[\begin{array}{l}1 \\ 0\end{array}\right]$ và $\mathbf{v}_{2}=\left[\begin{array}{l}0 \\ 1\end{array}\right]$.
 
 Từ đó suy ra
 
@@ -838,7 +841,7 @@ Bước 3: Tìm ma trận $\mathbf{U}$
 Ta có
 
 $$
-u_{1}=\frac{1}{\sigma_{1}} \mathbf{A} v_{1}=\frac{1}{\sqrt{2}}\left[\begin{array}{ll}
+\mathbf{u}_{1}=\frac{1}{\sigma_{1}} \mathbf{A} \mathbf{v}_{1}=\frac{1}{\sqrt{2}}\left[\begin{array}{ll}
 	1 & 0 \\
 	1 & 0 \\
 	0 & 1
@@ -855,7 +858,7 @@ $$
 và
 
 $$
-u_{2}=\frac{1}{\sigma_{2}} \mathbf{A} v_{1}=\left[\begin{array}{ll}
+\mathbf{u}_{2}=\frac{1}{\sigma_{2}} \mathbf{A} \mathbf{v}_{1}=\left[\begin{array}{ll}
 	1 & 0 \\
 	1 & 0 \\
 	0 & 1
@@ -1212,7 +1215,7 @@ $$
 
 Khi đó, $\operatorname{rank}\left(\mathbf{A}_{k}\right)=k$. Hơn nữa, $\mathbf{A}_{k}$ chính là ma trận xấp xỉ tốt nhất có hạng bằng $k$ của $\mathbf{A}$ theo cả hai chuẩn là chuẩn Frobenius và chuẩn 2. Ta có hai định lí quan trọng sau
 
-\begin{dl}{Định lí Eckart- Young, 1936} 
+\begin{dl}{Định lí Eckart- Young, 1936}  \label{eckart}
 
 Với mọi ma trận $\mathbf{B}$ cỡ $m \times n$ và $\operatorname{rank}(\mathbf{B}) \leqslant k$, ta có
 
@@ -1347,6 +1350,21 @@ $$
 
 Điều này chứng tỏ $\mathbf{A}_{k}$ chính là xấp xỉ hạng $k$ tốt nhất của ma trận $\mathbf{A}$ theo chuẩn Frobenius.
 \end{proof}
+Bên cạnh đó ta có nhận xét quan trọng về sai số do xấp xỉ một ma trận $\mathbf{A}$ có hạng $r$ bởi $mathbf{A}_{k}$ với $k < r$ phần tử như sau:
+
+$$
+	\label{eqn:26_17}
+	\frac{\|\mathbf{A} - \mathbf{A}_k\|_F^2}{\|\mathbf{A}\|_F^2} = {\frac{\sum_{i=k+1}^{r} \sigma_{i}^{2}}{\sum_{i=1}^{r} \sigma_{i}^{2}}}
+$$
+
+Ở đây, {lượng thông tin} được định nghĩa
+là tổng bình phương của giá trị suy biến. Ví dụ, nếu muốn giữ lại ít nhất
+90\% lượng thông tin trong $\mathbf{A}$, trước hết ta tính $\sum_{j = 1}^r
+\sigma_j^2$, sau đó chọn $k$ là số nhỏ nhất sao cho
+$$
+	\frac{\sum_{i = 1}^k \sigma_i^2}{\sum_{j = 1}^r \sigma_j^2} \geq 0.9
+$$
+
 \begin{dl}
 
 Giả sử $\mathbf{A}$ là ma trận cỡ $m \times n$ bất kì, với $\operatorname{rank}(A)=r$ và $\mathbf{A}$ có khai triển kì dị SVD là
@@ -1363,6 +1381,7 @@ $$
 
 Dấu " =" xảy ra khi $\mathbf{B}=\mathbf{A}_{k}=\sum_{i=1}^{k} \sigma_{i} \mathbf{u}_{i} \mathcal{V}_{i}^{T}$.
 \end{dl}
+
 \begin{proof}
 Giả sử tồn tại ma trận $\mathbf{B}$ có $\operatorname{rank}(\mathbf{B}) \leqslant k$ và $\|\mathbf{A}-\mathbf{B}\|_{2}<\sigma_{k+1}$. Vì $\operatorname{rank}(\mathbf{B}) \leqslant k$ nên tồn tại một không gian con $\mathbf{W}$ cỡ $r-k$ sao cho với mọi $\mathbf{w} \in \mathbf{W}$ thì $\mathrm{Bw}=0$.
 Do đó với mọi $\mathbf{w} \in \mathbf{W}$ thì $\mathbf{A} \mathbf{w}=(\mathbf{A}-\mathbf{B}) \mathbf{w}$ và
@@ -1386,26 +1405,110 @@ Vậy với mọi ma trận $\mathbf{B}$ cỡ $m \times n$ bất kì có $\opera
 
 Khi $\mathbf{B}=\mathbf{A}_{k}$ thì $\left\|\mathbf{A}-\mathbf{A}_{k}\right\|_{2}=\sigma_{k+1}$. Điều này chứng tỏ $\mathbf{A}_{k}$ chính là xấp xỉ hạng $k$ tốt nhất của $\mathbf{A}$ theo chuẩn 2 . 
 \end{proof}
+%\begin{dl}{Sai số do xấp xỉ bởi SVD "chặt cụt"}
+%	
+%	Sai số do xấp xỉ một ma trận $\mathbf{A}$ có hạng $r$ bởi SVD "chặt cụt" với $k < r$ phần tử là
+%	\begin{equation}
+%		\|\mathbf{A} - \mathbf{A}_k\|_F^2 = \sum_{i = k + 1}^r \sigma_i^2
+%	\end{equation}
+%\end{dl}
+%\begin{proof}
+%%	\operatorname{Tr}\left(\right)
+%Sử dụng tính chất $\|\mathbf{X}\|_F^2 = \operatorname{Tr}\left(\mathbf{X}\mathbf{X}^T\right)$ và
+%$\operatorname{Tr}\left(\mathbf{XY}\right) = \operatorname{Tr}\left(\mathbf{YX}\right)$ với mọi ma trận
+%$\mathbf{X, Y}$ ta có:
+%\begin{eqnarray}
+%	% \label{eqn:26_9}
+%	\nonumber
+%	\|\mathbf{A} - \mathbf{A}_k\|_F^2 & = & \left\|\sum_{i = k + 1}^r \sigma_i
+%	\mathbf{u}_i\mathbf{v}_i^T \right\|_F^2
+%	=  \text{trace}\left\{ \left(\sum_{i = k + 1}^r \sigma_i \mathbf{u}_i\mathbf{v}_i^T\right)
+%	\left(\sum_{j = k + 1}^r \sigma_j \mathbf{u}_j\mathbf{v}_j^T\right)^T
+%	\right\}  \\\
+%	\label{eqn:26_12}
+%	&=& \text{trace}\left\{ \sum_{i = k + 1}^r \sum_{j = k + 1}^r \sigma_i\sigma_j \mathbf{u}_i\mathbf{v}_i^T \mathbf{v}_j \mathbf{u}_j^T
+%	\right\}
+%	= \text{trace}\left\{ \sum_{i = k + 1}^r  \sigma_i^2\mathbf{u}_i\mathbf{u}_i^T
+%	\right\} \\\
+%	\label{eqn:26_13}
+%	&=& \text{trace}\left\{ \sum_{i = k + 1}^r  \sigma_i^2\mathbf{u}_i^T\mathbf{u}_i
+%	\right\}  \\\
+%	\label{eqn:26_15}
+%	&=& \text{trace}\left\{ \sum_{i = k + 1}^r  \sigma_i^2
+%	\right\}  = \sum_{i = k + 1}^r \sigma_i^2
+%\end{eqnarray}
+%Dấu bằng thứ hai ở \eqref{eqn:26_12} xảy ra vì $\mathbf{V}$ có các cột vuông góc với nhau.
+%Dấu bằng ở \eqref{eqn:26_13} xảy ra vì hàm $\text{trace}$ có tính chất giao hoán.
+%Dấu bằng ở \eqref{eqn:26_15} xảy ra vì biểu thức trong dấu ngoặc là một số vô hướng. 
+%Thay $k = 0$ ta sẽ có
+%\begin{equation}
+%	\label{eqn:26_16}
+%	\|\mathbf{A}\|_F^2 = \sum_{i = 1}^r \sigma_i^2
+%\end{equation}
+%\index{xấp xỉ hạng thấp -- low-rank approximation}
+%\index{low-rank approximation -- xấp xỉ hạng thấp}
+%Từ đó
+%\begin{equation}
+%	\label{eqn:26_17}
+%	\frac{\|\mathbf{A} - \mathbf{A}_k\|_F^2}{\|\mathbf{A}\|_F^2} = {\frac{\sum_{i =
+%				k + 1}^r \sigma_i^2}{\sum_{j = 1}^r \sigma_j^2}}
+%\end{equation}
+%Như vậy, \textit{sai số do xấp xỉ càng nhỏ nếu các giá trị suy biến bị
+%	cắt càng nhỏ so với các giá trị suy biến được giữ lại.}
+%Đây là một định lý quan trọng giúp xác định việc xấp xỉ ma trận dựa trên lượng
+%thông tin muốn giữ lại. Ở đây, {lượng thông tin} được định nghĩa
+%là tổng bình phương của giá trị suy biến. Ví dụ, nếu muốn giữ lại ít nhất
+%90\% lượng thông tin trong $\mathbf{A}$, trước hết ta tính $\sum_{j = 1}^r
+%\sigma_j^2$, sau đó chọn $k$ là số nhỏ nhất sao cho
+%\begin{equation}
+%	\frac{\sum_{i = 1}^k \sigma_i^2}{\sum_{j = 1}^r \sigma_j^2} \geq 0.9
+%\end{equation}
+%Khi $k$ nhỏ, ma trận $\mathbf{A}_k$ có hạng nhỏ bằng $k$
+%Vì vậy, SVD cắt ngọn cũng được xếp vào loại \textit{xấp xỉ hạng thấp}.
+%\end{proof}
+
 \section{Phân tích SVD trong xử lí ảnh}
 
 Như đã nói, phân tích SVD là dạng phân tích có rất nhiều ứng dụng trong lý thuyết và thực tiễn. Một trong những ứng dụng ấn tượng nhất chính là sử dụng SVD trong hiệu chỉnh hình ảnh kĩ thuật số. Nhờ đó hình ảnh được truyền đi một cách hiệu quả bằng vệ tinh, internet, ...
 
-Ý tưởng cơ sở của việc hiệu chỉnh ảnh là làm giảm số lượng thông tin truyền đi mà không làm mất đi những thông tin thực chất. Trong một bức ảnh kĩ thuật số, mỗi điểm ảnh được thể hiện bởi ba giá trị màu: xanh (blue), lục (green), đỏ (red) với các trị số từ 0 đến 255. Như vậy, với một hình ảnh có độ lớn là $340 \times 280$ pixels thì chúng ta phải lưu trữ 3 ma trận (thể hiện màu sắc của các điểm) có cùng độ lớn là $340 \times 280$, tức là phải lưu trữ 285600 số. Tuy nhiên, trong thực tế, khi truyền hay lưu trữ thông tin ảnh, ta có thể không cần những hình ảnh, hoặc một số phần của hình ảnh có độ nét quá lớn. Sử dụng phân tích SVD, chúng ta có thể loại bỏ rất nhiều thông tin không cần thiết đó.
+Ý tưởng cơ sở của việc hiệu chỉnh ảnh là làm giảm số lượng thông tin truyền đi mà không làm mất đi những thông tin thực chất. Trong một bức ảnh kĩ thuật số, mỗi điểm ảnh được thể hiện bởi ba giá trị màu: xanh (blue), lục (green), đỏ (red) với các trị số từ 0 đến 255. Như vậy, với một hình ảnh chỉ với độ lớn là $130 \times 130$ pixels thì chúng ta phải lưu trữ 3 ma trận (thể hiện màu sắc của các điểm) có cùng độ lớn là $130 \times 130$, tức là phải lưu trữ 50700 số. Tuy nhiên, trong thực tế, khi truyền hay lưu trữ thông tin ảnh, ta có thể không cần những hình ảnh, hoặc một số phần của hình ảnh có độ nét quá lớn. Sử dụng phân tích SVD, chúng ta có thể loại bỏ rất nhiều thông tin không cần thiết đó.
 
-Ví dụ một hình ảnh $340 \times 280$ pixels được phân tích thành 3 ma trận $\mathbf{A}, \mathbf{B}, \mathbf{C}$ có cùng độ lớn $340 \times 280$. Giả sử $\mathbf{A}$ có phân tích SVD là
+Ví dụ một hình ảnh $130 \times 130$ pixels được phân tích thành 3 ma trận $\mathbf{A}, \mathbf{B}, \mathbf{C}$ có cùng độ lớn $130 \times 130$. Giả sử $\mathbf{A}$ có phân tích SVD là
 
 $$
 \mathbf{A}=\sigma_{1} \mathbf{u}_{1} \mathcal{V}_{1}^{T}+\cdots+\sigma_{r} \mathbf{u}_{r} \mathcal{V}_{r}^{T}
 $$
 
-Theo như chứng minh ở Định lí 3.2.1, với mỗi giá trị $k<r$ thì $A_{k}=\sigma_{1} \mathbf{u}_{1} \mathcal{V}_{1}^{T}+\cdots+$ $\sigma_{k} \mathbf{u}_{k} \mathcal{V}_{k}^{T}$ là xấp xỉ hạng $k$ tốt nhất của $\mathbf{A}$.
+Theo như chứng minh ở Định lí \ref{eckart} với mỗi giá trị $k<r$ thì $A_{k}=\sigma_{1} \mathbf{u}_{1} \mathcal{V}_{1}^{T}+\cdots+$ $\sigma_{k} \mathbf{u}_{k} \mathcal{V}_{k}^{T}$ là xấp xỉ hạng $k$ tốt nhất của $\mathbf{A}$.
 
-Ví dụ, $k=20$ thì ma trận $\mathbf{A}_{k}$ thể hiện các dữ liệu của $\mathbf{A}$ tương ứng với 20 giá trị kì dị đầu tiên. Như vậy, ta chỉ cần lưu trữ 20 giá trị kì dị, 20 vector $\mathbf{u}_{i}, 20$ vector $\mathcal{V}_{i}$, tương đương với 12420 số. Tương tự như vậy với hai ma trận $\mathbf{B}$ và $\mathbf{C}$, số lượng các số phải lưu trữ là 37260 số. Rõ ràng phân tích SVD đã giúp giảm tải một lượng thông tin cần lưu trữ một cách đáng kể.
+Ví dụ, $k=16$ thì ma trận $\mathbf{A}_{k}$ thể hiện các dữ liệu của $\mathbf{A}$ tương ứng với 16 giá trị kì dị đầu tiên. Như vậy, ta chỉ cần lưu trữ 16 giá trị kì dị, 16 vector $\mathbf{u}_{i}, 16z $ vector $\mathcal{V}_{i}$, tương đương với 4176 số. Tương tự như vậy với hai ma trận $\mathbf{B}$ và $\mathbf{C}$, số lượng các số phải lưu trữ là 12528 số. Rõ ràng phân tích SVD đã giúp giảm tải một lượng thông tin cần lưu trữ một cách đáng kể.
 
-Trong  Python, ta có thể hiệu chỉnh độ nét của hình ảnh theo tham số $k$ tùy chọn. Ta xét ví dụ sau 
+Trong  Python, ta có thể hiệu chỉnh độ nét của hình ảnh theo tham số $k$ tùy chọn. Ta xét ví dụ sau để đơn giản ta chỉ xét hình ảnh xám với kích cỡ $130 \times 130 \times1 $ như sau :
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.5]{image-singular-values.png}
+	\caption{Ví dụ phân rã ma trận bằng SVD}
+	\label{fig:galaxy}
+\end{figure}
+
+Cụ thế hơn khi giảm chiều dữ liệu với $k = 4,16, 32 ,64.$
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.7]{svd_qnu.png}
+	\caption{Ứng với từng $k$ ta quan sát được mức độ tối ưu trong việc lưu trữ thông tin cũng như là lượng thông tin được giữ lại.}
+	\label{fig:galaxy}
+\end{figure}
+\newpage
+Lưu ý: 
+\begin{itemize}
+	\item Compression là số lượng số cần thiết để lưu trữ hình ảnh nén.
+\item Info. Retained là phần thông tin từ ma trận gốc mà chúng ta vẫn giữ được sau khi nén.
+\end{itemize}
+
 
 \end{document}
-
 
 
 
