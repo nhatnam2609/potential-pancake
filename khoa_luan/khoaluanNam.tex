@@ -1059,14 +1059,52 @@ Giả sử dữ liệu ban đầu là $\mathbf{x} \in \mathbb{R}^{m}$ và dữ l
 \item[(ii)] Nếu tầm quan trọng của các chiều dữ liệu là như nhau, ta cần bỏ đi chiều nào?
 	
 \end{itemize}
-Để trả lời câu hỏi thứ nhất, ta quan sát Hình $2.2 a$. Giả sử các điểm dữ liệu có thành phần thứ hai (phương đứng) giống hệt nhau hoặc sai khác nhau rất ít (phương sai nhỏ). Như vậy thành phần này hoàn toàn có thể được lược bỏ đi, và ta ngầm hiểu rằng nó sẽ được xấp xỉ bằng kỳ vọng của thành phần đó trên toàn bộ các điểm dữ liệu. Ngược lại, việc làm này nếu được áp dụng lên thành phần thứ nhất (phương ngang) sẽ khiến lượng thông tin bị mất đi rất nhiều do sai số xấp xỉ quá lớn. Vì vậy, lượng thông tin theo mỗi thành phần có thể được đo bằng phương sai của dữ liệu trên thành phần đó. Tổng lượng thông tin có thể được coi là tổng phương sai trên toàn bộ các thành phần.
+ \begin{figure}[t]
+	\begin{subfigure}{0.59\textwidth}
+		\includegraphics[width=0.99\linewidth]{pca_diagvar.pdf}
+		\caption{}
+		\label{fig:pca_2a}
+	\end{subfigure}
+	\begin{subfigure}{0.33\textwidth}
+		\includegraphics[width=0.99\linewidth]{pca_var.png}
+		\caption{}
+		\label{fig:pca_2b}
+	\end{subfigure}
+	\caption{Ví dụ về phương sai của dữ liệu trong không gian hai chiều. (a)
+		Phương sai của chiều thử hai (tỉ lệ với độ rộng của đường hình chuông) nhỏ
+		hơn phương sai của chiều thứ nhất. (b) Cả hai chiều có phương sai đáng kể. Phương sai của
+		mỗi chiều là phương sai của thành phần tương ứng được lấy trên toàn bộ dữ
+		liệu. Phương sai tỉ lệ thuận với độ phân tán của dữ liệu.}
+	\label{fig:pca_2}
+\end{figure}
+Giả sử vector dữ liệu ban đầu $\mathbf{x} \in \R^{D}$ được giảm chiều trở thành $\mathbf{z}
+\in \R^K$ với $K < D$. Một cách đơn giản để giảm chiều dữ liệu từ $D$ về $K < D$ là chỉ giữ lại $K$ phần tử {quan trọng nhất}. Có hai câu hỏi lập tức
+được đặt ra. Thứ nhất, làm thế nào để xác định {tầm quan trọng} của
+mỗi phần tử? Thứ hai, nếu tầm quan trọng của các phần tử là như
+nhau, ta cần bỏ đi những phần tử nào?
 
-Câu hỏi thứ hai tương ứng với trường hợp Hình 2.2b. Trong cả hai chiều, phương sai của dữ liệu đều lớn, việc bỏ đi một trong hai chiều đều dẫn đến việc lượng thông tin bị mất đi là rất lớn. Tuy nhiên, quan sát ban đầu của chúng ta là nếu xoay trục tọa độ đi một góc phù hợp, một trong hai chiều dữ liệu có thể được giảm đi vì dữ liệu có xu hướng phân bố xung quanh một đường thẳng.
+Để trả lời câu hỏi thứ nhất, hãy quan sát Hình \ref{fig:pca_2a}. Giả sử các
+điểm dữ liệu có thành phần thứ hai (phương đứng) giống hệt nhau hoặc sai khác
+nhau không đáng kể (phương sai nhỏ). Khi đó, thành phần này hoàn toàn có thể được lược
+bỏ, và ta ngầm hiểu rằng nó sẽ được xấp xỉ bằng kỳ vọng của thành phần đó
+trên toàn bộ dữ liệu. Ngược lại, nếu áp dụng phương pháp này lên chiều thứ nhất (phương ngang), {lượng thông tin} bị mất đi đáng kể do sai số xấp xỉ quá lớn. Vì vậy, lượng thông tin theo mỗi thành phần có thể được đo bằng phương sai của dữ liệu trên thành phần đó. Tổng lượng
+thông tin là tổng phương sai trên toàn bộ các thành phần. Lấy
+một ví dụ về việc có hai camera được đặt dùng để chụp cùng một người, một camera
+phía trước và một camera đặt trên đầu. Rõ ràng, hình ảnh thu được từ
+camera đặt phía trước mang nhiều thông tin hơn so với hình ảnh nhìn từ
+phía trên đầu. Vì vậy, bức ảnh chụp từ phía trên đầu có thể được bỏ qua mà không
+làm mất đi quá nhiều thông tin về hình dáng của người đó.
 
-thêm 2 hình zô 
-Hình 2.2: Ví dụ về phương sai của dữ liệu trong không gian hai chiều. (a) Chiều thứ hai có phương sai (tỉ lệ với độ rộng của đường hình chuông) nhỏ hơn chiều thứ nhất. (b) Cả hai chiều có phương sai đáng kể. Phương sai của mỗi chiều là phương sai của thành phần tương ứng được lấy trên toàn bộ dữ liệu. Phương sai tỉ lệ thuận với độ phân tán của dữ liệu. Ý tưởng chính của PCA: Tìm một hệ trực chuẩn mới sao cho trong hệ này, các thành phần quan trọng nhất nằm trong $r$ thành phần đầu tiên.
+Câu hỏi thứ hai tương ứng với trường hợp Hình~\ref{fig:pca_2b}. Trong cả hai
+chiều, phương sai của dữ liệu đều lớn; việc bỏ đi một trong hai chiều đều khiến
+một lượng thông tin đáng kể bị mất đi. Tuy nhiên, nếu xoay trục toạ độ đi một
+góc phù hợp, một trong hai chiều dữ liệu có thể được lược bở vì dữ liệu có xu
+hướng phân bố xung quanh một đường thẳng.
 
-PCA là một phương pháp đi tìm một phép xoay trục tọa độ để được một hệ trục tọa độ mới sao cho trong hệ mới này, thông tin của dữ liệu chủ yếu tập trung ở vài thành phần. Phần còn lại chứa ít thông tin hơn có thể được lược bỏ.
+\textit{Phân tích thành phần chính} (principle component analysis, PCA) là
+phương pháp đi tìm một phép xoay trục toạ độ để được một hệ trục toạ độ mới sao
+cho trong hệ mới này, thông tin của dữ liệu chủ yếu tập trung ở một vài thành
+phần. Phần còn lại chứa ít thông tin hơn có thể được lược bỏ.
 
 \section{Phân tích thành phần chính}
 
