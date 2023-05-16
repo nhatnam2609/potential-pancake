@@ -1108,7 +1108,7 @@ phần. Phần còn lại chứa ít thông tin hơn có thể được lược 
 
 \section{Phân tích thành phần chính}
 
-Về mặt hình thức, cho ma trận dữ liệu $\mathbf{X} \in \mathbb{R}^{m \times n}$ với mỗi giá trị đã được chuẩn hóa sao cho mỗi cột có giá trị trung bình là 0 và phương sai là 1 . PCA của $\mathbf{X}$ với $r$ thành phần là tìm ma trận trực giao $\mathbf{A} \in \mathbb{R}^{m \times r}$ và ma trận $\mathbf{B} \in \mathbb{R}^{n \times r}$ sao cho $\mathbf{X}$ có thể biểu diễn được dưới dạng ma trận
+Về mặt hình thức, cho ma trận dữ liệu $\mathbf{X} \in \mathbb{R}^{m \times n}$ với mỗi giá trị đã được chuẩn hóa sao cho mỗi cột có giá trị trung bình là 0. PCA của $\mathbf{X}$ với $r$ thành phần là tìm ma trận trực giao $\mathbf{A} \in \mathbb{R}^{m \times r}$ và ma trận $\mathbf{B} \in \mathbb{R}^{n \times r}$ sao cho $\mathbf{X}$ có thể biểu diễn được dưới dạng ma trận
 
 $$
 \mathbf{X}=\mathbf{A} \mathbf{B}^{T}+\mathbf{E}
@@ -1119,9 +1119,9 @@ Ngoài ra, PCA được trình bày theo một cách khác dưới dạng véct�
 $$
 \mathbf{X}=\sum_{i=1}^{r} \mathbf{a}_{i} \mathbf{b}_{i}^{T}+\mathbf{E}
 $$
-
+%m^{\frac{1}{2}}
 Điều này cho thấy $\mathrm{PCA}$ là xấp xỉ $\mathbf{X}$ với tổng của $r$ ma trận có hạng 1.
-Mục tiêu của PCA là làm giảm tối thiểu $\|\mathbf{E}\|^{2}=\left\|\mathbf{X}-\mathbf{A} \mathbf{B}^{T}\right\|^{2}$. Vì $\operatorname{rank}\left(\mathbf{A} \mathbf{B}^{T}\right) \leq r$ nên $\mathbf{A} \mathbf{B}^{T}$ là SVD "chặt cụt" của $\mathbf{X}$, nghĩa là nếu $\mathbf{U}_{r} \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}$ là SVD "chặt cụt" của $\mathbf{X}$ thì $\mathbf{A}=m^{\frac{1}{2}} \mathbf{U}_{r}$ và $\mathbf{B}^{T}=m^{-\frac{1}{2}} \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}$. Số lượng thành phần tối thiểu phù hợp là số giá trị kì dị khác 0 của $\mathbf{X}$, hay là hạng của $\mathbf{X}$. Vì vậy, không cần thiết phải lấy số thành phần $r$ lớn hơn số lượng biến $n$. Trên thực tế, $r$ thường được lấy nhỏ hơn nhiều so với $n$.
+Mục tiêu của PCA là làm giảm tối thiểu $\|\mathbf{E}\|^{2}=\left\|\mathbf{X}-\mathbf{A} \mathbf{B}^{T}\right\|^{2}$. Vì $\operatorname{rank}\left(\mathbf{A} \mathbf{B}^{T}\right) \leq r$ nên $\mathbf{A} \mathbf{B}^{T}$ là SVD "chặt cụt" của $\mathbf{X}$, nghĩa là nếu $\mathbf{U}_{r} \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}$ là SVD "chặt cụt" của $\mathbf{X}$ thì $\mathbf{A}= \mathbf{U}_{r}$ và $\mathbf{B}^{T}= \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}$. Số lượng thành phần tối thiểu phù hợp là số giá trị kì dị khác 0 của $\mathbf{X}$, hay là hạng của $\mathbf{X}$. Vì vậy, không cần thiết phải lấy số thành phần $r$ lớn hơn số lượng biến $n$. Trên thực tế, $r$ thường được lấy nhỏ hơn nhiều so với $n$.
 
 Do thứ tự giảm dần của các giá trị kì dị của $\mathbf{X}$ trong SVD, thành phần chính đầu tiên giải thích phương sai nhiều nhất có thể và từng thành phần chính tiếp theo giải thích phương sai với ràng buộc là nó trực giao (không tương quan với các thành phần trước đó). Khi đó tổng phương sai được giải thích là $\operatorname{Tr}\left(\mathbf{B} \mathbf{B}^{T}\right)=\operatorname{Tr}\left(m^{-\frac{1}{2}} \mathbf{D}_{r}^{2}\right)$ với $\operatorname{Tr}\left(\mathbf{D}_{r}^{2}\right)$ là tổng bình phương của $r$ giá trị kì dị lớn nhất của $\mathbf{X}$.
 
@@ -1167,7 +1167,7 @@ $$
 
 Rõ ràng, bài toán cho thấy giá trị lớn nhất tìm được khi $\mathbf{m}_{i}$ tương ứng với $\lambda_{i}$ lớn nhất bằng 1 và các $\mathbf{m}_{i}$ còn lại bằng 0. Kí hiệu $i^{*}$ là chỉ số của giá trị riêng lớn nhất. Trở lại biến $\mathbf{w}$, điều này tương đương với $\mathbf{w}$ bắt đầu từ vectơ riêng thứ $i^{*}$, tức là cột thứ $i^{*}$ của $\mathbf{U}$. Như vậy, thành phần chính đầu tiên được tìm một cách dễ dàng thông qua phân tích giá trị riêng.
 
-Do các vectơ riêng của ma trận đối xứng là trực giao nên việc tìm thành phần chính thứ hai đồng nghĩa với việc tối đa hóa phương sai sao cho $\mathbf{v}_{i^{*}}$ vẫn bằng 0. Điều này thực sự tương đương với việc tạo $\mathbf{w}$ trực giao mới cho vectơ riêng đầu tiên. Như vậy, về mặt $\mathbf{m}_{i}$, chúng ta có bài toán tối ưu hóa tương tự nhưng với ràng buộc $\mathbf{m}_{i^{*}}=0$. Rõ ràng, nghiệm của bài toán tối ưu đó thu được khi $\mathbf{w}$ bằng với vector riêng tương ứng với giá trị riêng lớn nhất thứ hai. Logic này áp dụng cho thành phần chính thứ $k$.
+Do các vectơ riêng của ma trận đối xứng là trực giao nên việc tìm thành phần chính thứ hai đồng nghĩa với việc tối đa hóa phương sai sao cho $\mathbf{v}_{i^{*}}$ vẫn bằng 0. Điều này thực sự tương đương với việc tạo $\mathbf{w}$ trực giao mới cho vectơ riêng đầu tiên. Như vậy, chúng ta có bài toán tối ưu hóa tương tự nhưng với ràng buộc $\mathbf{m}_{i^{*}}=0$. Rõ ràng, nghiệm của bài toán tối ưu đó thu được khi $\mathbf{w}$ bằng với vector riêng tương ứng với giá trị riêng lớn nhất thứ hai. Logic này áp dụng cho thành phần chính thứ $k$.
 
 Do đó, tất cả các thành phần chính có thể được tìm thấy bằng cách đặt các vector riêng $\mathbf{u}_{i}\text { với } i=1, \ldots, n$ trong $\mathbf{U}$ sao cho các giá trị riêng giảm dần. Chúng ta hãy giả sử $\mathbf{U}$ được định nghĩa như vậy. Khi đó thành phần chính thứ $i$ có dạng
 
@@ -1221,17 +1221,56 @@ Nhận xét:
 
 Giả sử $\mathbf{X}$ là ma trận cỡ $m \times n$, với $m \geq n$. Để tìm $\mathrm{PCA}$ của ma trận $\mathbf{X}$, chúng ta thực hiện các bước sau:
 
-- Bước 1: Tìm SVD "chặt cụt" của ma trận $\mathbf{X}$, ta được $\mathbf{X}=\mathbf{U}_{r} \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}$ với $r \leq n$.
+- Bước 1: Chuẩn hóa dữ liệu sao cho $E\{\mathbf{x_i}\}=0$. với $\mathbf{x_i}$ là vector cột của của ma trận $\mathbf{X}$
 
-- Bước 2: Tính ma trận $\mathbf{A}$ và $\mathbf{B}$ theo công thức sau:
+- Bước 2: Tìm SVD "chặt cụt" của ma trận $\mathbf{X}$, ta được $\mathbf{X}=\mathbf{U}_{r} \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}$ với $r \leq n$.
+
+- Bước 3: Tính ma trận $\mathbf{A}$ và $\mathbf{B}$ theo công thức sau:
 
 $$
-\mathbf{A}=m^{\frac{1}{2}} \mathbf{U}_{r}, \quad \mathbf{B}^{T}=m^{-\frac{1}{2}} \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}
+\mathbf{A} \mathbf{U}_{r}, \quad \mathbf{B}^{T}= \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}
 $$
 
-- Bước 3: Nếu nghiệm $(\mathbf{A, B})$ chưa tốt thì chọn phép quay $\mathbf{Q}$, với $\mathbf{Q}$ là ma trận trực giao cấp $r$, ta tìm được nghiệm của mô hình $\mathrm{PCA}$ là $(\mathbf{A Q, B Q})$
+- Bước 4: Nếu nghiệm $(\mathbf{A, B})$ chưa tốt thì chọn phép quay $\mathbf{Q}$, với $\mathbf{Q}$ là ma trận trực giao cấp $r$, ta tìm được nghiệm của mô hình $\mathrm{PCA}$ là $(\mathbf{A Q, B Q})$
 
+\subsection{Ví dụ}
+Quay lại ví dụ ở chương trước ta tìm PCA của ma trận $\mathbf{X}=\left[\begin{array}{ll}1 & 0 \\ 1 & 0 \\ 0 & 1\end{array}\right]$.
 
+Lời giải:
+
+- Bước 1: Chuẩn hóa ma trận $\mathbf{X}$ bằng các trừ mỗi điểm dữ liệu đi vector trung bình của toàn bộ dữ liệu để được dữ
+liệu chuẩn hoá:
+\begin{equation}
+	\hat{\mathbf{x}}_n = \mathbf{x}_n - \bar{\mathbf{x}}
+\end{equation}
+với $\bar{\mathbf{x}} = \left[\frac{2}{3},\frac{1}{3} \right] $.
+
+Ta có
+$$
+\bar{\mathbf{X}}=\left[\begin{array}{ll}
+	\frac{1}{3} & \frac{-1}{3} \\
+	\frac{1}{3} & \frac{-1}{3} \\
+	\frac{-2}{3} & \frac{2}{3} \\
+\end{array}\right]
+$$
+
+$$
+\mathbf{A}=\left[\begin{array}{ll}
+	1 & 0 \\
+	1 & 0 \\
+	0 & 1
+\end{array}\right]=\left[\begin{array}{cc}
+	\frac{1}{\sqrt{2}} & 0 \\
+	\frac{1}{\sqrt{2}} & 0 \\
+	0 & 1
+\end{array}\right]\left[\begin{array}{cc}
+	\sqrt{2} & 0 \\
+	0 & 1
+\end{array}\right]\left[\begin{array}{ll}
+	1 & 0 \\
+	0 & 1
+\end{array}\right]
+$$
  
 \chapter{ MỘT SỐ ỨNG DỤNG CỦA SVD và PCA }
 
@@ -1443,67 +1482,6 @@ Vậy với mọi ma trận $\mathbf{B}$ cỡ $m \times n$ bất kì có $\opera
 
 Khi $\mathbf{B}=\mathbf{A}_{k}$ thì $\left\|\mathbf{A}-\mathbf{A}_{k}\right\|_{2}=\sigma_{k+1}$. Điều này chứng tỏ $\mathbf{A}_{k}$ chính là xấp xỉ hạng $k$ tốt nhất của $\mathbf{A}$ theo chuẩn 2 . 
 \end{proof}
-%\begin{dl}{Sai số do xấp xỉ bởi SVD "chặt cụt"}
-%	
-%	Sai số do xấp xỉ một ma trận $\mathbf{A}$ có hạng $r$ bởi SVD "chặt cụt" với $k < r$ phần tử là
-%	\begin{equation}
-%		\|\mathbf{A} - \mathbf{A}_k\|_F^2 = \sum_{i = k + 1}^r \sigma_i^2
-%	\end{equation}
-%\end{dl}
-%\begin{proof}
-%%	\operatorname{Tr}\left(\right)
-%Sử dụng tính chất $\|\mathbf{X}\|_F^2 = \operatorname{Tr}\left(\mathbf{X}\mathbf{X}^T\right)$ và
-%$\operatorname{Tr}\left(\mathbf{XY}\right) = \operatorname{Tr}\left(\mathbf{YX}\right)$ với mọi ma trận
-%$\mathbf{X, Y}$ ta có:
-%\begin{eqnarray}
-%	% \label{eqn:26_9}
-%	\nonumber
-%	\|\mathbf{A} - \mathbf{A}_k\|_F^2 & = & \left\|\sum_{i = k + 1}^r \sigma_i
-%	\mathbf{u}_i\mathbf{v}_i^T \right\|_F^2
-%	=  \text{trace}\left\{ \left(\sum_{i = k + 1}^r \sigma_i \mathbf{u}_i\mathbf{v}_i^T\right)
-%	\left(\sum_{j = k + 1}^r \sigma_j \mathbf{u}_j\mathbf{v}_j^T\right)^T
-%	\right\}  \\\
-%	\label{eqn:26_12}
-%	&=& \text{trace}\left\{ \sum_{i = k + 1}^r \sum_{j = k + 1}^r \sigma_i\sigma_j \mathbf{u}_i\mathbf{v}_i^T \mathbf{v}_j \mathbf{u}_j^T
-%	\right\}
-%	= \text{trace}\left\{ \sum_{i = k + 1}^r  \sigma_i^2\mathbf{u}_i\mathbf{u}_i^T
-%	\right\} \\\
-%	\label{eqn:26_13}
-%	&=& \text{trace}\left\{ \sum_{i = k + 1}^r  \sigma_i^2\mathbf{u}_i^T\mathbf{u}_i
-%	\right\}  \\\
-%	\label{eqn:26_15}
-%	&=& \text{trace}\left\{ \sum_{i = k + 1}^r  \sigma_i^2
-%	\right\}  = \sum_{i = k + 1}^r \sigma_i^2
-%\end{eqnarray}
-%Dấu bằng thứ hai ở \eqref{eqn:26_12} xảy ra vì $\mathbf{V}$ có các cột vuông góc với nhau.
-%Dấu bằng ở \eqref{eqn:26_13} xảy ra vì hàm $\text{trace}$ có tính chất giao hoán.
-%Dấu bằng ở \eqref{eqn:26_15} xảy ra vì biểu thức trong dấu ngoặc là một số vô hướng. 
-%Thay $k = 0$ ta sẽ có
-%\begin{equation}
-%	\label{eqn:26_16}
-%	\|\mathbf{A}\|_F^2 = \sum_{i = 1}^r \sigma_i^2
-%\end{equation}
-%\index{xấp xỉ hạng thấp -- low-rank approximation}
-%\index{low-rank approximation -- xấp xỉ hạng thấp}
-%Từ đó
-%\begin{equation}
-%	\label{eqn:26_17}
-%	\frac{\|\mathbf{A} - \mathbf{A}_k\|_F^2}{\|\mathbf{A}\|_F^2} = {\frac{\sum_{i =
-%				k + 1}^r \sigma_i^2}{\sum_{j = 1}^r \sigma_j^2}}
-%\end{equation}
-%Như vậy, \textit{sai số do xấp xỉ càng nhỏ nếu các giá trị suy biến bị
-%	cắt càng nhỏ so với các giá trị suy biến được giữ lại.}
-%Đây là một định lý quan trọng giúp xác định việc xấp xỉ ma trận dựa trên lượng
-%thông tin muốn giữ lại. Ở đây, {lượng thông tin} được định nghĩa
-%là tổng bình phương của giá trị suy biến. Ví dụ, nếu muốn giữ lại ít nhất
-%90\% lượng thông tin trong $\mathbf{A}$, trước hết ta tính $\sum_{j = 1}^r
-%\sigma_j^2$, sau đó chọn $k$ là số nhỏ nhất sao cho
-%\begin{equation}
-%	\frac{\sum_{i = 1}^k \sigma_i^2}{\sum_{j = 1}^r \sigma_j^2} \geq 0.9
-%\end{equation}
-%Khi $k$ nhỏ, ma trận $\mathbf{A}_k$ có hạng nhỏ bằng $k$
-%Vì vậy, SVD cắt ngọn cũng được xếp vào loại \textit{xấp xỉ hạng thấp}.
-%\end{proof}
 
 \section{Phân tích SVD trong xử lí ảnh}
 
