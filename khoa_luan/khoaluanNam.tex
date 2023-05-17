@@ -1,20 +1,19 @@
 \documentclass[12pt,a4paper,oneside]{report}
 \usepackage[utf8]{vietnam}
+\usepackage[vietnamese]{babel}
 \usepackage{amsmath,amsxtra,amssymb,latexsym, amscd,amsthm, enumerate}
 \usepackage{cases}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{url}
-\usepackage[
-backend=biber,
-style=alphabetic,
-sorting=ynt
-]{biblatex}
+\usepackage[style=numeric,backend=biber]{biblatex}
 \usepackage{indentfirst}
 \usepackage{ragged2e}
 
-
+\addto\captionsvietnamese{
+	\renewcommand{\bibname}{Tài liệu tham khảo}
+}
 \setlength{\textwidth}{430pt}
 
 \newtheorem{nx}{Nhận xét}[section]
@@ -75,6 +74,7 @@ sorting=ynt
 \pagenumbering{roman}\pagestyle{plain}
 
 \allowdisplaybreaks
+\renewcommand{\bibname}{Tài liệu tham khảo}
 \begin{document}
 
 \thispagestyle{empty}
@@ -1646,7 +1646,7 @@ Mặc dù khóa luận đã cố gắng trình bày một cách đầy đủ và
 
 
 \begin{thebibliography}{99}
-\addcontentsline{toc}{chapter}{TÀI LIỆU THAM KHẢO}
+
 \bibitem{thuan2003}
 Nguyễn Duy Thuận, Phi Mạnh Ban, Nông Quốc Chinh,
 \emph{Dại số tuyến tính},
@@ -1705,7 +1705,7 @@ Springer, 2000.
 \bibitem{website}
 \url{https://tuanvanle.wordpress.com/2013/12/25/phuongphap-phan-tich-thanh-phan-chinh-principal-component-analysispca}
 \url{https://en.wikipedia.org/wiki/Singular_value_decomposition#History}
-\end{thebibliography}
+	\end{thebibliography}
 \end{document}
 
 

@@ -1,3 +1,4 @@
+\babel@toc {vietnamese}{}\relax 
 \contentsline {chapter}{Lời cảm ơn}{i}{}%
 \contentsline {chapter}{Lời mở đầu}{iv}{}%
 \contentsline {chapter}{Một số ký hiệu}{vi}{}%
@@ -28,4 +29,3 @@
 \contentsline {section}{\numberline {4.2}Phân tích SVD trong xử lí ảnh}{34}{}%
 \contentsline {section}{\numberline {4.3}Eigenface và ứng dụng PCA trong nhận dạng khuôn mặt}{38}{}%
 \contentsline {chapter}{\numberline {5}Kết luận}{43}{}%
-\contentsline {chapter}{TÀI LIỆU THAM KHẢO}{45}{}%
