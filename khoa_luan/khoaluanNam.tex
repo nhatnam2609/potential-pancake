@@ -1221,57 +1221,109 @@ Nhận xét:
 
 Giả sử $\mathbf{X}$ là ma trận cỡ $m \times n$, với $m \geq n$. Để tìm $\mathrm{PCA}$ của ma trận $\mathbf{X}$, chúng ta thực hiện các bước sau:
 
-- Bước 1: Chuẩn hóa dữ liệu sao cho $E\{\mathbf{x_i}\}=0$. với $\mathbf{x_i}$ là vector cột của của ma trận $\mathbf{X}$
+- Bước 1: Chuẩn hóa dữ liệu sao cho $E\{\mathbf{x_i}\}=0$ với $\mathbf{x_i}$ là vector hàng của của ma trận $\mathbf{X}$
 
 - Bước 2: Tìm SVD "chặt cụt" của ma trận $\mathbf{X}$, ta được $\mathbf{X}=\mathbf{U}_{r} \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}$ với $r \leq n$.
 
 - Bước 3: Tính ma trận $\mathbf{A}$ và $\mathbf{B}$ theo công thức sau:
 
 $$
-\mathbf{A} \mathbf{U}_{r}, \quad \mathbf{B}^{T}= \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}
+\mathbf{A} =  \mathbf{U}_{r}, \quad \mathbf{B}^{T}= \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}
 $$
 
 - Bước 4: Nếu nghiệm $(\mathbf{A, B})$ chưa tốt thì chọn phép quay $\mathbf{Q}$, với $\mathbf{Q}$ là ma trận trực giao cấp $r$, ta tìm được nghiệm của mô hình $\mathrm{PCA}$ là $(\mathbf{A Q, B Q})$
 
-\subsection{Ví dụ}
-Quay lại ví dụ ở chương trước ta tìm PCA của ma trận $\mathbf{X}=\left[\begin{array}{ll}1 & 0 \\ 1 & 0 \\ 0 & 1\end{array}\right]$.
+\subsubsection{Ví dụ}
+Ví dụ ta tìm PCA của ma trận\[
+\mathbf{x} = \begin{bmatrix}
+	2 & 3 & 5 & 1 \\
+	1 & 4 & 6 & 2 \\
+	3 & 6 & 8 & 4 \\
+	4 & 7 & 9 & 3 \\
+\end{bmatrix}
+\] với $r=3$ thành phần chính.
 
 Lời giải:
 
-- Bước 1: Chuẩn hóa ma trận $\mathbf{X}$ bằng các trừ mỗi điểm dữ liệu đi vector trung bình của toàn bộ dữ liệu để được dữ
+- Bước 1: Chuẩn hóa ma trận $\mathbf{X}$ bằng các trừ từng vector cột đi vector trung bình của toàn bộ dữ liệu để được dữ
 liệu chuẩn hoá:
 \begin{equation}
 	\hat{\mathbf{x}}_n = \mathbf{x}_n - \bar{\mathbf{x}}
 \end{equation}
-với $\bar{\mathbf{x}} = \left[\frac{2}{3},\frac{1}{3} \right] $.
 
+
+với $\bar{\mathbf{x}} = \left[ 2.75, 3.25, 5.25, 5.75 \right]$.
+
+- Bước 2: Tìm SVD của ma trận $\bar{\mathbf{x}}$
 Ta có
 $$
-\bar{\mathbf{X}}=\left[\begin{array}{ll}
-	\frac{1}{3} & \frac{-1}{3} \\
-	\frac{1}{3} & \frac{-1}{3} \\
-	\frac{-2}{3} & \frac{2}{3} \\
-\end{array}\right]
+\bar{\mathbf{X}}=\begin{bmatrix}
+	2-2.75 & 3-2.75 & 5-2.75 & 1-2.75 \\
+	1-3.25 & 4-3.25 & 6-3.25 & 2-3.25 \\
+	3-5.25 & 6-5.25 & 8-5.25 & 4-5.25 \\
+	4-5.75 & 7-5.75 & 9-5.75 & 3-5.75 \\
+\end{bmatrix} = \begin{bmatrix}
+	-0.75 & 0.25 & 2.25 & -1.75 \\
+	-2.25 & 0.75 & 2.75 & -1.25 \\
+	-2.25 & 0.75 & 2.75 & -1.25 \\
+	-1.75 & 1.25 & 3.25 & -2.75 \\
+\end{bmatrix}
 $$
 
-$$
-\mathbf{A}=\left[\begin{array}{ll}
-	1 & 0 \\
-	1 & 0 \\
-	0 & 1
-\end{array}\right]=\left[\begin{array}{cc}
-	\frac{1}{\sqrt{2}} & 0 \\
-	\frac{1}{\sqrt{2}} & 0 \\
-	0 & 1
-\end{array}\right]\left[\begin{array}{cc}
-	\sqrt{2} & 0 \\
-	0 & 1
-\end{array}\right]\left[\begin{array}{ll}
-	1 & 0 \\
-	0 & 1
-\end{array}\right]
-$$
- 
+\[
+\bar{\mathbf{X}}=\mathbf{UDV}^{T} = \begin{bmatrix}
+-0.371 & -0.5 & -0.78254 & 0 \\
+-0.49256 & 0.5 & -0.08596 & 0 \\
+-0.49256 & 0.5 & -0.08596 & 0 \\
+-0.61412 & -0.5 & 0.61062 & 0 \\
+\end{bmatrix} \cdot \begin{bmatrix}
+7.66339 & 0 & 0 & 0 \\
+0 & 1.41421 & 0 & 0 \\
+0 & 0 & 0.52196 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{bmatrix}
+\]
+\[
+\cdot \begin{bmatrix}
+0.46578 & -0.20868 & -0.72288 & 0.46578 \\
+-0.70711 & 0 & 0 & 0.70711 \\
+-0.18179 & 0.84051 & -0.47692 & -0.18179 \\
+0.5 & 0.5 & 0.5 & 0.5 \\
+\end{bmatrix}
+\]
+- Bước 3: Tính ma trận $\mathbf{A}$ và $\mathbf{B}$
+\begin{equation}
+	\mathbf{A}_r = \begin{bmatrix}
+	-0.371 & -0.5 & -0.78254  \\
+	-0.49256 & 0.5 & -0.08596 \\
+	-0.49256 & 0.5 & -0.08596  \\
+	-0.61412 & -0.5 & 0.61062 \\
+\end{bmatrix}
+\end{equation}
+\begin{equation}
+	\mathbf{B}_r^{T} =\begin{bmatrix}
+3.56945 & -1.59923 & -5.53968 & 3.56945 \\
+-1 & 0 & 0 & 1 \\
+-0.09489 & 0.43871 & -0.24893 & -0.09489 \\
+	\end{bmatrix}
+\end{equation}
+Ta thấy nghiệm $(\mathbf{A, B})$ đã đủ tốt cụ thể có thể xem thử nghiệm trên PYTHON3 Hình \ref{fig:pca_example}.\\
+Ta sắp xỉ lại ma trân ban đầu theo công thức sau 
+\begin{equation} 
+	\mathbf{X} \approx \mathbf{A}_r\mathbf{B}_r^{T}+ \bar{\mathbf{x}} 
+\end{equation} 
+Với một điểm dữ liệu mới $\mathbf{v} \in \R^D$ sẽ
+được giảm chiều bằng PCA theo công thức 
+\begin{equation} \label{chieu}
+	\mathbf{w} = \mathbf{A}_r^T(\mathbf{v} - \bar{\mathbf{x}}) \in
+	\R^K
+\end{equation} 
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.9]{implement_pca.png}
+	\caption{Thử nghiệm thuật toán PCA trên PYTHON3}
+	\label{fig:pca_example}
+\end{figure}
 \chapter{ MỘT SỐ ỨNG DỤNG CỦA SVD và PCA }
 
 \section{Ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận}
@@ -1504,25 +1556,89 @@ Trong  Python, ta có thể hiệu chỉnh độ nét của hình ảnh theo tha
 \begin{figure}[htp]
 	\centering
 	\includegraphics[scale=0.5]{image-singular-values.png}
-	\caption{Ví dụ phân rã ma trận bằng SVD}
-	\label{fig:galaxy}
+	\caption{Tính quan trọng của các thành phần chính trong ma trận ảnh và mức độ giữ lại thông tin khi ta giảm số lượng các thành phần chính}
+	\label{fig:svd_sigular}
 \end{figure}
 
-Cụ thế hơn khi giảm chiều dữ liệu với $k = 4,16, 32 ,64.$
+Đồ thị đầu tiên (bên trái) hiển thị ma trận ảnh gốc, được biểu diễn bằng các giá trị màu xám. Ma trận này thể hiện hình ảnh ban đầu trước bất kỳ xử lý nào.Đồ thị thứ hai (ở giữa) biểu diễn các giá trị kì dị (singular values) của ma trận ảnh. Các giá trị kì dị thể hiện độ lớn của các thành phần chính trong ma trận. Đồ thị hiển thị hai đường: một đường cho các giá trị kì dị ban đầu và một đường cho các giá trị kì dụ được chuyển đổi sang đơn vị logarit (logarithmic scale). Biểu đồ này cho ta cái nhìn tổng quan về độ quan trọng của các thành phần chính trong ma trận ảnh.Đồ thị cuối cùng (bên phải) biểu diễn tổng hợp thông tin tích lũy bằng cách sử dụng các giá trị kì dị. Nó cho thấy phần trăm thông tin được giữ lại (tích lũy) khi ta giữ lại một số lượng gia tăng các thành phần chính. Đồ thị này giúp ta quyết định xem ta có thể giảm số lượng thành phần chính mà không mất quá nhiều thông tin quan trọng.
+Cụ thế hơn khi giảm chiều dữ liệu với $k = 4,16, 32 ,64.$. Ta thấy với việc sấp xỉ ma trận ban đầu bằng SVD với $ k=32 $ ta đã giảm được dung lương lưu trữ đi khoảng $50\%$ nhưng vẫn không làm giảm đi chất lượng hình ảnh quá nhiều.
+
+Lưu ý: 
+\begin{itemize}
+	\item Compression là tỉ lệ dung lượng đã giảm được để lưu trữ hình ảnh nén.
+	\item Info. Retained là phần thông tin từ ma trận gốc mà chúng ta vẫn giữ được sau khi nén.
+\end{itemize}
 
 \begin{figure}[htp]
 	\centering
 	\includegraphics[scale=0.7]{svd_qnu.png}
 	\caption{Ứng với từng $k$ ta quan sát được mức độ tối ưu trong việc lưu trữ thông tin cũng như là lượng thông tin được giữ lại.}
-	\label{fig:galaxy}
+	\label{fig:svd_qnu}
 \end{figure}
 \newpage
-Lưu ý: 
-\begin{itemize}
-	\item Compression là số lượng số cần thiết để lưu trữ hình ảnh nén.
-\item Info. Retained là phần thông tin từ ma trận gốc mà chúng ta vẫn giữ được sau khi nén.
-\end{itemize}
+\section{Eigenface và ứng dụng PCA trong nhận dạng khuôn mặt}
+Phân tích thành phần chính (PCA - Principal Component Analysis) luôn được biết đến như là một phương pháp thống kê phổ biến dùng để giảm kích thước của dữ liệu trong khi vẫn giữ được những thông tin quan trọng nhất. PCA tìm ra các "thành phần chính" trong dữ liệu - những hướng mà dữ liệu biến đổi nhiều nhất, và dùng chúng để tái biểu diễn dữ liệu trong một không gian ít chiều hơn. Do đó, PCA đóng một vai trò quan trọng trong lĩnh vực nhận dạng khuôn mặt. Nhận dạng khuôn mặt là một bài toán phức tạp do sự đa dạng vô cùng lớn của các khuôn mặt. Mỗi khuôn mặt đều có những đặc điểm duy nhất và khác biệt như kích thước, hình dạng, màu sắc, cấu trúc, đặc điểm về giới tính, tuổi tác, v.v... PCA giúp chúng ta tìm ra những đặc điểm quan trọng nhất (hay còn gọi là "thành phần chính") của khuôn mặt, giúp tối ưu hóa quá trình nhận dạng và giảm bớt chi phí tính toán. Một trong những phương pháp thường được biết đến đó là Eigenface.
 
+Eigenface là một phương pháp nhận dạng khuôn mặt dựa trên kỹ thuật phân tích thành phần chính (PCA). Thuật ngữ "Eigenface" xuất phát từ từ "eigen" trong tiếng Đức, có nghĩa là "đặc trưng" hoặc "riêng". Trong ngữ cảnh này, một Eigenface là một tập hợp các vector riêng, mà từ đó có thể tạo ra hầu hết các khuôn mặt khác nhau.
+
+Phương pháp Eigenface giảm kích thước của dữ liệu hình ảnh khuôn mặt bằng cách chuyển đổi nó thành một tập hợp các thành phần chính. Những thành phần này, được gọi là Eigenfaces, đại diện cho các đặc điểm cơ bản của khuôn mặt, như hình dạng của mắt, mũi, miệng và vị trí tương đối của chúng. Mỗi khuôn mặt trong dữ liệu đều có thể được biểu diễn như một tổ hợp tuyến tính của những Eigenface này. Tôi sẽ thử nghiệm phương pháp Eigenface trên bộ dữ liệu LFW.
+
+Bộ dữ liệu LFW (Labeled Faces in the Wild) là một bộ dữ liệu hình ảnh khuôn mặt phổ biến được sử dụng trong nghiên cứu nhận dạng khuôn mặt. Bộ dữ liệu này bao gồm hình ảnh của hàng trăm người nổi tiếng, với mỗi người được chụp dưới nhiều góc độ và biểu cảm khác nhau. Mỗi hình ảnh trong bộ dữ liệu là một ma trận hai chiều biểu thị giá trị cường độ điểm ảnh có thể hiểu như ma trận $50*37*1$. với 1288 hình. Và được chia thành 7 loại khác nhau ứng với 7 người nổi tiểng.
+
+Khi áp dụng phương pháp Eigenface cho bộ dữ liệu LFW, ta sẽ tạo ra một "khuôn mặt trung bình" cùng với một tập hợp các "Eigenfaces". Sau đó, mỗi khuôn mặt trong bộ dữ liệu có thể được biểu diễn như một tổ hợp tuyến tính của các Eigenfaces, giúp cho việc nhận dạng khuôn mặt trở nên hiệu quả và chính xác hơn.
+
+Đầu tiên ta sẽ làm "phẳng" ma trận đầu vào thành ma trận $(50*37,1288)$ với mỗi cột là một vector ứng với một khuôn mặt trong tập dữ liệu. Sau đó ta chia dữ liệu đầu vào thành tập huấn luyện và tập kiểm thử với tỉ lể lần lượt là 0.75 và 0.25. Ta nhận được 2 ma trận với kích cỡ là $(1850,966)$ và $(1850,322)$
+
+%Sau đó ta đi tìm Eigenface cho mỗi khung mặt trên tập huấn luyện và ma trận biểu diễn dữ liệu gốc trên cơ sở của các thành phần chính($\mathbf{B}_k^T$) thông qua PCA.
+Sau đó, ta đi tìm ma trận $\mathbf{A}_k$ chứa các Eigenfaces và ma trận biểu diễn dữ liệu gốc trên cơ sở của các thành phần chính $\mathbf{B}_k^T$ thông qua PCA.
+
+PCA sẽ giúp chúng ta xác định các thành phần chính (hay còn gọi là Eigenfaces trong ngữ cảnh này) của tập dữ liệu hình ảnh khuôn mặt. Các thành phần này, được chứa trong ma trận $\mathbf{A}_k$, đại diện cho các hướng mà dữ liệu biến thiên nhiều nhất. Điều này giúp tạo ra một không gian mới, với các trục tương ứng với các thành phần chính, để biểu diễn dữ liệu.
+
+Kế tiếp, chúng ta tính toán ma trận $\mathbf{B}_k^T$, mà mỗi cột của nó biểu diễn một hình ảnh khuôn mặt trong không gian của các thành phần chính. Mỗi hình ảnh khuôn mặt giờ đây được biểu diễn bằng một tổ hợp tuyến tính của các Eigenfaces, với hệ số tương ứng nằm trong $\mathbf{B}_k^T$.
+
+Vì vậy, thông qua PCA, chúng ta có thể giảm đáng kể số lượng chiều dữ liệu mà vẫn giữ được phần lớn thông tin cần thiết từ tập dữ liệu hình ảnh khuôn mặt ban đầu. Với $k =150$ ta có thể xem kết quả sau khi được kết quả ảnh sau khi qua PCA Hình \ref{fig:eigenface}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.62]{eigenface.png}
+	\caption{Hình ảnh ban đầu và hình ảnh sau khi được khôi phục qua PCA.}
+	\label{fig:eigenface}
+\end{figure}
+
+Sau đó giảm chiều dữ liệu kiểm thử bằng cách chiếu nó qua ma trận $\mathbf{A}_k$ theo công thức \ref{chieu}.
+Bây giờ ta có 966 điểm dữ liệu huấn liệu và 322 điểm dữ liệu kiểm thử. Liệu ta có thể phân biệt được các nét đặc trưng của mỗi khuông mặt chỉ thông qua các vector eigenface chỉ với 150 chiều thay và 1850 như ban đầu.
+Để trả lời câu hỏi này ta sẽ huấn luyện một bộ phân lớp tương đối nổi tiếng và SVM(support Vector Machine).
+hình \ref{fig:svm_result} và hình \ref{fig:headmap}  là kết quả sau khi thử nghiệm với bộ phân loại SVM. Ta thấy bộ phân loại có thể nhận dạng khuôn mặt tốt dựa trên vector eigenface với độ chính xác trùng bình là $80\%$. Hình \ref{fig:output} là kết quả suy luận của bộ phân loại trên tập kiểm thử.
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.8]{result_svm.png}
+	\caption{kết quả sau khi huận luyện bộ phân loại SVM.}
+	\label{fig:svm_result}
+\end{figure}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.8]{heatmap.png}
+	\caption{Ma trận lỗi(confusion matrix)}
+	\label{fig:headmap}
+\end{figure}
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.8]{predict_pca.png}
+	\caption{kết quả suy luận của bộ phân loại trên tập kiểm thử}
+	\label{fig:output}
+\end{figure}
+\chapter{Kết luận}
+Qua quá trình thực hiện khóa luận, tôi đã có cơ hội tìm hiểu và nghiên cứu sâu về các khái niệm và kỹ thuật liên quan đến Phân tích giá trị kì dị (SVD) và Phân tích thành phần chính (PCA). Khóa luận đã đạt được những kết quả sau:
+\begin{itemize}
+	\item[1]Kiến thức chuẩn bị: Khóa luận đã trình bày một cách tổng quát về các kiến thức cơ bản về Ma trận, Vector riêng, Giá trị riêng, và Định lí phổ của ma trận đối xứng. Đồng thời, khóa luận cũng đã giới thiệu về các khái niệm cơ bản trong Xác xuất thống kê bao gồm Kỳ vọng, Phương sai và Ma trận hiệp phương sai.
+
+\item[1]Phân tích giá trị kì dị (SVD): Khóa luận đã giới thiệu về khái niệm SVD, cách thức tính toán SVD của một ma trận, cũng như một số tính chất quan trọng của ma trận liên quan đến SVD.
+
+\item[3]Phân tích thành phần chính (PCA): Khóa luận đã trình bày về khái niệm PCA, ý tưởng chính của PCA, cách thức tìm các thành phần chính của bài toán PCA thông qua SVD, tính duy nhất của nghiệm của PCA, và cũng đã giới thiệu về thuật toán tìm PCA của một ma trận.
+
+\item[4]Một số ứng dụng của SVD và PCA: Khóa luận đã giới thiệu về một số ứng dụng thực tế của SVD và PCA, bao gồm việc sử dụng SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận, ứng dụng của SVD trong xử lý ảnh, và cách sử dụng PCA trong bài toán nhận dạng khuôn mặt thông qua phương pháp Eigenface.
+\end{itemize}
+Mặc dù khóa luận đã cố gắng trình bày một cách đầy đủ và chi tiết, nhưng không tránh khỏi những thiếu sót. Tôi rất mong nhận được những ý kiến đóng góp từ Quý Thầy, Cô và các bạn để có thể hoàn thiện hơn trong việc nghiên cứu và ứng dụng các kiến thức liên quan đến SVD và PCA trong tương lai.
 
 \end{document}
 

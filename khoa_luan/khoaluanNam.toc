@@ -22,7 +22,9 @@
 \contentsline {section}{\numberline {3.4}Tìm các thành phần chính của bài toán PCA thông qua SVD}{23}{}%
 \contentsline {section}{\numberline {3.5}Tính duy nhất nghiệm của PCA}{25}{}%
 \contentsline {section}{\numberline {3.6}Thuật toán tìm PCA của một ma trận}{26}{}%
-\contentsline {subsection}{\numberline {3.6.1}Ví dụ}{26}{}%
-\contentsline {chapter}{\numberline {4} MỘT SỐ ỨNG DỤNG CỦA SVD và PCA }{28}{}%
-\contentsline {section}{\numberline {4.1}Ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận}{28}{}%
-\contentsline {section}{\numberline {4.2}Phân tích SVD trong xử lí ảnh}{33}{}%
+\contentsline {subsubsection}{Ví dụ}{26}{}%
+\contentsline {chapter}{\numberline {4} MỘT SỐ ỨNG DỤNG CỦA SVD và PCA }{29}{}%
+\contentsline {section}{\numberline {4.1}Ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận}{29}{}%
+\contentsline {section}{\numberline {4.2}Phân tích SVD trong xử lí ảnh}{34}{}%
+\contentsline {section}{\numberline {4.3}Eigenface và ứng dụng PCA trong nhận dạng khuôn mặt}{38}{}%
+\contentsline {chapter}{\numberline {5}Kết luận}{43}{}%
