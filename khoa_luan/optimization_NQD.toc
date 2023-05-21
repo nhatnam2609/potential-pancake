@@ -27,5 +27,4 @@
 \contentsline {section}{\numberline {4.1}Ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận}{27}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Phân tích SVD trong xử lí ảnh}{32}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Eigenface và ứng dụng PCA trong nhận dạng khuôn mặt}{36}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Kết luận}{41}{chapter.5}%
-\contentsline {chapter}{TÀI LIỆU THAM KHẢO}{43}{chapter*.16}%
+\contentsline {chapter}{TÀI LIỆU THAM KHẢO}{42}{chapter*.17}%

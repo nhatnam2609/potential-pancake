@@ -86,10 +86,10 @@
 {——————————————}\\
 \vskip 2cm
 {\bf\fontsize{16pt}{22}\selectfont NGUYỄN NHẬT NAM}
-
+% Một số phương pháp phân tích ma trận và ứng dụng
 \vskip 3cm
 \begin{center}
-{\bf\fontsize{22pt}{22}\selectfont Một số phương pháp phân tích ma trận và ứng dụng}
+{\bf\fontsize{22pt}{22}\selectfont MỘT SỐ PHƯƠNG PHÁP PHÂN TÍCH MA TRẬN VÀ ỨNG DỤNG}
 
 \end{center}
 
@@ -120,7 +120,7 @@
 
 \vskip 3cm
 \begin{center}
-{\bf\fontsize{22pt}{22}\selectfont Một số phương pháp phân tích ma trận và ứng dụng}
+{\bf\fontsize{22pt}{22}\selectfont MỘT SỐ PHƯƠNG PHÁP PHÂN TÍCH MA TRẬN VÀ ỨNG DỤNG}
 
 
 
@@ -243,53 +243,62 @@ Chương 3: Phân tích thành phần chính (PCA). Trong chương này, chúng 
 
 Chương 4: Ứng dụng của SVD và PCA trong bài toán thực tế. Chương này sẽ trình bày một số ví dụ cụ thể về việc áp dụng SVD và PCA trong các bài toán thực tế như xử lý hình ảnh, nhận dạng mẫu, phân tích dữ liệu và thống kê.
 
-Khóa luận tốt nghiệp này được hoàn thành dưới sự hướng dẫn của TS.lâm Thị Thanh Tâm. Nhân dịp này, tôi xin bày tỏ lòng biết ơn sâu sắc đến thầy/cô hướng dẫn, đã không chỉ hỗ trợ tôi trong việc nghiên cứu khoa học mà còn tận tình giúp đỡ và tạo mọi điều kiện thuận lợi cho tôi trong suốt quá trình làm đề tài. Tôi cũng xin chân thành cảm ơn tập thể lớp Toán Ứng Dụng K42, Khoa Toán và Thống kê Trường Đại học Quy Nhơn đã giúp đỡ và tạo mọi điều kiện thuận lợi cho tôi hoàn thành khóa học cùng với luận văn này.
+Khóa luận tốt nghiệp này được hoàn thành dưới sự hướng dẫn của TS.lâm Thị Thanh Tâm. Tôi cũng xin chân thành cảm ơn tập thể lớp Toán Ứng Dụng K42, Khoa Toán và Thống kê Trường Đại học Quy Nhơn đã giúp đỡ và tạo mọi điều kiện thuận lợi cho tôi hoàn thành khóa học cùng với khóa luận này.
 
 Cuối cùng, tôi xin chân thành cảm ơn gia đình, bạn bè, những người thân yêu đã luôn quan tâm, giúp đỡ và ủng hộ tôi trong suốt quá trình học tập và thực hiện khóa luận này. Dù đã cố gắng hết sức, nhưng do thời gian và năng lực có hạn, khóa luận không tránh khỏi những thiếu sót và hạn chế. Rất mong nhận được sự góp ý và chỉ bảo của quý thầy cô, quý bạn đồng nghiệp để khóa luận tốt nghiệp này được hoàn thiện hơn. Tôi xin chân thành cảm ơn.
 \end{justify}
   \chapter*{\centerline{Một số ký hiệu}}
 \addcontentsline{toc}{chapter}{Một số ký hiệu}
-\begin{tabular}{l l}
-	$\mathbb N$&tập các số tự nhiên\\
-	$\mathbb Z$&tập các số nguyên\\
-	$ \mathbb Q $& tập các số hữu tỷ\\
-	$\mathbb R$&tập các số thực\\
-	$\mathbb C$&tập các số phức\\
-	$ \overline{\R} $&tập các số thực mở rộng\\
-	$\mathbb R^n$&không gian vectơ thực $n$-chiều\\ 
-	$\mathbb K$&tập $\R$ hoặc $\C$\\
-$\mathcal{P}(X)$&tập tất cả các tập con của $X$\\
-
-%	$\gt{\rst}$& tập số thực mở rộng $\{-\vc\}\cup\rst\cup\{\vc\},$\\
-
-
-
-%	$\sigma(\uon{C})$&$\sigma$-đại số sinh bởi  $\uon{C}$,\\ 
-%	$\uon{M}_L$&$\sigma$-đại số các tập Lebesgue đo được trên $\rst$,\\
-%	$\uon{M}_L^n$&$\sigma$-đại số các tập Lebesgue đo được trên $\rst^n$,\\
-%	$\uon{C}_c(\rst)$&không gian các hàm liên tục có giá compact,\\ 
-
-%	$\mu_L$&độ đo Lebesgue trên $\rst$,\\
-%	$\mu_L^n$&độ đo Lebesgue trên $\rst^n$,\\
-%	$(\rst,\uon{M}_L,\mu_L)$&không gian độ đo Lebesgue trên $\rst$,\\
-%	$(\rst^n,\uon{M}_L^n,\mu_L^n)$&không gian độ đo Lebesgue trên $\rst^n$,\\
-$ \sgn $&hàm dấu\\
-$A\bigtriangleup B$&hiệu đối xứng của hai tập $A$ và $B$\\
-$\bigsqcup_{i=1}^n A_i$&hợp rời nhau các tập $A_1,\ldots,A_n$\\
-$f_n\uparrow$&dãy $f_n$ đơn điệu tăng\\
-$f_n\downarrow$&dãy $f_n$ đơn điệu giảm\\
-$f_n\nearrow f$&dãy $f_n$ đơn điệu tăng và hội tụ đến $f$\\
-$f_n\rightrightarrows f$&dãy $f_n$ hội tụ đều đến $f$\\	
-	%$f^+,\ f^-$&phần dương, phần âm của hàm $f$,\\
-$\L$&$\sigma$-đại số Lebesgue các tập con của $\R$\\
-$m$&độ đo Lebesgue\\
-$\sharp$&độ đo đếm
-	
-\end{tabular}
+%\begin{tabular}{l l}
+%%	$\mathbb N$&tập các số tự nhiên\\
+%%	$\mathbb Z$&tập các số nguyên\\
+%%	$ \mathbb Q $& tập các số hữu tỷ\\
+%%	$\mathbb R$&tập các số thực\\
+%%	$\mathbb C$&tập các số phức\\
+%%	$ \overline{\R} $&tập các số thực mở rộng\\
+%%	$\mathbb R^n$&không gian vectơ thực $n$-chiều\\ 
+%%	$\mathbb K$&tập $\R$ hoặc $\C$\\
+%%$\mathcal{P}(X)$&tập tất cả các tập con của $X$\\
+%%
+%%$ \sgn $&hàm dấu\\
+%%$A\bigtriangleup B$&hiệu đối xứng của hai tập $A$ và $B$\\
+%%$\bigsqcup_{i=1}^n A_i$&hợp rời nhau các tập $A_1,\ldots,A_n$\\
+%%$f_n\uparrow$&dãy $f_n$ đơn điệu tăng\\
+%%$f_n\downarrow$&dãy $f_n$ đơn điệu giảm\\
+%%$f_n\nearrow f$&dãy $f_n$ đơn điệu tăng và hội tụ đến $f$\\
+%%$f_n\rightrightarrows f$&dãy $f_n$ hội tụ đều đến $f$\\	
+%%	%$f^+,\ f^-$&phần dương, phần âm của hàm $f$,\\
+%%$\L$&$\sigma$-đại số Lebesgue các tập con của $\R$\\
+%%$m$&độ đo Lebesgue\\
+%%$\sharp$&độ đo đếm
+%%\begin{array}{ll}
+%%	$\mathbb{R}$ & Tập hợp các số thực  \\
+%%	$\mathbb{R}^n$ & Tập hợp các véc tơ thực $n$ chiều\\
+%%	$\mathbb{R}^{n \times m}$ &  Tập hợp các ma trận thực cấp $ n \times m $ \\
+%%	\|\mathbf{A}\|_F & : \text { Chuẩn Frobenius của ma trận } \mathbf{A} \\
+%%	\|\mathbf{A}\|_2 & : \text { Chuẩn } 2 \text { của ma trận } \mathbf{A} \\
+%%	\mathbf{A}^T & : \text { Ma trận chuyển vị của } \mathbf{A} \\
+%%	\mathbf{A}^{-1} & : \text { Ma trận nghịch đảo của } \mathbf{A} \\
+%%	\mathbf{A}^{+} & : \text {Ma trận giả nghịch đảo của } \mathbf{A}
+%%\end{array}
+%%	
+%\end{tabular}
+$$
+\begin{array}{ll}
+	\mathbb{R} & : \text { Tập hợp các số thực } \\
+	\mathbb{R}^n & : \text { Tập hợp các véc tơ thực } n \text { chiều } \\
+	\mathbb{R}^{n \times m} & : \text { Tập hợp các ma trận thực cấp } n \times m \\
+	\|\mathbf{A}\|_F & : \text { Chuẩn Frobenius của ma trận } \mathbf{A} \\
+	\|\mathbf{A}\|_2 & : \text { Chuẩn } 2 \text { của ma trận } \mathbf{A} \\
+	\mathbf{A}^T & : \text { Ma trận chuyển vị của } \mathbf{A} \\
+	\mathbf{A}^{-1} & : \text { Ma trận nghịch đảo của } \mathbf{A} \\
+	\mathbf{A}^{+} & : \text {Ma trận giả nghịch đảo của } \mathbf{A}
+\end{array}
+$$
 \chapter{Một số kiến thức chuẩn bị}
 \pagenumbering{arabic}            % Danh lai trang
 \section{Ma trận}.
-\begin{dn}\rm                    %ĐN sigma đại số
+\begin{dn} \cite{hieu2019}                    %ĐN sigma đại số
  Ma trận cỡ $m \times n$ là một bảng gồm $m n$ số thực được sắp xếp thành $m$ dòng và $n$ cột. Ma trận thường được kí hiệu như sau\\
  $$
  \mathbf{A}=\left[\begin{array}{ccccccc}
@@ -317,7 +326,7 @@ $\sharp$&độ đo đếm
 \end{dn}
 	
 %\end{dn}
-\begin{dn}\rm
+\begin{dn}\cite{hieu2019} 
 	Ma trận đơn vị cấp $n$ là ma trận vuông cấp $n$ có mọi phần tử nằm trên đường chéo chính bằng 1, các phần tử khác bằng 0. Ta ký hiệu ma trận đơn vị cấp $n$ bởi $\mathbf{I}_{n}$ và nó có dạng như sau
 $$
 \mathbf{I}_{n}=\left[\begin{array}{cccc}
@@ -329,7 +338,7 @@ $$
 $$
 Trong trường hợp không cần chú ý đến cấp của ma trận, ta ký hiệu ma trận đơn vị bởi $\mathbf{I}$ .
 \end{dn}
-\begin{dn}\rm                     
+\begin{dn}\cite{an2015}                     
 Ma trận đường chéo là ma trận vuông có các phần tử nằm trên đường chéo chính khác 0, các phần tử nằm ngoài đường chéo chính bằng 0. Ma trận đường chéo có dạng như sau
 $$
 \mathbf{D}=\left[\begin{array}{cccc}
@@ -341,27 +350,26 @@ $$
 $$
 \indent Ma trận chỉ có một dòng được gọi là vector dòng. Ma trận chỉ có một cột được gọi là vector cột.
 \end{dn}
-\begin{dn}\rm 
+\begin{dn}\cite{hung2020}
 	Ma trận vuông A cấp $n$ được gọi là ma trận khả nghịch nếu tồn tại một ma trận $\mathbf{A}^{\prime}$ vuông cấp $n$ thỏa mãn $\mathbf{A} \mathbf{A}^{\prime}=\mathbf{A}^{\prime} \mathbf{A}=\mathbf{I}_{n}$. Ma trận $\mathbf{A}$ được gọi là ma trận nghịch đảo của ma trận $\mathbf{A}$, và được ký hiệu là $\mathbf{A}^{-1}$
 \end{dn}
-\begin{dn}\rm 
+\begin{dn}\cite{hieu2019} 
 	Cho ma trận $\mathbf{A}=\left(a_{i j}\right)_{m \times n}$. Ma trận chuyển vị của $\mathbf{A}$, ký hiệu là $\mathbf{A}^{T}$, có dạng $\mathbf{A}^{T}=\left(a_{j i}\right)_{n \times m}$.
 	
 	Ma trận vuông $\mathbf{A}$ được gọi là ma trận đối xứng nếu $\mathbf{A}^{T}=\mathbf{A}$, và được gọi là ma trận phản đối xứng nếu $\mathbf{A}^{T}=-\mathbf{A}$.
 \end{dn}
-\begin{dn}\rm 
+\begin{dn}\cite{hieu2019}
 	Ma trận vuông $\mathbf{A}$ được gọi là ma trận trực giao nếu $\mathbf{A}^{T} \mathbf{A}=$ $\mathbf{A A}^{T}=\mathbf{I}$
 \end{dn}	
 	Nhận xét:
 	\begin{itemize}
+	 
 	
-	\item[(i)] Ma trận $\mathbf{A}=\left[a_{i j}\right]_{n \times n}$ là ma trận trực giao khi và chỉ khi $$\sum_{k=1}^{n} a_{i k} a_{j k}=\delta_{i j}$$ với $\delta_{i j}$ là kí hiệu Kronecker. 
+	\item[(i)] Ma trận trực giao $\mathbf{A}$ là khả nghịch và $\mathbf{A}^{T}=\mathbf{A}^{-1}$.
 	
-	\item[(ii)] Ma trận trực giao $\mathbf{A}$ là khả nghịch và $\mathbf{A}^{T}=\mathbf{A}^{-1}$.
-	
-	\item[(iii)]  Ma trận $\mathbf{A}$ trực giao khi và chỉ khi các vector cột và các vector hàng của $\mathbf{A}$ tạo thành các hệ trực chuẩn.
+	\item[(ii)]  Ma trận $\mathbf{A}$ trực giao khi và chỉ khi các vector cột và các vector hàng của $\mathbf{A}$ tạo thành các hệ trực chuẩn.
 	\end{itemize}
-\begin{dn}\rm 
+\begin{dn}\cite{hieu2019} 
 	Cho $\mathbf{A}$ là một ma trận vuông cấp $n$. Định thức của ma trận $\mathbf{A}$, ký hiệu là $\operatorname{det}(\mathbf{A})$ hay $|\mathbf{A}|$ là một giá trị được xác định bằng công thức
 	
 	$$
@@ -375,12 +383,11 @@ $$
 	
 	- Định thức cấp hai: Nếu $\mathbf{A}=\left[\begin{array}{ll}a & b \\ c & d\end{array}\right]$ thì $\operatorname{det}(\mathbf{A})=a d-b c$.
 \end{dn}
-\begin{dn}\rm 
+\begin{dn}\cite{thuan2003}
 	Cho $\mathbf{A}$ là ma trận cỡ $m \times n$ bất kì và $s$ là số nguyên thỏa $1 \leqslant s \leqslant \min (m, n)$. Khi đó, các phần tử nằm trên giao của $s$ dòng và $s$ cột của ma trận $\mathbf{A}$ sẽ lập nên các ma trận vuông cấp $s$, ta gọi đó chính là các ma trận con cấp $s$ của $\mathbf{A}$.
-	
 	Định thức của các ma trận này được gọi là định thức con cấp $s$ của ma trận $\mathbf{A}$.
 \end{dn}
-\begin{dn}\rm 
+\begin{dn}\cite{hieu2019} 
 	 Định thức con cấp cao nhất, khác 0 của ma trận $\mathbf{A}$ được gọi là định thức con cơ sở của ma trận $\mathbf{A}$. Một ma trận $\mathbf{A}$ có thể có nhiều định thức con cơ sở cùng cấp.
 	
 	Hạng của ma trận $\mathbf{A}$ là cấp của định thức con cơ sở. Ký hiệu hạng của ma trận $\mathbf{A}$ là $\operatorname{rank}(\mathbf{A})$.
@@ -392,12 +399,12 @@ $$
 	 \item[(ii)] Nếu $\operatorname{rank}(\mathbf{A})=n$ thì $\operatorname{rank}(\mathbf{A} . \mathbf{B})=\operatorname{rank}(\mathbf{B})$.
 	\end{itemize}
 \end{dn}
-\begin{dn}\rm 
+\begin{dn}\cite{tri2014}
 	Vết của ma trận vuông $\mathbf{A}$ cấp $n$ được xác định bằng tổng các phần tử trên đường chéo chính của ma trận $\mathbf{A}$, và được ký hiệu là $\operatorname{Tr}(\mathrm{A})$.
 \end{dn}
 
 \section{Vector riêng- Giá trị riêng}
-\begin{dn}\rm
+\begin{dn}\cite{thuan2003}
  Cho $\mathbf{A}$ là ma trận vuông cấp $n$. Khi đó đa thức bậc $n$ của biến $\lambda$ được xác định như sau
  $$
  P_{\mathbf{A}}(\lambda)=\operatorname{det}(\mathbf{A}-\lambda \mathbf{I})=\left|\begin{array}{cccc}
@@ -431,7 +438,7 @@ Nhận xét:
 \end{itemize}
 
 \section{Định lí phổ của ma trận đối xứng}
-\begin{dn} \label{dlpho}
+\begin{dn} \cite{linh2016} \label{dlpho}
 Cho $\mathbf{A}$ là ma trận đối xứng cấp $n$. Khi đó:
 \begin{itemize}
 \item[(i)] Với mỗi giá trị riêng thực $\lambda$ của $\mathbf{A}$, tồn tại một vector riêng tương ứng $\mathbf{u} \in \mathbb{R}^{n}$ sao cho $\mathbf{A u}=\lambda \mathbf{u}$.
@@ -481,6 +488,7 @@ thì $\mathbf{A} \mathbf{u}^{(i)}=\lambda_{i} \cdot \mathbf{u}^{(i)}, \quad i=1,
 	Đây được gọi là phân tích giá trị riêng của ma trận $\mathbf{A}$ (Eigen value decomposition, EVD). 
 \end{proof}
 \section{Xác xuất thống kê}
+Kiến thức trong phần này được tổng hợp từ \cite{tiep2018}
 \subsection{Kỳ vọng}
 \label{sub:expectaion_covariance}
 \index{kỳ vọng -- expectation}
@@ -499,8 +507,7 @@ nhiên $\mathbf{x}$. Khi đó, nếu $\mathbf{x}$ là biến ngẫu nhiên rời
 	\label{eqn:30_23}
 	\text{E}[f(\mathbf{x})] = \sum_\mathbf{x} f(\mathbf{x}) p(\mathbf{x}).
 \end{equation}
-Công thức cho biến ngẫu nhiên liên tục cũng được viết tương tự.
-
+Công thức cho biến ngẫu nhiên liên tục cũng được viết tương tự.\\
 Với xác suất đồng thời, kỳ vọng của một hàm cũng được xác định tương tự:
 \begin{equation}
 	\label{eqn:30_24}
@@ -621,11 +628,11 @@ Ví dụ về sự tương quan của dữ liệu được cho trong Hình~\ref{
 
 Trong chương này, chúng tôi trình bày cơ sở của phân tích giá trị kì dị của ma trận, thuật toán phân tích giá trị kì dị, và trình bày một số tính chất của ma trận liên quan đến phân tích giá trị kì dị của nó. 
 \section{Giới thiệu}
-Phân tích giá trị kì dị (SVD) là một trong những phân tích rất quan trọng của ma trận, có nhiều ứng dụng trong khoa học và kĩ thuật. Dạng cổ điển nhất của phân tích giá trị kì dị được phát hiện trong lĩnh vực Hình học vi phân. Vào năm 1873 và 1874 , hai nhà toán học Eugenio Beltrami và Camille Jordan đã độc lập đưa ra giá trị kì dị của dạng song tuyến tính. Năm 1889, James Joshept Sylvester đã đưa ra phân tích giá trị kì dị của ma trận vuông. Đến năm 1915, nhà toán học Autonne phát hiện ra phân tích giá trị kì dị dưới dạng phân tích cực. Năm 1936, hai nhà toán học Carl Eckart và Gale Young đã lần đầu tiên chứng minh phân tích giá trị kì dị đối với ma trận hình chữ nhật thực [] và ma trận vuông phức []. Trong chương này, chúng tôi sẽ tìm hiểu về phân tích giá trị kì dị cho một ma trận hình chữ nhật thực $\mathbf{A}$ cỡ $m \times n$.
+Phân tích giá trị kì dị (SVD) là một trong những phân tích rất quan trọng của ma trận, có nhiều ứng dụng trong khoa học và kĩ thuật. Dạng cổ điển nhất của phân tích giá trị kì dị được phát hiện trong lĩnh vực Hình học vi phân. Vào năm 1873 và 1874 , hai nhà toán học Eugenio Beltrami và Camille Jordan đã độc lập đưa ra giá trị kì dị của dạng song tuyến tính\cite{stewart1993}. Năm 1889, James Joshept Sylvester đã đưa ra phân tích giá trị kì dị của ma trận vuông. Đến năm 1915, nhà toán học Autonne phát hiện ra phân tích giá trị kì dị dưới dạng phân tích cực. Năm 1936, hai nhà toán học Carl Eckart và Gale Young đã lần đầu tiên chứng minh phân tích giá trị kì dị đối với ma trận hình chữ nhật thực và ma trận vuông phức\cite{eckart1936}. Trong chương này, chúng tôi sẽ tìm hiểu về phân tích giá trị kì dị cho một ma trận hình chữ nhật thực $\mathbf{A}$ cỡ $m \times n$.
 \section{Phân tích giá trị kì dị}
 Để phát biểu và chứng minh định lý phân tích giá trị kì dị, chúng ta sẽ cần định lí sau đây.
 
-\begin{dl} \label{dl_1} Cho A là một ma trận có cấp $m \times n$. Khi đó, mọi giá trị riêng của ma trận $\mathbf{A}^{T} \mathbf{A}$ đều không âm.
+\begin{dl} \cite{lay1994} \label{dl_1} Cho A là một ma trận có cấp $m \times n$. Khi đó, mọi giá trị riêng của ma trận $\mathbf{A}^{T} \mathbf{A}$ đều không âm.
 \end{dl}
 \begin{proof}
 Dễ thấy $\mathbf{A}^{T} \mathbf{A}$ là một ma trận đối xứng. Theo định lí \ref{dlpho}, mọi giá trị riêng của $\mathbf{A}^{T} \mathbf{A}$ đều là số thực. Với mỗi giá trị riêng $\lambda$ của $\mathbf{A}^{T} \mathbf{A}$, giả sử $\mathbf{v}$ là véc tơ riêng tương ứng. Khi đó
@@ -637,7 +644,6 @@ Dễ thấy $\mathbf{A}^{T} \mathbf{A}$ là một ma trận đối xứng. Theo 
 \begin{equation} \label{eq2}
 \|\mathbf{A} \mathbf{v}\|^{2}=\langle\mathbf{A} \mathbf{v}, \mathbf{A v}\rangle=(\mathbf{A v})^{T}(\mathbf{A v})=\mathbf{v}^{T} \mathbf{A}^{T} \mathbf{A} \mathbf{v}=\lambda \mathbf{v}^{T} \mathbf{v}=\lambda\|\mathbf{v}\|^{2}=\lambda
 \end{equation}
-
 Do vậy, $\lambda \geqslant 0$.
 \end{proof}
 Ta có định nghĩa và cách xác định các giá trị kì dị của một ma trận như sau
@@ -648,7 +654,7 @@ Ta có định nghĩa và cách xác định các giá trị kì dị của mộ
 Định lí sau cho ta sự tồn tại của SVD của một ma trận bất kỳ
 \end{dn}
 
-\begin{dl}Mọi ma trận $\mathrm{A}$ cỡ $m \times n$ bất kì đều có phân tích SVD có dạng
+\begin{dl}\cite{lay1994} Mọi ma trận $\mathrm{A}$ cỡ $m \times n$ bất kì đều có phân tích SVD có dạng
 
 \begin{equation} \label{eq3}
 \mathbf{A}=\mathbf{U D V}^{T}
@@ -694,14 +700,14 @@ $$
 $$
 
 Vậy $\mathbf{A}=\mathbf{U D V}^{T}$\\%Các vector cột $\mathbf{u}_{i}$ trong ma trận $\mathbf{U}$ được gọi là các vector kì dị trái của $\mathbf{A}$. Các vetor cột $\mathbf{v}_{i}$ trong ma trận $\mathbf{V}$ được gọi là các vector kì dị phải của $\mathbf{A}$.
-Trong trường hợp $\operatorname{rank}(\mathbf{A})=r<n$, thì SVD của $\mathbf{A}$ có dạng "chặt cụt" như sau:
+Trong trường hợp $\operatorname{rank}(\mathbf{A})=r<n$, thì SVD của $\mathbf{A}$ có dạng \textquotedblleft chặt cụt\textquotedblright\  như sau:
 $$
 \mathbf{A}=\mathbf{U}_r \mathbf{D}_r \mathbf{V}_r^T
 $$
 trong đó $\mathbf{U}_r, \mathbf{V}_r$ lần lượt là ma trận được tạo bởi $r$ cột đầu tiên của $\mathbf{U}, \mathbf{V}$, và $\mathbf{D}_r$ là ma trận con cấp $r \times r$ được tạo bởi $r$ hàng đầu tiên và $r$ cột đầu tiên của $\mathbf{D}$. Khai triển
-như trên được gọi là phân tích SVD "chặt cụt" của $\mathbf{A}$.
+như trên được gọi là phân tích SVD \textquotedblleft chặt cụt\textquotedblright\  của $\mathbf{A}$.
 \end{proof}
-\begin{dl}[\textbf{Về dạng khai triển của phân tích giá trị kì dị}] Cho $\mathbf{A}$ là ma trận cỡ $m \times n$ bất kì. Khi đó
+\begin{dl} \cite{linh2016} (\textbf{Về dạng khai triển của phân tích giá trị kì dị}) Cho $\mathbf{A}$ là ma trận cỡ $m \times n$ bất kì. Khi đó
 \begin{equation} \label{eq_4}
 \mathbf{A}=\mathbf{U D V}^{T}=\sigma_{1} \mathbf{u}_{1} \mathbf{v}_{1}^{T}+\sigma_{2} \mathbf{u}_{2} \mathbf{v}_{2}^{T}+\cdots+\sigma_{r} \mathbf{u}_{r} \mathbf{v}_{r}^{T}
 \end{equation}
@@ -709,7 +715,6 @@ trong đó $\sigma_{i}$ là các giá trị kì dị dương của ma trận $\m
 \end{dl}
 \begin{proof}
 Ta có
-
 $$
 \begin{aligned}
 	& \mathbf{U D V}^{T}=\left[\mathbf{u}_{1}, \mathbf{u}_{2}, \ldots, \mathbf{u}_{m}\right]\left[\begin{array}{ccc}
@@ -721,7 +726,7 @@ $$
 		\mathbf{v}_{2}^{T} \\
 		\vdots \\
 		\mathbf{v}_{n}^{T}
-	\end{array}\right] \\
+	\end{array}\right]\\
 	& =\left[\mathbf{u}_{1}, \mathbf{u}_{2}, \ldots, \mathbf{u}_{r}, \mathbf{u}_{r+1}, \ldots, \mathbf{u}_{m}\right]\left[\begin{array}{ccc}
 		\mathbf{D}_{r \times r} & \ldots & 0 \\
 		\vdots & \ddots & \vdots \\
@@ -793,6 +798,17 @@ $$
 $$
 là phân tích SVD của ma trận $\mathbf{A}$.
 \end{itemize}
+
+Cài đặt thuật toán trên PYTHON3 có thể xem Hình \ref{fig:svd_algo}
+\newpage
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.9]{implement_svd.png}
+	\caption{Cài đặt thuật toán SVD trên PYTHON3}
+	\label{fig:svd_algo}
+\end{figure}
+
 \subsubsection{Ví dụ}
 
 Tìm SVD của ma trận $\mathbf{A}=\left[\begin{array}{ll}1 & 0 \\ 1 & 0 \\ 0 & 1\end{array}\right]$.
@@ -905,16 +921,18 @@ $$
 	0 & 1
 \end{array}\right]
 $$
-Bên dưới là ví dụ về SVD trên PYTHON3.
+Bên dưới là ví dụ về SVD trên PYTHON3 Hình \ref{fig:SVD_example}.
+\newpage
 \begin{figure}[htp]
 	\centering
 	\includegraphics[scale=0.9]{example_svd.png}
 	\caption{Ví dụ SVD trên PYTHON3}
-	\label{fig:galaxy}
+	\label{fig:SVD_example}
 \end{figure}
 
+
 \section{Một số tính chất của ma trận liên quan đến SVD của nó}
-\begin{dl}
+\begin{dl} \cite{linh2016}
 Cho ma trận $\mathbf{A}$ cỡ $m \times n$ bất kì, có phân tích SVD là
 
 $$
@@ -934,7 +952,7 @@ Do đó
 $$
 \operatorname{rank}(\mathbf{A})=\operatorname{rank}\left(\mathbf{U D V}^{T}\right)=\operatorname{rank}\left(\mathbf{U}_{r} \mathbf{D} \mathbf{V}_{r}^{T}\right)=\operatorname{rank}\left(\mathbf{D V}_{r}^{T}\right)=\operatorname{rank}(\mathbf{D})=r$$
 \end{proof}
-\begin{dl} 
+\begin{dl} \cite{linh2016}
 Cho $\mathbf{A}$ là một ma trận có cỡ $m \times n$. Giả sử $\mathbf{A}$ có phân tích $\mathrm{SVD}$ dưới dạng khai triển là
 
 $$
@@ -1019,7 +1037,7 @@ $$
 
 Từ đó, ta suy $\operatorname{ra~} \operatorname{rank}\left(\mathbf{A}_{k}\right)=k$.
 \end{proof}
-\begin{dl} 
+\begin{dl} \cite{linh2016}
  Cho $\mathbf{A}$ là ma trận cỡ $m \times n$ bất kì và $\sigma_{1}, \sigma_{2}, \ldots, \sigma_{r}$ là các giá trị kì dị dương của $\mathbf{A}$. Khi đó $\|\mathbf{A}\|_{F}=\sqrt{\sigma_{1}^{2}+\sigma_{2}^{2}+\cdots+\sigma_{r}^{2}}$.
 \end{dl} 
 \begin{proof}
@@ -1033,13 +1051,11 @@ Giả sử $\mathbf{A}$ có phân tích $\mathrm{SVD}$ là $\mathbf{A}=\mathbf{U
 $$
 \left.\|\mathbf{A}\right\|_{F}^{2}=\left\|\mathbf{U D V}^{T}\right\|_{F}^{2}=\left\| \mathbf{D V}^{T}\right\|_{F}^{2}=\left\|\left(\mathbf{D V}^{T}\right)^{T}\right\|_{F}^{2}=\left\| \mathbf{V D}^{T}\right\|_{F}^{2}=\left\| \mathbf{D}^{T}\right \|_{F}^{2}=\sigma_{1}^{2}+\sigma_{2}^{2}+\cdots+\sigma_{r}^{2}
 $$
-
 Vậy
 
 $$
 \|\mathbf{A}\|_{F}^{2}=\sqrt{\sigma_{1}^{2}+\cdots+\sigma_{r}^{2}}
 $$
-
 với $\sigma_{i}, i=1,2, \ldots, r$ là các giá trị kì dị của ma trận $\mathbf{A}$.
 \end{proof} 
 %\section{Phân tích thành phần chính (PCA)}
@@ -1052,9 +1068,9 @@ Phép phân tích thành phần chính được đưa ra vào năm 1901 bởi Ka
 
 Một trong những ứng dụng quan trọng nhất của phép phân tích thành phần chính là giảm số chiều của dữ liệu. Khi dữ liệu có số chiều lớn, việc phân tích và xử lý trở nên phức tạp và tốn nhiều thời gian. Đồng thời cho phép giảm số chiều của dữ liệu bằng cách xác định các thành phần chính của ma trận, giúp cho việc xử lý và phân tích dữ liệu trở nên đơn giản và nhanh chóng hơn.
 
-Ngoài ra, phép phân tích này còn được sử dụng để giảm tác động của nhiễu trong dữ liệu, phát hiện các mối quan hệ giữa các biến đầu vào và giúp tối ưu hóa các thuật toán máy học.
+Ngoài ra, phép phân tích này còn được sử dụng để giảm tác động của nhiễu trong dữ liệu, phát hiện các mối quan hệ giữa các biến đầu vào và giúp tối ưu hóa các thuật toán máy học.Với những ứng dụng và lợi ích của mình, phép phân tích thành phần chính đã trở thành một công cụ quan trọng trong phân tích dữ liệu và được sử dụng rộng rãi trong nhiều lĩnh vực khác nhau.
+Nội dung trong chương này được tổng hợp chính từ các nguồn \cite{my2020}, \cite{tiep2018} và \cite{hyvarinen2009}
 
-Với những ứng dụng và lợi ích của mình, phép phân tích thành phần chính đã trở thành một công cụ quan trọng trong phân tích dữ liệu và được sử dụng rộng rãi trong nhiều lĩnh vực khác nhau.
 \section{Ý tưởng}
 Giả sử dữ liệu ban đầu là $\mathbf{x} \in \mathbb{R}^{m}$ và dữ liệu đã được giảm chiều là $\mathbf{z} \in \mathbb{R}^{r}$ với $r<m$. Cách đơn giản nhất để giảm chiều dữ liệu từ $m$ về $r<m$ là chỉ cần giữ lại $r$ phần tử quan trọng nhất. Có hai câu hỏi được đặt ra ở đây:
 \begin{itemize}
@@ -1125,7 +1141,7 @@ $$
 $$
 %m^{\frac{1}{2}}
 Điều này cho thấy $\mathrm{PCA}$ là xấp xỉ $\mathbf{X}$ với tổng của $r$ ma trận có hạng 1.
-Mục tiêu của PCA là làm giảm tối thiểu $\|\mathbf{E}\|^{2}=\left\|\mathbf{X}-\mathbf{A} \mathbf{B}^{T}\right\|^{2}$. Vì $\operatorname{rank}\left(\mathbf{A} \mathbf{B}^{T}\right) \leq r$ nên $\mathbf{A} \mathbf{B}^{T}$ là SVD "chặt cụt" của $\mathbf{X}$, nghĩa là nếu $\mathbf{U}_{r} \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}$ là SVD "chặt cụt" của $\mathbf{X}$ thì $\mathbf{A}= \mathbf{U}_{r}$ và $\mathbf{B}^{T}= \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}$. Số lượng thành phần tối thiểu phù hợp là số giá trị kì dị khác 0 của $\mathbf{X}$, hay là hạng của $\mathbf{X}$. Vì vậy, không cần thiết phải lấy số thành phần $r$ lớn hơn số lượng biến $n$. Trên thực tế, $r$ thường được lấy nhỏ hơn nhiều so với $n$.
+Mục tiêu của PCA là làm giảm tối thiểu $\|\mathbf{E}\|^{2}=\left\|\mathbf{X}-\mathbf{A} \mathbf{B}^{T}\right\|^{2}$. Vì $\operatorname{rank}\left(\mathbf{A} \mathbf{B}^{T}\right) \leq r$ nên $\mathbf{A} \mathbf{B}^{T}$ là SVD \textquotedblleft chặt cụt\textquotedblright\ của $\mathbf{X}$, nghĩa là nếu $\mathbf{U}_{r} \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}$ là SVD \textquotedblleft chặt cụt\textquotedblright\   của $\mathbf{X}$ thì $\mathbf{A}= \mathbf{U}_{r}$ và $\mathbf{B}^{T}= \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}$. Số lượng thành phần tối thiểu phù hợp là số giá trị kì dị khác 0 của $\mathbf{X}$, hay là hạng của $\mathbf{X}$. Vì vậy, không cần thiết phải lấy số thành phần $r$ lớn hơn số lượng biến $n$. Trên thực tế, $r$ thường được lấy nhỏ hơn nhiều so với $n$.
 
 Do thứ tự giảm dần của các giá trị kì dị của $\mathbf{X}$ trong SVD, thành phần chính đầu tiên giải thích phương sai nhiều nhất có thể và từng thành phần chính tiếp theo giải thích phương sai với ràng buộc là nó trực giao (không tương quan với các thành phần trước đó). Khi đó tổng phương sai được giải thích là $\operatorname{Tr}\left(\mathbf{B} \mathbf{B}^{T}\right)=\operatorname{Tr}\left(m^{-\frac{1}{2}} \mathbf{D}_{r}^{2}\right)$ với $\operatorname{Tr}\left(\mathbf{D}_{r}^{2}\right)$ là tổng bình phương của $r$ giá trị kì dị lớn nhất của $\mathbf{X}$.
 
@@ -1138,7 +1154,6 @@ Chúng ta cần đưa ra ràng buộc cho chuẩn của vectơ $\mathbf{w}=\left
 $$
 \|\mathbf{w}\|=\sqrt{\sum_{i=1}^{m} \mathbf{w}_{i}^{2}}=1
 $$
-
 Các ràng buộc khác về giá trị chuẩn của $\mathbf{w}$ chúng ta có thể đưa về ràng buộc trên.
 Chú ý rằng phương sai của một tổ hợp tuyến tính bất kì đều có thể được tính thông qua ma trận hiệp phương sai của dữ liệu. Xét một tổ hợp tuyến tính $\mathbf{w}^{T} \mathbf{x}=\sum_{i=1}^{m} w_{i} x_{i}$. Giả sử giá trị trung bình bằng 0 , tức là $E\{\mathbf{x}\}=0$. Khi đó
 
@@ -1150,19 +1165,16 @@ $$
 	& =\mathbf{w}^{T} \mathbf{C} \mathbf{w}
 \end{aligned}
 $$
-
 trong đó $\mathbf{C}=E\left\{\mathbf{x} \mathbf{x}^{T}\right\}$ là ma trận hiệp phương sai. Vì vậy, bài toán cơ bản $\mathrm{PCA}$ được xác định như sau:
 
 $$
 \max _{\mathbf{w}:\|\mathbf{w}\|=1} \mathbf{w}^{T}\mathbf{Cw}
 $$
-
 Vì $\mathbf{C}$ là ma trận đối xứng nên theo định lí phổ của ma trận đối xứng, tồn tại ma trận trực giao $\mathbf{U} \in \mathbb{R}^{m \times n}$ và ma trận đường chéo $\mathbf{D}=\operatorname{diag}\left(\lambda_{1}, \ldots, \lambda_{n}\right) \in \mathbb{R}^{n \times n}$ sao cho $\mathbf{C} = \mathbf{U} \mathbf{D} \mathbf{ U}^{T}$, trong đó $\lambda_{1}, \ldots, \lambda_{n}$ là các giá trị riêng của $\mathbf{C}$, và các vector cột của $\mathbf{U}$ là các véctơ riêng của $\mathbf{C}$ ứng với giá trị riêng đó. Thực hiện đổi biến $\mathbf{v}=\mathbf{U}^{T} \mathbf{w}$. Khi đó ta nhận được
 
 $$
 \mathbf{w}^{T} \mathbf{C} \mathbf{w}=\mathbf{w}^{T} \mathbf{U} \mathbf{D} \mathbf{U}^{T} \mathbf{w}=\mathbf{v}^{T} \mathbf{D} \mathbf{v}=\sum_{i=1}^{n} \mathbf{v}_{i}^{2} \lambda_{i}
 $$
-
 Vì $\mathbf{U}$ trực giao nên $\|\mathbf{v}\|=\|\mathbf{w}\|$, do đó, $\mathbf{v}$ có ràng buộc $\|\mathbf{v}\|=1$. Tiếp tục thực hiện phép đổi biến $\mathbf{m}_{i}=\mathbf{v}_{i}^{2}, i=1, \ldots, n$. Khi đó ràng buộc $\|\mathbf{v}\|=1$ tương đương với ràng buộc $\mathbf{m}_{i} \geq 0$ và $\sum_{i=1}^{n} \mathbf{m}_{i}=1$. Bài toán được chuyển sang dạng
 
 $$
@@ -1227,7 +1239,7 @@ Giả sử $\mathbf{X}$ là ma trận cỡ $m \times n$, với $m \geq n$. Để
 
 - Bước 1: Chuẩn hóa dữ liệu sao cho $E\{\mathbf{x_i}\}=0$ với $\mathbf{x_i}$ là vector hàng của của ma trận $\mathbf{X}$
 
-- Bước 2: Tìm SVD "chặt cụt" của ma trận $\mathbf{X}$, ta được $\mathbf{X}=\mathbf{U}_{r} \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}$ với $r \leq n$.
+- Bước 2: Tìm SVD \textquotedblleft chặt cụt\textquotedblright\ của ma trận $\mathbf{X}$, ta được $\mathbf{X}=\mathbf{U}_{r} \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}$ với $r \leq n$.
 
 - Bước 3: Tính ma trận $\mathbf{A}$ và $\mathbf{B}$ theo công thức sau:
 
@@ -1236,6 +1248,15 @@ $$
 $$
 
 - Bước 4: Nếu nghiệm $(\mathbf{A, B})$ chưa tốt thì chọn phép quay $\mathbf{Q}$, với $\mathbf{Q}$ là ma trận trực giao cấp $r$, ta tìm được nghiệm của mô hình $\mathrm{PCA}$ là $(\mathbf{A Q, B Q})$
+
+Cài đặt thuật toán trên PYTHON3 Hình \ref{fig:pca_algo} 
+\newpage
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.8]{implement_pca.png}
+\caption{ Cài đặt thuật toán PCA trên PYTHON3}
+\label{fig:pca_algo}
+\end{figure}
 
 \subsubsection{Ví dụ}
 Ví dụ ta tìm PCA của ma trận\[
@@ -1312,7 +1333,7 @@ $$
 	\end{bmatrix}
 \end{equation}
 Ta thấy nghiệm $(\mathbf{A, B})$ đã đủ tốt cụ thể có thể xem thử nghiệm trên PYTHON3 Hình \ref{fig:pca_example}.\\
-Ta sắp xỉ lại ma trân ban đầu theo công thức sau 
+Ngoài ra ta có thể sắp xỉ lại ma trân ban đầu theo công thức sau 
 \begin{equation} 
 	\mathbf{X} \approx \mathbf{A}_r\mathbf{B}_r^{T}+ \bar{\mathbf{x}} 
 \end{equation} 
@@ -1324,11 +1345,11 @@ Với một điểm dữ liệu mới $\mathbf{v} \in \R^D$ sẽ
 \end{equation} 
 \begin{figure}[htp]
 	\centering
-	\includegraphics[scale=0.9]{implement_pca.png}
+	\includegraphics[scale=0.8]{example_pca.png}
 	\caption{Thử nghiệm thuật toán PCA trên PYTHON3}
 	\label{fig:pca_example}
 \end{figure}
-\chapter{ MỘT SỐ ỨNG DỤNG CỦA SVD và PCA }
+\chapter{ Một số ứng dụng SVD và PCA }
 
 \section{Ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận}
 
@@ -1348,7 +1369,7 @@ $$
 
 Khi đó, $\operatorname{rank}\left(\mathbf{A}_{k}\right)=k$. Hơn nữa, $\mathbf{A}_{k}$ chính là ma trận xấp xỉ tốt nhất có hạng bằng $k$ của $\mathbf{A}$ theo cả hai chuẩn là chuẩn Frobenius và chuẩn 2. Ta có hai định lí quan trọng sau
 
-\begin{dl}{Định lí Eckart- Young, 1936}  \label{eckart}
+\begin{dl}\cite{eckart1936}{Định lí Eckart- Young, 1936}  \label{eckart}
 
 Với mọi ma trận $\mathbf{B}$ cỡ $m \times n$ và $\operatorname{rank}(\mathbf{B}) \leqslant k$, ta có
 
@@ -1363,7 +1384,6 @@ $$
 $$
 \mathbf{A}=\sum_{i=1}^{r} \sigma_{i} \mathbf{u}_{i} \mathbf{v}_{i}^{T}
 $$
-
 Khi đó với vector $\mathbf{x} \in \mathbb{R}^{n}$ bất kì và $1 \leqslant k \leqslant r$, ta có
 
 $$
@@ -1376,13 +1396,11 @@ Theo phân tích SVD dạng khai triển của $\mathbf{A}$ ta có
 $$
 \mathbf{A} \mathbf{x}=\sum_{i=1}^{r} \sigma_{i} \mathbf{u}_{i} \mathcal{V}_{i}^{T} \mathbf{x}=\sum_{i=1}^{r} \sigma_{i} \mathbf{u}_{i}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)=\sum_{i=1}^{r} \sigma_{i}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right) \mathbf{u}_{i}
 $$
-
 Do $\left(\mathbf{u}_{1} \cdot \mathbf{u}_{2}, \ldots, \mathbf{u}_{m}\right)$ là cơ sở trực chuẩn trong $\mathbb{R}^{m}$ và $\sigma_{1} \geqslant \sigma_{2} \cdots \geqslant \sigma_{r}$ nên
 
 $$
 \|\mathbf{A} \mathbf{x}\|_{F}^{2}=\sum_{i=1}^{r} \sigma_{i}^{2}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2} \leqslant \sum_{i=1}^{k} \sigma_{i}^{2}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2}+\sigma_{k}^{2} \sum_{i=k+1}^{r}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2} .
 $$
-
 Mặt khác
 
 $\sigma_{k}^{2} \sum_{i=1}^{k}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2}+\sigma_{k}^{2} \sum_{i=k+1}^{r}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2}=\sigma_{k}^{2} \sum_{i=1}^{r}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2} \leqslant \sigma_{k}^{2} \sum_{i=1}^{n}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2}=\sigma_{k}^{2}\left\|\mathbf{V}^{T} \mathbf{x}\right\|_{F}^{2}=\sigma_{k}^{2}\|\mathbf{x}\|_{F}^{2}$
@@ -1392,7 +1410,6 @@ Do đó,
 $$
 \sigma_{k}^{2} \sum_{i=k+1}^{r}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2} \leqslant \sigma_{k}^{2}\|\mathbf{x}\|_{F}^{2}-\sigma_{k}^{2} \sum_{i=1}^{k}\left(\mathcal{V}_{i}^{T} \mathbf{x}\right)^{2}
 $$
-
 Vậy
 
 $$
@@ -1433,13 +1450,11 @@ nên suy ra
 	& \geqslant \operatorname{Tr}\left(\mathbf{A} \mathbf{A}^{T}\right)-\sum_{i=1}^{k}\left\|\mathbf{A y}_{i}\right\|_{F}^{2} .
 \end{aligned}
 \end{equation}
-
 Tiếp theo, ta đánh giá số hạng $\sum_{i=1}^{k}\left\|\mathbf{A y}_{i}\right\|_{F}^{2}$ trong bất đẳng thức \ref{eq411}. Theo Bổ đề \ref{bode} ta có
 
 $$
 \left\|\mathbf{A y}_{i}\right\|_{F}^{2} \leqslant \sigma_{k}^{2}+\sum_{i=1}^{k} \sigma_{i}^{2}\left(\mathcal{V}_{i}^{T} \mathbf{y}_{i}\right)^{2}-\sigma_{k}^{2} \sum_{i=1}^{k}\left(\mathcal{V}_{\mathcal{V}}^{T} \mathbf{y}_{i}\right)^{2} \text {. }
 $$
-
 Lấy tổng theo chỉ số $j$ ta có bất đẳng thức
 
 $$
@@ -1450,25 +1465,21 @@ $$
 	& =\sum_{i=1}^{k}\left[\sigma_{k}^{2}+\left(\sigma_{i}^{2}-\sigma_{k}^{2}\right) \sum_{j=1}^{k}\left(v_{i}^{T} y_{j}\right)^{2}\right] .
 \end{aligned}
 $$
-
 Mặt khác,
 
 $$
 \sum_{j=1}^{k}\left(\mathcal{V}_{i}^{T} \mathbf{y}_{j}\right)^{2} \leqslant \sum_{j=1}^{n}\left(\mathcal{V}_{i}^{T} \mathbf{y}_{j}\right)^{2}=\left\|\mathcal{V}_{i}^{T} \mathbf{Y}\right\|_{F}^{2}=\left\|\mathcal{V}_{i}^{T}\right\|_{F}^{2}=1
 $$
-
 với $\mathbf{Y}$ là ma trận trực giao có các cột là các vector $\mathbf{y}_{1}, \mathbf{y}_{2}, \ldots, \mathbf{y}_{n}$. Do đó
 
 $$
 \sum_{j=1}^{k}\left\|\mathbf{A y}_{j}\right\|_{F}^{2} \leqslant \sum_{i=1}^{k} \sigma_{k}^{2}
 $$
-
 Thay vào bất đẳng thức \ref{eq411} ta được
 
 $$
 \|\mathbf{A}-\mathbf{B}\|_{F}^{2} \geqslant \operatorname{Tr}\left(\mathbf{A} \mathbf{A}^{T}\right)-\sum_{i=1}^{k}\left\|\mathbf{A} \mathbf{y}_{i}\right\|_{F}^{2} \geqslant\|\mathbf{A}\|_{F}^{2}-\sum_{i=1}^{k} \sigma_{i}^{2} .
 $$
-
 Khi $\mathbf{B}=\mathbf{A}_{k}=\sum_{i=1}^{k} \sigma_{i} \mathbf{u}_{i} \mathcal{V}_{i}^{T}$, ta có
 
 $$
@@ -1480,16 +1491,14 @@ Từ đó suy ra
 $$
 \left\|\mathbf{A}-\mathbf{A}_{k}\right\|_{F}^{2}=\sum_{i=k+1}^{r} \sigma_{i}^{2}=\sum_{i=1}^{r} \sigma_{i}^{2}-\sum_{i=1}^{k} \sigma_{i}^{2}=\|A\|_{F}^{2}-\sum_{i=1}^{k} \sigma_{i}^{2} .
 $$
-
 Điều này chứng tỏ $\mathbf{A}_{k}$ chính là xấp xỉ hạng $k$ tốt nhất của ma trận $\mathbf{A}$ theo chuẩn Frobenius.
 \end{proof}
-Bên cạnh đó ta có nhận xét quan trọng về sai số do xấp xỉ một ma trận $\mathbf{A}$ có hạng $r$ bởi $mathbf{A}_{k}$ với $k < r$ phần tử như sau:
+Bên cạnh đó ta có nhận xét quan trọng về sai số do xấp xỉ một ma trận $\mathbf{A}$ có hạng $r$ bởi $\mathbf{A}_{k}$ với $k < r$ phần tử như sau:
 
 $$
 	\label{eqn:26_17}
 	\frac{\|\mathbf{A} - \mathbf{A}_k\|_F^2}{\|\mathbf{A}\|_F^2} = {\frac{\sum_{i=k+1}^{r} \sigma_{i}^{2}}{\sum_{i=1}^{r} \sigma_{i}^{2}}}
 $$
-
 Ở đây, {lượng thông tin} được định nghĩa
 là tổng bình phương của giá trị suy biến. Ví dụ, nếu muốn giữ lại ít nhất
 90\% lượng thông tin trong $\mathbf{A}$, trước hết ta tính $\sum_{j = 1}^r
@@ -1498,7 +1507,7 @@ $$
 	\frac{\sum_{i = 1}^k \sigma_i^2}{\sum_{j = 1}^r \sigma_j^2} \geq 0.9
 $$
 
-\begin{dl}
+\begin{dl} \cite{linh2016}
 
 Giả sử $\mathbf{A}$ là ma trận cỡ $m \times n$ bất kì, với $\operatorname{rank}(A)=r$ và $\mathbf{A}$ có khai triển kì dị SVD là
 
@@ -1511,8 +1520,7 @@ Khi đó, với mọi ma trận $\mathbf{B}$ có cỡ $m \times n$ bất kì và
 $$
 \|\mathbf{A}-\mathbf{B}\|_{2} \geqslant \sigma_{k+1}
 $$
-
-Dấu " =" xảy ra khi $\mathbf{B}=\mathbf{A}_{k}=\sum_{i=1}^{k} \sigma_{i} \mathbf{u}_{i} \mathcal{V}_{i}^{T}$.
+Dấu \textquotedblleft  =\textquotedblright\ xảy ra khi $\mathbf{B}=\mathbf{A}_{k}=\sum_{i=1}^{k} \sigma_{i} \mathbf{u}_{i} \mathcal{V}_{i}^{T}$.
 \end{dl}
 
 \begin{proof}
@@ -1521,21 +1529,17 @@ Do đó với mọi $\mathbf{w} \in \mathbf{W}$ thì $\mathbf{A} \mathbf{w}=(\ma
 $$
 \|\mathbf{A} \mathbf{w}\|_{2}=\|(\mathbf{A}-\mathbf{B}) \mathbf{w}\|_{2} \leqslant\|\mathbf{A}-\mathbf{B}\|_{2}\|\mathbf{w}\|_{2}<\sigma_{k+1}\|\mathbf{w}\|_{2} .
 $$
-
 Vì vậy W là không gian con cỡ $r-k$ sao cho
 $$
 \|\mathbf{A}\|_{2}<\sigma_{k+1}\|\mathbf{w}\|_{2}
 $$
-
 Mặt khác, tồn tại một không gian con $\mathbf{U}$ có chiều là $k+1$ được xây dựng từ $k+1$ giá trị kì dị đầu tiên của ma trận $\mathbf{A}$ sao cho
 $$
 \|\mathbf{A} \mathbf{u}\| \geqslant \sigma_{k+1}\|\mathbf{u}\|_{2}, \quad \forall \mathbf{u} \in \mathbf{U}
 $$
-
 Khi đó $\operatorname{dim}(\mathbf{U}+\mathbf{W})=(r-k)+(k+1)=r+1>r$. Do đó tồn tại $\mathcal{V} \neq \mathbf{0}$ và $\mathcal{V} \in \mathbf{U} \cap \mathbf{W}$. Suy ra $\|\mathbf{A} \mathcal{V}\|_{2}<\sigma_{k+1}\|\mathcal{V}\|_{2}$ và $\|\mathbf{A} \mathcal{V}\| \geqslant \sigma_{k+1}\|\mathcal{V}\|_{2}$. Điều này không thể xảy ra. Vì vậy giả thiết phản chứng ban đầu là sai.
 
-Vậy với mọi ma trận $\mathbf{B}$ cỡ $m \times n$ bất kì có $\operatorname{rank}(\mathbf{B}) \leqslant k$ thì $\|\mathbf{A}-\mathbf{B}\|_{2} \geqslant \sigma_{k+1}$.
-
+Vậy với mọi ma trận $\mathbf{B}$ cỡ $m \times n$ bất kì có $\operatorname{rank}(\mathbf{B}) \leqslant k$ thì $\|\mathbf{A}-\mathbf{B}\|_{2} \geqslant \sigma_{k+1}$.\\
 Khi $\mathbf{B}=\mathbf{A}_{k}$ thì $\left\|\mathbf{A}-\mathbf{A}_{k}\right\|_{2}=\sigma_{k+1}$. Điều này chứng tỏ $\mathbf{A}_{k}$ chính là xấp xỉ hạng $k$ tốt nhất của $\mathbf{A}$ theo chuẩn 2 . 
 \end{proof}
 
@@ -1550,7 +1554,6 @@ Ví dụ một hình ảnh $130 \times 130$ pixels được phân tích thành 3
 $$
 \mathbf{A}=\sigma_{1} \mathbf{u}_{1} \mathcal{V}_{1}^{T}+\cdots+\sigma_{r} \mathbf{u}_{r} \mathcal{V}_{r}^{T}
 $$
-
 Theo như chứng minh ở Định lí \ref{eckart} với mỗi giá trị $k<r$ thì $A_{k}=\sigma_{1} \mathbf{u}_{1} \mathcal{V}_{1}^{T}+\cdots+$ $\sigma_{k} \mathbf{u}_{k} \mathcal{V}_{k}^{T}$ là xấp xỉ hạng $k$ tốt nhất của $\mathbf{A}$.
 
 Ví dụ, $k=16$ thì ma trận $\mathbf{A}_{k}$ thể hiện các dữ liệu của $\mathbf{A}$ tương ứng với 16 giá trị kì dị đầu tiên. Như vậy, ta chỉ cần lưu trữ 16 giá trị kì dị, 16 vector $\mathbf{u}_{i}, 16z $ vector $\mathcal{V}_{i}$, tương đương với 4176 số. Tương tự như vậy với hai ma trận $\mathbf{B}$ và $\mathbf{C}$, số lượng các số phải lưu trữ là 12528 số. Rõ ràng phân tích SVD đã giúp giảm tải một lượng thông tin cần lưu trữ một cách đáng kể.
@@ -1581,21 +1584,19 @@ Lưu ý:
 \end{figure}
 \newpage
 \section{Eigenface và ứng dụng PCA trong nhận dạng khuôn mặt}
-Phân tích thành phần chính (PCA - Principal Component Analysis) luôn được biết đến như là một phương pháp thống kê phổ biến dùng để giảm kích thước của dữ liệu trong khi vẫn giữ được những thông tin quan trọng nhất. PCA tìm ra các "thành phần chính" trong dữ liệu - những hướng mà dữ liệu biến đổi nhiều nhất, và dùng chúng để tái biểu diễn dữ liệu trong một không gian ít chiều hơn. Do đó, PCA đóng một vai trò quan trọng trong lĩnh vực nhận dạng khuôn mặt. Nhận dạng khuôn mặt là một bài toán phức tạp do sự đa dạng vô cùng lớn của các khuôn mặt. Mỗi khuôn mặt đều có những đặc điểm duy nhất và khác biệt như kích thước, hình dạng, màu sắc, cấu trúc, đặc điểm về giới tính, tuổi tác, v.v... PCA giúp chúng ta tìm ra những đặc điểm quan trọng nhất (hay còn gọi là "thành phần chính") của khuôn mặt, giúp tối ưu hóa quá trình nhận dạng và giảm bớt chi phí tính toán. Một trong những phương pháp thường được biết đến đó là Eigenface.
+Phân tích thành phần chính (PCA - Principal Component Analysis) luôn được biết đến như là một phương pháp thống kê phổ biến dùng để giảm kích thước của dữ liệu trong khi vẫn giữ được những thông tin quan trọng nhất. PCA tìm ra các \textquotedblleft thành phần chính\textquotedblright\  trong dữ liệu - những hướng mà dữ liệu biến đổi nhiều nhất, và dùng chúng để tái biểu diễn dữ liệu trong một không gian ít chiều hơn. Do đó, PCA đóng một vai trò quan trọng trong lĩnh vực nhận dạng khuôn mặt. Nhận dạng khuôn mặt là một bài toán phức tạp do sự đa dạng vô cùng lớn của các khuôn mặt. Mỗi khuôn mặt đều có những đặc điểm duy nhất và khác biệt như kích thước, hình dạng, màu sắc, cấu trúc, đặc điểm về giới tính, tuổi tác, v.v... PCA giúp chúng ta tìm ra những đặc điểm quan trọng nhất (hay còn gọi là \textquotedblleft thành phần chính\textquotedblright) của khuôn mặt, giúp tối ưu hóa quá trình nhận dạng và giảm bớt chi phí tính toán. Một trong những phương pháp thường được biết đến đó là Eigenface.
 
-Eigenface là một phương pháp nhận dạng khuôn mặt dựa trên kỹ thuật phân tích thành phần chính (PCA). Thuật ngữ "Eigenface" xuất phát từ từ "eigen" trong tiếng Đức, có nghĩa là "đặc trưng" hoặc "riêng". Trong ngữ cảnh này, một Eigenface là một tập hợp các vector riêng, mà từ đó có thể tạo ra hầu hết các khuôn mặt khác nhau.
+Eigenface là một phương pháp nhận dạng khuôn mặt dựa trên kỹ thuật phân tích thành phần chính (PCA). Thuật ngữ \textquotedblleft Eigenface\textquotedblright\ xuất phát từ từ \textquotedblleft eigen\textquotedblright\ trong tiếng Đức, có nghĩa là \textquotedblleft đặc trưng\textquotedblright\ hoặc  \textquotedblleft riêng\textquotedblright. Trong ngữ cảnh này, một Eigenface là một tập hợp các vector riêng, mà từ đó có thể tạo ra hầu hết các khuôn mặt khác nhau.
 
 Phương pháp Eigenface giảm kích thước của dữ liệu hình ảnh khuôn mặt bằng cách chuyển đổi nó thành một tập hợp các thành phần chính. Những thành phần này, được gọi là Eigenfaces, đại diện cho các đặc điểm cơ bản của khuôn mặt, như hình dạng của mắt, mũi, miệng và vị trí tương đối của chúng. Mỗi khuôn mặt trong dữ liệu đều có thể được biểu diễn như một tổ hợp tuyến tính của những Eigenface này. Tôi sẽ thử nghiệm phương pháp Eigenface trên bộ dữ liệu LFW.
 
-Bộ dữ liệu LFW (Labeled Faces in the Wild) là một bộ dữ liệu hình ảnh khuôn mặt phổ biến được sử dụng trong nghiên cứu nhận dạng khuôn mặt. Bộ dữ liệu này bao gồm hình ảnh của hàng trăm người nổi tiếng, với mỗi người được chụp dưới nhiều góc độ và biểu cảm khác nhau. Mỗi hình ảnh trong bộ dữ liệu là một ma trận hai chiều biểu thị giá trị cường độ điểm ảnh có thể hiểu như ma trận $50*37*1$. với 1288 hình. Và được chia thành 7 loại khác nhau ứng với 7 người nổi tiểng.
+Bộ dữ liệu LFW (Labeled Faces in the Wild)\cite{huang} là một bộ dữ liệu hình ảnh khuôn mặt phổ biến được sử dụng trong nghiên cứu nhận dạng khuôn mặt. Bộ dữ liệu này bao gồm hình ảnh của hàng trăm người nổi tiếng, với mỗi người được chụp dưới nhiều góc độ và biểu cảm khác nhau. Mỗi hình ảnh trong bộ dữ liệu là một ma trận hai chiều biểu thị giá trị cường độ điểm ảnh có thể hiểu như ma trận $50*37*1$. với 1288 hình. Và được chia thành 7 loại khác nhau ứng với 7 người nổi tiểng.
 
-Khi áp dụng phương pháp Eigenface cho bộ dữ liệu LFW, ta sẽ tạo ra một "khuôn mặt trung bình" cùng với một tập hợp các "Eigenfaces". Sau đó, mỗi khuôn mặt trong bộ dữ liệu có thể được biểu diễn như một tổ hợp tuyến tính của các Eigenfaces, giúp cho việc nhận dạng khuôn mặt trở nên hiệu quả và chính xác hơn.
+Khi áp dụng phương pháp Eigenface cho bộ dữ liệu LFW, ta sẽ tạo ra một \textquotedblleft khuôn mặt trung bình\textquotedblright\ cùng với một tập hợp các \textquotedblleft Eigenfaces\textquotedblright. Sau đó, mỗi khuôn mặt trong bộ dữ liệu có thể được biểu diễn như một tổ hợp tuyến tính của các Eigenfaces, giúp cho việc nhận dạng khuôn mặt trở nên hiệu quả và chính xác hơn.
 
-Đầu tiên ta sẽ làm "phẳng" ma trận đầu vào thành ma trận $(50*37,1288)$ với mỗi cột là một vector ứng với một khuôn mặt trong tập dữ liệu. Sau đó ta chia dữ liệu đầu vào thành tập huấn luyện và tập kiểm thử với tỉ lể lần lượt là 0.75 và 0.25. Ta nhận được 2 ma trận với kích cỡ là $(1850,966)$ và $(1850,322)$
-
+Đầu tiên ta sẽ làm \textquotedblleft phẳng\textquotedblright\ ma trận đầu vào thành ma trận $(50*37,1288)$ với mỗi cột là một vector ứng với một khuôn mặt trong tập dữ liệu. Sau đó ta chia dữ liệu đầu vào thành tập huấn luyện và tập kiểm thử với tỉ lể lần lượt là 0.75 và 0.25. Ta nhận được 2 ma trận với kích cỡ là $(1850,966)$ và $(1850,322)$\\
 %Sau đó ta đi tìm Eigenface cho mỗi khung mặt trên tập huấn luyện và ma trận biểu diễn dữ liệu gốc trên cơ sở của các thành phần chính($\mathbf{B}_k^T$) thông qua PCA.
-Sau đó, ta đi tìm ma trận $\mathbf{A}_k$ chứa các Eigenfaces và ma trận biểu diễn dữ liệu gốc trên cơ sở của các thành phần chính $\mathbf{B}_k^T$ thông qua PCA.
-
+Sau đó, ta đi tìm ma trận $\mathbf{A}_k$ chứa các Eigenfaces và ma trận biểu diễn dữ liệu gốc trên cơ sở của các thành phần chính $\mathbf{B}_k^T$ thông qua PCA.\\
 PCA sẽ giúp chúng ta xác định các thành phần chính (hay còn gọi là Eigenfaces trong ngữ cảnh này) của tập dữ liệu hình ảnh khuôn mặt. Các thành phần này, được chứa trong ma trận $\mathbf{A}_k$, đại diện cho các hướng mà dữ liệu biến thiên nhiều nhất. Điều này giúp tạo ra một không gian mới, với các trục tương ứng với các thành phần chính, để biểu diễn dữ liệu.
 
 Kế tiếp, chúng ta tính toán ma trận $\mathbf{B}_k^T$, mà mỗi cột của nó biểu diễn một hình ảnh khuôn mặt trong không gian của các thành phần chính. Mỗi hình ảnh khuôn mặt giờ đây được biểu diễn bằng một tổ hợp tuyến tính của các Eigenfaces, với hệ số tương ứng nằm trong $\mathbf{B}_k^T$.
@@ -1610,14 +1611,32 @@ Vì vậy, thông qua PCA, chúng ta có thể giảm đáng kể số lượng 
 
 Sau đó giảm chiều dữ liệu kiểm thử bằng cách chiếu nó qua ma trận $\mathbf{A}_k$ theo công thức \ref{chieu}.
 Bây giờ ta có 966 điểm dữ liệu huấn liệu và 322 điểm dữ liệu kiểm thử. Liệu ta có thể phân biệt được các nét đặc trưng của mỗi khuông mặt chỉ thông qua các vector eigenface chỉ với 150 chiều thay và 1850 như ban đầu.
-Để trả lời câu hỏi này ta sẽ huấn luyện một bộ phân lớp tương đối nổi tiếng và SVM(support Vector Machine).
+Để trả lời câu hỏi này ta sẽ huấn luyện một bộ phân lớp tương đối nổi tiếng và SVM(Support Vector Machine)\cite{cristianini2000}.
 hình \ref{fig:svm_result} và hình \ref{fig:headmap}  là kết quả sau khi thử nghiệm với bộ phân loại SVM. Ta thấy bộ phân loại có thể nhận dạng khuôn mặt tốt dựa trên vector eigenface với độ chính xác trùng bình là $80\%$. Hình \ref{fig:output} là kết quả suy luận của bộ phân loại trên tập kiểm thử.
 \begin{figure}[htp]
 	\centering
 	\includegraphics[scale=0.8]{result_svm.png}
-	\caption{kết quả sau khi huận luyện bộ phân loại SVM.}
+	\caption{Báo cáo phân loại sau khi huận luyện bộ phân loại SVM.}
 	\label{fig:svm_result}
 \end{figure}
+Hình \ref{fig:svm_result} là báo cáo phân loại (classification report) của một mô hình phân loại, được tính toán trên bộ dữ liệu kiểm thử (test set). Dựa vào dữ liệu bạn cung cấp, có vẻ như mô hình đã được huấn luyện để phân loại ảnh của các chính trị gia khác nhau.\\
+Báo cáo bao gồm các thông số đo lường hiệu suất của mô hình như sau:
+\begin{itemize}
+\item Precision: Độ chính xác cho từng lớp. Độ chính xác là tỉ lệ giữa số mẫu dự đoán đúng và tổng số mẫu dự đoán cho một lớp cụ thể.
+
+\item Recall: Độ phủ cho từng lớp. Độ phủ là tỉ lệ giữa số mẫu dự đoán đúng và tổng số mẫu thực sự thuộc về lớp đó.
+
+\item F1-score: Trung bình điều hòa của độ chính xác và độ phủ. Điểm F1 càng cao thì mô hình càng tốt.
+
+\item Support: Số lượng mẫu thực sự có trong tập kiểm thử cho mỗi lớp.
+\end{itemize}
+Đối với mỗi chỉ số này, báo cáo cũng cung cấp một giá trị trung bình (\textquotedblleft macro avg\textquotedblright) và giá trị trung bình có trọng số (\textquotedblleft weighted avg\textquotedblright) cho tất cả các lớp:
+\begin{itemize}
+\item \textquotedblleft Macro avg\textquotedblright\ là trung bình đơn giản của các số liệu trên tất cả các lớp.
+\item \textquotedblleft Weighted avg\textquotedblright\ là trung bình có trọng số của các số liệu trên tất cả các lớp, trong đó trọng số cho mỗi lớp là số lượng mẫu trong lớp đó.
+\item Cuối cùng, \textquotedblleft accuracy\textquotedblright\ là tỉ lệ tổng thể của các dự đoán đúng so với tổng số mẫu.
+\end{itemize}
+Dựa trên báo cáo, mô hình phân loại này hoạt động tốt nhất cho lớp \textquotedblleft George W Bush\textquotedblright\ với điểm F1 là 0.86, và kém nhất cho lớp \textquotedblleft Donald Rumsfeld\textquotedblright\ với điểm F1 là 0.61. Độ chính xác tổng thể của mô hình là 0.80, có nghĩa là mô hình đã dự đoán đúng 80\% các mẫu trong tập kiểm thử.
 \begin{figure}[htp]
 	\centering
 	\includegraphics[scale=0.8]{heatmap.png}
@@ -1625,52 +1644,110 @@ hình \ref{fig:svm_result} và hình \ref{fig:headmap}  là kết quả sau khi 
 	\label{fig:headmap}
 \end{figure}
 
+Ma trận lỗi(hình\ref{fig:headmap}) là một cách hữu ích để trực quan hóa hiệu suất của bộ phân loại. Mỗi hàng của ma trận tương ứng với lớp thực tế, và mỗi cột tương ứng với lớp dự đoán.
+
+Giá trị tại vị trí $(i, j)$ là số lượng mẫu mà lớp thực tế là $i$ nhưng mô hình dự đoán là lớp $j$. Do đó, các phần tử trên đường chéo chính của ma trận tương ứng với số lượng các dự đoán chính xác.
+Ta có các lớp sau:
+
+\begin{itemize}
+	\item Ariel Sharon
+	\item Colin Powell
+	\item Donald Rumsfeld
+	\item George W Bush
+	\item Gerhard Schroeder
+	\item Hugo Chavez
+	\item Tony Blair
+\end{itemize}
+Khi đó, các con số trong ma trận sẽ tương ứng với:
+
+\begin{itemize}
+	\item 10 hình ảnh của Ariel Sharon đã được dự đoán chính xác, 3 hình ảnh bị nhầm lẫn với Donald Rumsfeld.
+	\item Colin Powell có 50 hình ảnh được dự đoán chính xác, nhưng 2 hình ảnh bị nhầm lẫn với Ariel Sharon, 2 hình ảnh bị nhầm với Donald Rumsfeld, 3 hình ảnh bị nhầm với George W Bush, và còn lại bị nhầm lẫn với Hugo Chavez và Tony Blair.
+	\item ... và tương tự cho các lớp khác.
+\end{itemize}
+
+Một số hình ảnh từ tập dữ liệu kiểm thử, với mỗi hình ảnh được hiển thị cùng với dự đoán của mô hình và nhãn thực sự của hình ảnh.
+
 \begin{figure}[htp]
 	\centering
 	\includegraphics[scale=0.8]{predict_pca.png}
 	\caption{kết quả suy luận của bộ phân loại trên tập kiểm thử}
 	\label{fig:output}
 \end{figure}
-\chapter{Kết luận}
+\chapter*{Kết luận}
 Qua quá trình thực hiện khóa luận, tôi đã có cơ hội tìm hiểu và nghiên cứu sâu về các khái niệm và kỹ thuật liên quan đến Phân tích giá trị kì dị (SVD) và Phân tích thành phần chính (PCA). Khóa luận đã đạt được những kết quả sau:
 \begin{itemize}
-	\item[1]Kiến thức chuẩn bị: Khóa luận đã trình bày một cách tổng quát về các kiến thức cơ bản về Ma trận, Vector riêng, Giá trị riêng, và Định lí phổ của ma trận đối xứng. Đồng thời, khóa luận cũng đã giới thiệu về các khái niệm cơ bản trong Xác xuất thống kê bao gồm Kỳ vọng, Phương sai và Ma trận hiệp phương sai.
+	\item[1] Kiến thức chuẩn bị: Khóa luận đã trình bày một cách tổng quát về các kiến thức cơ bản về Ma trận, Vector riêng, Giá trị riêng, và Định lí phổ của ma trận đối xứng. Đồng thời, khóa luận cũng đã giới thiệu về các khái niệm cơ bản trong Xác xuất thống kê bao gồm Kỳ vọng, Phương sai và Ma trận hiệp phương sai.
 
-\item[1]Phân tích giá trị kì dị (SVD): Khóa luận đã giới thiệu về khái niệm SVD, cách thức tính toán SVD của một ma trận, cũng như một số tính chất quan trọng của ma trận liên quan đến SVD.
+\item[2] Phân tích giá trị kì dị (SVD): Khóa luận đã giới thiệu về khái niệm SVD, cách thức tính toán SVD của một ma trận, cũng như một số tính chất quan trọng của ma trận liên quan đến SVD.
 
-\item[3]Phân tích thành phần chính (PCA): Khóa luận đã trình bày về khái niệm PCA, ý tưởng chính của PCA, cách thức tìm các thành phần chính của bài toán PCA thông qua SVD, tính duy nhất của nghiệm của PCA, và cũng đã giới thiệu về thuật toán tìm PCA của một ma trận.
+\item[3] Phân tích thành phần chính (PCA): Khóa luận đã trình bày về khái niệm PCA, ý tưởng chính của PCA, cách thức tìm các thành phần chính của bài toán PCA thông qua SVD, tính duy nhất của nghiệm của PCA, và cũng đã giới thiệu về thuật toán tìm PCA của một ma trận.
 
-\item[4]Một số ứng dụng của SVD và PCA: Khóa luận đã giới thiệu về một số ứng dụng thực tế của SVD và PCA, bao gồm việc sử dụng SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận, ứng dụng của SVD trong xử lý ảnh, và cách sử dụng PCA trong bài toán nhận dạng khuôn mặt thông qua phương pháp Eigenface.
+\item[4] Một số ứng dụng của SVD và PCA: Khóa luận đã giới thiệu về một số ứng dụng thực tế của SVD và PCA, bao gồm việc sử dụng SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận, ứng dụng của SVD trong xử lý ảnh, và cách sử dụng PCA trong bài toán nhận dạng khuôn mặt thông qua phương pháp Eigenface.
 \end{itemize}
-Mặc dù khóa luận đã cố gắng trình bày một cách đầy đủ và chi tiết, nhưng không tránh khỏi những thiếu sót. Tôi rất mong nhận được những ý kiến đóng góp từ Quý Thầy, Cô và các bạn để có thể hoàn thiện hơn trong việc nghiên cứu và ứng dụng các kiến thức liên quan đến SVD và PCA trong tương lai.
+Mặc dù chúng tôi đã cố gắng trình bày khóa luận một cách đầy đủ và chi tiết, nhưng khó tránh khỏi những thiếu sót do hạn chế về thời gian và trình độ. Chúng tôi rất mong nhận được những ý kiến đóng góp từ Quý Thầy, Cô và các bạn để khóa luận có thể hoàn thiện hơn.
 
 
 \begin{thebibliography}{99}
+\bibitem{an2015}
+Trần Hồng An,
+\emph{Giáo trình đại số tuyến tính},
+Tài liệu lưu hành nội bộ Trường Dại học Công Nghệ Thông Tin, (2015).
+
+\bibitem{hieu2019}
+Lê Thanh Hiếu,
+\emph{Bài giảng đại số tuyến tính},
+Tài liệu lưu hành nội bộ, (2019).
+
+\bibitem{hung2000}
+Nguyễn Hữu Việt Hưng,
+\emph{Giáo trình đại số tuyến tính 1,2},
+Nhà xuất bản Đại học Quốc gia Hà Nội (2000).
+
+\bibitem{linh2016}
+Nguyễn Trần Nhật Linh,
+\emph{Phân tích giá trị kì dị và một số ứng dụng},
+Luận văn thạc sĩ (2016).
+
+\bibitem{my2020}
+Nguyễn THị Ái My,
+\emph{Một số mô hình phân tích thành phần chính ba chiều},
+Luận văn thạc sĩ (2020).
 
 \bibitem{thuan2003}
 Nguyễn Duy Thuận, Phi Mạnh Ban, Nông Quốc Chinh,
 \emph{Dại số tuyến tính},
-Nhà xuất bản Đại học Sư phạm, (2003).
+Nhà xuất bản Đại học Sư phạm, (2003)
 
-\bibitem{hieu2019}
-Lê Thanh Hiếu,
-\emph{Giáo trình đại số tuyến tính 1,2},
-Giáo trình lưu hành nội bộ, (2019).
-
-\bibitem{tien2018}
+\bibitem{tiep2018}
 Vũ Hữu Tiệp,
 \emph{Machine Learning cơ bản},
 Nhà xuất bản Khoa học và Kỹ thuật, (2018).
+
+\bibitem{tri2014}
+Nguyễn Đình Trí (Chủ biên), Tạ Văn Đĩnh, Nguyễn Hồ Quỳnh
+\emph{Toán học cao cấp Tập II}
+ Nhà xuất bản Giáo dục Việt Nam.(2014).
+
+\bibitem{cristianini2000}
+Cristianini, N., Shawe-Taylor
+\emph{An Introduction to Support Vector Machines and other kernel-based learning methods},
+Cambridge University Press, Cambrigde, 2000.
+
+\bibitem{huang}
+Gary B. Huang, Manu Ramesh, Tamara Berg, and Erik Learned-Miller
+\emph{Labeled Faces in the Wild: A Database for Studying
+Face Recognition in Unconstrained Environments}
 
 \bibitem{hyvarinen2009}
 Aapo Hyvärinen,
 \emph{Principal component analysis},
 Based on material from the book Natural Image Statistics to be published by Springer-Verlag in 2009.
 
-\bibitem{meyer2000}
-Carl D. Meyer,
-\emph{Matrix analysis and applied linear algebra},
-SIAM, Philadelphia 2000.
+%\bibitem{meyer2000}
+%Carl D. Meyer,
+%\emph{Matrix analysis and applied linear algebra},
+%SIAM, Philadelphia 2000.
 
 
 \bibitem{lay1994}
@@ -1679,17 +1756,18 @@ David C. Lay,
 Addison-Wesley, Reading, MA, 1994.
 
 \bibitem{eckart1936}
-Eckart, C.; Young, G. (1936). "The approximation of one matrix by another of lower rank". Psychometrika. 1 (3): 211–8. doi:10.1007/BF02288367. S2CID 10163399.
+Eckart, C.; Young, G.
+\emph{ The approximation of one matrix by another of lower rank}. Psychometrika. 1 (3): 211–8. doi:10.1007/BF02288367. S2CID 10163399.(1936)
 
-\bibitem{harshman1970}
-Harshman R. A.,
-\emph{Foundations of Parafac procedure: Models and conditions for an "explanatory" multimodal factor analysis},
-UCLA Working papers in Phonetics, 16, p.1-84, 1970.
+%\bibitem{harshman1970}
+%Harshman R. A.,
+%\emph{Foundations of Parafac procedure: Models and conditions for an "explanatory" multimodal factor analysis},
+%UCLA Working papers in Phonetics, 16, p.1-84, 1970.
 
-\bibitem{good1969}
-I. J. Good,
-\emph{Some applications of the singular value decomposition of matrix},
-Technometrics, 11, p. 823-831, 1969.
+%\bibitem{good1969}
+%I. J. Good,
+%\emph{Some applications of the singular value decomposition of matrix},
+%Technometrics, 11, p. 823-831, 1969.
 
 
 \bibitem{stewart1993}
@@ -1697,13 +1775,8 @@ Stewart G. W.,
 \emph{On the early history of the singular value decomposition},
 SIAM Review, 35, p. 551-566, 1993.
 
-\bibitem{sgores2000}
-Thomas S. Sgores,
-\emph{Applied linear algebra and matrix analysis},
-Springer, 2000.
 
 \bibitem{website}
-\url{https://tuanvanle.wordpress.com/2013/12/25/phuongphap-phan-tich-thanh-phan-chinh-principal-component-analysispca}
 \url{https://en.wikipedia.org/wiki/Singular_value_decomposition#History}
 	\end{thebibliography}
 \end{document}
