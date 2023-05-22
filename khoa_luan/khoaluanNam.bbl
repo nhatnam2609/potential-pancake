@@ -1,0 +1,152 @@
+\begin{thebibliography}{26}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[An()]{an2015}
+Trần~Hồng An.
+\newblock \emph{Giáo trình đại số tuyến tính}.
+\newblock Trường Dại học Công Nghệ Thông Tin, 2015.
+
+\bibitem[Beltagy et~al.(2020)Beltagy, Peters, and Cohan]{beltagy2020}
+Iz~Beltagy, Matthew~E Peters, and Arman Cohan.
+\newblock Longformer: The long-document transformer, 2020.
+
+\bibitem[Brown et~al.(2020)Brown, Mann, Ryder, Subbiah, Kaplan, Dhariwal,
+  Neelakantan, Shyam, Sastry, Askell, et~al.]{brown2020}
+Tom~B Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla
+  Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell,
+  et~al.
+\newblock Language models are few-shot learners.
+\newblock \emph{arXiv preprint arXiv:2005.14165}, 2020.
+
+\bibitem[Child et~al.(2019)Child, Gray, Radford, and Sutskever]{child2019}
+Rewon Child, Scott Gray, Alec Radford, and Ilya Sutskever.
+\newblock Generating long sequences with sparse transformers, 2019.
+
+\bibitem[Cristianini and Shawe-Taylor(2000)]{cristianini2000}
+N.~Cristianini and Shawe-Taylor.
+\newblock \emph{An Introduction to Support Vector Machines and other
+  kernel-based learning methods}.
+\newblock Cambridge University Press, 2000.
+
+\bibitem[Devlin et~al.(2019)Devlin, Chang, Lee, and Toutanova]{Devlin2019}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock Bert: Pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock \emph{arXiv preprint arXiv:1810.04805}, 2019.
+
+\bibitem[Eckart and Young(1936)]{eckart1936}
+C.~Eckart and G.~Young.
+\newblock The approximation of one matrix by another of lower rank.
+\newblock \emph{Psychometrika}, 1\penalty0 (3):\penalty0 211--218, 1936.
+\newblock \doi{10.1007/BF02288367}.
+
+\bibitem[Hinton et~al.(2015)Hinton, Vinyals, and Dean]{hinton2015}
+Geoffrey Hinton, Oriol Vinyals, and Jeff Dean.
+\newblock Distilling the knowledge in a neural network, 2015.
+
+\bibitem[Hiếu()]{hieu2019}
+Lê~Thanh Hiếu.
+\newblock \emph{Bài giảng đại số tuyến tính}.
+\newblock Tài liệu lưu hành nội bộ, 2019.
+
+\bibitem[Huang et~al.(2007)Huang, Ramesh, Berg, and Learned-Miller]{huang}
+Gary~B. Huang, Manu Ramesh, Tamara Berg, and Erik Learned-Miller.
+\newblock \emph{Labeled Faces in the Wild: A Database for Studying Face
+  Recognition in Unconstrained Environments}.
+\newblock 2007.
+
+\bibitem[Hyvärinen(2009)]{hyvarinen2009}
+Aapo Hyvärinen.
+\newblock \emph{Principal component analysis}.
+\newblock 2009.
+\newblock Based on material from the book Natural Image Statistics to be
+  published by Springer-Verlag in 2009.
+
+\bibitem[Hưng(2000)]{hung2000}
+Nguyễn Hữu~Việt Hưng.
+\newblock \emph{Giáo trình đại số tuyến tính 1,2}.
+\newblock Nhà xuất bản Đại học Quốc gia Hà Nội, 2000.
+
+\bibitem[Kitaev et~al.(2020)Kitaev, Kaiser, and Levskaya]{kitaev2020}
+Nikita Kitaev, Lukasz Kaiser, and Anselm Levskaya.
+\newblock Reformer: The efficient transformer.
+\newblock In \emph{International Conference on Learning Representations}, 2020.
+
+\bibitem[Lay(1994)]{lay1994}
+David~C. Lay.
+\newblock \emph{Linear algebra and its applications}.
+\newblock Addison-Wesley, 1994.
+
+\bibitem[Linh(2016)]{linh2016}
+Nguyễn Trần~Nhật Linh.
+\newblock Phân tích giá trị kì dị và một số ứng dụng.
+\newblock Master's thesis, Đại Học Quy Nhơn, 2016.
+
+\bibitem[Ott et~al.(2018)Ott, Edunov, Grangier, and Auli]{ott2018}
+Myle Ott, Sergey Edunov, David Grangier, and Michael Auli.
+\newblock Scaling neural machine translation.
+\newblock In \emph{Proceedings of the Third Conference on Machine Translation:
+  Research Papers}, 2018.
+
+\bibitem[Qiu et~al.(2019)Qiu, Ma, Levy, tau Yih, Wang, and Tang]{qiu2019}
+Jiezhong Qiu, Hao Ma, Omer Levy, Scott~Wen tau Yih, Sinong Wang, and Jie Tang.
+\newblock Blockwise self-attention for long document understanding, 2019.
+
+\bibitem[Radford et~al.(2019)Radford, Wu, Child, Luan, Amodei, and
+  Sutskever]{radford2019}
+Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya
+  Sutskever.
+\newblock Language models are unsupervised multitask learners.
+\newblock OpenAI Blog, 2019.
+
+\bibitem[Raffel et~al.(2019)Raffel, Shazeer, Roberts, Lee, Narang, Matena,
+  Zhou, Li, and Liu]{raffel2019}
+Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael
+  Matena, Yanqi Zhou, Wei Li, and Peter~J Liu.
+\newblock Exploring the limits of transfer learning with a unified text-to-text
+  transformer.
+\newblock \emph{arXiv preprint arXiv:1910.10683}, 2019.
+
+\bibitem[Stewart(1993)]{stewart1993}
+G.~W. Stewart.
+\newblock On the early history of the singular value decomposition.
+\newblock \emph{SIAM Review}, 35:\penalty0 551--566, 1993.
+
+\bibitem[Thuận et~al.(2003)Thuận, Ban, and Chinh]{thuan2003}
+Nguyễn~Duy Thuận, Phi~Mạnh Ban, and Nông~Quốc Chinh.
+\newblock \emph{Dại số tuyến tính}.
+\newblock Nhà xuất bản Đại học Sư phạm, 2003.
+
+\bibitem[Tiệp(2018)]{tiep2018}
+Vũ~Hữu Tiệp.
+\newblock \emph{Machine Learning cơ bản}.
+\newblock Nhà xuất bản Khoa học và Kỹ thuật, 2018.
+
+\bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
+  lukasz Kaiser, and Polosukhin]{vaswani2017}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N Gomez, lukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock In \emph{Advances in neural information processing systems}, page
+  5998–6008, 2017.
+
+\bibitem[Wang et~al.(2020)Wang, Li, Khabsa, Fang, and Ma]{wang2020}
+Sinong Wang, Belinda~Z. Li, Madian Khabsa, Han Fang, and Hao Ma.
+\newblock Linformer: Self-attention with linear complexity.
+\newblock \emph{arXiv preprint arXiv:2006.04768}, 2020.
+
+\bibitem[Ái My(2020)]{my2020}
+Nguyễn~Thị Ái My.
+\newblock Một số mô hình phân tích thành phần chính ba chiều.
+\newblock Master's thesis, Đại Học Quy Nhơn, 2020.
+
+\bibitem[Đình Trí et~al.(2014)Đình Trí, Đĩnh, and Quỳnh]{tri2014}
+Nguyễn Đình Trí, Tạ~Văn Đĩnh, and Nguyễn~Hồ Quỳnh.
+\newblock \emph{Toán học cao cấp Tập II}.
+\newblock Nhà xuất bản Giáo dục Việt Nam, 2014.
+
+\end{thebibliography}

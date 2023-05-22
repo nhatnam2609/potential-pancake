@@ -1,0 +1,75 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: khoaluanNam.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: plainnat.bst
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+Database file #1: reference.bib
+I was expecting a `,' or a `}'---line 9 of file reference.bib
+ :  
+ :  year={2015},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 23 of file reference.bib
+ :  
+ :  year={2019},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--entry type for "hinton2015" isn't style-file defined
+--line 321 of file reference.bib
+Warning--entry type for "radford2019" isn't style-file defined
+--line 337 of file reference.bib
+Warning--entry type for "child2019" isn't style-file defined
+--line 351 of file reference.bib
+Warning--entry type for "qiu2019" isn't style-file defined
+--line 367 of file reference.bib
+Warning--entry type for "beltagy2020" isn't style-file defined
+--line 383 of file reference.bib
+Warning--empty year in an2015
+Warning--empty year in an2015
+Warning--empty year in hieu2019
+Warning--empty year in hieu2019
+Warning--empty publisher in huang
+Warning--empty publisher in hyvarinen2009
+You've used 26 entries,
+            2773 wiz_defined-function locations,
+            710 strings with 8692 characters,
+and the built_in function-call counts, 11548 in all, are:
+= -- 909
+> -- 860
+< -- 12
++ -- 293
+- -- 267
+* -- 908
+:= -- 1846
+add.period$ -- 76
+call.type$ -- 26
+change.case$ -- 156
+chr.to.int$ -- 26
+cite$ -- 58
+duplicate$ -- 528
+empty$ -- 871
+format.name$ -- 297
+if$ -- 2362
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 29
+newline$ -- 136
+num.names$ -- 104
+pop$ -- 400
+preamble$ -- 1
+purify$ -- 140
+quote$ -- 0
+skip$ -- 425
+stack$ -- 0
+substring$ -- 124
+swap$ -- 50
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 236
+warning$ -- 6
+while$ -- 83
+width$ -- 0
+write$ -- 316
+(There were 2 error messages)
