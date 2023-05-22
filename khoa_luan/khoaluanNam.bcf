@@ -2388,6 +2388,20 @@
     <bcf:citekey order="26" intorder="1">linh2016</bcf:citekey>
     <bcf:citekey order="27" intorder="1">huang</bcf:citekey>
     <bcf:citekey order="28" intorder="1">cristianini2000</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">vaswani2017</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">ott2018</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">raffel2019</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">brown2020</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">Devlin2019</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">radford2019</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">hinton2015</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">child2019</bcf:citekey>
+    <bcf:citekey order="36" intorder="2">qiu2019</bcf:citekey>
+    <bcf:citekey order="36" intorder="3">beltagy2020</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">child2019</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">qiu2019</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">kitaev2020</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">wang2020</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

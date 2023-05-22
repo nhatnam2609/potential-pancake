@@ -10,6 +10,10 @@
 \usepackage[style=numeric,backend=biber]{biblatex}
 \usepackage{indentfirst}
 \usepackage{ragged2e}
+%\usepackage[sort&compress,numbers]{natbib}
+%\usepackage[square,numbers]{natbib}
+%\bibliographystyle{abbrvnat}
+%\usepackage{natbib}
 
 \addto\captionsvietnamese{
 	\renewcommand{\bibname}{Tài liệu tham khảo}
@@ -229,21 +233,21 @@ Sinh viên thực hiện\qquad\qquad\qquad\qquad\\
 \addcontentsline{toc}{chapter}{Lời mở đầu}
 
 \begin{justify}   
-Trong thời đại công nghệ thông tin phát triển mạnh mẽ ngày nay, việc thu thập và xử lý dữ liệu ngày càng trở nên quan trọng và cần thiết. Các phương pháp phân tích dữ liệu như phân rã giá trị kì dị (SVD) và phân tích thành phần chính (PCA) đóng vai trò quan trọng trong việc giải quyết các vấn đề liên quan đến dữ liệu lớn và đa chiều. Những phương pháp này không chỉ giúp giảm kích thước dữ liệu mà còn giúp khai thác thông tin hữu ích từ dữ liệu gốc. SVD và PCA đã và đang được ứng dụng rộng rãi trong nhiều lĩnh vực khoa học và kỹ thuật, chẳng hạn như xử lý hình ảnh, phân tích dữ liệu, nhận dạng mẫu, thống kê,...
+Trong thời đại công nghệ thông tin nói chung và dữ liệu hơn nói riêng đang ngày càng phát triển mạnh mẽ, việc thu thập và xử lý dữ liệu ngày một trở nên quan trọng và cần thiết. Các phương pháp phân tích dữ liệu như phân rã giá trị kì dị (SVD) và phân tích thành phần chính (PCA) đóng vai trò quan trọng trong việc giải quyết các vấn đề liên quan đến dữ liệu lớn và đa chiều. Những phương pháp này không chỉ giúp giảm kích thước dữ liệu mà còn giúp khai thác thông tin hữu ích từ dữ liệu gốc. SVD và PCA đã và đang được ứng dụng rộng rãi trong nhiều lĩnh vực khoa học và kỹ thuật, chẳng hạn như xử lý hình ảnh, phân tích dữ liệu, nhận dạng mẫu, thống kê,...
 
-Trong khóa luận này, chúng tôi tập trung nghiên cứu về các phương pháp phân tích dữ liệu như phân rã giá trị kì dị (SVD) và phân tích thành phần chính (PCA), cũng như một số ứng dụng của chúng trong bài toán thực tế. Mục tiêu chính của khóa luận là tìm hiểu về các tính chất cơ bản, cách tính và ứng dụng của SVD và PCA trong việc giải quyết các vấn đề liên quan đến dữ liệu.
+Trong khóa luận này, chúng tôi tập trung nghiên cứu về các phương pháp phân tích dữ liệu như phân rã giá trị kì dị (SVD) và phân tích thành phần chính (PCA), cũng như một số ứng dụng của chúng trong bài toán thực tế. Mục tiêu chính của khóa luận là tìm hiểu về các tính chất cơ bản và ứng dụng của SVD và PCA trong việc giải quyết các vấn đề liên quan đến dữ liệu.
 
 Đối tượng nghiên cứu trong khóa luận này là phương pháp phân rã giá trị kì dị (SVD) và phân tích thành phần chính (PCA). Ngoài lời cảm ơn, mục lục, lời mở đầu và một số ký hiệu, luận văn được chia làm bốn chương chính:
+\begin{itemize}
+\item Chương 1: Kiến thức cơ bản. Trong chương này, chúng tôi trình bày một số kiến thức cơ sở về đại số tuyến tính, giải tích và thống kê, nhằm chuẩn bị cho việc tìm hiểu về SVD và PCA.
 
-Chương 1: Kiến thức cơ bản. Trong chương này, chúng tôi trình bày một số kiến thức cơ sở về đại số tuyến tính, giải tích và thống kê, nhằm chuẩn bị cho việc tìm hiểu về SVD và PCA.
+\item Chương 2: Phân rã giá trị kì dị (SVD). Trong chương này, chúng tôi giới thiệu về SVD và các tính chất của ma trận liên quan đến SVD.
 
-Chương 2: Phân rã giá trị kì dị (SVD). Trong chương này, chúng tôi giới thiệu về SVD và các tính chất của ma trận liên quan đến SVD.
+\item Chương 3: Phân tích thành phần chính (PCA). Trong chương này, chúng tôi giới thiệu về PCA, cách tính PCA và mối quan hệ giữa PCA và SVD.
 
-Chương 3: Phân tích thành phần chính (PCA). Trong chương này, chúng tôi giới thiệu về PCA, cách tính PCA và mối quan hệ giữa PCA và SVD.
-
-Chương 4: Ứng dụng của SVD và PCA trong bài toán thực tế. Chương này sẽ trình bày một số ví dụ cụ thể về việc áp dụng SVD và PCA trong các bài toán thực tế như xử lý hình ảnh, nhận dạng mẫu, phân tích dữ liệu và thống kê.
-
-Khóa luận tốt nghiệp này được hoàn thành dưới sự hướng dẫn của TS.lâm Thị Thanh Tâm. Tôi cũng xin chân thành cảm ơn tập thể lớp Toán Ứng Dụng K42, Khoa Toán và Thống kê Trường Đại học Quy Nhơn đã giúp đỡ và tạo mọi điều kiện thuận lợi cho tôi hoàn thành khóa học cùng với khóa luận này.
+\item Chương 4: Ứng dụng của SVD và PCA trong bài toán thực tế. Chương này sẽ trình bày một số ví dụ cụ thể về việc áp dụng SVD và PCA trong các bài toán thực tế như xử lý hình ảnh, nhận dạng khuôn mặt, phân tích dữ liệu và thống kê.
+\end{itemize}
+Khóa luận được hoàn thành dưới sự hướng dẫn của TS.lâm Thị Thanh Tâm. Tôi cũng xin chân thành cảm ơn tập thể lớp Toán Ứng Dụng K42, Khoa Toán và Thống kê Trường Đại học Quy Nhơn đã giúp đỡ và tạo mọi điều kiện thuận lợi cho tôi hoàn thành khóa học cùng với khóa luận này.
 
 Cuối cùng, tôi xin chân thành cảm ơn gia đình, bạn bè, những người thân yêu đã luôn quan tâm, giúp đỡ và ủng hộ tôi trong suốt quá trình học tập và thực hiện khóa luận này. Dù đã cố gắng hết sức, nhưng do thời gian và năng lực có hạn, khóa luận không tránh khỏi những thiếu sót và hạn chế. Rất mong nhận được sự góp ý và chỉ bảo của quý thầy cô, quý bạn đồng nghiệp để khóa luận tốt nghiệp này được hoàn thiện hơn. Tôi xin chân thành cảm ơn.
 \end{justify}
@@ -1590,11 +1594,11 @@ Eigenface là một phương pháp nhận dạng khuôn mặt dựa trên kỹ t
 
 Phương pháp Eigenface giảm kích thước của dữ liệu hình ảnh khuôn mặt bằng cách chuyển đổi nó thành một tập hợp các thành phần chính. Những thành phần này, được gọi là Eigenfaces, đại diện cho các đặc điểm cơ bản của khuôn mặt, như hình dạng của mắt, mũi, miệng và vị trí tương đối của chúng. Mỗi khuôn mặt trong dữ liệu đều có thể được biểu diễn như một tổ hợp tuyến tính của những Eigenface này. Tôi sẽ thử nghiệm phương pháp Eigenface trên bộ dữ liệu LFW.
 
-Bộ dữ liệu LFW (Labeled Faces in the Wild)\cite{huang} là một bộ dữ liệu hình ảnh khuôn mặt phổ biến được sử dụng trong nghiên cứu nhận dạng khuôn mặt. Bộ dữ liệu này bao gồm hình ảnh của hàng trăm người nổi tiếng, với mỗi người được chụp dưới nhiều góc độ và biểu cảm khác nhau. Mỗi hình ảnh trong bộ dữ liệu là một ma trận hai chiều biểu thị giá trị cường độ điểm ảnh có thể hiểu như ma trận $50*37*1$. với 1288 hình. Và được chia thành 7 loại khác nhau ứng với 7 người nổi tiểng.
+Bộ dữ liệu LFW (Labeled Faces in the Wild)\cite{huang} là một bộ dữ liệu hình ảnh khuôn mặt phổ biến được sử dụng trong nghiên cứu nhận dạng khuôn mặt. Bộ dữ liệu này bao gồm hình ảnh của hàng trăm người nổi tiếng, với mỗi người được chụp dưới nhiều góc độ và biểu cảm khác nhau. Mỗi hình ảnh trong bộ dữ liệu là một ma trận hai chiều biểu thị giá trị cường độ điểm ảnh có thể hiểu như ma trận $50\times37\times1$. với 1288 hình. Và được chia thành 7 loại khác nhau ứng với 7 người nổi tiểng.
 
 Khi áp dụng phương pháp Eigenface cho bộ dữ liệu LFW, ta sẽ tạo ra một \textquotedblleft khuôn mặt trung bình\textquotedblright\ cùng với một tập hợp các \textquotedblleft Eigenfaces\textquotedblright. Sau đó, mỗi khuôn mặt trong bộ dữ liệu có thể được biểu diễn như một tổ hợp tuyến tính của các Eigenfaces, giúp cho việc nhận dạng khuôn mặt trở nên hiệu quả và chính xác hơn.
 
-Đầu tiên ta sẽ làm \textquotedblleft phẳng\textquotedblright\ ma trận đầu vào thành ma trận $(50*37,1288)$ với mỗi cột là một vector ứng với một khuôn mặt trong tập dữ liệu. Sau đó ta chia dữ liệu đầu vào thành tập huấn luyện và tập kiểm thử với tỉ lể lần lượt là 0.75 và 0.25. Ta nhận được 2 ma trận với kích cỡ là $(1850,966)$ và $(1850,322)$\\
+Đầu tiên ta sẽ làm \textquotedblleft phẳng\textquotedblright\ ma trận đầu vào thành ma trận $(50\times37,1288)$ với mỗi cột là một vector ứng với một khuôn mặt trong tập dữ liệu. Sau đó ta chia dữ liệu đầu vào thành tập huấn luyện và tập kiểm thử với tỉ lể lần lượt là 0.75 và 0.25. Ta nhận được 2 ma trận với kích cỡ là $(1850,966)$ và $(1850,322)$\\
 %Sau đó ta đi tìm Eigenface cho mỗi khung mặt trên tập huấn luyện và ma trận biểu diễn dữ liệu gốc trên cơ sở của các thành phần chính($\mathbf{B}_k^T$) thông qua PCA.
 Sau đó, ta đi tìm ma trận $\mathbf{A}_k$ chứa các Eigenfaces và ma trận biểu diễn dữ liệu gốc trên cơ sở của các thành phần chính $\mathbf{B}_k^T$ thông qua PCA.\\
 PCA sẽ giúp chúng ta xác định các thành phần chính (hay còn gọi là Eigenfaces trong ngữ cảnh này) của tập dữ liệu hình ảnh khuôn mặt. Các thành phần này, được chứa trong ma trận $\mathbf{A}_k$, đại diện cho các hướng mà dữ liệu biến thiên nhiều nhất. Điều này giúp tạo ra một không gian mới, với các trục tương ứng với các thành phần chính, để biểu diễn dữ liệu.
@@ -1674,7 +1678,30 @@ Một số hình ảnh từ tập dữ liệu kiểm thử, với mỗi hình �
 	\caption{kết quả suy luận của bộ phân loại trên tập kiểm thử}
 	\label{fig:output}
 \end{figure}
+\newpage
+\section{Nghiên cứu về ứng dụng SVD trong kiến trúc Transformer}
+Trong thời gian gần đây với sự bùng nổi của ChatGPT(GPT-3.5) và GPT-4 với lõi là kiến trúc Transformer\cite{vaswani2017} đã gây được sự chú ý với các nhà nghiên cứu nói riêng và những người yêu thích công nghệ nói chung. Nhưng trước đó các mô hình với kiến trúc này đã trở nên phổ biến trong xử lý ngôn ngữ tự nhiên (NLP) cho nhiều vấn đề như dịch thuật\cite{ott2018}, phân loại văn bản, trả lời câu hỏi và nhiều ứng dụng khác\cite{raffel2019}. Tuy vậy, số lượng tham số trong các mô hình với kiến trúc Transformer hàng đầu đã tăng đáng kể, từ 340 triệu trong BERT-Large ban đầu lên đến 175 tỷ trong GPT-3\cite{brown2020}. Mặc dù những mô hình lớn này mang lại kết quả ấn tượng trên nhiều loại nhiệm vụ, việc huấn luyện và triển khai chúng lại gặp nhiều khó khăn. Ví dụ, mô hình BERT-Large\cite{Devlin2019} ban đầu mất 4 ngày để huấn luyện trên 16 Cloud TPUs, và GPT-3 tiêu thụ hàng chục lần nhiều petaflops/ngày so với GPT-2\cite{radford2019}, mô hình tiền nhiệm của nó. Triển khai các mô hình Transformer vào các ứng dụng thực tế cũng đòi hỏi nhiều tài nguyên và quá trình rút gọn hoặc nén dữ liệu phức tạp\cite{hinton2015}.
+
+Rào cản chính đối với hiệu suất của các mô hình Transformer là cơ chế tự chú ý. Trong cơ chế này, biểu diễn của mỗi token được cập nhật bằng cách chú ý đến tất cả các token khác trong lớp trước đó. Thao tác này quan trọng để giữ thông tin dài hạn và giúp Transformer vượt trội hơn các mô hình tuần tự trong xử lý chuỗi dài. Tuy nhiên, việc chú ý đến tất cả các token ở mỗi lớp tạo ra độ phức tạp O($n^2$) với độ dài chuỗi. Vì vậy, câu hỏi đặt ra là liệu có thể tối ưu hóa mô hình Transformer để tránh thao tác bậc hai này hay thao tác này là yêu cầu bắt buộc để duy trì hiệu suất mạnh mẽ?
+
+Các nghiên cứu trước đây đã đề xuất một số kỹ thuật để cải thiện hiệu suất của cơ chế tự chú ý. Một kỹ thuật phổ biến là áp dụng thưa thớt vào các lớp chú ý\cite{child2019, qiu2019, beltagy2020} bằng cách cho mỗi token chỉ chú ý đến một tập hợp con của các token trong chuỗi. Điều này giảm độ phức tạp tổng thể của cơ chế tự chú ý xuống còn $O(n\sqrt{n})$\cite{child2019}. Tuy nhiên, như đã chỉ ra trong\cite{qiu2019}, phương pháp này gặp phải sự giảm hiệu suất lớn với ít lợi ích về hiệu quả, ví dụ như giảm 2\% với chỉ tốc độ tăng 20\%. Gần đây, mô hình Reformer\cite{kitaev2020} đã sử dụng băm nhạy cục bộ (LSH) để giảm độ phức tạp tự chú ý xuống còn O(n log(n)). Tuy nhiên, trong thực tế, lợi ích về hiệu quả của Reformer chỉ xuất hiện trên các chuỗi có độ dài lớn hơn 2048. Hơn nữa, cách tiếp cận băm nhiều vòng của Reformer thực tế tăng số lượng các thao tác tuần tự, làm giảm lợi ích hiệu quả cuối cùng của nó. 
+
+Vào cuối năm 2020 nhóm các nhà nghiên cứu AI ở Facebook đã giới thiệu một phương pháp mới là Linformer\cite{wang2020} và chứng minh rằng cơ chế tự chú ý có thể được xấp xỉ bằng một ma trận có hạng thấp thông qua SVD. Tiếp đó nhóm tác giả còn khai thác phát hiện này để đề xuất một cơ chế tự chú ý mới, giảm độ phức tạp tổng thể của tự chú ý từ $O(n^2)$ xuống $O(n)$ cả về thời gian và không gian. Độ phức tạp thời gian trên mỗi lớp và số lượng phép toán tuần tự cho các kiến trúc khác nhau được thể hiện ở bảng dưới.
+$$
+\begin{array}{lcc}
+	\hline \text { Kiến trúc mô hình } & \text { Độ phức tạp về thời gian trên mỗi lớp } & \text { Số phép toán tuần tự } \\
+	\hline \text { Recurrent } & O(n) & O(n) \\
+	\text { Transformer } & O\left(n^2\right) & O(1) \\
+	\text { Sparse Tansformer } & O(n \sqrt{n}) & O(1) \\
+	\text { Reformer} & O(n \log (n)) & O(\log (n)) \\
+	\text { Linformer } & O(n) & O(1) \\
+	\hline
+\end{array}
+$$
+
+
 \chapter*{Kết luận}
+\addcontentsline{toc}{chapter}{Kết luận}
 Qua quá trình thực hiện khóa luận, tôi đã có cơ hội tìm hiểu và nghiên cứu sâu về các khái niệm và kỹ thuật liên quan đến Phân tích giá trị kì dị (SVD) và Phân tích thành phần chính (PCA). Khóa luận đã đạt được những kết quả sau:
 \begin{itemize}
 	\item[1] Kiến thức chuẩn bị: Khóa luận đã trình bày một cách tổng quát về các kiến thức cơ bản về Ma trận, Vector riêng, Giá trị riêng, và Định lí phổ của ma trận đối xứng. Đồng thời, khóa luận cũng đã giới thiệu về các khái niệm cơ bản trong Xác xuất thống kê bao gồm Kỳ vọng, Phương sai và Ma trận hiệp phương sai.
@@ -1689,6 +1716,7 @@ Mặc dù chúng tôi đã cố gắng trình bày khóa luận một cách đ�
 
 
 \begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{Tài liệu tham khảo}
 \bibitem{an2015}
 Trần Hồng An,
 \emph{Giáo trình đại số tuyến tính},
@@ -1733,6 +1761,9 @@ Nguyễn Đình Trí (Chủ biên), Tạ Văn Đĩnh, Nguyễn Hồ Quỳnh
 Cristianini, N., Shawe-Taylor
 \emph{An Introduction to Support Vector Machines and other kernel-based learning methods},
 Cambridge University Press, Cambrigde, 2000.
+\bibitem{eckart1936}
+Eckart, C.; Young, G.
+\emph{ The approximation of one matrix by another of lower rank}. Psychometrika. 1 (3): 211–8. doi:10.1007/BF02288367. S2CID 10163399.(1936)
 
 \bibitem{huang}
 Gary B. Huang, Manu Ramesh, Tamara Berg, and Erik Learned-Miller
@@ -1755,9 +1786,7 @@ David C. Lay,
 \emph{Linear algebra and its applications},
 Addison-Wesley, Reading, MA, 1994.
 
-\bibitem{eckart1936}
-Eckart, C.; Young, G.
-\emph{ The approximation of one matrix by another of lower rank}. Psychometrika. 1 (3): 211–8. doi:10.1007/BF02288367. S2CID 10163399.(1936)
+
 
 %\bibitem{harshman1970}
 %Harshman R. A.,
@@ -1776,8 +1805,70 @@ Stewart G. W.,
 SIAM Review, 35, p. 551-566, 1993.
 
 
-\bibitem{website}
-\url{https://en.wikipedia.org/wiki/Singular_value_decomposition#History}
+%\bibitem{website}
+%\url{https://en.wikipedia.org/wiki/Singular_value_decomposition#History}
+\bibitem{vaswani2017}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, lukasz Kaiser, and Illia Polosukhin.
+\emph{Attention is all you need.}
+In Advances in neural information processing systems, pp. 5998–6008,2017.
+
+\bibitem{ott2018}
+Myle Ott, Sergey Edunov, David Grangier, and Michael Auli.
+\emph{Scaling neural machine translation.}
+In Proceedings of the Third Conference on Machine Translation: Research Papers, 2018.
+
+\bibitem{raffel2019}
+Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi
+Zhou, Wei Li, and Peter J Liu. 
+\emph{Exploring the limits of transfer learning with a unified text-to-text
+	transformer.}
+arXiv preprint arXiv:1910.10683, 2019.
+
+\bibitem{wang2020}
+Sinong Wang, Belinda Z. Li, Madian Khabsa, Han Fang, Hao Ma
+\emph{Linformer: Self-Attention with Linear Complexity}
+arXiv preprint arXiv:2006.04768, 2020.
+
+\bibitem{brown2020}
+Tom B Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal,
+Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 
+\emph{Language models are few-shot learners.}
+arXiv preprint arXiv:2005.14165, 2020.
+
+\bibitem{devlin2019}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\emph{Bert: Pre-training of deep bidirectional transformers for language understanding.}
+In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies 2019
+
+\bibitem{radford2019}
+Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 
+\emph{Language models are unsupervised multitask learners.}
+OpenAI Blog, 2019.
+
+\bibitem{hinton2015}
+Geoffrey Hinton, Oriol Vinyals, and Jeff Dean.
+\emph{Distilling the knowledge in a neural network.}
+arXiv preprint arXiv:1503.02531, 2015.
+
+\bibitem{child2019}
+Rewon Child, Scott Gray, Alec Radford, and Ilya Sutskever.
+\emph{Generating long sequences with sparse transformers.}
+arXiv preprint arXiv:1904.10509, 2019.
+
+\bibitem{qiu2019}
+Jiezhong Qiu, Hao Ma, Omer Levy, Scott Wen-tau Yih, Sinong Wang, and Jie Tang. 
+\emph{Blockwise self-attention for long document understanding.}
+arXiv preprint arXiv:1911.02972, 2019.
+
+\bibitem{beltagy2020}
+Iz Beltagy, Matthew E Peters, and Arman Cohan. 
+\emph{Longformer: The long-document transformer.}
+arXiv preprint arXiv:2004.05150, 2020.
+
+\bibitem{kitaev2020}
+Nikita Kitaev, Lukasz Kaiser, and Anselm Levskaya. 
+\emph{Reformer: The efficient transformer.} 
+In International Conference on Learning Representations, 2020
 	\end{thebibliography}
 \end{document}
 

@@ -28,3 +28,6 @@
 \contentsline {section}{\numberline {4.1}Ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận}{30}{}%
 \contentsline {section}{\numberline {4.2}Phân tích SVD trong xử lí ảnh}{35}{}%
 \contentsline {section}{\numberline {4.3}Eigenface và ứng dụng PCA trong nhận dạng khuôn mặt}{39}{}%
+\contentsline {section}{\numberline {4.4}Nghiên cứu về ứng dụng SVD trong kiến trúc Transformer}{46}{}%
+\contentsline {chapter}{Kết luận}{48}{}%
+\contentsline {chapter}{Tài liệu tham khảo}{49}{}%
