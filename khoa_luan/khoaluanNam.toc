@@ -4,29 +4,30 @@
 \contentsline {chapter}{Một số ký hiệu}{vi}{}%
 \contentsline {chapter}{\numberline {1}Một số kiến thức chuẩn bị}{1}{}%
 \contentsline {section}{\numberline {1.1}Ma trận}{1}{}%
-\contentsline {section}{\numberline {1.2}Vector riêng- Giá trị riêng}{4}{}%
-\contentsline {section}{\numberline {1.3}Định lí phổ của ma trận đối xứng}{4}{}%
-\contentsline {section}{\numberline {1.4}Xác xuất thống kê}{6}{}%
-\contentsline {subsection}{\numberline {1.4.1}Kỳ vọng}{6}{}%
-\contentsline {subsection}{\numberline {1.4.2}Phương sai}{7}{}%
-\contentsline {subsection}{\numberline {1.4.3}Ma trận hiêp phương sai}{8}{}%
-\contentsline {chapter}{\numberline {2} PHÂN TÍCH GIÁ TRỊ KÌ DỊ }{10}{}%
-\contentsline {section}{\numberline {2.1}Giới thiệu}{10}{}%
-\contentsline {section}{\numberline {2.2}Phân tích giá trị kì dị}{10}{}%
-\contentsline {section}{\numberline {2.3}Thuật toán tìm SVD của một ma trận}{13}{}%
-\contentsline {subsubsection}{Ví dụ}{15}{}%
-\contentsline {section}{\numberline {2.4}Một số tính chất của ma trận liên quan đến SVD của nó}{17}{}%
-\contentsline {chapter}{\numberline {3} Phân tích thành phần chính }{20}{}%
-\contentsline {section}{\numberline {3.1}Giới thiệu}{20}{}%
-\contentsline {section}{\numberline {3.2}Ý tưởng}{21}{}%
-\contentsline {section}{\numberline {3.3}Phân tích thành phần chính}{22}{}%
-\contentsline {section}{\numberline {3.4}Tìm các thành phần chính của bài toán PCA thông qua SVD}{23}{}%
-\contentsline {section}{\numberline {3.5}Tính duy nhất nghiệm của PCA}{25}{}%
+\contentsline {section}{\numberline {1.2}Vector riêng - Giá trị riêng}{5}{}%
+\contentsline {section}{\numberline {1.3}Định lí phổ của ma trận đối xứng}{5}{}%
+\contentsline {section}{\numberline {1.4}Xác xuất thống kê}{7}{}%
+\contentsline {subsection}{\numberline {1.4.1}Kỳ vọng}{7}{}%
+\contentsline {subsection}{\numberline {1.4.2}Phương sai}{8}{}%
+\contentsline {subsection}{\numberline {1.4.3}Ma trận hiêp phương sai}{9}{}%
+\contentsline {chapter}{\numberline {2} Phân tích giá trị kì dị }{11}{}%
+\contentsline {section}{\numberline {2.1}Giới thiệu}{11}{}%
+\contentsline {section}{\numberline {2.2}Phân tích giá trị kì dị}{11}{}%
+\contentsline {section}{\numberline {2.3}Thuật toán tìm SVD của một ma trận}{14}{}%
+\contentsline {subsubsection}{Ví dụ}{16}{}%
+\contentsline {section}{\numberline {2.4}Một số tính chất của ma trận liên quan đến SVD}{18}{}%
+\contentsline {chapter}{\numberline {3} Phân tích thành phần chính }{21}{}%
+\contentsline {section}{\numberline {3.1}Giới thiệu}{21}{}%
+\contentsline {section}{\numberline {3.2}Ý tưởng}{22}{}%
+\contentsline {section}{\numberline {3.3}Phân tích thành phần chính}{23}{}%
+\contentsline {section}{\numberline {3.4}Tìm các thành phần chính của bài toán PCA thông qua SVD}{24}{}%
+\contentsline {section}{\numberline {3.5}Tính duy nhất nghiệm của PCA}{26}{}%
 \contentsline {section}{\numberline {3.6}Thuật toán tìm PCA của một ma trận}{26}{}%
-\contentsline {subsubsection}{Ví dụ}{26}{}%
-\contentsline {chapter}{\numberline {4} Một số ứng dụng SVD và PCA }{29}{}%
-\contentsline {section}{\numberline {4.1}Ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận}{29}{}%
-\contentsline {section}{\numberline {4.2}Phân tích SVD trong xử lí ảnh}{34}{}%
-\contentsline {section}{\numberline {4.3}Eigenface và ứng dụng PCA trong nhận dạng khuôn mặt}{38}{}%
-\contentsline {section}{\numberline {4.4}Nghiên cứu về ứng dụng SVD trong kiến trúc Transformer}{45}{}%
-\contentsline {chapter}{Kết luận}{47}{}%
+\contentsline {subsubsection}{Ví dụ}{27}{}%
+\contentsline {chapter}{\numberline {4} Một số ứng dụng SVD và PCA }{30}{}%
+\contentsline {section}{\numberline {4.1}Ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận}{30}{}%
+\contentsline {section}{\numberline {4.2}Phân tích SVD trong xử lí ảnh}{35}{}%
+\contentsline {section}{\numberline {4.3} ứng dụng PCA trong nhận dạng khuôn mặt}{39}{}%
+\contentsline {section}{\numberline {4.4}Nghiên cứu về ứng dụng SVD trong kiến trúc Transformer}{46}{}%
+\contentsline {chapter}{Kết luận}{48}{}%
+\contentsline {chapter}{Tài liệu tham khảo}{48}{}%
