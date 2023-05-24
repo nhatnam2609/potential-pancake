@@ -944,39 +944,39 @@ $$
 $$
 là phân tích SVD của ma trận $\mathbf{A}$.
 \end{itemize}
-Trong nghiên cứu này chúng tôi sử dụng PYTHON3 để cài đặt thuật toán.
-\begin{lstlisting}
-import numpy as np
-from numpy import linalg as LA
-def svd(A):
-	# Compute the eigenvectors and eigenvalues of A.T @ A
-	w, V = LA.eig(A.T @ A)  
-	# Calculate sigma values (singular values)
-	sigma = np.sqrt(w)
-	# Sort singular values and corresponding columns
-	sorted_indices = np.argsort(sigma)[::-1]
-	sigma = sigma[sorted_indices]
-	V = V[:, sorted_indices]
-	# Create the diagonal matrix D using singular values
-	D = np.diag(sigma) 
-	# Calculate the U matrix
-	U = np.zeros((A.shape[0], len(sigma)))
-	for i in range(len(sigma)):
-	if np.isclose(sigma[i], 0):
-	U[:, i] = 0
-	else:
-	U[:, i] = (1 / sigma[i]) * A @ V[:, i]
-	return U, D, V.T
-\end{lstlisting}
-% Hình~\ref{fig:svd_algo}
-%\newpage
-%
-%\begin{figure}[htp]
-%	\centering
-%	\includegraphics[scale=0.9]{implement_svd.png}
-%	\caption{Cài đặt thuật toán SVD trên PYTHON3}
-%	\label{fig:svd_algo}
-%\end{figure}
+Trong nghiên cứu này chúng tôi sử dụng PYTHON3 để cài đặt thuật toán Hình~\ref{fig:svd_algo}.
+%\begin{lstlisting}
+%import numpy as np
+%from numpy import linalg as LA
+%def svd(A):
+%	# Compute the eigenvectors and eigenvalues of A.T @ A
+%	w, V = LA.eig(A.T @ A)  
+%	# Calculate sigma values (singular values)
+%	sigma = np.sqrt(w)
+%	# Sort singular values and corresponding columns
+%	sorted_indices = np.argsort(sigma)[::-1]
+%	sigma = sigma[sorted_indices]
+%	V = V[:, sorted_indices]
+%	# Create the diagonal matrix D using singular values
+%	D = np.diag(sigma) 
+%	# Calculate the U matrix
+%	U = np.zeros((A.shape[0], len(sigma)))
+%	for i in range(len(sigma)):
+%	if np.isclose(sigma[i], 0):
+%	U[:, i] = 0
+%	else:
+%	U[:, i] = (1 / sigma[i]) * A @ V[:, i]
+%	return U, D, V.T
+%\end{lstlisting}
+
+\newpage
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.9]{implement_svd.png}
+	\caption{Cài đặt thuật toán SVD trên PYTHON3}
+	\label{fig:svd_algo}
+\end{figure}
 
 \begin{vd}
 
@@ -1087,35 +1087,34 @@ $$
 $$
 \end{itemize}
 \end{vd}
-Bên dưới là ví dụ về SVD trên PYTHON3
-% Hình~\ref{fig:SVD_example}.
-%\newpage
-%\begin{figure}[htp]
-%	\centering
-%	\includegraphics[scale=0.9]{example_svd.png}
-%	\caption{Ví dụ SVD trên PYTHON3}
-%	\label{fig:SVD_example}
-%\end{figure}
-\begin{lstlisting}
-A = np.array([[1, 0],
-[1, 0],
-[0, 1]])
-U, D, Vt =svd(A)
-print("SVD:")
-print("U:", U)
-print("D:", D)
-print("Vt:", Vt)
-
-#SVD:
-#U: [[0.70710678 0.        ]
-#[0.70710678 0.        ]
-#[0.         1.        ]]
-#D: [[1.41421356 0.        ]
-#[0.         1.        ]]
-#Vt: [[1. 0.]
-#[0. 1.]]
-
-\end{lstlisting}
+Bên dưới là ví dụ về SVD trên PYTHON3 Hình~\ref{fig:SVD_example}.
+\newpage
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.9]{example_svd.png}
+	\caption{Ví dụ SVD trên PYTHON3}
+	\label{fig:SVD_example}
+\end{figure}
+%\begin{lstlisting}
+%A = np.array([[1, 0],
+%[1, 0],
+%[0, 1]])
+%U, D, Vt =svd(A)
+%print("SVD:")
+%print("U:", U)
+%print("D:", D)
+%print("Vt:", Vt)
+%
+%#SVD:
+%#U: [[0.70710678 0.        ]
+%#[0.70710678 0.        ]
+%#[0.         1.        ]]
+%#D: [[1.41421356 0.        ]
+%#[0.         1.        ]]
+%#Vt: [[1. 0.]
+%#[0. 1.]]
+%
+%\end{lstlisting}
 
 \section{Một số tính chất của ma trận liên quan đến SVD}
 \begin{dl} \cite{linh2016}
@@ -1413,27 +1412,27 @@ $$
 \item Bước 4: Nếu nghiệm $(\mathbf{A, B})$ chưa tốt thì chọn phép quay $\mathbf{Q}$, với $\mathbf{Q}$ là ma trận trực giao cấp $r$, ta tìm được nghiệm của mô hình $\mathrm{PCA}$ là $(\mathbf{A Q, B Q})$
 \end{itemize}
 Cài đặt thuật toán trên PYTHON3
-% Hình~\ref{fig:pca_algo} 
-%\begin{figure}[htp]
-%	\centering
-%	\includegraphics[scale=0.8]{implement_pca.png}
-%\caption{ Cài đặt thuật toán PCA trên PYTHON3}
-%\label{fig:pca_algo}
-%\end{figure}
-\begin{lstlisting}
-def pca(X, k):
-	# Center the data
-	X_centered = X -np.mean(X,axis=1).reshape(-1,1)   
-	# Perform SVD on the centered data
-	U, D, Vt = svd(X_centered)    
-	# Compute the transformed matrices
-	A = U
-	Bt = D@Vt
-	# Reduce the dimensionality to k dimensions
-	A_k = U[:,:k]
-	Bt_k = D[:k,:k]@Vt[:k,:]
-	return A_k, Bt_k
-\end{lstlisting}
+ Hình~\ref{fig:pca_algo}.
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.8]{implement_pca.png}
+\caption{ Cài đặt thuật toán PCA trên PYTHON3}
+\label{fig:pca_algo}
+\end{figure}
+%\begin{lstlisting}
+%def pca(X, k):
+%	# Center the data
+%	X_centered = X -np.mean(X,axis=1).reshape(-1,1)   
+%	# Perform SVD on the centered data
+%	U, D, Vt = svd(X_centered)    
+%	# Compute the transformed matrices
+%	A = U
+%	Bt = D@Vt
+%	# Reduce the dimensionality to k dimensions
+%	A_k = U[:,:k]
+%	Bt_k = D[:k,:k]@Vt[:k,:]
+%	return A_k, Bt_k
+%\end{lstlisting}
 \begin{vd}
 Ví dụ ta tìm PCA của ma trận\[
 \mathbf{x} = \begin{bmatrix}
@@ -1520,36 +1519,36 @@ Với một điểm dữ liệu mới $\mathbf{v} \in \R^D$ sẽ
 	\mathbf{w} = \mathbf{A}_r^T(\mathbf{v} - \bar{\mathbf{x}}) \in
 	\R^K .
 \end{equation}
-Kết quả chạy thử ví dụ trên PYTHON3
-\begin{lstlisting}
-A = np.array([[2 , 3 , 5 , 1],
-[1 , 4 , 6 , 2], 
-[3 , 6 , 8 , 4],
-[4 , 7 , 9 , 3]])
-A_k, Bt_k = pca(A,3)
-np.around(A_k, decimals=6)
-#array([[-0.370996, -0.5     , -0.782535],
-#[-0.492556,  0.5     , -0.085956],
-#[-0.492556,  0.5     , -0.085956],
-#[-0.614116, -0.5     ,  0.610624]])
-
-np.around(Bt_k, decimals=6)
-#array([[ 3.569453, -1.599228, -5.539678,  3.569453],
-#[-1.      ,  0.      , -0.      ,  1.      ],
-#[-0.09489 ,  0.438713, -0.248933, -0.09489 ]])
-
-A_k@Bt_k + np.mean(A,axis=1).reshape(-1,1)
-#array([[2., 3., 5., 1.],
-#[1., 4., 6., 2.],
-#[3., 6., 8., 4.],
-#[4., 7., 9., 3.]])
-\end{lstlisting} 
-%\begin{figure}[htp]
-%	\centering
-%	\includegraphics[scale=0.8]{example_pca.png}
-%	\caption{Thử nghiệm thuật toán PCA trên PYTHON3.}
-%	\label{fig:pca_example}
-%\end{figure}
+Kết quả chạy thử ví dụ trên PYTHON3 Hình~\ref{fig:pca_example}
+%\begin{lstlisting}
+%A = np.array([[2 , 3 , 5 , 1],
+%[1 , 4 , 6 , 2], 
+%[3 , 6 , 8 , 4],
+%[4 , 7 , 9 , 3]])
+%A_k, Bt_k = pca(A,3)
+%np.around(A_k, decimals=6)
+%#array([[-0.370996, -0.5     , -0.782535],
+%#[-0.492556,  0.5     , -0.085956],
+%#[-0.492556,  0.5     , -0.085956],
+%#[-0.614116, -0.5     ,  0.610624]])
+%
+%np.around(Bt_k, decimals=6)
+%#array([[ 3.569453, -1.599228, -5.539678,  3.569453],
+%#[-1.      ,  0.      , -0.      ,  1.      ],
+%#[-0.09489 ,  0.438713, -0.248933, -0.09489 ]])
+%
+%A_k@Bt_k + np.mean(A,axis=1).reshape(-1,1)
+%#array([[2., 3., 5., 1.],
+%#[1., 4., 6., 2.],
+%#[3., 6., 8., 4.],
+%#[4., 7., 9., 3.]])
+%\end{lstlisting} 
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.8]{example_pca.png}
+	\caption{Thử nghiệm thuật toán PCA trên PYTHON3.}
+	\label{fig:pca_example}
+\end{figure}
 \chapter{ Một số ứng dụng của SVD và PCA }
 
 \section{Ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận}
@@ -1786,13 +1785,15 @@ Khuôn mặt đặc trưng là một phương pháp nhận dạng khuôn mặt d
 
 Phương pháp khuôn mặt đặc trưng giúp giảm kích thước của dữ liệu hình ảnh khuôn mặt bằng cách chuyển đổi nó thành một tập hợp các thành phần chính. Những thành phần này, đại diện cho các đặc điểm cơ bản của khuôn mặt, như hình dạng của mắt, mũi, miệng và vị trí tương đối của chúng. Mỗi khuôn mặt trong dữ liệu đều có thể được biểu diễn như một tổ hợp tuyến tính của những khuôn mặt đặc trưng này. Chúng tôi sẽ thử nghiệm phương pháp  khuôn mặt đặc trưng trên bộ dữ liệu LFW.
 
-Bộ dữ liệu \textit{LFW (Labeled Faces in the Wild)} \cite{huang} là một bộ dữ liệu hình ảnh khuôn mặt phổ biến được sử dụng trong nghiên cứu nhận dạng khuôn mặt. Bộ dữ liệu này bao gồm hình ảnh của hàng trăm người nổi tiếng, với mỗi người được chụp dưới nhiều góc độ và biểu cảm khác nhau. Tuy nhiên để đơn giản chúng tôi chỉ thử nghiệm trên một phần nhỏ của bộ dữ liệu. Mỗi hình ảnh trong bộ dữ liệu là một ma trận hai chiều biểu thị giá trị cường độ điểm ảnh có thể hiểu như ma trận $50\times37\times1$ với 1288 hình và được chia thành 7 loại khác nhau ứng với 7 người nổi tiểng.
+Bộ dữ liệu \textit{LFW (Labeled Faces in the Wild)} \cite{huang} là một bộ dữ liệu hình ảnh khuôn mặt phổ biến được sử dụng trong nghiên cứu nhận dạng khuôn mặt. Bộ dữ liệu này bao gồm hình ảnh của hàng trăm người nổi tiếng, với mỗi người được chụp dưới nhiều góc độ và biểu cảm khác nhau. Tuy nhiên để đơn giản chúng tôi chỉ thử nghiệm trên một phần nhỏ của bộ dữ liệu. Mỗi hình ảnh trong bộ dữ liệu là một ma trận hai chiều biểu thị giá trị cường độ điểm ảnh có thể hiểu như ma trận $50\times37$ với 1288 hình và được chia thành 7 loại khác nhau ứng với 7 người nổi tiểng.
 
 Khi áp dụng phương pháp khuôn mặt đặc trưng cho bộ dữ liệu LFW, ta sẽ tạo ra một \textquotedblleft khuôn mặt trung bình\textquotedblright\ cùng với một tập hợp các \textquotedblleft khuôn mặt đặc trưng \textquotedblright. Sau đó, mỗi khuôn mặt trong bộ dữ liệu có thể được biểu diễn như một tổ hợp tuyến tính của các khuôn mặt đặc trưng, giúp cho việc nhận dạng khuôn mặt trở nên hiệu quả và chính xác hơn.
 
-Đầu tiên ta sẽ làm \textquotedblleft phẳng\textquotedblright\ ma trận đầu vào thành ma trận $1850\times1288$ (vì $50\times37=1850$ với mỗi cột là một vector ứng với một khuôn mặt trong tập dữ liệu. Sau đó ta chia dữ liệu đầu vào thành tập huấn luyện và tập kiểm thử với tỉ lể lần lượt là 0.75 và 0.25. Ta nhận được 2 ma trận với kích cỡ là $1850 \times966)$ và $1850\times322$.\\
+Đầu tiên ta sẽ làm \textquotedblleft phẳng\textquotedblright\ ma trận đầu vào thành ma trận $1850\times1288$ (vì $50\times37=1850$ với mỗi cột là một vector ứng với một khuôn mặt trong tập dữ liệu.
+
+Sau đó ta chia dữ liệu đầu vào thành tập huấn luyện và tập kiểm thử với tỉ lể lần lượt là 0.75 và 0.25. Ta nhận được 2 ma trận với kích cỡ là $1850 \times966)$ và $1850\times322$.
 %Sau đó ta đi tìm Eigenface cho mỗi khung mặt trên tập huấn luyện và ma trận biểu diễn dữ liệu gốc trên cơ sở của các thành phần chính($\mathbf{B}_k^T$) thông qua PCA.
-Sau đó, ta đi tìm ma trận $\mathbf{A}_k$ chứa các khuôn mặt đặc trưng và ma trận biểu diễn dữ liệu gốc trên cơ sở của các thành phần chính $\mathbf{B}_k^T$ thông qua PCA.\\
+Sau đó, ta đi tìm ma trận $\mathbf{A}_k$ chứa các khuôn mặt đặc trưng và ma trận biểu diễn dữ liệu gốc trên cơ sở của các thành phần chính $\mathbf{B}_k^T$ thông qua PCA.
 PCA sẽ giúp chúng ta xác định các thành phần chính (hay còn gọi là khuôn mặt đặc trưng trong ngữ cảnh này) của tập dữ liệu hình ảnh khuôn mặt. Các thành phần này, được chứa trong ma trận $\mathbf{A}_k$, đại diện cho các hướng mà dữ liệu biến thiên nhiều nhất. Điều này giúp tạo ra một không gian mới, với các trục tương ứng với các thành phần chính, để biểu diễn dữ liệu.
 
 Kế tiếp, chúng ta tính toán ma trận $\mathbf{B}_k^T$, mà mỗi cột của nó biểu diễn một hình ảnh khuôn mặt trong không gian của các thành phần chính. Mỗi hình ảnh khuôn mặt giờ đây được biểu diễn bằng một tổ hợp tuyến tính của các khuôn mặt đặc trưng, với hệ số tương ứng nằm trong $\mathbf{B}_k^T$.
