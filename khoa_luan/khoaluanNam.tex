@@ -7,7 +7,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{url}
-
+\usepackage{listings}
 \usepackage{indentfirst}
 \usepackage{ragged2e}
 
@@ -292,8 +292,8 @@
 
 Trước hết, tôi muốn bày tỏ lòng biết ơn sâu sắc đối với Trường Đại Học Quy Nhơn, nơi đã cung cấp cho tôi một môi trường học thuật tuyệt vời, đồng thời hỗ trợ tôi trong suốt quãng thời gian học tập và nghiên cứu.\\
 Tôi xin gửi lời cảm ơn chân thành nhất đến TS.Lâm Thị Thanh Tâm, người đã dẫn dắt và hỗ trợ tôi trong suốt quá trình thực hiện khóa luận này. Bằng sự kiên nhẫn, tận tâm và trí tuệ của mình, TS.Lâm Thị Thanh Tâm đã hướng dẫn tôi đến những hiểu biết mới và giúp tôi phát triển các kỹ năng nghiên cứu quan trọng.\\
-Tôi cũng muốn cảm ơn Khoa Toán - Thống Kê đã tạo ra những cơ hội học thuật và nghiên cứu tốt cho tôi. Sự hỗ trợ và khuyến khích của quý thầy cô đã giúp tôi hoàn thành khóa luận này. Cuối cùng, tôi xin gửi lời cảm ơn sâu sắc đến gia đình và bạn bè của tôi. Sự ủng hộ và khích lệ không ngừng nghỉ của họ đã giúp tôi vượt qua những thách thức và hoàn thành công việc của mình.
-Trong quá trình viết khóa luận này mặc dù đã được chỉnh sửa nhiều lần nhưng không thể tránh khỏi việc thiếu sót. Tôi xin chân thành cảm ơn nếu nhận được sự góp ý từ các quý thầy cô, anh chị và bạn bè để có thể chỉnh sửa khóa luận được tốt hơn.
+Tôi muốn gửi lời cảm ơn Khoa Toán và Thống Kê đã tạo ra những cơ hội học thuật và nghiên cứu tốt cho tôi. Sự hỗ trợ và khuyến khích của quý thầy cô đã giúp tôi hoàn thành khóa luận này. Cuối cùng, tôi xin gửi lời cảm ơn sâu sắc đến gia đình và bạn bè của tôi. Sự ủng hộ và khích lệ không ngừng nghỉ của họ đã giúp tôi vượt qua những thách thức và hoàn thành công việc của mình.
+Trong quá trình viết khóa luận này mặc dù đã được kiểm tra rà soát nhiều lần nhưng không thể tránh khỏi việc thiếu sót. Tôi xin chân thành cảm ơn nếu nhận được sự góp ý từ các quý thầy cô, anh chị và bạn bè để có thể chỉnh sửa khóa luận được tốt hơn.
 \end{justify}
 \vskip 0.5cm
 \begin{flushright}
@@ -392,7 +392,7 @@ $$
 $$
 \chapter{Một số kiến thức chuẩn bị}
 \pagenumbering{arabic}            % Danh lai trang
-\section{Ma trận}.
+\section{Ma t  rận}.
 \begin{dn} \cite{hieu2019}                   
  Ma trận cỡ $m \times n$ là một bảng gồm $m n$ số thực được sắp xếp thành $m$ dòng và $n$ cột. Ma trận thường được kí hiệu như sau\\
  $$
@@ -944,17 +944,41 @@ $$
 $$
 là phân tích SVD của ma trận $\mathbf{A}$.
 \end{itemize}
-Cài đặt thuật toán trên PYTHON3 có thể xem Hình~\ref{fig:svd_algo}
-\newpage
+Trong nghiên cứu này chúng tôi sử dụng PYTHON3 để cài đặt thuật toán.
+\begin{lstlisting}
+import numpy as np
+from numpy import linalg as LA
+def svd(A):
+	# Compute the eigenvectors and eigenvalues of A.T @ A
+	w, V = LA.eig(A.T @ A)  
+	# Calculate sigma values (singular values)
+	sigma = np.sqrt(w)
+	# Sort singular values and corresponding columns
+	sorted_indices = np.argsort(sigma)[::-1]
+	sigma = sigma[sorted_indices]
+	V = V[:, sorted_indices]
+	# Create the diagonal matrix D using singular values
+	D = np.diag(sigma) 
+	# Calculate the U matrix
+	U = np.zeros((A.shape[0], len(sigma)))
+	for i in range(len(sigma)):
+	if np.isclose(sigma[i], 0):
+	U[:, i] = 0
+	else:
+	U[:, i] = (1 / sigma[i]) * A @ V[:, i]
+	return U, D, V.T
+\end{lstlisting}
+% Hình~\ref{fig:svd_algo}
+%\newpage
+%
+%\begin{figure}[htp]
+%	\centering
+%	\includegraphics[scale=0.9]{implement_svd.png}
+%	\caption{Cài đặt thuật toán SVD trên PYTHON3}
+%	\label{fig:svd_algo}
+%\end{figure}
 
-\begin{figure}[htp]
-	\centering
-	\includegraphics[scale=0.9]{implement_svd.png}
-	\caption{Cài đặt thuật toán SVD trên PYTHON3}
-	\label{fig:svd_algo}
-\end{figure}
-
-\subsubsection{Ví dụ}
+\begin{vd}
 
 Tìm SVD của ma trận $\mathbf{A}=\left[\begin{array}{ll}1 & 0 \\ 1 & 0 \\ 0 & 1\end{array}\right]$.
 
@@ -1062,15 +1086,36 @@ $$
 \end{array}\right]
 $$
 \end{itemize}
-Bên dưới là ví dụ về SVD trên PYTHON3 Hình~\ref{fig:SVD_example}.
-\newpage
-\begin{figure}[htp]
-	\centering
-	\includegraphics[scale=0.9]{example_svd.png}
-	\caption{Ví dụ SVD trên PYTHON3}
-	\label{fig:SVD_example}
-\end{figure}
+\end{vd}
+Bên dưới là ví dụ về SVD trên PYTHON3
+% Hình~\ref{fig:SVD_example}.
+%\newpage
+%\begin{figure}[htp]
+%	\centering
+%	\includegraphics[scale=0.9]{example_svd.png}
+%	\caption{Ví dụ SVD trên PYTHON3}
+%	\label{fig:SVD_example}
+%\end{figure}
+\begin{lstlisting}
+A = np.array([[1, 0],
+[1, 0],
+[0, 1]])
+U, D, Vt =svd(A)
+print("SVD:")
+print("U:", U)
+print("D:", D)
+print("Vt:", Vt)
 
+#SVD:
+#U: [[0.70710678 0.        ]
+#[0.70710678 0.        ]
+#[0.         1.        ]]
+#D: [[1.41421356 0.        ]
+#[0.         1.        ]]
+#Vt: [[1. 0.]
+#[0. 1.]]
+
+\end{lstlisting}
 
 \section{Một số tính chất của ma trận liên quan đến SVD}
 \begin{dl} \cite{linh2016}
@@ -1174,7 +1219,6 @@ Vì  $\operatorname{rank}(\mathbf{B})=k=\operatorname{rank}\left(\mathbf{v}_{1},
 $$
 \operatorname{rank}\left(\sigma_{1} \mathbf{v}_{1}^{T}, \sigma_{2} \mathbf{v}_{2}^{T}, \ldots, \sigma_{k} \mathbf{v}_{k}^{T}\right)=k.
 $$
-
 Từ đó, ta suy $\operatorname{ra~} \operatorname{rank}\left(\mathbf{A}_{k}\right)=k$.
 \end{proof}
 \begin{dl} \cite{linh2016}
@@ -1194,7 +1238,7 @@ $$
 Vậy
 
 $$
-\|\mathbf{A}\|_{F}=\sqrt{\sigma_{1}^{2}+\cdots+\sigma_{r}^{2}}.
+\|\mathbf{A}\|_{F}=\sqrt{\sigma_{1}^{2}+\cdots+\sigma_{r}^{2}},
 $$
 với $\sigma_{i}, i=1,2, \ldots, r$ là các giá trị kì dị của ma trận $\mathbf{A}$.
 \end{proof} 
@@ -1368,14 +1412,29 @@ $$
 
 \item Bước 4: Nếu nghiệm $(\mathbf{A, B})$ chưa tốt thì chọn phép quay $\mathbf{Q}$, với $\mathbf{Q}$ là ma trận trực giao cấp $r$, ta tìm được nghiệm của mô hình $\mathrm{PCA}$ là $(\mathbf{A Q, B Q})$
 \end{itemize}
-Cài đặt thuật toán trên PYTHON3 Hình~\ref{fig:pca_algo} 
-\begin{figure}[htp]
-	\centering
-	\includegraphics[scale=0.8]{implement_pca.png}
-\caption{ Cài đặt thuật toán PCA trên PYTHON3}
-\label{fig:pca_algo}
-\end{figure}
-\subsubsection{Ví dụ}
+Cài đặt thuật toán trên PYTHON3
+% Hình~\ref{fig:pca_algo} 
+%\begin{figure}[htp]
+%	\centering
+%	\includegraphics[scale=0.8]{implement_pca.png}
+%\caption{ Cài đặt thuật toán PCA trên PYTHON3}
+%\label{fig:pca_algo}
+%\end{figure}
+\begin{lstlisting}
+def pca(X, k):
+	# Center the data
+	X_centered = X -np.mean(X,axis=1).reshape(-1,1)   
+	# Perform SVD on the centered data
+	U, D, Vt = svd(X_centered)    
+	# Compute the transformed matrices
+	A = U
+	Bt = D@Vt
+	# Reduce the dimensionality to k dimensions
+	A_k = U[:,:k]
+	Bt_k = D[:k,:k]@Vt[:k,:]
+	return A_k, Bt_k
+\end{lstlisting}
+\begin{vd}
 Ví dụ ta tìm PCA của ma trận\[
 \mathbf{x} = \begin{bmatrix}
 	2 & 3 & 5 & 1 \\
@@ -1448,7 +1507,9 @@ $$
 	\end{bmatrix}
 \end{equation}
 \end{itemize}
-Ta thấy nghiệm $(\mathbf{A, B})$ đã đủ tốt cụ thể có thể xem thử nghiệm trên PYTHON3 Hình~\ref{fig:pca_example}.\\
+Ta thấy nghiệm $(\mathbf{A, B})$ đã đủ tốt cụ thể có thể xem thử nghiệm trên PYTHON3 bên dưới.
+%Hình~\ref{fig:pca_example}.
+\end{vd}
 Ngoài ra ta có thể sắp xỉ lại ma trận ban đầu theo công thức sau 
 \begin{equation} 
 	\mathbf{X} \approx \mathbf{A}_r\mathbf{B}_r^{T}+ \bar{\mathbf{x}} .
@@ -1458,13 +1519,37 @@ Với một điểm dữ liệu mới $\mathbf{v} \in \R^D$ sẽ
 \begin{equation} \label{chieu}
 	\mathbf{w} = \mathbf{A}_r^T(\mathbf{v} - \bar{\mathbf{x}}) \in
 	\R^K .
-\end{equation} 
-\begin{figure}[htp]
-	\centering
-	\includegraphics[scale=0.8]{example_pca.png}
-	\caption{Thử nghiệm thuật toán PCA trên PYTHON3.}
-	\label{fig:pca_example}
-\end{figure}
+\end{equation}
+Kết quả chạy thử ví dụ trên PYTHON3
+\begin{lstlisting}
+A = np.array([[2 , 3 , 5 , 1],
+[1 , 4 , 6 , 2], 
+[3 , 6 , 8 , 4],
+[4 , 7 , 9 , 3]])
+A_k, Bt_k = pca(A,3)
+np.around(A_k, decimals=6)
+#array([[-0.370996, -0.5     , -0.782535],
+#[-0.492556,  0.5     , -0.085956],
+#[-0.492556,  0.5     , -0.085956],
+#[-0.614116, -0.5     ,  0.610624]])
+
+np.around(Bt_k, decimals=6)
+#array([[ 3.569453, -1.599228, -5.539678,  3.569453],
+#[-1.      ,  0.      , -0.      ,  1.      ],
+#[-0.09489 ,  0.438713, -0.248933, -0.09489 ]])
+
+A_k@Bt_k + np.mean(A,axis=1).reshape(-1,1)
+#array([[2., 3., 5., 1.],
+#[1., 4., 6., 2.],
+#[3., 6., 8., 4.],
+#[4., 7., 9., 3.]])
+\end{lstlisting} 
+%\begin{figure}[htp]
+%	\centering
+%	\includegraphics[scale=0.8]{example_pca.png}
+%	\caption{Thử nghiệm thuật toán PCA trên PYTHON3.}
+%	\label{fig:pca_example}
+%\end{figure}
 \chapter{ Một số ứng dụng của SVD và PCA }
 
 \section{Ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận}
