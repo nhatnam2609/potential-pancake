@@ -10,18 +10,7 @@
 
 \usepackage{indentfirst}
 \usepackage{ragged2e}
-%\usepackage[sort&compress,numbers]{natbib}
-%\usepackage[square,numbers]{natbib}
-%\bibliographystyle{abbrvnat}
-%\usepackage{natbib}
-%\usepackage{cite}
-%\bibliographystyle{plain}
-%\usepackage[numbers]{natbib}
-%\bibliographystyle{plainnat}
 
-
-
-%\usepackage[style=numeric ,backend=biber]{biblatex}
 \usepackage[style=numeric,backend=biber,natbib=true,maxbibnames=99, defernumbers=true]{biblatex}
 \renewcommand*{\finalnamedelim}{\addcomma\space} % Replaces 'and' with a comma
 
@@ -304,7 +293,7 @@
 Trước hết, tôi muốn bày tỏ lòng biết ơn sâu sắc đối với Trường Đại Học Quy Nhơn, nơi đã cung cấp cho tôi một môi trường học thuật tuyệt vời, đồng thời hỗ trợ tôi trong suốt quãng thời gian học tập và nghiên cứu.\\
 Tôi xin gửi lời cảm ơn chân thành nhất đến TS.Lâm Thị Thanh Tâm, người đã dẫn dắt và hỗ trợ tôi trong suốt quá trình thực hiện khóa luận này. Bằng sự kiên nhẫn, tận tâm và trí tuệ của mình, TS.Lâm Thị Thanh Tâm đã hướng dẫn tôi đến những hiểu biết mới và giúp tôi phát triển các kỹ năng nghiên cứu quan trọng.\\
 Tôi cũng muốn cảm ơn Khoa Toán - Thống Kê đã tạo ra những cơ hội học thuật và nghiên cứu tốt cho tôi. Sự hỗ trợ và khuyến khích của quý thầy cô đã giúp tôi hoàn thành khóa luận này. Cuối cùng, tôi xin gửi lời cảm ơn sâu sắc đến gia đình và bạn bè của tôi. Sự ủng hộ và khích lệ không ngừng nghỉ của họ đã giúp tôi vượt qua những thách thức và hoàn thành công việc của mình.
-Trong quá trình viết khóa luận này mặc dù đã được chỉnh sửa nhiều lần nhưng không thể tránh khỏi việc thiếu sót. Tôi xin chân thành cảm ơn nếu nhận được sự góp ý từ các quý thầy cô, anh chị và bạn bè để có thể chỉnh sửa luận văn được tốt hơn.
+Trong quá trình viết khóa luận này mặc dù đã được chỉnh sửa nhiều lần nhưng không thể tránh khỏi việc thiếu sót. Tôi xin chân thành cảm ơn nếu nhận được sự góp ý từ các quý thầy cô, anh chị và bạn bè để có thể chỉnh sửa khóa luận được tốt hơn.
 \end{justify}
 \vskip 0.5cm
 \begin{flushright}
@@ -454,7 +443,7 @@ $$
 Ma trận chỉ có một dòng được gọi là vector dòng. Ma trận chỉ có một cột được gọi là vector cột.
 \end{dn}
 \begin{dn}\cite{hung2000}
-	Ma trận vuông A cấp $n$ được gọi là ma trận khả nghịch nếu tồn tại một ma trận $\mathbf{A}^{\prime}$ vuông cấp $n$ thỏa mãn $\mathbf{A} \mathbf{A}^{\prime}=\mathbf{A}^{\prime} \mathbf{A}=\mathbf{I}_{n}$. Ma trận $\mathbf{A}$ được gọi là ma trận nghịch đảo của ma trận $\mathbf{A}$, và được ký hiệu là $\mathbf{A}^{-1}$
+	Ma trận vuông A cấp $n$ được gọi là ma trận khả nghịch nếu tồn tại một ma trận $\mathbf{A}^{\prime}$ vuông cấp $n$ thỏa mãn $\mathbf{A} \mathbf{A}^{\prime}=\mathbf{A}^{\prime} \mathbf{A}=\mathbf{I}_{n}$. Ma trận $\mathbf{A}$ được gọi là ma trận nghịch đảo của ma trận $\mathbf{A}$, và được ký hiệu là $\mathbf{A}^{-1}$.
 \end{dn}
 \begin{dn}\cite{hieu2019} 
 	Cho ma trận $\mathbf{A}=\left(a_{i j}\right)_{m \times n}$. Ma trận chuyển vị của $\mathbf{A}$, ký hiệu là $\mathbf{A}^{T}$, có dạng $\mathbf{A}^{T}=\left(a_{j i}\right)_{n \times m}$.
@@ -462,15 +451,12 @@ Ma trận chỉ có một dòng được gọi là vector dòng. Ma trận chỉ
 	Ma trận vuông $\mathbf{A}$ được gọi là ma trận đối xứng nếu $\mathbf{A}^{T}=\mathbf{A}$, và được gọi là ma trận phản đối xứng nếu $\mathbf{A}^{T}=-\mathbf{A}$.
 \end{dn}
 \begin{dn}\cite{hieu2019}
-	Ma trận vuông $\mathbf{A}$ được gọi là ma trận trực giao nếu $\mathbf{A}^{T} \mathbf{A}=$ $\mathbf{A A}^{T}=\mathbf{I}$
+	Ma trận vuông $\mathbf{A}$ được gọi là ma trận trực giao nếu $\mathbf{A}^{T} \mathbf{A}=$ $\mathbf{A A}^{T}=\mathbf{I}$.
 \end{dn}	
 \begin{nx}
-:
-	\begin{itemize}	
-	\item[(i)] Ma trận trực giao $\mathbf{A}$ là khả nghịch và $\mathbf{A}^{T}=\mathbf{A}^{-1}$.
+	\item[(i)] Ma trận trực giao $\mathbf{A}$ là khả nghịch và $\mathbf{A}^{T}=\mathbf{A}^{-1}$,
 	
 	\item[(ii)]  Ma trận $\mathbf{A}$ trực giao khi và chỉ khi các vector cột và các vector hàng của $\mathbf{A}$ tạo thành các hệ trực chuẩn.
-	\end{itemize}
 \end{nx}
 \begin{dn}\cite{hieu2019} 
 	Cho $\mathbf{A}$ là một ma trận vuông cấp $n$. Định thức của ma trận $\mathbf{A}$, ký hiệu là $\operatorname{det}(\mathbf{A})$ hay $|\mathbf{A}|$ là một giá trị được xác định bằng công thức
@@ -479,9 +465,8 @@ Ma trận chỉ có một dòng được gọi là vector dòng. Ma trận chỉ
 	\operatorname{det}(\mathbf{A})=a_{11} \mathbf{A}_{11}+a_{12} \mathbf{A}_{12}+\cdots+a_{1 n} \mathbf{A}_{1 n}
 	$$
 	trong đó $\mathbf{A}_{i k}=(-1)^{i+k} \operatorname{det}\left(\mathbf{M}_{i k}\right)$, với $\mathbf{M}_{i k}$ là ma trận vuông cấp $n-1$ nhận được từ ma trận $\mathbf{A}$ bằng cách bỏ đi dòng thứ $i$ và cột thứ $k$. Đại lượng $\mathbf{A}_{i k}$ được gọi là phần bù đại số của $a_{i k}$.
-\begin{nx}:
-	
-	\item[(i)] Định thức cấp một: Nếu $\mathbf{A}=\left(a_{11}\right)$ thì $\operatorname{det}(\mathbf{A})=a_{11}$.
+\begin{nx}
+	\item[(i)] Định thức cấp một: Nếu $\mathbf{A}=\left(a_{11}\right)$ thì $\operatorname{det}(\mathbf{A})=a_{11}$,
 	
 	\item[(ii)] Định thức cấp hai: Nếu $\mathbf{A}=\left[\begin{array}{ll}a & b \\ c & d\end{array}\right]$ thì $\operatorname{det}(\mathbf{A})=a d-b c$.
 \end{nx}	
@@ -495,12 +480,12 @@ Ma trận chỉ có một dòng được gọi là vector dòng. Ma trận chỉ
 	
 	Hạng của ma trận $\mathbf{A}$ là cấp của định thức con cơ sở. Ký hiệu hạng của ma trận $\mathbf{A}$ là $\operatorname{rank}(\mathbf{A})$.
 \end{dn}
-\begin{nx}: Cho $\mathbf{A}$ là ma trận cấp $m \times n, \mathbf{B}$ là ma trận cấp $n \times l$.
-	\begin{itemize}
-	 \item[(i)] Nếu $\operatorname{rank}(\mathbf{B})=n$ thì $\operatorname{rank}(\mathbf{A} \cdot \mathbf{B})=\operatorname{rank}(\mathbf{A})$.
+\begin{nx}Cho $\mathbf{A}$ là ma trận cấp $m \times n, \mathbf{B}$ là ma trận cấp $n \times l$.
+
+	 \item[(i)] Nếu $\operatorname{rank}(\mathbf{B})=n$ thì $\operatorname{rank}(\mathbf{A} \cdot \mathbf{B})=\operatorname{rank}(\mathbf{A})$,
 	
 	 \item[(ii)] Nếu $\operatorname{rank}(\mathbf{A})=n$ thì $\operatorname{rank}(\mathbf{A} . \mathbf{B})=\operatorname{rank}(\mathbf{B})$.
-	\end{itemize}
+
 \end{nx}
 \begin{dn}\cite{tiep2018}
 	Một hàm số $f: \R^n \rightarrow \R$ được gọi là một chuẩn nếu nó thỏa mãn ba
@@ -540,10 +525,10 @@ Có 2 hai chuẩn của vector thường được dùng là \ref{eqn:norm1} và 
 	\label{eqn:norm2}
 	\hspace{-0.24cm} \|\mathbf{x}\|_2 = \sqrt{x_1^2 + x_2^2 + \dots + x_n^2} .
 \end{equation}
-Tổng quát với $p$ {là một số không nhỏ hơn 1} bất kỳ, hàm số:
+Tổng quát với $p$ {là một số không nhỏ hơn 1} bất kỳ, hàm số
 \begin{equation}
 	\label{eqn:normp}
-	\hspace{0.57cm}  \|\mathbf{x}\|_p = (|x_1|^p + |x_2|^p + \dots |x_n|^p)^{\frac{1}{p}}
+	\hspace{0.57cm}  \|\mathbf{x}\|_p = (|x_1|^p + |x_2|^p + \dots |x_n|^p)^{\frac{1}{p}}.
 \end{equation}
 đã được chứng minh thỏa mãn ba điều kiện của chuẩn.
 \begin{dn}\cite{tiep2018}
@@ -580,7 +565,6 @@ $$
 Vector $\mathbf{u} \in \mathbb{R}^{n}$ được gọi là vector riêng ứng với giá trị riêng $\lambda$ của ma trận $\mathbf{A}$ nếu thỏa $\mathbf{A u}=\lambda \mathbf{u}$.
 \end{dn}
 \begin{nx}
-\begin{itemize}
  \item[(i)] Nếu $\lambda$ là một giá trị riêng của $\mathbf{A}$ thì $\operatorname{det}(\mathbf{A}-\lambda \mathbf{I})=0$. Khi đó hệ phương trình thuần nhất 
  $$
  (\mathbf{A}-\lambda \mathbf{I})\left[\begin{array}{c}
@@ -589,14 +573,13 @@ Vector $\mathbf{u} \in \mathbb{R}^{n}$ được gọi là vector riêng ứng v�
  	x_{n}
  \end{array}\right]=0
  $$
- có vô số nghiệm.
+ có vô số nghiệm,
  
- \item[(ii)] Mỗi giá trị riêng có thể có nhiều vector riêng.
+ \item[(ii)] Mỗi giá trị riêng có thể có nhiều vector riêng,
  
- \item[(iii)] Mỗi vector riêng chỉ ứng với một giá trị riêng duy nhất.
+ \item[(iii)] Mỗi vector riêng chỉ ứng với một giá trị riêng duy nhất,
  
  \item[(iv)] Nếu $\lambda=0$ là một giá trị riêng của ma trận $\mathbf{A}$ thì $\mathbf{A}$ không khả nghịch. Ngược lại, nếu mọi giá trị riêng của $\mathbf{A}$ đều khác 0 thì ma trận $\mathbf{A}$ khả nghịch. 
-\end{itemize}
 \end{nx}
 %\begin{dn} \cite{linh2016} \label{dlpho}
 %Cho $\mathbf{A}$ là ma trận đối xứng cấp $n$. Khi đó:
@@ -620,7 +603,7 @@ Vector $\mathbf{u} \in \mathbb{R}^{n}$ được gọi là vector riêng ứng v�
 \begin{dn} \cite{linh2016} \label{dlpho}
 	Cho $\mathbf{A}$ là ma trận đối xứng cấp $n$. Khi đó:
 	\begin{itemize}
-		\item[(i)] Với mỗi giá trị riêng thực $\lambda$ của $\mathbf{A}$, tồn tại một vector riêng tương ứng $\mathbf{u} \in \mathbb{R}^{n}$ sao cho $\mathbf{A u}=\lambda \mathbf{u}$.
+		\item[(i)] Với mỗi giá trị riêng thực $\lambda$ của $\mathbf{A}$, tồn tại một vector riêng tương ứng $\mathbf{u} \in \mathbb{R}^{n}$ sao cho $\mathbf{A u}=\lambda \mathbf{u}$,
 		
 		\item[(ii)] Tồn tại ma trận dường chéo $\mathbf{D}$ cấp $n$ và ma trận trực giao $\mathbf{U}$ cấp $n$ sao cho $\mathbf{A}=\mathbf{U D U}^{T}$, trong đó các phần tử nằm trên đường chéo chính của $\mathbf{D}$ là các giá trị riêng của $\mathbf{A}$, và các vector cột của $\mathbf{U}$ là các vetor riêng của $\mathbf{A}$ tương ứng với các giá trị riêng đó. Tức là, nếu
 		
@@ -675,7 +658,7 @@ Tronng phần này chúng tôi sẽ nhắc lại những kiến thức cơ bản
 \textit{Kỳ vọng} (expectation) của một biến ngẫu nhiên $\mathbf{x}$ được định nghĩa bởi:
 	\begin{align}
 		\label{eqn:30_21}
-		\text{E}[\mathbf{x}] &= \sum_ \mathbf{x} \mathbf{x} p(\mathbf{x})  \hspace{0.7cm} \text{nếu}~\mathbf{ x} ~ \text{là rời rạc,} \quad
+		\text{E}[\mathbf{x}] &= \sum_ \mathbf{x} \mathbf{x} p(\mathbf{x})  \hspace{0.65cm} \text{nếu}~\mathbf{ x} ~ \text{là rời rạc,} \quad
 		\\
 		\label{eqn:30_22}
 		\text{E}[\mathbf{x}] & = \int \mathbf{x} p(\mathbf{x}) dx  \quad  \text{nếu}~ \mathbf{x} ~ \text{là liên tục.}
@@ -700,14 +683,14 @@ Có ba tính chất quan trọng về kỳ vọng
 		\label{eqn:30_25}
 		\text{E}[\alpha] = \alpha.
 	\end{equation}
-	\item Kỳ vọng có tính chất tuyến tính:
+	\item Kỳ vọng có tính chất tuyến tính
 	\begin{eqnarray}
 		\label{eqn:30_26}
 		\text{E}[\alpha \mathbf{x}] & = & \alpha \text{E}[\mathbf{x}],  \\
 		\label{eqn:30_27}
 		\text{E}[f(\mathbf{x}) + g(\mathbf{x})] & = & \text{E}[f(\mathbf{x})] + \text{E}[g(\mathbf{x})].
 	\end{eqnarray}
-	\item Kỳ vọng của tích hai biến ngẫu nhiên độc lập bằng tích kỳ vọng của chúng:
+	\item Kỳ vọng của tích hai biến ngẫu nhiên độc lập bằng tích kỳ vọng của chúng
 	\begin{equation}
 		\label{eqn:30_28}
 		\text{E}[f(\mathbf{x}) g(\mathbf{y})] = \text{E}[f(\mathbf{x})] \text{E}[g(\mathbf{y})].
@@ -743,9 +726,10 @@ Có ba tính chất quan trọng về kỳ vọng
 %
 %Căn bậc hai của phương sai, $\sigma$ còn được gọi là \textit{độ lệch chuẩn} (standard deviation) của
 %dữ liệu.
+\subsection{Phương sai} 
 Trong không gian một chiều, kỳ vọng thường được xem xét cùng với phương sai, và trong không gian nhiều chiều, ta thảo luận về ma trận hiệp phương sai.
 
-Phương sai đóng một vai trò quan trọng trong thống kê. Hãy xét một tập hợp $N$ giá trị $\mathbf{x}_1, \mathbf{x}_2, \dots, \mathbf{x}_N$. Kỳ vọng và phương sai cho tập dữ liệu này có thể được tính như sau:
+Phương sai đóng một vai trò quan trọng trong thống kê. Hãy xét một tập hợp $N$ giá trị $\mathbf{x}_1, \mathbf{x}_2, \dots, \mathbf{x}_N$. Kỳ vọng và phương sai cho tập dữ liệu này có thể được tính như sau
 \begin{eqnarray} 
 	\bar{\mathbf{x}} &=& \frac{1}{N}\sum_{n=1}^N \mathbf{x}_n = \frac{1}{N}\mathbf{x1},\\\ 
 	\sigma^2 &=& \frac{1}{N} \sum_{n=1}^N (\mathbf{x}_n - \bar{\mathbf{x}})^2,
@@ -753,7 +737,7 @@ Phương sai đóng một vai trò quan trọng trong thống kê. Hãy xét m�
 
 Ở đây, $\mathbf{x}=\left[x_1, x_2, \ldots, x_N\right]$ và $\mathbf{1} \in \mathbb{R}^N$ là vector cột chỉ gồm các phần tử 1. Kỳ vọng chỉ đơn thuần là trung bình của tất cả các giá trị.
 
-Phương sai, mặt khác, là trung bình của bình phương khoảng cách từ mỗi điểm đến kỳ vọng. Một phương sai nhỏ cho thấy rằng dữ liệu tập trung gần kỳ vọng, tức là các điểm dữ liệu rất tương tự nhau. Một phương sai lớn ngụ ý rằng dữ liệu có độ phân tán cao. Căn bậc hai của phương sai, được biết đến như độ lệch chuẩn, là một thước đo khác của phân tán dữ liệu.
+Phương sai, mặt khác, là trung bình của bình phương khoảng cách từ mỗi điểm đến kỳ vọng. Một phương sai nhỏ cho thấy rằng dữ liệu tập trung gần kỳ vọng, tức là các điểm dữ liệu rất tương tự nhau. Một phương sai lớn ngụ ý rằng dữ liệu có độ phân tán cao. Căn bậc hai của phương sai, được biết đến như độ lệch chuẩn, là một thước đo khác của sự phân tán dữ liệu.
 
 %%%%%%% Three subfigures with bottom caption%%%%%%%%%%%%%%
 \begin{figure}[t]
@@ -773,11 +757,11 @@ Phương sai, mặt khác, là trung bình của bình phương khoảng cách t
 		\label{fig:27_2c}
 	\end{subfigure}
 	\caption{
-		Đây là một ví dụ về kỳ vọng và phương sai. (a) Trong không gian một chiều, chúng ta chỉ xem xét một loại dữ liệu. (b) Trong không gian hai chiều, khi hai chiều không có tương quan, ma trận hiệp phương sai sẽ là một ma trận đường chéo, với $\sigma_1, \sigma_2$ là phần tử trên đường chéo. Đây cũng là các trị riêng của ma trận hiệp phương sai, đại diện cho phương sai của từng loại dữ liệu. (c) Trong không gian hai chiều khi hai chiều của dữ liệu có tương quan, chúng ta có thể tính kỳ vọng và phương sai trong từng chiều của dữ liệu. Phương sai lớn hơn cho thấy dữ liệu trong chiều đó phân tán hơn. Trong trường hợp này, dữ liệu theo chiều thứ hai phân tán hơn so với theo chiều nhất. }
+		Đây là một ví dụ về kỳ vọng và phương sai. (a) Dữ liệu trong không gian một chiều. (b) Trong không gian hai chiều, khi hai chiều không có tương quan, ma trận hiệp phương sai sẽ là một ma trận đường chéo, với $\sigma_1, \sigma_2$ là phần tử trên đường chéo. Đây cũng là các trị riêng của ma trận hiệp phương sai, đại diện cho phương sai của từng chiều trong dữ liệu. (c) Trong không gian hai chiều khi hai chiều của dữ liệu có tương quan, chúng ta có thể tính kỳ vọng và phương sai trong từng chiều của dữ liệu. Phương sai lớn hơn cho thấy dữ liệu trong chiều đó phân tán hơn. Trong trường hợp này, dữ liệu theo chiều thứ hai phân tán hơn so với chiều thứ nhất. }
 	\label{fig:27_2}
 \end{figure}
 
-\subsection{Ma trận hiêp phương sai}
+\subsection{Ma trận hiệp phương sai}
 
 Cho $N$ điểm dữ liệu được biểu diễn bởi các vector cột $\mathbf{x}_1, \dots, \mathbf{x}_N$, khi đó, {vector kỳ vọng} và {ma trận hiệp phương sai} của toàn bộ dữ liệu được định nghĩa là
 \begin{eqnarray} 
@@ -788,9 +772,9 @@ Trong đó $\hat{\mathbf{X}}$ được tạo bằng cách trừ mỗi cột củ
 \begin{equation} 
 	\hat{\mathbf{x}}_n = \mathbf{x}_n - \bar{\mathbf{x}}.
 \end{equation} 
-Một vài tính chất của ma trận hiệp phương sai: 
+Một vài tính chất của ma trận hiệp phương sai
 \begin{itemize}
-\item[(i)] Ma trận hiệp phương sai là một ma trận đối xứng, hơn nữa, nó là một ma trận.	
+\item[(i)] Ma trận hiệp phương sai là một ma trận đối xứng.	
 \item[(ii)] Mọi phần tử trên đường chéo của ma trận hiệp phương sai là các số không âm. Chúng chính là phương sai của từng chiều dữ liệu. 
 \item[(iii)] Các phần tử ngoài đường chéo $s_{ij}, i \neq j$ thể hiện sự tương quan
 	giữa thành phần thứ $i$ và thứ $j$ của dữ liệu, còn được gọi là hiệp phương
@@ -809,11 +793,11 @@ Phân tích giá trị kì dị là một trong những phân tích rất quan t
 \begin{dl} \cite{lay1994} \label{dl_1} Cho A là một ma trận có cấp $m \times n$. Khi đó, mọi giá trị riêng của ma trận $\mathbf{A}^{T} \mathbf{A}$ đều không âm.
 \end{dl}
 \begin{proof}
-Dễ thấy $\mathbf{A}^{T} \mathbf{A}$ là một ma trận đối xứng. Theo định lí \ref{dlpho}, mọi giá trị riêng của $\mathbf{A}^{T} \mathbf{A}$ đều là số thực. Với mỗi giá trị riêng $\lambda$ của $\mathbf{A}^{T} \mathbf{A}$, giả sử $\mathbf{v}$ là véc tơ riêng tương ứng. Khi đó
+Dễ thấy $\mathbf{A}^{T} \mathbf{A}$ là một ma trận đối xứng. Theo định lí \ref{dlpho}, mọi giá trị riêng của $\mathbf{A}^{T} \mathbf{A}$ đều là số thực. Với mỗi giá trị riêng $\lambda$ của $\mathbf{A}^{T} \mathbf{A}$, giả sử $\mathbf{v}$ là vector riêng tương ứng. Khi đó
 \begin{equation} \label{eq1}
 \mathbf{A}^{T} \mathbf{A} \mathbf{v}=\lambda \mathbf{v}.
 \end{equation}
-Để ý rằng ta có thể chọn $\mathbf{v}$ là vector đơn vị, i.e. $\|\mathbf{v}\|=1$. Với cách chọn như vậy, ta nhận được
+Để ý rằng ta có thể chọn $\mathbf{v}$ là vector đơn vị để $\|\mathbf{v}\|=1$. Với cách chọn như vậy, ta nhận được
 \begin{equation} \label{eq2}
 \|\mathbf{A} \mathbf{v}\|^{2}=\langle\mathbf{A} \mathbf{v}, \mathbf{A v}\rangle=(\mathbf{A v})^{T}(\mathbf{A v})=\mathbf{v}^{T} \mathbf{A}^{T} \mathbf{A} \mathbf{v}=\lambda \mathbf{v}^{T} \mathbf{v}=\lambda\|\mathbf{v}\|^{2}=\lambda.
 \end{equation}
@@ -850,7 +834,7 @@ $$
 \begin{proof}
 Vì $\mathbf{A}^{T} \mathbf{A}$ là ma trận đối xứng nên theo Định lí \ref{dl_1} $n$ giá trị riêng $\lambda_{1}, \ldots, \lambda_{n}$ của nó đều không âm. Do đó tồn tại $r \leqslant n$ sao cho $\lambda_{1} \geqslant \lambda_{2} \geqslant \lambda_{r}>0$ và $\lambda_{j}=0$ với $j>r$. Khi đó ma trận $\mathbf{A}$ có các giá trị kì dị là $\sigma_{1} \geqslant \sigma_{2} \geqslant \cdots \geqslant \sigma_{r} \geqslant 0$, và $\sigma_{j}=0$ với $j>r$.
 
-Chọn $\mathbf{v}_{i} \in \mathbb{R}^{n}, i=1,2, \ldots, n$, là các vetor riêng tương ứng với $\lambda_{i}$ sao cho $\mathbf{v}_{i}$ là các vetor đơn vị. Đặt $\mathbf{V}=\left(\mathbf{v}_{1}, \mathbf{v}_{2}, \ldots, \mathbf{v}_{n}\right)$, với $\mathbf{v}_{i}$ là các vector cột. Khi đó $\mathbf{V}$ là ma trận trực giao.
+Chọn $\mathbf{v}_{i} \in \mathbb{R}^{n}, i=1,2, \ldots, n$, là các vetor riêng tương ứng với $\lambda_{i}$ sao cho $\mathbf{v}_{i}$ là các vector đơn vị. Đặt $\mathbf{V}=\left(\mathbf{v}_{1}, \mathbf{v}_{2}, \ldots, \mathbf{v}_{n}\right)$, với $\mathbf{v}_{i}$ là các vector cột. Khi đó $\mathbf{V}$ là ma trận trực giao.
 
 Với $\sigma_{i}, 1 \leqslant i \leqslant r$, là các giá trị kì dị dương của $\mathbf{A}$, đặt $\mathbf{u}_{i}=\frac{\mathbf{A v}_{i}}{\sigma_{i}}, i=1,2, \ldots, r$. Khi đó $\mathbf{u}_{i}$ là vector đơn vị trong $\mathbb{R}^{m}$.\\
 Xây dựng ma trận $\mathbf{U}=\left(\mathbf{u}_{1}, \mathbf{u}_{2}, \ldots, \mathbf{u}_{m}\right)$, với $\mathbf{u}_{j}=0, r<j \leqslant m$. Ta có $\mathbf{U}$ là ma trận trực giao.
@@ -864,8 +848,9 @@ $$
 	& =\mathbf{U D}
 \end{aligned}
 $$
-Vậy $\mathbf{A}=\mathbf{U D V}^{T}$\\%Các vector cột $\mathbf{u}_{i}$ trong ma trận $\mathbf{U}$ được gọi là các vector kì dị trái của $\mathbf{A}$. Các vetor cột $\mathbf{v}_{i}$ trong ma trận $\mathbf{V}$ được gọi là các vector kì dị phải của $\mathbf{A}$.
-Trong trường hợp $\operatorname{rank}(\mathbf{A})=r<n$, thì SVD của $\mathbf{A}$ có dạng \textquotedblleft chặt cụt\textquotedblright\  như sau:
+Vậy $\mathbf{A}=\mathbf{U D V}^{T}$.\\%Các vector cột $\mathbf{u}_{i}$ trong ma trận $\mathbf{U}$ được gọi là các vector kì dị trái của $\mathbf{A}$. Các vetor cột $\mathbf{v}_{i}$ trong ma trận $\mathbf{V}$ được gọi là các vector kì dị phải của $\mathbf{A}$.
+
+Trong trường hợp $\operatorname{rank}(\mathbf{A})=r<n$, thì SVD của $\mathbf{A}$ có dạng \textquotedblleft chặt cụt\textquotedblright\  như sau
 $$
 \mathbf{A}=\mathbf{U}_r \mathbf{D}_r \mathbf{V}_r^T.
 $$
@@ -943,17 +928,17 @@ $$
 \end{proof}
 
 \section{Thuật toán SVD}
-Cho $\mathbf{A}$ là ma trận cỡ $m \times n$, với $m \geq n$. Để tìm $\mathrm{SVD}$ của ma trận $\mathbf{A}$, chúng ta thực hiện các bước sau:
+Cho $\mathbf{A}$ là ma trận cỡ $m \times n$, với $m \geq n$. Để tìm $\mathrm{SVD}$ của ma trận $\mathbf{A}$, chúng ta thực hiện các bước sau
 \begin{itemize}
 
  \item Bước 1. Tính ma trận $\mathbf{A}^{T} \mathbf{A}$ và giải phương trình $\operatorname{det}\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right)=0$ để tìm các giá trị riêng $\lambda_{1} \geq \lambda_{2} \geq \ldots \geq \lambda_{n} \geq 0$ của ma trận $\mathbf{A}^{T} \mathbf{A}$. Từ đó suy ra các giá trị kì dị của $\mathbf{A}$ là $\sigma_{i}=\sqrt{\lambda_{i}}, i=\overline{1, n}$ và $\mathbf{D}=\operatorname{diag}\left(\sigma_{1}, \sigma_{2}, \ldots, \sigma_{n}\right)$
-\item Bước 2. Tương ứng với mỗi giá trị riêng $\lambda_{i}$, tìm véctơ riêng $\mathbf{v}_{i} \in \mathbb{R}^{n}$ sao cho $\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right) v_{i}=0$. Từ đó tìm được ma trận trực giao $\mathbf{V}$ cấp $n$ chứa các véctơ kì dị phải của $\mathbf{A}$.
-\item Bước 3. Xác định các véctơ kì dị trái của $\mathbf{A}$ theo công thức
+\item Bước 2. Tương ứng với mỗi giá trị riêng $\lambda_{i}$, tìm vector riêng $\mathbf{v}_{i} \in \mathbb{R}^{n}$ sao cho $\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right) v_{i}=0$. Từ đó tìm được ma trận trực giao $\mathbf{V}$ cấp $n$ chứa các vector kì dị phải của $\mathbf{A}$.
+\item Bước 3. Xác định các vector kì dị trái của $\mathbf{A}$ theo công thức
 $$
 \mathbf{u}_{i}=\frac{1}{\sigma_{i}} \mathbf{A} \mathbf{v}_{i}.
 $$
 
-Bổ sung $n-r$ vector $\mathbf{u}_{r+1}, \ldots, \mathbf{u}_{n}$ vào hệ $\left\{\mathbf{u}_{1}, \mathbf{u}_{2}, \ldots, \mathbf{u}_{r}\right\}$ sao cho $\left\{\mathbf{u}_{1},\mathbf{u}_{2}, \ldots, \mathbf{u}_{n}\right\}$ lập thành một cơ sở trực chuẩn của $\mathbb{R}^{n}$. Từ đó nhận được ma trận trực giao $\mathbf{U}$ chứa các véctơ kì dị trái của $\mathbf{A}$, và
+Bổ sung $n-r$ vector $\mathbf{u}_{r+1}, \ldots, \mathbf{u}_{n}$ vào hệ $\left\{\mathbf{u}_{1}, \mathbf{u}_{2}, \ldots, \mathbf{u}_{r}\right\}$ sao cho $\left\{\mathbf{u}_{1},\mathbf{u}_{2}, \ldots, \mathbf{u}_{n}\right\}$ lập thành một cơ sở trực chuẩn của $\mathbb{R}^{n}$. Từ đó nhận được ma trận trực giao $\mathbf{U}$ chứa các vector kì dị trái của $\mathbf{A}$, và
 $$
 \mathbf{A}=\mathbf{U D V}^{T}.
 $$
@@ -974,8 +959,9 @@ Cài đặt thuật toán trên PYTHON3 có thể xem Hình~\ref{fig:svd_algo}
 Tìm SVD của ma trận $\mathbf{A}=\left[\begin{array}{ll}1 & 0 \\ 1 & 0 \\ 0 & 1\end{array}\right]$.
 
 Lời giải:
+\begin{itemize}
 
-Bước 1: Tìm các giá trị kì dị của ma trận $\mathbf{A}$
+\item Bước 1: Tìm các giá trị kì dị của ma trận $\mathbf{A}$
 
 Ta có
 
@@ -1002,9 +988,9 @@ $$
 \end{array}\right]
 $$
 
-Bước 2: Tìm ma trận $\mathbf{V}$
+\item Bước 2: Tìm ma trận $\mathbf{V}$
 
-Giải phương trình $\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right) \mathbf{v}=0$ ta tìm được các véctơ riêng tương ứng là \\
+Giải phương trình $\left(\mathbf{A}^{T} \mathbf{A}-\lambda \mathbf{I}\right) \mathbf{v}=0$ ta tìm được các vector riêng tương ứng là \\
 $\mathbf{v}_{1}=\left[\begin{array}{l}1 \\ 0\end{array}\right]$ và $\mathbf{v}_{2}=\left[\begin{array}{l}0 \\ 1\end{array}\right]$.
 
 Từ đó suy ra
@@ -1016,7 +1002,7 @@ $$
 \end{array}\right]
 $$
 
-Bước 3: Tìm ma trận $\mathbf{U}$\\
+\item Bước 3: Tìm ma trận $\mathbf{U}$\\
 Ta có
 $$
 \mathbf{u}_{1}=\frac{1}{\sigma_{1}} \mathbf{A} \mathbf{v}_{1}=\frac{1}{\sqrt{2}}\left[\begin{array}{ll}
@@ -1075,6 +1061,7 @@ $$
 	0 & 1
 \end{array}\right]
 $$
+\end{itemize}
 Bên dưới là ví dụ về SVD trên PYTHON3 Hình~\ref{fig:SVD_example}.
 \newpage
 \begin{figure}[htp]
@@ -1163,7 +1150,7 @@ $$
 Xét $\operatorname{rank}\left(\sigma_{1} \mathbf{v}_{1}^{T}, \sigma_{2} \mathbf{v}_{2}^{T}, \ldots, \sigma_{k} \mathbf{v}_{k}^{T}\right)$. Ta có
 
 $$
-\left(\mathbf{v}_{1}^{T}, \mathbf{v}_{2}^{T}, \ldots, \mathbf{v}_{k}^{T}\right)\left(\mathbf{v}_{1}, \mathbf{v}_{2}, \ldots, \mathbf{v}_{k}\right)=\mathbf{I}_{k}
+\left(\mathbf{v}_{1}^{T}, \mathbf{v}_{2}^{T}, \ldots, \mathbf{v}_{k}^{T}\right)\left(\mathbf{v}_{1}, \mathbf{v}_{2}, \ldots, \mathbf{v}_{k}\right)=\mathbf{I}_{k}. 
 $$
 
 Do đó
@@ -1197,7 +1184,7 @@ Từ đó, ta suy $\operatorname{ra~} \operatorname{rank}\left(\mathbf{A}_{k}\ri
 Giả sử $\mathbf{Q}$ là ma trận trực giao cấp $m$. Khi đó
 \begin{align*}
 \|\mathbf{Q} \mathbf{A}\|_{F}^{2}&=\left\|\left[\mathbf{Q} \mathbf{a}_{1}, \ldots, \mathbf{Q} \mathbf{a}_{n}\right]\right\|_{F}^{2}\\
-&=\left\|\mathbf{Q}_{\mathbf{1}}\right\|_{F}^{2}+\cdots+\left\|\mathbf{Q} \mathbf{a}_{n}\right\|_{F}^{2}\\
+&=\left\|\mathbf{Q}_{\mathbf{a}_{1}}\right\|_{F}^{2}+\cdots+\left\|\mathbf{Q} \mathbf{a}_{n}\right\|_{F}^{2}\\
 &=\left\|\mathbf{a}_{1}\right\|_{F}^{2}+\cdots+\left\|\mathbf{a}_{n}\right\|_{F}^{2}=\|\mathbf{A}\|_{F}^{2}.
 \end{align*}
 Giả sử $\mathbf{A}$ có phân tích $\mathrm{SVD}$ là $\mathbf{A}=\mathbf{U D V}^{T}$. Vì $\mathbf{U}$ và $\mathbf{V}$ là các ma trận trực giao nên
@@ -1286,7 +1273,7 @@ $$
 \mathbf{X}=\mathbf{A} \mathbf{B}^{T}+\mathbf{E}.
 $$
 trong đó $\|\mathbf{E}\|^{2}$ đạt giá trị nhỏ nhất. Ma trận $\mathbf{A}$ được gọi là ma trận thành phần, và các cột của nó là các thành phần chính. Ma trận $\mathbf{B}$ được gọi là ma trận tải, các tải trọng là các trọng số cho phép tái cấu trúc các biến ban đầu dưới dạng tổ hợp tuyến tính của các thành phần chính. Cặp $(\mathbf{A}, \mathbf{B})$ được gọi là nghiệm PCA.
-Ngoài ra, PCA được trình bày theo một cách khác dưới dạng véctơ như sau:
+Ngoài ra, PCA được trình bày theo một cách khác dưới dạng vector như sau
 $$
 \mathbf{X}=\sum_{i=1}^{r} \mathbf{a}_{i} \mathbf{b}_{i}^{T}+\mathbf{E}.
 $$
@@ -1298,7 +1285,7 @@ Do thứ tự giảm dần của các giá trị kì dị của $\mathbf{X}$ tro
 \section{Mối liên hệ giữa PCA và SVD}
 Xét một vector $\mathbf{x}$ bất kì. Thành phần chính là tổ hợp tuyến tính $\mathbf{s}=\sum_{i=1}^{m} \mathbf{w}_{i} \mathbf{x}_{i}$ có chứa càng nhiều phương sai của dữ liệu đầu vào càng tốt. Như vậy, thành phần chính đầu tiên được định nghĩa bằng trực giác là tổ hợp tuyến tính của các biến quan sát, trong đó có phương sai lớn nhất.
 
-Chúng ta cần đưa ra ràng buộc cho chuẩn của vectơ $\mathbf{w}=\left(\mathbf{w}_{1}, \mathbf{w}_{2}, \ldots, \mathbf{w}_{m}\right)$. Để đơn giản, chúng ta ràng buộc $\mathbf{w}$ có chuẩn bằng 1 , tức là
+Chúng ta cần đưa ra ràng buộc cho chuẩn của vectơ $\mathbf{w}=\left(\mathbf{w}_{1}, \mathbf{w}_{2}, \ldots, \mathbf{w}_{m}\right)$. Để đơn giản, chúng ta ràng buộc $\mathbf{w}$ có chuẩn bằng 1, tức là
 $$
 \|\mathbf{w}\|=\sqrt{\sum_{i=1}^{m} \mathbf{w}_{i}^{2}}=1.
 $$
@@ -1313,11 +1300,11 @@ $$
 	& =\mathbf{w}^{T} \mathbf{C} \mathbf{w}.
 \end{aligned}
 $$
-trong đó $\mathbf{C}=E\left\{\mathbf{x} \mathbf{x}^{T}\right\}$ là ma trận hiệp phương sai. Vì vậy, bài toán cơ bản $\mathrm{PCA}$ được xác định như sau:
+trong đó $\mathbf{C}=E\left\{\mathbf{x} \mathbf{x}^{T}\right\}$ là ma trận hiệp phương sai. Vì vậy, bài toán cơ bản $\mathrm{PCA}$ được xác định như sau
 $$
 \max _{\mathbf{w}:\|\mathbf{w}\|=1} \mathbf{w}^{T}\mathbf{Cw}.
 $$
-Vì $\mathbf{C}$ là ma trận đối xứng nên theo định lí phổ của ma trận đối xứng, tồn tại ma trận trực giao $\mathbf{U} \in \mathbb{R}^{m \times n}$ và ma trận đường chéo $\mathbf{D}=\operatorname{diag}\left(\lambda_{1}, \ldots, \lambda_{n}\right) \in \mathbb{R}^{n \times n}$ sao cho $\mathbf{C} = \mathbf{U} \mathbf{D} \mathbf{ U}^{T}$, trong đó $\lambda_{1}, \ldots, \lambda_{n}$ là các giá trị riêng của $\mathbf{C}$, và các vector cột của $\mathbf{U}$ là các véctơ riêng của $\mathbf{C}$ ứng với giá trị riêng đó. Thực hiện đổi biến $\mathbf{v}=\mathbf{U}^{T} \mathbf{w}$. Khi đó ta nhận được
+Vì $\mathbf{C}$ là ma trận đối xứng nên theo định lí phổ của ma trận đối xứng, tồn tại ma trận trực giao $\mathbf{U} \in \mathbb{R}^{m \times n}$ và ma trận đường chéo $\mathbf{D}=\operatorname{diag}\left(\lambda_{1}, \ldots, \lambda_{n}\right) \in \mathbb{R}^{n \times n}$ sao cho $\mathbf{C} = \mathbf{U} \mathbf{D} \mathbf{ U}^{T}$, trong đó $\lambda_{1}, \ldots, \lambda_{n}$ là các giá trị riêng của $\mathbf{C}$, và các vector cột của $\mathbf{U}$ là các vector riêng của $\mathbf{C}$ ứng với giá trị riêng đó. Thực hiện đổi biến $\mathbf{v}=\mathbf{U}^{T} \mathbf{w}$. Khi đó ta nhận được
 $$
 \mathbf{w}^{T} \mathbf{C} \mathbf{w}=\mathbf{w}^{T} \mathbf{U} \mathbf{D} \mathbf{U}^{T} \mathbf{w}=\mathbf{v}^{T} \mathbf{D} \mathbf{v}=\sum_{i=1}^{n} \mathbf{v}_{i}^{2} \lambda_{i}.
 $$
@@ -1328,7 +1315,7 @@ $$
 
 Rõ ràng, bài toán cho thấy giá trị lớn nhất tìm được khi $\mathbf{m}_{i}$ tương ứng với $\lambda_{i}$ lớn nhất bằng 1 và các $\mathbf{m}_{i}$ còn lại bằng 0. Kí hiệu $i^{*}$ là chỉ số của giá trị riêng lớn nhất. Trở lại biến $\mathbf{w}$, điều này tương đương với $\mathbf{w}$ bắt đầu từ vectơ riêng thứ $i^{*}$, tức là cột thứ $i^{*}$ của $\mathbf{U}$. Như vậy, thành phần chính đầu tiên được tìm một cách dễ dàng thông qua phân tích giá trị riêng.
 
-Do các vectơ riêng của ma trận đối xứng là trực giao nên việc tìm thành phần chính thứ hai đồng nghĩa với việc tối đa hóa phương sai sao cho $\mathbf{v}_{i^{*}}$ vẫn bằng 0. Điều này thực sự tương đương với việc tạo $\mathbf{w}$ trực giao mới cho vectơ riêng đầu tiên. Như vậy, chúng ta có bài toán tối ưu hóa tương tự nhưng với ràng buộc $\mathbf{m}_{i^{*}}=0$. Rõ ràng, nghiệm của bài toán tối ưu đó thu được khi $\mathbf{w}$ bằng với vector riêng tương ứng với giá trị riêng lớn nhất thứ hai. Logic này áp dụng cho thành phần chính thứ $k$.
+Do các vector riêng của ma trận đối xứng là trực giao nên việc tìm thành phần chính thứ hai đồng nghĩa với việc tối đa hóa phương sai sao cho $\mathbf{v}_{i^{*}}$ vẫn bằng 0. Điều này thực sự tương đương với việc tạo $\mathbf{w}$ trực giao mới cho vector riêng đầu tiên. Như vậy, chúng ta có bài toán tối ưu hóa tương tự nhưng với ràng buộc $\mathbf{m}_{i^{*}}=0$. Rõ ràng, nghiệm của bài toán tối ưu đó thu được khi $\mathbf{w}$ bằng với vector riêng tương ứng với giá trị riêng lớn nhất thứ hai. Logic này áp dụng cho thành phần chính thứ $k$.
 
 Do đó, tất cả các thành phần chính có thể được tìm thấy bằng cách đặt các vector riêng $\mathbf{u}_{i}\text { với } i=1, \ldots, n$ trong $\mathbf{U}$ sao cho các giá trị riêng giảm dần. Chúng ta hãy giả sử $\mathbf{U}$ được định nghĩa như vậy. Khi đó thành phần chính thứ $i$ có dạng
 $$
@@ -1365,19 +1352,15 @@ Vậy $(\mathbf{A Q, B Q})$ là một nghiệm của mô hình PCA.
 \end{proof}
 Từ Định lí \ref{dl351}, ta có nhận xét sau\\
 \begin{nx} 
-\begin{itemize}
 \item[(i)] Nghiệm $(\mathbf{A, B})$ của PCA không duy nhất.
 \item[(ii)] Phép quay trực giao $\mathbf{Q}$ sẽ cho ta ma trận tải có cấu trúc đơn giản hơn, do đó các nhân tố sẽ được diễn giải dễ dàng hơn.
-\end{itemize}
 \end{nx}
 \section{Thuật toán PCA}
-Giả sử $\mathbf{X}$ là ma trận cỡ $m \times n$, với $m \geq n$. Để tìm $\mathrm{PCA}$ của ma trận $\mathbf{X}$, chúng ta thực hiện các bước sau:
+Giả sử $\mathbf{X}$ là ma trận cỡ $m \times n$, với $m \geq n$. Để tìm $\mathrm{PCA}$ của ma trận $\mathbf{X}$, chúng ta thực hiện các bước sau
 \begin{itemize}
 \item Bước 1: Chuẩn hóa dữ liệu sao cho $E\{\mathbf{x_i}\}=0$ với $\mathbf{x_i}$ là vector hàng của của ma trận $\mathbf{X}$
-
 \item Bước 2: Tìm SVD \textquotedblleft chặt cụt\textquotedblright\ của ma trận $\mathbf{X}$, ta được $\mathbf{X}=\mathbf{U}_{r} \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}$ với $r \leq n$.
-
-\item Bước 3: Tính ma trận $\mathbf{A}$ và $\mathbf{B}$ theo công thức sau:
+\item Bước 3: Tính ma trận $\mathbf{A}$ và $\mathbf{B}$ theo công thức sau
 
 $$
 \mathbf{A} =  \mathbf{U}_{r}, \quad \mathbf{B}^{T}= \mathbf{D}_{r}\left(\mathbf{V}_{r}\right)^{T}.
@@ -1392,7 +1375,6 @@ Cài đặt thuật toán trên PYTHON3 Hình~\ref{fig:pca_algo}
 \caption{ Cài đặt thuật toán PCA trên PYTHON3}
 \label{fig:pca_algo}
 \end{figure}
-
 \subsubsection{Ví dụ}
 Ví dụ ta tìm PCA của ma trận\[
 \mathbf{x} = \begin{bmatrix}
@@ -1406,7 +1388,7 @@ Ví dụ ta tìm PCA của ma trận\[
 Lời giải:
 \begin{itemize}
 \item Bước 1: Chuẩn hóa ma trận $\mathbf{X}$ bằng các trừ từng vector cột đi vector trung bình của toàn bộ dữ liệu để được dữ
-liệu chuẩn hoá:
+liệu chuẩn hoá
 \begin{equation}
 	\hat{\mathbf{x}}_n = \mathbf{x}_n - \bar{\mathbf{x}}.
 \end{equation}
@@ -1467,7 +1449,7 @@ $$
 \end{equation}
 \end{itemize}
 Ta thấy nghiệm $(\mathbf{A, B})$ đã đủ tốt cụ thể có thể xem thử nghiệm trên PYTHON3 Hình~\ref{fig:pca_example}.\\
-Ngoài ra ta có thể sắp xỉ lại ma trân ban đầu theo công thức sau 
+Ngoài ra ta có thể sắp xỉ lại ma trận ban đầu theo công thức sau 
 \begin{equation} 
 	\mathbf{X} \approx \mathbf{A}_r\mathbf{B}_r^{T}+ \bar{\mathbf{x}} .
 \end{equation} 
@@ -1483,11 +1465,11 @@ Với một điểm dữ liệu mới $\mathbf{v} \in \R^D$ sẽ
 	\caption{Thử nghiệm thuật toán PCA trên PYTHON3.}
 	\label{fig:pca_example}
 \end{figure}
-\chapter{ Một số ứng dụng SVD và PCA }
+\chapter{ Một số ứng dụng của SVD và PCA }
 
 \section{Ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận}
 
-Về lí thuyết, khi làm việc với ma trận, ta cần nắm được toàn bộ những thông tin về ma trận đó. Tuy nhiên, trong thực tế có những ma trận cấp rất lớn với nhiều phần tử, lượng thông tin cần xử lí nhiều khiến ta rất khó khăn khi tiếp cận. Vấn đề đặt ra là, làm thế nào để ta cần loại bỏ, giảm tải bớt những thông tin, số liệu không cần thiết mà vẫn đảm bảo giữ lại những số liệu, những thông tin đặc trưng của ma trận, nhằm giúp cho công việc nghiên cứu được thuận tiện và đơn giản hơn. Nói cách khác, ta cần tìm một ma trận có hạng nhỏ hơn xấp xỉ với ma trận đã cho. Một trong những công cụ có thể giúp ta tìm được ma trận xấp xỉ đó chính là SVD. Trong chương này, chúng ta sẽ cùng tìm hiểu về ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận. 
+Về lí thuyết, khi làm việc với ma trận, ta cần nắm được toàn bộ những thông tin về ma trận đó. Tuy nhiên, trong thực tế có những ma trận cấp rất lớn với nhiều phần tử, lượng thông tin cần xử lí nhiều khiến ta rất khó khăn khi tiếp cận. Vấn đề đặt ra là, làm thế nào để ta cần loại bỏ, giảm tải bớt những thông tin, số liệu không cần thiết mà vẫn đảm bảo giữ lại những số liệu, những thông tin đặc trưng của ma trận, nhằm giúp cho công việc nghiên cứu được thuận tiện và đơn giản hơn. Nói cách khác, ta cần tìm một ma trận có hạng nhỏ hơn xấp xỉ với ma trận đã cho. Một trong những công cụ có thể giúp ta tìm được ma trận xấp xỉ đó chính là SVD. Trong phần này, chúng ta sẽ cùng tìm hiểu về ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận. 
 
 Cho $\mathbf{A}$ là một ma trận cấp $m \times n$ bất kì, $\operatorname{rank}(\mathbf{A})=r$. Giả sử $\mathbf{A}$ có phân tích SVD dạng khai triển là
 
@@ -1630,8 +1612,7 @@ $$
 $$
 Điều này chứng tỏ $\mathbf{A}_{k}$ chính là xấp xỉ hạng $k$ tốt nhất của ma trận $\mathbf{A}$ theo chuẩn Frobenius.
 \end{proof}
-Bên cạnh đó ta có nhận xét quan trọng về sai số do xấp xỉ một ma trận $\mathbf{A}$ có hạng $r$ bởi $\mathbf{A}_{k}$ với $k < r$ phần tử như sau:
-
+Bên cạnh đó ta có nhận xét quan trọng về sai số do xấp xỉ một ma trận $\mathbf{A}$ có hạng $r$ bởi $\mathbf{A}_{k}$ với $k < r$ phần tử như sau
 $$
 	\label{eqn:26_17}
 	\frac{\|\mathbf{A} - \mathbf{A}_k\|_F^2}{\|\mathbf{A}\|_F^2} = {\frac{\sum_{i=k+1}^{r} \sigma_{i}^{2}}{\sum_{i=1}^{r} \sigma_{i}^{2}}} .
@@ -1699,7 +1680,7 @@ Trong  Python, ta có thể hiệu chỉnh độ nét của hình ảnh theo tha
 \end{figure}
 
 Đồ thị đầu tiên (bên trái) hiển thị ma trận ảnh gốc, được biểu diễn bằng các giá trị màu xám. Ma trận này thể hiện hình ảnh ban đầu trước bất kỳ xử lý nào.Đồ thị thứ hai (ở giữa) biểu diễn các giá trị kì dị (singular values) của ma trận ảnh. Các giá trị kì dị thể hiện độ lớn của các thành phần chính trong ma trận. Đồ thị hiển thị hai đường: một đường cho các giá trị kì dị ban đầu và một đường cho các giá trị kì dụ được chuyển đổi sang đơn vị logarit (logarithmic scale). Biểu đồ này cho ta cái nhìn tổng quan về độ quan trọng của các thành phần chính trong ma trận ảnh.Đồ thị cuối cùng (bên phải) biểu diễn tổng hợp thông tin tích lũy bằng cách sử dụng các giá trị kì dị. Nó cho thấy phần trăm thông tin được giữ lại (tích lũy) khi ta giữ lại một số lượng gia tăng các thành phần chính. Đồ thị này giúp ta quyết định xem ta có thể giảm số lượng thành phần chính mà không mất quá nhiều thông tin quan trọng.
-Cụ thế hơn khi giảm chiều dữ liệu với $k = 4,16, 32 ,64.$. Ta thấy với việc sấp xỉ ma trận ban đầu bằng SVD với $ k=32 $ ta đã giảm được dung lương lưu trữ đi khoảng $50\%$ nhưng vẫn không làm giảm đi chất lượng hình ảnh quá nhiều.\\
+Cụ thế hơn khi giảm chiều dữ liệu với $k = 4,16, 32 ,64.$ Hình~\ref{fig:svd_qnu} Ta thấy với việc sấp xỉ ma trận ban đầu bằng SVD với $ k=32 $ ta đã giảm được dung lương lưu trữ đi khoảng $50\%$ nhưng vẫn không làm giảm đi chất lượng hình ảnh quá nhiều.\\
 Lưu ý: 
 \begin{itemize}
 	\item Compression là tỉ lệ dung lượng đã giảm được để lưu trữ hình ảnh nén.
@@ -1720,27 +1701,26 @@ Khuôn mặt đặc trưng là một phương pháp nhận dạng khuôn mặt d
 
 Phương pháp khuôn mặt đặc trưng giúp giảm kích thước của dữ liệu hình ảnh khuôn mặt bằng cách chuyển đổi nó thành một tập hợp các thành phần chính. Những thành phần này, đại diện cho các đặc điểm cơ bản của khuôn mặt, như hình dạng của mắt, mũi, miệng và vị trí tương đối của chúng. Mỗi khuôn mặt trong dữ liệu đều có thể được biểu diễn như một tổ hợp tuyến tính của những khuôn mặt đặc trưng này. Chúng tôi sẽ thử nghiệm phương pháp  khuôn mặt đặc trưng trên bộ dữ liệu LFW.
 
-Bộ dữ liệu LFW (Labeled Faces in the Wild) \cite{huang} là một bộ dữ liệu hình ảnh khuôn mặt phổ biến được sử dụng trong nghiên cứu nhận dạng khuôn mặt. Bộ dữ liệu này bao gồm hình ảnh của hàng trăm người nổi tiếng, với mỗi người được chụp dưới nhiều góc độ và biểu cảm khác nhau. Mỗi hình ảnh trong bộ dữ liệu là một ma trận hai chiều biểu thị giá trị cường độ điểm ảnh có thể hiểu như ma trận $50\times37\times1$. với 1288 hình. Và được chia thành 7 loại khác nhau ứng với 7 người nổi tiểng.
+Bộ dữ liệu \textit{LFW (Labeled Faces in the Wild)} \cite{huang} là một bộ dữ liệu hình ảnh khuôn mặt phổ biến được sử dụng trong nghiên cứu nhận dạng khuôn mặt. Bộ dữ liệu này bao gồm hình ảnh của hàng trăm người nổi tiếng, với mỗi người được chụp dưới nhiều góc độ và biểu cảm khác nhau. Tuy nhiên để đơn giản chúng tôi chỉ thử nghiệm trên một phần nhỏ của bộ dữ liệu. Mỗi hình ảnh trong bộ dữ liệu là một ma trận hai chiều biểu thị giá trị cường độ điểm ảnh có thể hiểu như ma trận $50\times37\times1$ với 1288 hình và được chia thành 7 loại khác nhau ứng với 7 người nổi tiểng.
 
 Khi áp dụng phương pháp khuôn mặt đặc trưng cho bộ dữ liệu LFW, ta sẽ tạo ra một \textquotedblleft khuôn mặt trung bình\textquotedblright\ cùng với một tập hợp các \textquotedblleft khuôn mặt đặc trưng \textquotedblright. Sau đó, mỗi khuôn mặt trong bộ dữ liệu có thể được biểu diễn như một tổ hợp tuyến tính của các khuôn mặt đặc trưng, giúp cho việc nhận dạng khuôn mặt trở nên hiệu quả và chính xác hơn.
 
-Đầu tiên ta sẽ làm \textquotedblleft phẳng\textquotedblright\ ma trận đầu vào thành ma trận $(50\times37,1288)$ với mỗi cột là một vector ứng với một khuôn mặt trong tập dữ liệu. Sau đó ta chia dữ liệu đầu vào thành tập huấn luyện và tập kiểm thử với tỉ lể lần lượt là 0.75 và 0.25. Ta nhận được 2 ma trận với kích cỡ là $(1850,966)$ và $(1850,322)$\\
+Đầu tiên ta sẽ làm \textquotedblleft phẳng\textquotedblright\ ma trận đầu vào thành ma trận $1850\times1288$ (vì $50\times37=1850$ với mỗi cột là một vector ứng với một khuôn mặt trong tập dữ liệu. Sau đó ta chia dữ liệu đầu vào thành tập huấn luyện và tập kiểm thử với tỉ lể lần lượt là 0.75 và 0.25. Ta nhận được 2 ma trận với kích cỡ là $1850 \times966)$ và $1850\times322$.\\
 %Sau đó ta đi tìm Eigenface cho mỗi khung mặt trên tập huấn luyện và ma trận biểu diễn dữ liệu gốc trên cơ sở của các thành phần chính($\mathbf{B}_k^T$) thông qua PCA.
 Sau đó, ta đi tìm ma trận $\mathbf{A}_k$ chứa các khuôn mặt đặc trưng và ma trận biểu diễn dữ liệu gốc trên cơ sở của các thành phần chính $\mathbf{B}_k^T$ thông qua PCA.\\
 PCA sẽ giúp chúng ta xác định các thành phần chính (hay còn gọi là khuôn mặt đặc trưng trong ngữ cảnh này) của tập dữ liệu hình ảnh khuôn mặt. Các thành phần này, được chứa trong ma trận $\mathbf{A}_k$, đại diện cho các hướng mà dữ liệu biến thiên nhiều nhất. Điều này giúp tạo ra một không gian mới, với các trục tương ứng với các thành phần chính, để biểu diễn dữ liệu.
 
 Kế tiếp, chúng ta tính toán ma trận $\mathbf{B}_k^T$, mà mỗi cột của nó biểu diễn một hình ảnh khuôn mặt trong không gian của các thành phần chính. Mỗi hình ảnh khuôn mặt giờ đây được biểu diễn bằng một tổ hợp tuyến tính của các khuôn mặt đặc trưng, với hệ số tương ứng nằm trong $\mathbf{B}_k^T$.
 
-Vì vậy, thông qua PCA, chúng ta có thể giảm đáng kể số lượng chiều dữ liệu mà vẫn giữ được phần lớn thông tin cần thiết từ tập dữ liệu hình ảnh khuôn mặt ban đầu. Với $k =150$ ta có thể xem kết quả sau khi được kết quả ảnh sau khi qua PCA Hình~\ref{fig:eigenface}
+Vì vậy, thông qua PCA, chúng ta có thể giảm đáng kể số lượng chiều dữ liệu mà vẫn giữ được phần lớn thông tin cần thiết từ tập dữ liệu hình ảnh khuôn mặt ban đầu. Với $k =150$ ta có thể xem kết quả sau khi được kết quả ảnh sau khi qua PCA Hình~\ref{fig:eigenface}.
 \begin{figure}[htp]
 	\centering
 	\includegraphics[scale=0.62]{eigenface.png}
 	\caption{Hình ảnh ban đầu và hình ảnh sau khi được khôi phục qua PCA.}
 	\label{fig:eigenface}
 \end{figure}
-
 Sau đó giảm chiều dữ liệu kiểm thử bằng cách chiếu nó qua ma trận $\mathbf{A}_k$ theo công thức \ref{chieu}.
-Bây giờ ta có 966 điểm dữ liệu huấn liệu và 322 điểm dữ liệu kiểm thử. Liệu ta có thể phân biệt được các nét đặc trưng của mỗi khuôn mặt chỉ thông qua các vector eigenface chỉ với 150 chiều thay và 1850 như ban đầu.
+Bây giờ ta có 966 điểm dữ liệu huấn liệu và 322 điểm dữ liệu kiểm thử. Liệu ta có thể phân biệt được các nét đặc trưng của mỗi khuôn mặt chỉ thông qua các vector chỉ với 150 chiều thay và 1850 như ban đầu?
 Để trả lời câu hỏi này ta sẽ huấn luyện một bộ phân lớp tương đối nổi tiếng là SVM(Support Vector Machine) \cite{cristianini2000}.
 Hình~\ref{fig:svm_result} và Hình~\ref{fig:headmap}  là kết quả sau khi thử nghiệm với bộ phân loại SVM. Ta thấy bộ phân loại có thể nhận dạng khuôn mặt tốt dựa trên vector của khuôn mặt đặc trưng với độ chính xác trung bình là $80\%$. Hình~\ref{fig:output} là kết quả suy luận của bộ phân loại trên tập kiểm thử.
 \begin{figure}[htp]
@@ -1750,7 +1730,7 @@ Hình~\ref{fig:svm_result} và Hình~\ref{fig:headmap}  là kết quả sau khi 
 	\label{fig:svm_result}
 \end{figure}
 Hình~\ref{fig:svm_result} là báo cáo phân loại (classification report) của một mô hình phân loại, được tính toán trên bộ dữ liệu kiểm thử (test set).\\
-Báo cáo bao gồm các thông số đo lường hiệu suất của mô hình như sau:
+Báo cáo bao gồm các thông số đo lường hiệu suất của mô hình như sau
 \begin{itemize}
 \item Precision: Độ chính xác cho từng lớp. Độ chính xác là tỉ lệ giữa số mẫu dự đoán đúng và tổng số mẫu dự đoán cho một lớp cụ thể.
 
@@ -1760,7 +1740,7 @@ Báo cáo bao gồm các thông số đo lường hiệu suất của mô hình 
 
 \item Support: Số lượng mẫu thực sự có trong tập kiểm thử cho mỗi lớp.
 \end{itemize}
-Đối với mỗi chỉ số này, báo cáo cũng cung cấp một giá trị trung bình (\textquotedblleft macro avg\textquotedblright) và giá trị trung bình có trọng số (\textquotedblleft weighted avg\textquotedblright) cho tất cả các lớp:
+Đối với mỗi chỉ số này, báo cáo cũng cung cấp một giá trị trung bình (\textquotedblleft macro avg\textquotedblright) và giá trị trung bình có trọng số (\textquotedblleft weighted avg\textquotedblright) cho tất cả các lớp
 \begin{itemize}
 \item \textquotedblleft Macro avg\textquotedblright\ là trung bình đơn giản của các số liệu trên tất cả các lớp.
 \item \textquotedblleft Weighted avg\textquotedblright\ là trung bình có trọng số của các số liệu trên tất cả các lớp, trong đó trọng số cho mỗi lớp là số lượng mẫu trong lớp đó.
@@ -1774,8 +1754,8 @@ Dựa trên báo cáo, mô hình phân loại này hoạt động tốt nhất c
 	\label{fig:headmap}
 \end{figure}
 
-Ma trận lỗi là một cách hữu ích để trực quan hóa hiệu suất của bộ phân loại. Mỗi hàng của ma trận tương ứng với lớp thực tế, và mỗi cột tương ứng với lớp dự đoán.Giá trị tại vị trí $(i, j)$ là số lượng mẫu mà lớp thực tế là $i$ nhưng mô hình dự đoán là lớp $j$. Do đó, các phần tử trên đường chéo chính của ma trận tương ứng với số lượng các dự đoán chính xác.
-Ta có các lớp sau:
+Ngoài ra, ma trận lỗi là một cách hữu ích để trực quan hóa hiệu suất của bộ phân loại. Mỗi hàng của ma trận tương ứng với lớp thực tế, và mỗi cột tương ứng với lớp dự đoán. Giá trị tại vị trí $(i, j)$ là số lượng mẫu mà lớp thực tế là $i$ nhưng mô hình dự đoán là lớp $j$. Do đó, các phần tử trên đường chéo chính của ma trận tương ứng với số lượng các dự đoán chính xác.
+Ta có các lớp sau
 
 \begin{itemize}
 	\item Ariel Sharon
@@ -1786,7 +1766,7 @@ Ta có các lớp sau:
 	\item Hugo Chavez
 	\item Tony Blair
 \end{itemize}
-Khi đó, các con số trong ma trận sẽ tương ứng với:
+Khi đó, các con số trong ma trận sẽ tương ứng với
 
 \begin{itemize}
 	\item 10 hình ảnh của Ariel Sharon đã được dự đoán chính xác, 3 hình ảnh bị nhầm lẫn với Donald Rumsfeld.
@@ -1803,13 +1783,13 @@ Một số hình ảnh từ tập dữ liệu kiểm thử, với mỗi hình �
 \end{figure}
 \newpage
 \section{Nghiên cứu về ứng dụng SVD trong kiến trúc Transformer}
-Trong thời gian gần đây với sự bùng nổi của ChatGPT(GPT-3.5) và GPT-4 với lõi là kiến trúc Transformer \cite{vaswani2017} đã gây được sự chú ý với các nhà nghiên cứu nói riêng và những người yêu thích công nghệ nói chung. Nhưng trước đó các mô hình với kiến trúc này đã trở nên phổ biến trong xử lý ngôn ngữ tự nhiên (NLP) cho nhiều vấn đề như dịch thuật \cite{ott2018}, phân loại văn bản, trả lời câu hỏi và nhiều ứng dụng khác \cite{raffel2019}. Tuy vậy, số lượng tham số trong các mô hình với kiến trúc Transformer hàng đầu đã tăng đáng kể, từ 340 triệu trong BERT-Large ban đầu lên đến 175 tỷ trong GPT-3 \cite{brown2020}. Mặc dù những mô hình lớn này mang lại kết quả ấn tượng trên nhiều loại nhiệm vụ, việc huấn luyện và triển khai chúng lại gặp nhiều khó khăn. Ví dụ, mô hình BERT-Large \cite{devlin2019} ban đầu mất 4 ngày để huấn luyện trên 16 Cloud TPUs, và GPT-3 tiêu thụ hàng chục lần nhiều petaflops/ngày so với GPT-2 \cite{radford2019}, mô hình tiền nhiệm của nó. Triển khai các mô hình Transformer vào các ứng dụng thực tế cũng đòi hỏi nhiều tài nguyên và quá trình rút gọn hoặc nén dữ liệu phức tạp \cite{hinton2015}.
+Trong thời gian gần đây với sự bùng nổi của ChatGPT(GPT-3.5) và GPT-4 với lõi là kiến trúc Transformer \cite{vaswani2017} đã gây được sự chú ý với các nhà nghiên cứu nói riêng và những người quan tâm đến trí tuệ nhân tạo nói chung. Hơn thế nữa, trước đó các mô hình với kiến trúc này đã trở nên phổ biến trong xử lý ngôn ngữ tự nhiên (NLP) cho nhiều vấn đề như dịch thuật \cite{ott2018}, phân loại văn bản, trả lời câu hỏi và nhiều ứng dụng khác \cite{raffel2019}. Tuy vậy, số lượng tham số trong các mô hình với kiến trúc Transformer hàng đầu đã tăng đáng kể, từ 340 triệu trong BERT-Large ban đầu lên đến 175 tỷ trong GPT-3 \cite{brown2020}. Mặc dù những mô hình lớn này mang lại kết quả ấn tượng trên nhiều loại nhiệm vụ, việc huấn luyện và triển khai chúng lại gặp nhiều khó khăn. Ví dụ, mô hình BERT-Large \cite{devlin2019} ban đầu mất 4 ngày để huấn luyện trên 16 Cloud TPUs, và GPT-3 tiêu thụ hàng chục lần nhiều petaflops(đơn vị tính toán thường dùng để đo lường trên các siêu máy tính)/ngày so với GPT-2 \cite{radford2019}, mô hình tiền nhiệm của nó. Triển khai các mô hình Transformer vào các ứng dụng thực tế cũng đòi hỏi nhiều tài nguyên và quá trình rút gọn hoặc nén dữ liệu phức tạp \cite{hinton2015}.
 
 Rào cản chính đối với hiệu suất của các mô hình Transformer là cơ chế tự chú ý. Trong cơ chế này, biểu diễn của mỗi token được cập nhật bằng cách chú ý đến tất cả các token khác trong lớp trước đó. Thao tác này quan trọng để giữ thông tin dài hạn và giúp Transformer vượt trội hơn các mô hình tuần tự trong xử lý chuỗi dài. Tuy nhiên, việc chú ý đến tất cả các token ở mỗi lớp tạo ra độ phức tạp O($n^2$) với độ dài chuỗi. Vì vậy, câu hỏi đặt ra là liệu có thể tối ưu hóa mô hình Transformer để tránh thao tác bậc hai này hay thao tác này là yêu cầu bắt buộc để duy trì hiệu suất mạnh mẽ?
 
-Các nghiên cứu trước đây đã đề xuất một số kỹ thuật để cải thiện hiệu suất của cơ chế tự chú ý. Một kỹ thuật phổ biến là áp dụng thưa thớt vào các lớp chú ý \cite{child2019, qiu2019, beltagy2020} bằng cách cho mỗi token chỉ chú ý đến một tập hợp con của các token trong chuỗi. Điều này giảm độ phức tạp tổng thể của cơ chế tự chú ý xuống còn $O(n\sqrt{n})$ \cite{child2019}. Tuy nhiên, như đã chỉ ra trong \cite{qiu2019}, phương pháp này gặp phải sự giảm hiệu suất lớn với ít lợi ích về hiệu quả, ví dụ như giảm 2\% với chỉ tốc độ tăng 20\%. Gần đây, mô hình Reformer \cite{kitaev2020} đã sử dụng băm nhạy cục bộ (LSH) để giảm độ phức tạp tự chú ý xuống còn O(n log(n)). Tuy nhiên, trong thực tế, lợi ích về hiệu quả của Reformer chỉ xuất hiện trên các chuỗi có độ dài lớn hơn 2048. Hơn nữa, cách tiếp cận băm nhiều vòng của Reformer thực tế tăng số lượng các thao tác tuần tự, làm giảm lợi ích hiệu quả cuối cùng của nó. 
+Các nghiên cứu trước đây đã đề xuất một số kỹ thuật để cải thiện hiệu suất của cơ chế tự chú ý. Một kỹ thuật phổ biến là áp dụng thưa thớt vào các lớp chú ý \cite{child2019, qiu2019, beltagy2020} bằng cách cho mỗi token chỉ chú ý đến một tập hợp con của các token trong chuỗi. Điều này giảm độ phức tạp tổng thể của cơ chế tự chú ý xuống còn $O(n\sqrt{n})$ \cite{child2019}. Tuy nhiên, như đã chỉ ra trong \cite{qiu2019}, phương pháp này gặp phải sự giảm hiệu suất lớn với ít lợi ích về hiệu quả, ví dụ như giảm 2\% với chỉ tốc độ tăng 20\%. Gần đây, mô hình Reformer \cite{kitaev2020} đã sử dụng băm nhạy cục bộ (LSH) để giảm độ phức tạp tự chú ý xuống còn O(n log(n)). Tuy nhiên, trong thực tế, lợi ích về hiệu quả của Reformer chỉ xuất hiện trên các chuỗi có độ dài lớn hơn 2048. Hơn nữa, cách tiếp cận băm nhiều vòng của Reformer thực tế làm tăng số lượng các thao tác tuần tự và giảm lợi ích hiệu quả cuối cùng của nó. 
 
-Vào cuối năm 2020 nhóm các nhà nghiên cứu AI ở Facebook đã giới thiệu một kiến trúc mô hình cải tiến mới là Linformer \cite{wang2020} và chứng minh rằng cơ chế tự chú ý có thể được xấp xỉ bằng một ma trận có hạng thấp thông qua SVD. Tiếp đó nhóm tác giả còn khai thác phát hiện này để đề xuất một cơ chế tự chú ý mới, giảm độ phức tạp tổng thể của tự chú ý từ $O(n^2)$ xuống $O(n)$ cả về thời gian và không gian. Độ phức tạp thời gian trên mỗi lớp và số lượng phép toán tuần tự cho các kiến trúc khác nhau được thể hiện ở bảng dưới.
+Vào cuối năm 2020 nhóm các nhà nghiên cứu về trí tuệ nhân tạo ở Facebook đã giới thiệu một kiến trúc mô hình cải tiến mới là Linformer \cite{wang2020} và chứng minh rằng cơ chế tự chú ý có thể được xấp xỉ bằng một ma trận có hạng thấp thông qua SVD. Tiếp đó nhóm tác giả còn khai thác phát hiện này để đề xuất một cơ chế tự chú ý mới, giảm độ phức tạp tổng thể của tự chú ý từ $O(n^2)$ xuống $O(n)$ cả về thời gian và không gian. Độ phức tạp thời gian trên mỗi lớp và số lượng phép toán tuần tự cho các kiến trúc khác nhau được thể hiện ở bảng dưới.
 $$
 \begin{array}{lcc}
 	\hline \text { Kiến trúc mô hình } & \text { Độ phức tạp về thời gian trên mỗi lớp } & \text { Số phép toán tuần tự } \\
@@ -1830,193 +1810,19 @@ Qua quá trình thực hiện khóa luận, tôi đã có cơ hội tìm hiểu 
 \begin{itemize}
 	\item[1.] Kiến thức chuẩn bị: Khóa luận đã trình bày một cách tổng quát về các kiến thức cơ bản về Ma trận, Vector riêng, Giá trị riêng, và Định lí phổ của ma trận đối xứng. Đồng thời, khóa luận cũng đã giới thiệu về các khái niệm cơ bản trong Xác xuất thống kê bao gồm Kỳ vọng, Phương sai và Ma trận hiệp phương sai.
 
-\item[2.] Phân tích giá trị kì dị (SVD): Khóa luận đã giới thiệu về khái niệm SVD, cách thức tính toán SVD của một ma trận, cũng như một số tính chất quan trọng của ma trận liên quan đến SVD.
+\item[2.] Phân tích giá trị kì dị: Khóa luận đã giới thiệu về khái niệm SVD, cách thức tính toán SVD của một ma trận, cũng như một số tính chất quan trọng của ma trận liên quan đến SVD.
 
-\item[3.] Phân tích thành phần chính (PCA): Khóa luận đã trình bày về khái niệm PCA, ý tưởng chính của PCA, cách thức tìm các thành phần chính của bài toán PCA thông qua SVD, tính duy nhất của nghiệm của PCA, và cũng đã giới thiệu về thuật toán tìm PCA của một ma trận.
+\item[3.] Phân tích thành phần chính: Khóa luận đã trình bày về khái niệm PCA, ý tưởng chính của PCA, cách thức tìm các thành phần chính của bài toán PCA thông qua SVD, tính duy nhất của nghiệm của PCA, và cũng đã giới thiệu về thuật toán tìm PCA của một ma trận.
 
 \item[4.] Một số ứng dụng của SVD và PCA: Khóa luận đã giới thiệu về một số ứng dụng thực tế của SVD và PCA, bao gồm việc sử dụng SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận, ứng dụng của SVD trong xử lý ảnh, và cách sử dụng PCA trong bài toán nhận dạng khuôn mặt thông qua phương pháp khuôn mặt đặc trưng.
 \end{itemize}
 Mặc dù chúng tôi đã cố gắng trình bày khóa luận một cách đầy đủ và chi tiết, nhưng khó tránh khỏi những thiếu sót do hạn chế về thời gian và trình độ. Chúng tôi rất mong nhận được những ý kiến đóng góp từ Quý Thầy, Cô và các bạn để khóa luận có thể hoàn thiện hơn.
 
-%\bibliographystyle{plain} % or {unsrt} for non-alphabetical order
-%\bibliographystyle{plainnat}
-%\bibliography{reference} % mybib.bib is the name of your .bib file
-%\printbibliography[title={Tiếng Việt}, keyword=vietnamese]
 \addcontentsline{toc}{chapter}{Tài liệu tham khảo}
 \printbibheading[title={Tài liệu tham khảo}]
-
-% The Vietnamese bibliography
 \printbibliography[keyword={vietnamese}, heading=subbibliography, title={Tiếng Việt}]
 \stepcounter{enumiv}
-% The English Bibliography
 \printbibliography[keyword={english}, heading=subbibliography, title={Tiếng Anh}]
-%\printbibheading
-%\printbibliography[notkeyword=vietnamese,heading=subbibliography,title={Other Sources}]
-%\printbibliography[keyword=vietnamese,heading=subbibliography,title={vietnamese Sources}]
-%\printbibliography[title={Tiếng Anh}, keyword=english]
-%\subsection{Tiếng Việt}
-%\nocite{*} % Ghi chú: Lệnh này sẽ "tham khảo" tất cả các mục trong file .bib, ngay cả khi chúng không được trích dẫn trực tiếp trong văn bản.
-%\bibliography{refvn}
-%
-%\subsection{Tiếng Anh}
-%\nocite{*} % Ghi chú: Lệnh này sẽ "tham khảo" tất cả các mục trong file .bib, ngay cả khi chúng không được trích dẫn trực tiếp trong văn bản.
-%\bibliography{refen}
-%\printbibliography
-%\begin{thebibliography}{99}
-
-%\bibitem{an2015}
-%Trần Hồng An,
-%\emph{Giáo trình đại số tuyến tính},
-%Tài liệu lưu hành nội bộ Trường Dại học Công Nghệ Thông Tin, (2015).
-%
-%\bibitem{hieu2019}
-%Lê Thanh Hiếu,
-%\emph{Bài giảng đại số tuyến tính},
-%Tài liệu lưu hành nội bộ, (2019).
-%
-%\bibitem{hung2000}
-%Nguyễn Hữu Việt Hưng,
-%\emph{Giáo trình đại số tuyến tính 1,2},
-%Nhà xuất bản Đại học Quốc gia Hà Nội (2000).
-%
-%\bibitem{linh2016}
-%Nguyễn Trần Nhật Linh,
-%\emph{Phân tích giá trị kì dị và một số ứng dụng},
-%Luận văn thạc sĩ (2016).
-%
-%\bibitem{my2020}
-%Nguyễn THị Ái My,
-%\emph{Một số mô hình phân tích thành phần chính ba chiều},
-%Luận văn thạc sĩ (2020).
-%
-%\bibitem{thuan2003}
-%Nguyễn Duy Thuận, Phi Mạnh Ban, Nông Quốc Chinh,
-%\emph{Dại số tuyến tính},
-%Nhà xuất bản Đại học Sư phạm, (2003)
-%
-%\bibitem{tiep2018}
-%Vũ Hữu Tiệp,
-%\emph{Machine Learning cơ bản},
-%Nhà xuất bản Khoa học và Kỹ thuật, (2018).
-%
-%\bibitem{tri2014}
-%Nguyễn Đình Trí (Chủ biên), Tạ Văn Đĩnh, Nguyễn Hồ Quỳnh
-%\emph{Toán học cao cấp Tập II}
-% Nhà xuất bản Giáo dục Việt Nam.(2014).
-%
-%\bibitem{cristianini2000}
-%Cristianini, N., Shawe-Taylor
-%\emph{An Introduction to Support Vector Machines and other kernel-based learning methods},
-%Cambridge University Press, Cambrigde, 2000.
-%\bibitem{eckart1936}
-%Eckart, C.; Young, G.
-%\emph{ The approximation of one matrix by another of lower rank}. Psychometrika. 1 (3): 211–8. doi:10.1007/BF02288367. S2CID 10163399.(1936)
-%
-%\bibitem{huang}
-%Gary B. Huang, Manu Ramesh, Tamara Berg, and Erik Learned-Miller
-%\emph{Labeled Faces in the Wild: A Database for Studying
-%Face Recognition in Unconstrained Environments}
-%
-%\bibitem{hyvarinen2009}
-%Aapo Hyvärinen,
-%\emph{Principal component analysis},
-%Based on material from the book Natural Image Statistics to be published by Springer-Verlag in 2009.
-%
-%%\bibitem{meyer2000}
-%%Carl D. Meyer,
-%%\emph{Matrix analysis and applied linear algebra},
-%%SIAM, Philadelphia 2000.
-%
-%
-%\bibitem{lay1994}
-%David C. Lay,
-%\emph{Linear algebra and its applications},
-%Addison-Wesley, Reading, MA, 1994.
-%
-%
-%
-%%\bibitem{harshman1970}
-%%Harshman R. A.,
-%%\emph{Foundations of Parafac procedure: Models and conditions for an "explanatory" multimodal factor analysis},
-%%UCLA Working papers in Phonetics, 16, p.1-84, 1970.
-%
-%%\bibitem{good1969}
-%%I. J. Good,
-%%\emph{Some applications of the singular value decomposition of matrix},
-%%Technometrics, 11, p. 823-831, 1969.
-%
-%
-%\bibitem{stewart1993}
-%Stewart G. W.,
-%\emph{On the early history of the singular value decomposition},
-%SIAM Review, 35, p. 551-566, 1993.
-%
-%
-%%\bibitem{website}
-%%\url{https://en.wikipedia.org/wiki/Singular_value_decomposition#History}
-%\bibitem{vaswani2017}
-%Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, lukasz Kaiser, and Illia Polosukhin.
-%\emph{Attention is all you need.}
-%In Advances in neural information processing systems, pp. 5998–6008,2017.
-%
-%\bibitem{ott2018}
-%Myle Ott, Sergey Edunov, David Grangier, and Michael Auli.
-%\emph{Scaling neural machine translation.}
-%In Proceedings of the Third Conference on Machine Translation: Research Papers, 2018.
-%
-%\bibitem{raffel2019}
-%Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi
-%Zhou, Wei Li, and Peter J Liu. 
-%\emph{Exploring the limits of transfer learning with a unified text-to-text
-%	transformer.}
-%arXiv preprint arXiv:1910.10683, 2019.
-%
-%\bibitem{wang2020}
-%Sinong Wang, Belinda Z. Li, Madian Khabsa, Han Fang, Hao Ma
-%\emph{Linformer: Self-Attention with Linear Complexity}
-%arXiv preprint arXiv:2006.04768, 2020.
-%
-%\bibitem{brown2020}
-%Tom B Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal,
-%Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. 
-%\emph{Language models are few-shot learners.}
-%arXiv preprint arXiv:2005.14165, 2020.
-%
-%\bibitem{devlin2019}
-%Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
-%\emph{Bert: Pre-training of deep bidirectional transformers for language understanding.}
-%In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies 2019
-%
-%\bibitem{radford2019}
-%Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya Sutskever. 
-%\emph{Language models are unsupervised multitask learners.}
-%OpenAI Blog, 2019.
-%
-%\bibitem{hinton2015}
-%Geoffrey Hinton, Oriol Vinyals, and Jeff Dean.
-%\emph{Distilling the knowledge in a neural network.}
-%arXiv preprint arXiv:1503.02531, 2015.
-%
-%\bibitem{child2019}
-%Rewon Child, Scott Gray, Alec Radford, and Ilya Sutskever.
-%\emph{Generating long sequences with sparse transformers.}
-%arXiv preprint arXiv:1904.10509, 2019.
-%
-%\bibitem{qiu2019}
-%Jiezhong Qiu, Hao Ma, Omer Levy, Scott Wen-tau Yih, Sinong Wang, and Jie Tang. 
-%\emph{Blockwise self-attention for long document understanding.}
-%arXiv preprint arXiv:1911.02972, 2019.
-%
-%\bibitem{beltagy2020}
-%Iz Beltagy, Matthew E Peters, and Arman Cohan. 
-%\emph{Longformer: The long-document transformer.}
-%arXiv preprint arXiv:2004.05150, 2020.
-%
-%\bibitem{kitaev2020}
-%Nikita Kitaev, Lukasz Kaiser, and Anselm Levskaya. 
-%\emph{Reformer: The efficient transformer.} 
-%In International Conference on Learning Representations, 2020
-%	\end{thebibliography}
 \end{document}
 
 
