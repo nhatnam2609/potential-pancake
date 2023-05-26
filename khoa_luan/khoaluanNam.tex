@@ -170,7 +170,7 @@
 % Một số phương pháp phân tích ma trận và ứng dụng
 \vskip 3cm
 \begin{center}
-{\bf\fontsize{22pt}{22}\selectfont MỘT SỐ PHƯƠNG PHÁP PHÂN TÍCH MA TRẬN VÀ ỨNG DỤNG}
+{\bf\fontsize{22pt}{22}\selectfont MỘT SỐ PHƯƠNG PHÁP PHÂN TÍCH DỮ LIỆU VÀ ỨNG DỤNG}
 
 \end{center}
 
@@ -201,7 +201,7 @@
 
 \vskip 3cm
 \begin{center}
-{\bf\fontsize{22pt}{22}\selectfont MỘT SỐ PHƯƠNG PHÁP PHÂN TÍCH MA TRẬN VÀ ỨNG DỤNG}
+{\bf\fontsize{22pt}{22}\selectfont MỘT SỐ PHƯƠNG PHÁP PHÂN TÍCH DỮ LIỆU VÀ ỨNG DỤNG}
 
 
 
@@ -392,7 +392,7 @@ $$
 $$
 \chapter{Một số kiến thức chuẩn bị}
 \pagenumbering{arabic}            % Danh lai trang
-\section{Ma t  rận}.
+\section{Ma trận}.
 \begin{dn} \cite{hieu2019}                   
  Ma trận cỡ $m \times n$ là một bảng gồm $m n$ số thực được sắp xếp thành $m$ dòng và $n$ cột. Ma trận thường được kí hiệu như sau\\
  $$
@@ -1550,9 +1550,7 @@ Kết quả chạy thử ví dụ trên PYTHON3 Hình~\ref{fig:pca_example}
 	\label{fig:pca_example}
 \end{figure}
 \chapter{ Một số ứng dụng của SVD và PCA }
-
 \section{Ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận}
-
 Về lí thuyết, khi làm việc với ma trận, ta cần nắm được toàn bộ những thông tin về ma trận đó. Tuy nhiên, trong thực tế có những ma trận cấp rất lớn với nhiều phần tử, lượng thông tin cần xử lí nhiều khiến ta rất khó khăn khi tiếp cận. Vấn đề đặt ra là, làm thế nào để ta cần loại bỏ, giảm tải bớt những thông tin, số liệu không cần thiết mà vẫn đảm bảo giữ lại những số liệu, những thông tin đặc trưng của ma trận, nhằm giúp cho công việc nghiên cứu được thuận tiện và đơn giản hơn. Nói cách khác, ta cần tìm một ma trận có hạng nhỏ hơn xấp xỉ với ma trận đã cho. Một trong những công cụ có thể giúp ta tìm được ma trận xấp xỉ đó chính là SVD. Trong phần này, chúng ta sẽ cùng tìm hiểu về ứng dụng của SVD trong bài toán xấp xỉ hạng thấp tốt nhất của ma trận. 
 
 Cho $\mathbf{A}$ là một ma trận cấp $m \times n$ bất kì, $\operatorname{rank}(\mathbf{A})=r$. Giả sử $\mathbf{A}$ có phân tích SVD dạng khai triển là
