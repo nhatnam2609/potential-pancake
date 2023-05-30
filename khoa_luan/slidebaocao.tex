@@ -437,6 +437,20 @@ Dấu \textquotedblleft  =\textquotedblright\ xảy ra khi $\mathbf{B}=\mathbf{A
 \end{figure}
 \end{frame}
 
+\begin{frame}{4.3 Nghiên cứu về ứng dụng SVD trong kiến trúc Transformer}
+$$
+\begin{array}{lcc}
+	\hline \text {Kiến trúc mô hình } & \text {Độ phức tạp  thời gian} & \text {Số phép toán tuần tự} \\
+	\hline \text {Recurrent } & O(n) & O(n) \\
+	\text {Transformer } & O\left(n^2\right) & O(1) \\
+	\text {Sparse Tansformer } & O(n \sqrt{n}) & O(1) \\
+	\text {Reformer} & O(n \log (n)) & O(\log (n)) \\
+	\text {Linformer } & O(n) & O(1) \\
+	\hline
+\end{array}
+$$
+\end{frame}
+
 
 %\begin{frame}{3.2 Không gian $\Lpp\kgdd$ }
 %\begin{block}{\textnormal{Định nghĩa 3.2.2}}
@@ -710,16 +724,16 @@ Dấu \textquotedblleft  =\textquotedblright\ xảy ra khi $\mathbf{B}=\mathbf{A
 %\end{block}
 %\end{frame}
 
-\begin{frame}{Tài liệu tham khảo}
-\begin{thebibliography}{99}
-	\bibitem{1} L. Đ. Kỳ, \textit{Bài giảng về Lý thuyết độ đo và tích phân}, Quy Nhơn, 2018.
-	\bibitem{2} L. Đ. Kỳ, \textit{Bài giảng về Giải tích thực}, Quy Nhơn, 2018.
-	\bibitem{3} T.T. Quang, \textit{Cơ sở lý thuyết Giải tích hàm}, Quy nhơn, 2013.
-	\bibitem{4} H. Brezis, \textit{Functional analysis}, Sobolev spaces and partial differential equations. Universitext. Springer, New York, 2011.
-	\bibitem{5} R. E. Castillo and H. Rafeiro, \textit{An introductory course in Lebesgue spaces}, CMS Books in Mathematics/Ouvrages de Mathématiques de la SMC. Springer, [Cham], 2016.
-	\bibitem{6} H. L. Royden, \textit{Real analysis}. Fourth edition. Pearson Education and China Machine Press, China, 2010.
-\end{thebibliography}
-\end{frame}
+%\begin{frame}{Tài liệu tham khảo}
+%\begin{thebibliography}{99}
+%	\bibitem{1} L. Đ. Kỳ, \textit{Bài giảng về Lý thuyết độ đo và tích phân}, Quy Nhơn, 2018.
+%	\bibitem{2} L. Đ. Kỳ, \textit{Bài giảng về Giải tích thực}, Quy Nhơn, 2018.
+%	\bibitem{3} T.T. Quang, \textit{Cơ sở lý thuyết Giải tích hàm}, Quy nhơn, 2013.
+%	\bibitem{4} H. Brezis, \textit{Functional analysis}, Sobolev spaces and partial differential equations. Universitext. Springer, New York, 2011.
+%	\bibitem{5} R. E. Castillo and H. Rafeiro, \textit{An introductory course in Lebesgue spaces}, CMS Books in Mathematics/Ouvrages de Mathématiques de la SMC. Springer, [Cham], 2016.
+%	\bibitem{6} H. L. Royden, \textit{Real analysis}. Fourth edition. Pearson Education and China Machine Press, China, 2010.
+%\end{thebibliography}
+%\end{frame}
 \begin{frame}
 \centerline{\Large\bf \fontsize{18}{18}\selectfont{\color{red}{KẾT THÚC BÁO CÁO}}}
 \vspace{1cm}
